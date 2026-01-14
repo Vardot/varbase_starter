@@ -14,8 +14,12 @@ recipes:
   - easy_email_express
   - varbase_admin_base
 install:
+  - cva
+  - menu_link_content
   - vartheme_bs5
   - project_browser
+  - inline_form_errors
+  - config
 config:
   strict: false
   import:
