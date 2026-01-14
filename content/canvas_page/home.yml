@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: fefadd5b-d980-4eb9-aa2c-d58f0826bdc1
+  default_langcode: en
+default:
+  revision_user:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: Home
+  components: []
+  path:
+    - alias: /home
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true

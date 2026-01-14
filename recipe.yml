@@ -22,43 +22,13 @@ install:
   - config
 config:
   strict: false
-  import:
-    system:
-      - system.menu.footer
   actions:
-    canvas.component.block.sitemap:
-      disable: []
-    field.field.node.blog.field_featured_image:
-      setRequired: true
-    metatag.settings:
-      simpleConfigUpdate:
-        entity_type_groups:
-          canvas_page:
-            canvas_page:
-              basic: basic
-    node.type.page:
-      setThirdPartySettings:
-        -
-          module: menu_ui
-          key: available_menus
-          value:
-            - main
-            - footer
-            - utility
-        -
-          module: menu_ui
-          key: parent
-          value: 'main:'
     system.site:
       simpleConfigUpdate:
-        page.404: '/404'
         page.front: '/home'
     system.theme:
       simpleConfigUpdate:
         default: vartheme_bs5
-    webform.webform.contact_form:
-      setProperties:
-        settings.confirmation_type: modal
 extra:
   recipe_installer_kit:
     finish_url: '/admin/dashboard/welcome'
