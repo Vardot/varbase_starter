@@ -13,6 +13,7 @@ recipes:
   - drupal_cms_seo_tools
   - easy_email_express
   - varbase_admin_base
+  - varbase_security_base
 install:
   - cva
   - menu_link_content
@@ -29,6 +30,15 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: vartheme_bs5
+    project_browser.admin_settings:
+      simpleConfigUpdate:
+        enabled_sources:
+          recommended:
+            # @see recommended.yml
+            uri: 'https://git.drupalcode.org/api/v4/projects/167158/repository/files/recommended.yml/raw?ref=HEAD'
+            ttl: 1
+          drupalorg_jsonapi: []
+        default_source: recommended
 extra:
   recipe_installer_kit:
     finish_url: '/admin/dashboard/welcome'
