@@ -2,6 +2,9 @@ name: Varbase Starter
 type: Site
 description: 'A starter site template recipe for Varbase, providing a modern recipe-first approach to initializing Varbase sites.'
 recipes:
+  - core/recipes/administrator_role
+  - core/recipes/core_recommended_maintenance
+  - core/recipes/core_recommended_performance
   - drupal_cms_admin_ui
   - drupal_cms_anti_spam
   - drupal_cms_authentication
@@ -11,8 +14,8 @@ recipes:
   - drupal_cms_privacy_basic
   - drupal_cms_seo_basic
   - drupal_cms_seo_tools
-  - easy_email_express
   - drupal_cms_accessibility_tools
+  - easy_email_express
   - varbase_admin_base
   - varbase_security_base
 install:
