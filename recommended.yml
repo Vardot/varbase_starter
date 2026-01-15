@@ -143,5 +143,3 @@ drupal/varbase_security_base:
   body:
     summary: 'A recipe to manage default security configurations including password policy, username enumeration prevention, security kit, CAPTCHA, honeypot, antibot, and flood control.'
   packageName: drupal/varbase_security_base
-
-  

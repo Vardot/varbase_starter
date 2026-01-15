@@ -12,6 +12,7 @@ recipes:
   - drupal_cms_seo_basic
   - drupal_cms_seo_tools
   - easy_email_express
+  - drupal_cms_accessibility_tools
   - varbase_admin_base
   - varbase_security_base
 install:
