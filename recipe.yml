@@ -35,6 +35,19 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: vartheme_bs5
+    package_manager.settings:
+      simpleConfigUpdate:
+        additional_trusted_composer_plugins:
+          - vardot/varbase
+          - composer/installers
+          - cweagans/composer-patches
+          - oomphinc/composer-installers-extender
+          - drupal/core-composer-scaffold
+          - drupal/core-project-message
+          - dealerdirect/phpcodesniffer-composer-installer
+          - phpstan/extension-installer
+          - php-http/discovery
+          - tbachert/spi
     project_browser.admin_settings:
       simpleConfigUpdate:
         enabled_sources:
