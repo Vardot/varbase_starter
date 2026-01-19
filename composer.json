@@ -5,6 +5,7 @@
   "license": ["GPL-2.0-or-later"],
   "require": {
     "drupal/core": "^11.3",
+    "drupal/recipe_installer_kit": "~1",
     "drupal/drupal_cms_admin_ui": "^2",
     "drupal/drupal_cms_anti_spam": "^2",
     "drupal/drupal_cms_authentication": "^2",
@@ -22,10 +23,10 @@
     "drupal/drupal_cms_google_analytics": "^2",
     "drupal/easy_email_express": "^1.0.2",
     "drupal/ui_icons": "^1.1",
-    "drupal/recipe_installer_kit": "~1",
     "drupal/varbase_admin_base": "1.0.x-dev",
     "drupal/varbase_dev_base": "1.0.x-dev",
     "drupal/varbase_security_base": "1.0.x-dev",
+    "drupal/varbase_i18n_base": "1.0.x-dev",
     "drupal/vartheme_bs5": "5.0.x-dev"
   }
 }

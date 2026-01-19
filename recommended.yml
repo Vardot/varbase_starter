@@ -143,3 +143,14 @@ drupal/varbase_security_base:
   body:
     summary: 'A recipe to manage default security configurations including password policy, username enumeration prevention, security kit, CAPTCHA, honeypot, antibot, and flood control.'
   packageName: drupal/varbase_security_base
+
+drupal/varbase_i18n_base:
+  title: 'Varbase Internationalization Base'
+  type: recipe
+  logo: null
+  core: '^11.3'
+  machineName: varbase_i18n_base
+  body:
+    summary: 'A recipe to manage internationalization, languages, and translation support with default configurations and permissions for Varbase multilingual sites.'
+  packageName: drupal/varbase_i18n_base
+
