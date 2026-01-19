@@ -3,6 +3,7 @@ type: Site
 description: 'A starter site template recipe for Varbase, providing a modern recipe-first approach to initializing Varbase sites.'
 recipes:
   - core/recipes/administrator_role
+  - core/recipes/content_editor_role
   - core/recipes/core_recommended_maintenance
   - core/recipes/core_recommended_performance
   - drupal_cms_admin_ui
