@@ -39,7 +39,6 @@ config:
       simpleConfigUpdate:
         additional_trusted_composer_plugins:
           - vardot/varbase
-          - drupal/drupal_cms_seo_tools
           - drupal/varbase_starter
           - composer/installers
           - cweagans/composer-patches
