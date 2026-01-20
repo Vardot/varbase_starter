@@ -2,7 +2,7 @@
 # A curated list of recommended add-ons. This file is part of Drupal CMS's API and
 # should not be renamed or removed unless you know precisely what you're doing. Its
 # canonical URL is:
-# https://git.drupalcode.org/api/v4/projects/167158/repository/files/recommended.yml/raw?ref=HEAD
+# https://git.drupalcode.org/api/v4/projects/201141/repository/files/recommended.yml/raw?ref=HEAD
 #
 drupal/drupal_cms_accessibility_tools:
   title: 'Accessibility Tools'
@@ -154,3 +154,12 @@ drupal/varbase_i18n_base:
     summary: 'A recipe to manage internationalization, languages, and translation support with default configurations and permissions for Varbase multilingual sites.'
   packageName: drupal/varbase_i18n_base
 
+drupal/varbase_api_base:
+  title: 'Varbase API Base'
+  type: recipe
+  logo: null
+  core: '^11.3'
+  machineName: varbase_api_base
+  body:
+    summary: 'A recipe to set up JSON:API with authentication, authorization, and OpenAPI documentation for easy content ingestion by other applications.'
+  packageName: drupal/varbase_api_base

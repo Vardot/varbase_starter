@@ -27,6 +27,7 @@
     "drupal/varbase_dev_base": "1.0.x-dev",
     "drupal/varbase_security_base": "1.0.x-dev",
     "drupal/varbase_i18n_base": "1.0.x-dev",
+    "drupal/varbase_api_base": "1.0.x-dev",
     "drupal/vartheme_bs5": "5.0.x-dev"
   }
 }
