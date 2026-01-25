@@ -1,0 +1,18 @@
+_meta:
+  version: "1.0"
+  entity_type: block_content
+  uuid: 2f3e092e-0470-4863-9ac8-4852cf1bf96a
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    - value: true
+  info:
+    - value: "Powered by Varbase"
+  reusable:
+    - value: true
+  body:
+    -
+      value: '<div class="d-flex justify-content-end small text-end"><p class="fw-bold">Powered by <a href="https://www.vardot.com/?utm_source=varbase&amp;utm_campaign=varbase%20default%20links" target="_self" rel="noopener">Vardot</a>.</p></div>'
+      format: content_format
+      summary: ""

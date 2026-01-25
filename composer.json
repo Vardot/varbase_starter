@@ -23,6 +23,8 @@
     "drupal/drupal_cms_google_analytics": "^2",
     "drupal/easy_email_express": "^1.0.2",
     "drupal/ui_icons": "^1.1",
+    "drupal/block_class": "~4.0",
+    "drupal/menu_block": "~1.0",
     "drupal/varbase_admin_base": "1.0.x-dev",
     "drupal/varbase_dev_base": "1.0.x-dev",
     "drupal/varbase_security_base": "1.0.x-dev",

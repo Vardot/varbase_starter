@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 0ac28534-833d-4fee-b4f8-0ea304c7b98f
+  default_langcode: en
+default:
+  revision_user:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Contact Us'
+  components: []
+  path:
+    - alias: /contact-us
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true
+

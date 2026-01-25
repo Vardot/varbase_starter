@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 2d52e16b-1f0d-4128-948a-fea23111fbcd
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: Blog
+  reusable:
+    -
+      value: true
+  body:
+    -
+      value: '<p>Create captivating content effortlessly. Multiple authors can seamlessly contribute while you maintain full control over layout, categories, and tags. It''s simple, powerful, and ready to elevate your dreams online presence without complications.</p>'
+      format: content_format
+      summary: ''

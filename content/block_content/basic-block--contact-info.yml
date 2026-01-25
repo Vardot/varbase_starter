@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 5c7346de-0857-4921-9cd8-8f037416a3b6
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Contact Information'
+  reusable:
+    -
+      value: true
+  body:
+    -
+      value: '<h2 class="h4">Contact Information</h2><p><b>US &amp; Canada</b></p><p>Phone Number: <a href="tel:4083299888" target="_self">(408) 329 9888</a><br>Address: <a href="https://goo.gl/maps/buSjPMHTjQb4eW4s7" target="_self">3080 Olcott St, Suite A115, Santa Clara, CA 95054</a></p>'
+      format: content_format
+      summary: ''
