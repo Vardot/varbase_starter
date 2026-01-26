@@ -19,6 +19,7 @@ recipes:
   - easy_email_express
   - varbase_admin_base
   - varbase_security_base
+  - varbase_webform_base
 install:
   - cva
   - menu_link_content
