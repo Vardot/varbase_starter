@@ -7,6 +7,9 @@ default:
   revision_user:
     -
       target_id: 1
+  revision_log:
+    -
+      value: 'Created new Home Page.'
   status:
     -
       value: true
@@ -16,10 +19,13 @@ default:
   title:
     -
       value: Home
-  components: []
   path:
-    - alias: /home
+    -
+      alias: /home
       langcode: en
   revision_translation_affected:
     -
       value: true
+  metatags:
+    -
+      value: '{"canonical_url":"[canvas_page:url]","description":"[canvas_page:description]","image_src":"[canvas_page:image:entity:field_media_image:entity:url]","title":"[canvas_page:title] | [site:name]"}'

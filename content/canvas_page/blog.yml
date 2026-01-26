@@ -7,6 +7,9 @@ default:
   revision_user:
     -
       target_id: 1
+  revision_log:
+    -
+      value: 'Created a new Blog site section page.'
   status:
     -
       value: true
@@ -16,10 +19,28 @@ default:
   title:
     -
       value: Blog
-  components: []
+  components:
+    -
+      uuid: 4dcf611c-a513-461b-9145-856b641d7c8e
+      component_id: sdc.vartheme_bs5.heading
+      inputs:
+        heading_text: Blog
+        level: 1
+    -
+      uuid: 1ae33e66-d7f6-4ea9-a6a9-bbdc0094d434
+      component_id: block.views_block.blog-all
+      inputs:
+        label: 'Blog: All blog posts'
+        label_display: '0'
+        views_label: ''
+        items_per_page: 10
   path:
-    - alias: /blog
+    -
+      alias: /blog
       langcode: en
   revision_translation_affected:
     -
       value: true
+  metatags:
+    -
+      value: '{"canonical_url":"[canvas_page:url]","description":"[canvas_page:description]","image_src":"[canvas_page:image:entity:field_media_image:entity:url]","title":"[canvas_page:title] | [site:name]"}'
