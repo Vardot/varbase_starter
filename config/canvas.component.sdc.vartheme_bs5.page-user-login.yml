@@ -1,0 +1,24 @@
+uuid: 921c547b-9117-4b94-a78e-19a0b2eaa4ce
+langcode: en
+status: false
+dependencies:
+  theme:
+    - vartheme_bs5
+active_version: 2a0de3d4b424db4f
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        branding:
+          title: Branding
+          description: 'Site branding.'
+        navigation:
+          title: navigation
+          description: 'site navigation.'
+label: 'Page User Login'
+id: sdc.vartheme_bs5.page-user-login
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:page-user-login'

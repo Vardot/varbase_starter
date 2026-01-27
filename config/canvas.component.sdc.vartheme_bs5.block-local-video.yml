@@ -1,0 +1,18 @@
+uuid: 9ce0a1c0-3454-4933-976e-126c39af87bb
+langcode: en
+status: false
+dependencies:
+  theme:
+    - vartheme_bs5
+active_version: 8fe3be948e0194e1
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Block Local Video'
+id: sdc.vartheme_bs5.block-local-video
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:block-local-video'

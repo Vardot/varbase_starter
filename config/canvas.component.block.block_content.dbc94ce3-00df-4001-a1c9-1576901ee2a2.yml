@@ -1,0 +1,25 @@
+uuid: 3965ff9c-2172-4138-9078-389b21f87147
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:dbc94ce3-00df-4001-a1c9-1576901ee2a2'
+  module:
+    - block_content
+active_version: aee70645ba4e5ed5
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'block_content:dbc94ce3-00df-4001-a1c9-1576901ee2a2'
+        label: 'About Varbase'
+        label_display: '0'
+        provider: block_content
+        view_mode: full
+    fallback_metadata:
+      slot_definitions: null
+label: 'About Varbase'
+id: block.block_content.dbc94ce3-00df-4001-a1c9-1576901ee2a2
+provider: block_content
+source: block
+source_local_id: 'block_content:dbc94ce3-00df-4001-a1c9-1576901ee2a2'

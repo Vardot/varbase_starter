@@ -1,0 +1,26 @@
+uuid: 782cd044-b9aa-4aaa-9374-04ff3855bfcb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vartheme_bs5
+active_version: d44eac70d24437ec
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: Details
+id: sdc.vartheme_bs5.details
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:details'

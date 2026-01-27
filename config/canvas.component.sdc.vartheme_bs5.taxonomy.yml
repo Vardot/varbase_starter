@@ -1,0 +1,21 @@
+uuid: 77901fa9-d32c-40a6-af21-3e5b5fbdb2da
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vartheme_bs5
+active_version: d54b181baa9953d9
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        content:
+          title: Content
+          description: 'The content text or text with a link for the taxonomy term.'
+label: Taxonomy
+id: sdc.vartheme_bs5.taxonomy
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:taxonomy'

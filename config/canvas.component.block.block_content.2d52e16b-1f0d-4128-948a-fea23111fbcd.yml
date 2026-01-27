@@ -1,0 +1,25 @@
+uuid: bb48edfc-a515-4d12-86c0-0bf3bda80738
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:2d52e16b-1f0d-4128-948a-fea23111fbcd'
+  module:
+    - block_content
+active_version: 0263f65d387f0cd2
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'block_content:2d52e16b-1f0d-4128-948a-fea23111fbcd'
+        label: Blog
+        label_display: '0'
+        provider: block_content
+        view_mode: full
+    fallback_metadata:
+      slot_definitions: null
+label: Blog
+id: block.block_content.2d52e16b-1f0d-4128-948a-fea23111fbcd
+provider: block_content
+source: block
+source_local_id: 'block_content:2d52e16b-1f0d-4128-948a-fea23111fbcd'
