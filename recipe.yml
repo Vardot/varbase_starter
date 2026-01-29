@@ -17,21 +17,14 @@ recipes:
   - drupal_cms_seo_tools
   - drupal_cms_accessibility_tools
   - easy_email_express
+  - varbase_content_base
   - varbase_admin_base
   - varbase_security_base
   - varbase_webform_base
 install:
   - cva
-  - menu_link_content
   - vartheme_bs5
   - project_browser
-  - inline_form_errors
-  - config
-  - help
-  - menu_block
-  - text
-  - block_content
-  - block_class
 config:
   strict: false
   import:
