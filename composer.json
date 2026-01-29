@@ -22,13 +22,16 @@
     "drupal/drupal_cms_ai": "^2",
     "drupal/drupal_cms_google_analytics": "^2",
     "drupal/easy_email_express": "^1.0.2",
-    "drupal/varbase_content_base": "1.0.x-dev",
     "drupal/varbase_admin_base": "1.0.x-dev",
     "drupal/varbase_dev_base": "1.0.x-dev",
     "drupal/varbase_security_base": "1.0.x-dev",
+    "drupal/varbase_media_base": "1.0.x-dev",
+    "drupal/varbase_content_base": "1.0.x-dev",
+    "drupal/varbase_workflow_base": "1.0.x-dev",
     "drupal/varbase_i18n_base": "1.0.x-dev",
     "drupal/varbase_api_base": "1.0.x-dev",
     "drupal/varbase_webform_base": "1.0.x",
+    "drupal/varbase_demo_content": "1.0.x",
     "drupal/vartheme_bs5": "5.0.x-dev"
   }
 }
