@@ -26,14 +26,6 @@ default:
       inputs:
         heading_text: Blog
         level: 1
-    -
-      uuid: 1ae33e66-d7f6-4ea9-a6a9-bbdc0094d434
-      component_id: block.views_block.blog-all
-      inputs:
-        label: 'Blog: All blog posts'
-        label_display: '0'
-        views_label: ''
-        items_per_page: 10
   path:
     -
       alias: /blog

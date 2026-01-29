@@ -17,10 +17,10 @@ recipes:
   - drupal_cms_seo_tools
   - drupal_cms_accessibility_tools
   - easy_email_express
-  - varbase_content_base
   - varbase_admin_base
   - varbase_security_base
   - varbase_webform_base
+  - varbase_content_base
 install:
   - cva
   - vartheme_bs5
