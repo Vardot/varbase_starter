@@ -1,0 +1,25 @@
+uuid: 836b3031-9191-43ff-aaa0-fa382e43fb5c
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:7cbc6f8a-b200-46a0-bb19-e1c72fc12c1f'
+  module:
+    - block_content
+active_version: 1595bf874b164627
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'block_content:7cbc6f8a-b200-46a0-bb19-e1c72fc12c1f'
+        label: 'Branding Footer'
+        label_display: '0'
+        provider: block_content
+        view_mode: full
+    fallback_metadata:
+      slot_definitions: null
+label: 'Branding Footer'
+id: block.block_content.7cbc6f8a-b200-46a0-bb19-e1c72fc12c1f
+provider: block_content
+source: block
+source_local_id: 'block_content:7cbc6f8a-b200-46a0-bb19-e1c72fc12c1f'

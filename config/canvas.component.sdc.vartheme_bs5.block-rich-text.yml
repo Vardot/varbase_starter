@@ -1,0 +1,45 @@
+uuid: a9b776e5-d124-4b79-bc14-1fc3b326ec11
+langcode: en
+status: false
+dependencies:
+  module:
+    - options
+  theme:
+    - vartheme_bs5
+active_version: c32811e60fa5759b
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        title_tag:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        heading:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        content:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Block Rich Text'
+id: sdc.vartheme_bs5.block-rich-text
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:block-rich-text'
