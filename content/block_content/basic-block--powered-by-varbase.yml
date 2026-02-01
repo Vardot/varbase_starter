@@ -14,5 +14,5 @@ default:
   body:
     -
       value: '<div><p>Powered by <a href="https://www.vardot.com/?utm_source=varbase&amp;utm_campaign=varbase%20default%20links" target="_self" rel="noopener">Vardot</a>.</p></div>'
-      format: content_format
+      format: code_html
       summary: ""
