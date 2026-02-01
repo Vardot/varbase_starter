@@ -76,6 +76,88 @@ config:
             ttl: 1
           drupalorg_jsonapi: []
         default_source: recommended
+    # Disable Canvas components that aren't really useful in building pages or
+    # content templates.
+    ?canvas.component.block.announce_block:
+      disable: []
+    canvas.component.block.block_content.*:
+      disable: []
+    ?canvas.component.block.dashboard_placeholder:
+      disable: []
+    ?canvas.component.block.dashboard_site_status:
+      disable: []
+    ?canvas.component.block.help_block:
+      disable: []
+    ?canvas.component.block.inline_block.basic:
+      disable: []
+    ?canvas.component.block.local_actions_block:
+      disable: []
+    ?canvas.component.block.local_tasks_block:
+      disable: []
+    ?canvas.component.block.navigation_dashboard:
+      disable: []
+    ?canvas.component.block.navigation_link:
+      disable: []
+    ?canvas.component.block.navigation_shortcuts:
+      disable: []
+    ?canvas.component.block.navigation_user:
+      disable: []
+    ?canvas.component.block.page_title_block:
+      disable: []
+    ?canvas.component.block.project_browser_block.*:
+      disable: []
+    ?canvas.component.block.system_clear_cache_block:
+      disable: []
+    ?canvas.component.block.system_menu_block.account:
+      disable: []
+    ?canvas.component.block.system_menu_block.admin:
+      disable: []
+    ?canvas.component.block.system_menu_block.content:
+      disable: []
+    ?canvas.component.block.system_menu_block.navigation-user-links:
+      disable: []
+    ?canvas.component.block.system_menu_block.social-media-menu:
+      disable: []
+    ?canvas.component.block.system_menu_block.tools:
+      disable: []
+    ?canvas.component.block.system_menu_block.top-tasks:
+      disable: []
+    ?canvas.component.block.user_login_block:
+      disable: []
+    canvas.component.block.views_block.a11y_tools_editoria11y_.*:
+      disable: []
+    canvas.component.block.views_block.editoria11y_.*:
+      disable: []
+    ?canvas.component.block.views_block.publishing_content-block_drafts:
+      disable: []
+    ?canvas.component.block.views_block.publishing_content-block_scheduled:
+      disable: []
+    ?canvas.component.block.views_block.recent_content-block_recent_content:
+      disable: []
+    ?canvas.component.sdc.navigation.title:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.block-cta:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.block-image:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.block-local-video:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.block-remote-video:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.block-rich-text:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.page-header:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.page-user-edit:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.page-user-login:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.page-user-password:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.page-user-register:
+      disable: []
+    ?canvas.component.sdc.vartheme_bs5.page-user-reset:
+      disable: []
 extra:
   recipe_installer_kit:
     finish_url: '/admin/dashboard/welcome'
