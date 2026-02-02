@@ -12,7 +12,6 @@ dependencies:
     - canvas.component.sdc.vartheme_bs5.text
     - core.entity_view_mode.node.full
     - field.field.media.image.field_media_image
-    - field.field.node.blog.field_blog__byline
     - field.field.node.blog.field_content
     - field.field.node.blog.field_featured_image
     - filter.format.content_format
@@ -38,7 +37,7 @@ component_tree:
     uuid: 14f8bf3e-e882-48fb-ba4e-83e932f0748b
     component_id: sdc.vartheme_bs5.hero-blog
     component_version: 989a5b66efe6aa48
-    inputs: '{"heading_text":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dtitle\u241e\u241fvalue"},"level":1,"date":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dcreated\u241e\u241fvalue"},"author":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dfield_blog__byline\u241e\u241fvalue"},"media":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dfield_featured_image\u241e\u241fentity\u241c\u241centity:media:image\u241dfield_media_image\u241e\u241f{src\u21a0src_with_alternate_widths,alt\u21a0alt,width\u21a0width,height\u21a0height}"}}'
+    inputs: '{"heading_text":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dtitle\u241e\u241fvalue"},"level":1,"date":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dcreated\u241e\u241fvalue"},"media":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dfield_featured_image\u241e\u241fentity\u241c\u241centity:media:image\u241dfield_media_image\u241e\u241f{src\u21a0src_with_alternate_widths,alt\u21a0alt,width\u21a0width,height\u21a0height}"}}'
   2:
     uuid: ea40592d-2c03-45e8-9c19-a66a96a59ec9
     component_id: sdc.vartheme_bs5.section
