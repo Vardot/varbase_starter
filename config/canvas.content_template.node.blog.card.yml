@@ -19,5 +19,10 @@ id: node.blog.card
 content_entity_type_id: node
 content_entity_type_bundle: blog
 content_entity_type_view_mode: card
-component_tree: []
+component_tree:
+  -
+    uuid: 7358e3cc-7e74-4531-8931-531236ad67ce
+    component_id: sdc.vartheme_bs5.card
+    component_version: ee73a287db94dfa5
+    inputs: '{"shadow":"default","border":"default","rounded":"default","background":"accent","style":"framed","orientation":"horizontal","media_ratio":"16x9","heading_text":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dtitle\u241e\u241fvalue"},"level":3,"media":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dfield_featured_image\u241e\u241fentity\u241c\u241centity:media:image\u241dfield_media_image\u241e\u241f{src\u21a0src_with_alternate_widths,alt\u21a0alt,width\u21a0width,height\u21a0height}"},"text":{"sourceType":"dynamic","expression":"\u2139\ufe0e\u241centity:node:blog\u241dfield_description\u241e\u241fvalue"},"is_text_centered":false,"button_label":"Learn more","button_variant":"link","extra_classes":"mb-3"}'
 exposed_slots: {  }
