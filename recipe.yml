@@ -4,8 +4,6 @@ description: 'A starter site template recipe for Varbase, providing a modern rec
 recipes:
   - core/recipes/administrator_role
   - core/recipes/content_editor_role
-  - core/recipes/core_recommended_maintenance
-  - core/recipes/core_recommended_performance
   - drupal_cms_admin_ui
   - drupal_cms_anti_spam
   - drupal_cms_authentication
@@ -24,6 +22,7 @@ recipes:
   - varbase_content_base
   - varbase_workflow_base
   - varbase_webform_base
+  - varbase_performance_base
   - varbase_demo_content
 install:
   - cva
