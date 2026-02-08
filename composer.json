@@ -33,6 +33,7 @@
     "drupal/varbase_seo_base": "1.0.x-dev",
     "drupal/varbase_api_base": "1.0.x-dev",
     "drupal/varbase_webform_base": "1.0.x",
+    "drupal/varbase_auth_base": "1.0.x",
     "drupal/varbase_blog_base": "1.0.x",
     "drupal/varbase_demo_content": "1.0.x",
     "drupal/vartheme_bs5": "5.0.x-dev"
