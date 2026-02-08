@@ -7,7 +7,6 @@ recipes:
   - drupal_cms_admin_ui
   - drupal_cms_anti_spam
   - drupal_cms_authentication
-  - drupal_cms_blog
   - drupal_cms_forms
   - drupal_cms_media
   - drupal_cms_privacy_basic
@@ -21,7 +20,9 @@ recipes:
   - varbase_editor_base
   - varbase_content_base
   - varbase_workflow_base
+  - varbase_seo_base
   - varbase_webform_base
+  - varbase_blog_base
   - varbase_performance_base
   - varbase_demo_content
 install:

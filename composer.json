@@ -15,7 +15,6 @@
     "drupal/drupal_cms_privacy_basic": "^2",
     "drupal/drupal_cms_search": "^2",
     "drupal/drupal_cms_seo_basic": "^2",
-    "drupal/drupal_cms_blog": "^2",
     "drupal/drupal_cms_forms": "^2",
     "drupal/drupal_cms_seo_tools": "^2",
     "drupal/drupal_cms_accessibility_tools": "^2",
@@ -31,8 +30,10 @@
     "drupal/varbase_content_base": "1.0.x-dev",
     "drupal/varbase_workflow_base": "1.0.x-dev",
     "drupal/varbase_i18n_base": "1.0.x-dev",
+    "drupal/varbase_seo_base": "1.0.x-dev",
     "drupal/varbase_api_base": "1.0.x-dev",
     "drupal/varbase_webform_base": "1.0.x",
+    "drupal/varbase_blog_base": "1.0.x",
     "drupal/varbase_demo_content": "1.0.x",
     "drupal/vartheme_bs5": "5.0.x-dev"
   }
