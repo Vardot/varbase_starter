@@ -9,7 +9,7 @@ default:
       target_id: 1
   revision_log:
     -
-      value: 'Created a new Blog site section page.'
+      value: 'Created English translation'
   status:
     -
       value: true
@@ -24,8 +24,17 @@ default:
       uuid: 4dcf611c-a513-461b-9145-856b641d7c8e
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text: Blog
         level: 1
+        heading_text: Blog
+    -
+      uuid: ef1a9ade-5633-4bb2-bef9-665d58878f9b
+      component_id: block.views_block.blog-all
+      inputs:
+        label: 'Blog: All blog posts'
+        exposed: {  }
+        views_label: ''
+        label_display: '0'
+        items_per_page: 8
   path:
     -
       alias: /blog
