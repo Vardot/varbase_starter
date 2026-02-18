@@ -1,25 +1,36 @@
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - vartheme_bs5
-active_version: 1570c5ddfb282be7
+label: 'Views view unformatted'
+id: sdc.vartheme_bs5.views-view-unformatted
+source: sdc
+source_local_id: 'vartheme_bs5:views-view-unformatted'
+provider: vartheme_bs5
+active_version: 540694677b8d8a0b
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
-        content:
+        title:
           required: false
           field_type: string
+          field_widget: string_textfield
+          expression: "ℹ︎string␟value"
+          default_value: null
           field_storage_settings: {  }
           field_instance_settings: {  }
-          field_widget: string_textfield
+        default_row_class:
+          required: false
+          field_type: boolean
+          field_widget: boolean_checkbox
+          expression: "ℹ︎boolean␟value"
           default_value: null
-          expression: ℹ︎string␟value
+          field_storage_settings: {  }
+          field_instance_settings: {  }
     fallback_metadata:
-      slot_definitions: {  }
-label: 'Views view unformatted'
-id: sdc.vartheme_bs5.views-view-unformatted
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:views-view-unformatted'
+      slot_definitions:
+        rows:
+          title: Rows
+          description: Rows
