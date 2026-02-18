@@ -27,6 +27,7 @@ recipes:
   - varbase_demo_content
 install:
   - cva
+  - varbase_components
   - vartheme_bs5
   - project_browser
 config:
