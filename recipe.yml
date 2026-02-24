@@ -22,6 +22,7 @@ recipes:
   - varbase_workflow_base
   - varbase_seo_base
   - varbase_webform_base
+  - varbase_page_base
   - varbase_blog_base
   - varbase_performance_base
   - varbase_demo_content
