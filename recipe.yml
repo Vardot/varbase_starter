@@ -2,8 +2,7 @@ name: Varbase
 type: Site
 description: 'A starter site template recipe for Varbase, providing a modern recipe-first approach to initializing Varbase sites.'
 recipes:
-  - core/recipes/administrator_role
-  - core/recipes/content_editor_role
+  - varbase_users_base
   - drupal_cms_admin_ui
   - drupal_cms_anti_spam
   - drupal_cms_authentication
