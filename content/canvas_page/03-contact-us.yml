@@ -78,8 +78,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         heading_text: 'Contact Information'
-        border_top: false
-        border_bottom: false
         level: 2
         text_size: h5
     -
@@ -91,13 +89,8 @@ default:
         text:
           value: '<p><strong>US &amp; Canada</strong></p><p>Phone Number: <a href="tel:4083299888">(408) 329 9888</a><br>Address: <a href="https://goo.gl/maps/buSjPMHTjQb4eW4s7">3080 Olcott St, Suite A115, Santa Clara, CA 95054</a></p>'
           format: canvas_html_block
-        element: div
-        text_size: default
-        text_color: default
-        align: start
-        weight: default
-        line_height: default
-        spacing_y: none
+        text_size: none
+        text_color: text-body
     -
       uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       component_id: sdc.vartheme_bs5.section
@@ -129,8 +122,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         heading_text: 'About Varbase'
-        border_top: false
-        border_bottom: false
         level: 2
         text_size: h2
     -
@@ -142,28 +133,21 @@ default:
         text:
           value: '<p>Varbase has successfully delivered over 200 digital experience projects for global brands and international enterprises that need the best Drupal web development and design capabilities for their custom and complex technical requirements.</p>'
           format: canvas_html_block
-        element: div
-        text_size: default
-        text_color: default
-        weight: default
-        spacing_y: none
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: d67a9b60-5495-47b8-80d6-64a84a9c5ad5
       slot: footer_slot
       uuid: 4ec7d907-5fd5-42d5-b0ff-0e7060219b34
       component_id: sdc.vartheme_bs5.button
       inputs:
-        variant: primary
-        size: md
+        variant: btn-primary
+        size: btn-md
         label: 'Learn More About Varbase'
-        target: self
         icon: none
         icon_first: false
-        alignment: inline
-        mobile_width: false
-        full_width: false
         disabled: false
-        radius: default
+        radius: rounded
         href: 'https://www.vardot.com/en/solutions/varbase'
     -
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
@@ -186,8 +170,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         heading_text: Blog
-        border_top: false
-        border_bottom: false
         level: 2
         text_size: h2
     -
@@ -199,28 +181,21 @@ default:
         text:
           value: "<p>Create captivating content effortlessly. Multiple authors can seamlessly contribute while you maintain full control over layout, categories, and tags. It's simple, powerful, and ready to elevate your dreams online presence without complications.</p>"
           format: canvas_html_block
-        element: div
-        text_size: default
-        text_color: default
-        weight: default
-        spacing_y: none
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: 95742802-4867-4ee1-baab-82786db3d934
       slot: footer_slot
       uuid: 7373576c-9de3-4d45-a5c3-fdb612672cba
       component_id: sdc.vartheme_bs5.button
       inputs:
-        variant: primary
-        size: md
+        variant: btn-primary
+        size: btn-md
         label: 'View Updates'
-        target: self
         icon: none
         icon_first: false
-        alignment: inline
-        mobile_width: false
-        full_width: false
         disabled: false
-        radius: default
+        radius: rounded
         href: /blog
   path:
     -

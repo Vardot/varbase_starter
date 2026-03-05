@@ -71,26 +71,6 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
-        mobile_width:
-          required: false
-          field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: boolean_checkbox
-          default_value:
-            -
-              value: false
-          expression: ℹ︎boolean␟value
-        full_width:
-          required: false
-          field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: boolean_checkbox
-          default_value:
-            -
-              value: false
-          expression: ℹ︎boolean␟value
         disabled:
           required: false
           field_type: boolean
@@ -112,16 +92,6 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
-        btn_classes:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'fw-bold shadow-sm'
-          expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
 label: Button

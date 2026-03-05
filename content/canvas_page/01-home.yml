@@ -103,9 +103,7 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        border_top: false
         heading_text: 'Build Your Site Using Varbase!'
-        border_bottom: false
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -114,9 +112,7 @@ default:
       inputs:
         level: 3
         text_size: h4
-        border_top: false
         heading_text: 'Flexible Content and Fields'
-        border_bottom: false
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -126,13 +122,8 @@ default:
         text:
           value: '<p>Easily customize the structure of your content fields using Content types. Each content type can be assigned different view modes using Canvas that can be displayed using views.</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: default
-        line_height: default
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -141,10 +132,7 @@ default:
       inputs:
         level: 3
         text_size: h4
-        border_top: false
-        margin_top: '5'
         heading_text: 'Versioned Content'
-        border_bottom: false
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -154,13 +142,8 @@ default:
         text:
           value: '<p>Manage content utilizing automatic versioning with historical edits. Compare previous version using Diff module, and get an automated log message for your changes using Revision Log Default.</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: default
-        line_height: default
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_2
@@ -169,9 +152,7 @@ default:
       inputs:
         level: 3
         text_size: h4
-        border_top: false
         heading_text: 'Powerful Landing Page Builder'
-        border_bottom: false
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_2
@@ -181,13 +162,8 @@ default:
         text:
           value: '<p>Using Drupal Canvas, you can add text with a WYSIWYG-editor, pictures, media, galleries, carousels, headers, complex layouts to your pages and change the order by dragging and dropping the content wherever you like it.</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: default
-        line_height: default
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_2
@@ -196,10 +172,7 @@ default:
       inputs:
         level: 3
         text_size: h4
-        border_top: false
-        margin_top: '5'
         heading_text: 'Administration Dashboard'
-        border_bottom: false
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_2
@@ -209,13 +182,8 @@ default:
         text:
           value: '<p>Varbase comes with advanced editorial Dashboards that is built on top of Dashboard with Layout Builder module, utilizing , and several enhanced blocks and widgets for an intuitive and flexible administration experience.</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: default
-        line_height: default
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: footer_slot
@@ -224,16 +192,12 @@ default:
       inputs:
         href: '#'
         icon: none
-        size: md
+        size: btn-md
         label: "See All Varbase's Features"
-        radius: default
-        target: self
-        variant: primary
+        radius: rounded
+        variant: btn-primary
         disabled: false
-        alignment: inline
-        full_width: false
         icon_first: false
-        mobile_width: false
     -
       uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       component_id: sdc.vartheme_bs5.section
@@ -254,10 +218,8 @@ default:
       inputs:
         level: 2
         text_size: h5
-        border_top: false
-        text_color: white
+        text_color: text-white
         heading_text: 'Varbase in Numbers'
-        border_bottom: false
     -
       parent_uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       slot: col_1
@@ -274,10 +236,8 @@ default:
       inputs:
         level: 3
         text_size: display-3
-        border_top: false
-        text_color: white
+        text_color: text-white
         heading_text: '702'
-        border_bottom: false
     -
       parent_uuid: 7c02190c-4d81-452e-abc5-bd919b9e28ed
       slot: content
@@ -287,13 +247,8 @@ default:
         text:
           value: '<p>Varbase Usage</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: white
-        line_height: default
+        text_size: none
+        text_color: text-white
     -
       parent_uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       slot: col_2
@@ -310,10 +265,8 @@ default:
       inputs:
         level: 3
         text_size: display-3
-        border_top: false
-        text_color: white
+        text_color: text-white
         heading_text: '137,013'
-        border_bottom: false
     -
       parent_uuid: 38e4a868-3e12-4f63-a342-fb933c15c4fd
       slot: content
@@ -323,13 +276,8 @@ default:
         text:
           value: '<p>Overall Installs</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: white
-        line_height: default
+        text_size: none
+        text_color: text-white
     -
       parent_uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       slot: col_3
@@ -346,10 +294,8 @@ default:
       inputs:
         level: 3
         text_size: display-3
-        border_top: false
-        text_color: white
+        text_color: text-white
         heading_text: '2,452'
-        border_bottom: false
     -
       parent_uuid: 9a3b0e71-b3b5-4239-9cf7-ae2f3b32fb27
       slot: content
@@ -359,13 +305,8 @@ default:
         text:
           value: '<p>Installs Last 30 Days</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: white
-        line_height: default
+        text_size: none
+        text_color: text-white
     -
       uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
       component_id: sdc.vartheme_bs5.section
@@ -384,21 +325,17 @@ default:
       uuid: fcda4d66-f01c-4756-92bc-14e33ac854c2
       component_id: sdc.vartheme_bs5.image
       inputs:
-        fit: cover
-        align: start
+        fit: object-fit-cover
+        align: me-auto
         media:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: b45820f4-7a2f-48f7-9869-0a48a26330d1
             target_type: media
-        ratio: auto
-        sizes: '(max-width: 768px) 100vw, 50vw'
-        width: auto
-        border: none
-        shadow: none
+        ratio: ratio-auto
+        width: w-auto
         target: self
         loading: lazy
-        rounded: none
-        figcaption_align: start
+        rounded: rounded-0
     -
       parent_uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
       slot: col_2
@@ -407,10 +344,7 @@ default:
       inputs:
         level: 2
         text_size: h3
-        border_top: false
-        margin_top: '5'
         heading_text: 'Security Standards'
-        border_bottom: false
     -
       parent_uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
       slot: col_2
@@ -420,13 +354,8 @@ default:
         text:
           value: '<p>Varbase comes with top security standards for an enterprise-security level website. You will find Password Policy, Security Review, Security Kit, and Username Enumeration Prevention are installed and configured to secure your site. Honeypot is also being used to lock your forms from spam bots.</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: md
-        text_size: default
-        text_color: default
-        line_height: default
+        text_size: none
+        text_color: text-body
     -
       uuid: 8eec24fb-cfd9-455e-a274-068ef27da301
       component_id: sdc.vartheme_bs5.section
@@ -445,9 +374,7 @@ default:
       inputs:
         level: 2
         text_size: h3
-        border_top: false
         heading_text: 'Latest Updates'
-        border_bottom: false
     -
       parent_uuid: 8eec24fb-cfd9-455e-a274-068ef27da301
       slot: col_1
@@ -467,21 +394,16 @@ default:
       inputs:
         href: /blog
         icon: none
-        size: md
+        size: btn-md
         label: 'View All Articles'
-        radius: default
-        target: self
-        variant: primary
+        radius: rounded
+        variant: btn-primary
         disabled: false
-        alignment: inline
-        full_width: false
         icon_first: false
-        mobile_width: false
     -
       uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       component_id: sdc.vartheme_bs5.section
       inputs:
-        align: start
         columns: '100'
         bg_edge2edge: false
         extra_classes: 'ps-5 pe-5'
@@ -500,9 +422,7 @@ default:
       inputs:
         level: 2
         text_size: h3
-        border_top: false
         heading_text: 'Kick-start Your Journey with us Today!'
-        border_bottom: false
     -
       parent_uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       slot: col_1
@@ -512,13 +432,8 @@ default:
         text:
           value: '<p>Begin your adventure with Varbase Starter Kit, leveraging the ultimate Drupal CMS to propel your digital journey forward with ease and efficiency.</p>'
           format: canvas_html_block
-        align: start
-        weight: default
-        element: div
-        spacing_y: none
-        text_size: default
-        text_color: default
-        line_height: default
+        text_size: none
+        text_color: text-body
     -
       parent_uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       slot: footer_slot
@@ -527,16 +442,12 @@ default:
       inputs:
         href: /contact-us
         icon: none
-        size: md
+        size: btn-md
         label: 'Contact Us'
-        radius: default
-        target: self
-        variant: primary
+        radius: rounded
+        variant: btn-primary
         disabled: false
-        alignment: inline
-        full_width: false
         icon_first: false
-        mobile_width: false
   path:
     -
       alias: /home
