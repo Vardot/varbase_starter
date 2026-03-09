@@ -3,6 +3,11 @@ status: false
 dependencies:
   theme:
     - vartheme_bs5
+label: Page
+id: sdc.vartheme_bs5.page
+source: sdc
+source_local_id: 'vartheme_bs5:page'
+provider: vartheme_bs5
 active_version: 2a0de3d4b424db4f
 versioned_properties:
   active:
@@ -16,8 +21,3 @@ versioned_properties:
         navigation:
           title: navigation
           description: 'site navigation.'
-label: Page
-id: sdc.vartheme_bs5.page
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:page'

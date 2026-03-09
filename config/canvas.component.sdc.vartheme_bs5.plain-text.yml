@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vartheme_bs5
+active_version: b38cef5759872e26
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        text:
+          required: false
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value:
+            -
+              value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          expression: ℹ︎string_long␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Plain Text'
+id: sdc.vartheme_bs5.plain-text
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:plain-text'

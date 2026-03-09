@@ -5,6 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
+label: 'Views view grid'
+id: sdc.vartheme_bs5.views-view-grid
+source: sdc
+source_local_id: 'vartheme_bs5:views-view-grid'
+provider: vartheme_bs5
 active_version: 83cedcf24c138210
 versioned_properties:
   active:
@@ -87,8 +92,3 @@ versioned_properties:
         rows:
           title: Rows
           description: Rows
-label: 'Views view grid'
-id: sdc.vartheme_bs5.views-view-grid
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:views-view-grid'

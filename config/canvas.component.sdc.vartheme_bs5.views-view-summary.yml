@@ -5,6 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
+label: 'Views view summary'
+id: sdc.vartheme_bs5.views-view-summary
+source: sdc
+source_local_id: 'vartheme_bs5:views-view-summary'
+provider: vartheme_bs5
 active_version: 5f36a987564228ab
 versioned_properties:
   active:
@@ -51,8 +56,3 @@ versioned_properties:
         rows:
           title: Rows
           description: Rows
-label: 'Views view summary'
-id: sdc.vartheme_bs5.views-view-summary
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:views-view-summary'

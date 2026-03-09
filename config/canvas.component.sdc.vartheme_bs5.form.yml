@@ -3,6 +3,11 @@ status: false
 dependencies:
   theme:
     - vartheme_bs5
+label: Form
+id: sdc.vartheme_bs5.form
+source: sdc
+source_local_id: 'vartheme_bs5:form'
+provider: vartheme_bs5
 active_version: 109233c75f64af88
 versioned_properties:
   active:
@@ -19,8 +24,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: Form
-id: sdc.vartheme_bs5.form
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:form'

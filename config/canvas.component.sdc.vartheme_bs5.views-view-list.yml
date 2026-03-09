@@ -5,6 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
+label: 'Views View List'
+id: sdc.vartheme_bs5.views-view-list
+source: sdc
+source_local_id: 'vartheme_bs5:views-view-list'
+provider: vartheme_bs5
 active_version: eb72c3a53092bf94
 versioned_properties:
   active:
@@ -41,9 +46,4 @@ versioned_properties:
       slot_definitions:
         rows:
           title: Rows
-          description: 'Data rows by view rows.'
-label: 'Views View List'
-id: sdc.vartheme_bs5.views-view-list
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:views-view-list'
+          description: Rows

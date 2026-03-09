@@ -5,6 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
+label: Tabs
+id: sdc.vartheme_bs5.tabs
+source: sdc
+source_local_id: 'vartheme_bs5:tabs'
+provider: vartheme_bs5
 active_version: ead44d287f956a39
 versioned_properties:
   active:
@@ -21,8 +26,3 @@ versioned_properties:
           expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: Tabs
-id: sdc.vartheme_bs5.tabs
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:tabs'

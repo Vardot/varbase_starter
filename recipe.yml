@@ -79,74 +79,123 @@ config:
     # Disable Canvas components that aren't really useful in building pages or
     # content templates.
     canvas.component.block.announce_block:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.dashboard_placeholder:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.dashboard_site_status:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.help_block:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.local_actions_block:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.local_tasks_block:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.navigation_dashboard:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.navigation_link:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.navigation_shortcuts:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.navigation_user:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.page_title_block:
-      simpleConfigUpdate:
-        status: false
-    canvas.component.block.project_browser_block.*:
-      simpleConfigUpdate:
-        status: false
+      disable: []
+    canvas.component.block.project_browser_block.drupal_core:
+      disable: []
+    canvas.component.block.project_browser_block.drupalorg_jsonapi:
+      disable: []
+    canvas.component.block.project_browser_block.local_modules:
+      disable: []
+    canvas.component.block.project_browser_block.recipes:
+      disable: []
+    canvas.component.block.project_browser_block.recommended:
+      disable: []
     canvas.component.block.system_clear_cache_block:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.system_menu_block.account:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.system_menu_block.admin:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.system_menu_block.content:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.system_menu_block.navigation-user-links:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.system_menu_block.tools:
-      simpleConfigUpdate:
-        status: false
+      disable: []
     canvas.component.block.system_menu_block.top-tasks:
-      simpleConfigUpdate:
-        status: false
+      disable: []
+    canvas.component.block.system_messages_block:
+      disable: []
+    canvas.component.block.system_powered_by_block:
+      disable: []
     canvas.component.block.user_login_block:
-      simpleConfigUpdate:
-        status: false
-    canvas.component.block.views_block.a11y_tools_editoria11y_.*:
-      simpleConfigUpdate:
-        status: false
-    canvas.component.block.views_block.editoria11y_.*:
-      simpleConfigUpdate:
-        status: false
+      disable: []
+    canvas.component.block.views_block.a11y_tools_editoria11y_results-block_a11y_alerts:
+      disable: []
+    canvas.component.block.views_block.editoria11y_dismissals-recent_dismissals:
+      disable: []
+    canvas.component.block.views_block.editoria11y_results-block_recent_issues:
+      disable: []
+    canvas.component.block.views_block.editoria11y_results-block_top_issues:
+      disable: []
+    canvas.component.block.views_block.editoria11y_results-block_top_results:
+      disable: []
+    canvas.component.block.views_block.publishing_content-block_drafts:
+      disable: []
+    canvas.component.block.views_block.publishing_content-block_scheduled:
+      disable: []
+    canvas.component.block.views_block.recent_content-block_recent_content:
+      disable: []
     canvas.component.sdc.navigation.title:
-      simpleConfigUpdate:
-        status: false
+      disable: []
+    canvas.component.sdc.vartheme_bs5.details:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.field:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.fieldset:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.form:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.form-element:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.form-element-radiocheckbox:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.input-checkbox:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.input-submit:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.links-dropbutton:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.list:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.local-tasks:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.page:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.page-footer:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.radios:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.region:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.select:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.social-auth:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.taxonomy:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.user:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.views-view:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.views-view-grid:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.views-view-list:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.views-view-summary:
+      disable: []
+    canvas.component.sdc.vartheme_bs5.views-view-unformatted:
+      disable: []
 extra:
   recipe_installer_kit:
     finish_url: '/admin/dashboard/welcome'

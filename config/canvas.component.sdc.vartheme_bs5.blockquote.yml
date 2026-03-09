@@ -1,11 +1,47 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - options
   theme:
     - vartheme_bs5
-active_version: 08bf02ab0b542444
+active_version: 3f13e748cd805335
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        type:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        text:
+          required: true
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value:
+            -
+              value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non sapien lacinia, pellentesque elit sit amet, tempor orci.'
+          expression: ℹ︎string_long␟value
+        cite_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Quotee Name and Position'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  08bf02ab0b542444:
     settings:
       prop_field_definitions:
         text:

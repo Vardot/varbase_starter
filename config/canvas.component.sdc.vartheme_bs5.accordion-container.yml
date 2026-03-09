@@ -5,6 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
+label: 'Accordion container'
+id: sdc.vartheme_bs5.accordion-container
+source: sdc
+source_local_id: 'vartheme_bs5:accordion-container'
+provider: vartheme_bs5
 active_version: d3331567517a1596
 versioned_properties:
   active:
@@ -56,8 +61,3 @@ versioned_properties:
         accordion_content:
           title: 'Accordion content'
           description: 'Only one of collapsible sections added can be open at a time.'
-label: 'Accordion container'
-id: sdc.vartheme_bs5.accordion-container
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:accordion-container'

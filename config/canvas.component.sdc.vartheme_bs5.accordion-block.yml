@@ -5,9 +5,91 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: b2d756ce4fdc9d71
+active_version: d7664cf07c35f7d5
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        title:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Section title'
+          expression: ℹ︎string␟value
+        heading_level:
+          required: false
+          field_type: list_integer
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: 3
+          expression: ℹ︎list_integer␟value
+        open_by_default:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+        parent_id:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        item_id:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        always_open:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
+        extra_classes:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+        color:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+    fallback_metadata:
+      slot_definitions:
+        accordion_content:
+          title: 'Accordion content'
+          description: 'Content in this slot will be hidden when the accordion is collapsed.'
+          examples:
+            - '<p>Accordion body content…</p>'
+  b2d756ce4fdc9d71:
     settings:
       prop_field_definitions:
         title:
@@ -87,6 +169,8 @@ versioned_properties:
         accordion_content:
           title: 'Accordion content'
           description: 'Content in this slot will be hidden when the accordion is collapsed.'
+          examples:
+            - '<p>Accordion body content…</p>'
 label: Accordion
 id: sdc.vartheme_bs5.accordion-block
 provider: vartheme_bs5

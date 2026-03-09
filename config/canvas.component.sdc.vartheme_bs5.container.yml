@@ -3,6 +3,11 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
+label: Container
+id: sdc.vartheme_bs5.container
+source: sdc
+source_local_id: 'vartheme_bs5:container'
+provider: vartheme_bs5
 active_version: f5657c2c005b5815
 versioned_properties:
   active:
@@ -27,8 +32,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: Container
-id: sdc.vartheme_bs5.container
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:container'

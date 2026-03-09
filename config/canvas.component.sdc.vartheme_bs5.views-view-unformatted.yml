@@ -8,7 +8,7 @@ id: sdc.vartheme_bs5.views-view-unformatted
 source: sdc
 source_local_id: 'vartheme_bs5:views-view-unformatted'
 provider: vartheme_bs5
-active_version: 540694677b8d8a0b
+active_version: a807c1b4965d1be8
 versioned_properties:
   active:
     settings:
@@ -17,7 +17,7 @@ versioned_properties:
           required: false
           field_type: string
           field_widget: string_textfield
-          expression: "ℹ︎string␟value"
+          expression: ℹ︎string␟value
           default_value: null
           field_storage_settings: {  }
           field_instance_settings: {  }
@@ -25,7 +25,7 @@ versioned_properties:
           required: false
           field_type: boolean
           field_widget: boolean_checkbox
-          expression: "ℹ︎boolean␟value"
+          expression: ℹ︎boolean␟value
           default_value: null
           field_storage_settings: {  }
           field_instance_settings: {  }

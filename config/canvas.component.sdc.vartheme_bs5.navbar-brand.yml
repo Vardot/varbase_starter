@@ -3,6 +3,11 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
+label: 'Navbar brand'
+id: sdc.vartheme_bs5.navbar-brand
+source: sdc
+source_local_id: 'vartheme_bs5:navbar-brand'
+provider: vartheme_bs5
 active_version: 814cd70680d38fc0
 versioned_properties:
   active:
@@ -19,8 +24,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: 'Navbar brand'
-id: sdc.vartheme_bs5.navbar-brand
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:navbar-brand'

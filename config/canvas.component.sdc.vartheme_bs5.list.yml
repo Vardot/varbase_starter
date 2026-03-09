@@ -5,6 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
+label: List
+id: sdc.vartheme_bs5.list
+source: sdc
+source_local_id: 'vartheme_bs5:list'
+provider: vartheme_bs5
 active_version: ab8d0590b626ff9e
 versioned_properties:
   active:
@@ -48,8 +53,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: List
-id: sdc.vartheme_bs5.list
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:list'

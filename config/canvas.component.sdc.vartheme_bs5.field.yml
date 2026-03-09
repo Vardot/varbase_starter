@@ -3,6 +3,11 @@ status: false
 dependencies:
   theme:
     - vartheme_bs5
+label: Filed
+id: sdc.vartheme_bs5.field
+source: sdc
+source_local_id: 'vartheme_bs5:field'
+provider: vartheme_bs5
 active_version: 083a0fff67ff3da3
 versioned_properties:
   active:
@@ -18,8 +23,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: Filed
-id: sdc.vartheme_bs5.field
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:field'
