@@ -27,7 +27,6 @@ recipes:
   - varbase_demo_content
 install:
   - vartheme_bs5
-  - project_browser
 config:
   strict: false
   import:
