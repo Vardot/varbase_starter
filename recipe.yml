@@ -73,6 +73,7 @@ config:
             uri: 'https://git.drupalcode.org/api/v4/projects/201141/repository/files/recommended.yml/raw?ref=HEAD'
             ttl: 1
           drupalorg_jsonapi: []
+          varbase_recipes: []
         default_source: recommended
     # Disable Canvas components that aren't really useful in building pages or
     # content templates.
