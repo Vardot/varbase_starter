@@ -75,6 +75,8 @@ config:
           drupalorg_jsonapi: []
           varbase_recipes: []
         default_source: recommended
+    ckeditor_media_embed.settings:
+      setCKEditorMediaEmbedVersion: true
     # Disable Canvas components that aren't really useful in building pages or
     # content templates.
     canvas.component.block.announce_block:
