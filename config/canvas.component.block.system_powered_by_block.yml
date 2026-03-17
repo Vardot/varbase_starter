@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - system
-active_version: 2b93ef58df390eb2
+active_version: fallback
 versioned_properties:
   active:
     settings:

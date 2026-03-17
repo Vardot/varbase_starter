@@ -8,16 +8,8 @@ id: sdc.vartheme_bs5.page
 source: sdc
 source_local_id: 'vartheme_bs5:page'
 provider: vartheme_bs5
-active_version: 2a0de3d4b424db4f
+active_version: fallback
 versioned_properties:
   active:
     settings:
-      prop_field_definitions: {  }
-    fallback_metadata:
-      slot_definitions:
-        branding:
-          title: Branding
-          description: 'Site branding.'
-        navigation:
-          title: navigation
-          description: 'site navigation.'
+      last_active_version: placeholder

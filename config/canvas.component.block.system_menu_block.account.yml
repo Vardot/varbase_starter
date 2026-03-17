@@ -5,7 +5,7 @@ dependencies:
     - system.menu.account
   module:
     - system
-active_version: a7ba38fb6eb3c0ef
+active_version: fallback
 versioned_properties:
   active:
     settings:

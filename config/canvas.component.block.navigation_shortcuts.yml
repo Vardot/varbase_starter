@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - navigation
-active_version: 254e306b1d8355bb
+active_version: fallback
 versioned_properties:
   active:
     settings:

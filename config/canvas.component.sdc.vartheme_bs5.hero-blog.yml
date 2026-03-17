@@ -19,7 +19,7 @@ id: sdc.vartheme_bs5.hero-blog
 source: sdc
 source_local_id: 'vartheme_bs5:hero-blog'
 provider: vartheme_bs5
-active_version: 910a3c80b4cd4e55
+active_version: fallback
 versioned_properties:
   active:
     settings:

@@ -8,29 +8,8 @@ id: sdc.vartheme_bs5.views-view-unformatted
 source: sdc
 source_local_id: 'vartheme_bs5:views-view-unformatted'
 provider: vartheme_bs5
-active_version: a807c1b4965d1be8
+active_version: fallback
 versioned_properties:
   active:
     settings:
-      prop_field_definitions:
-        title:
-          required: false
-          field_type: string
-          field_widget: string_textfield
-          expression: ℹ︎string␟value
-          default_value: null
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-        default_row_class:
-          required: false
-          field_type: boolean
-          field_widget: boolean_checkbox
-          expression: ℹ︎boolean␟value
-          default_value: null
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-    fallback_metadata:
-      slot_definitions:
-        rows:
-          title: Rows
-          description: Rows
+      last_active_version: placeholder

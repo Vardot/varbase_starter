@@ -5,54 +5,11 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: 202a8039f9cffaaa
+active_version: fallback
 versioned_properties:
   active:
     settings:
-      prop_field_definitions:
-        label:
-          required: true
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value:
-            -
-              value: Taxonomy
-          expression: ℹ︎string␟value
-        url:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        target:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        size:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-    fallback_metadata:
-      slot_definitions: {  }
-  d54b181baa9953d9:
-    settings:
-      prop_field_definitions: {  }
-    fallback_metadata:
-      slot_definitions: {  }
+      last_active_version: placeholder
 label: Taxonomy
 id: sdc.vartheme_bs5.taxonomy
 provider: vartheme_bs5

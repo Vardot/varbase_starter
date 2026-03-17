@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - drupical
-active_version: 56e6814537cb4a7b
+active_version: fallback
 versioned_properties:
   active:
     settings:

@@ -3,7 +3,7 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
-active_version: b38cef5759872e26
+active_version: fallback
 versioned_properties:
   active:
     settings:

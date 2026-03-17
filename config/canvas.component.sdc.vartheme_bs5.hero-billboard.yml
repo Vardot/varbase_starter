@@ -14,7 +14,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: b0167b38487bb096
+active_version: fallback
 versioned_properties:
   active:
     settings:

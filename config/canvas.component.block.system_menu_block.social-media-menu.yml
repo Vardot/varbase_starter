@@ -5,7 +5,7 @@ dependencies:
     - system.menu.social-media-menu
   module:
     - system
-active_version: 19a1dff8e3f56e57
+active_version: fallback
 versioned_properties:
   active:
     settings:

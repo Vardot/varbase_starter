@@ -5,7 +5,7 @@ dependencies:
     - system.menu.admin
   module:
     - system
-active_version: e93e596e69b0b12c
+active_version: fallback
 versioned_properties:
   active:
     settings:

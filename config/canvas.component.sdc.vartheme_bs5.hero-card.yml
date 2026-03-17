@@ -16,7 +16,7 @@ dependencies:
     - text
   theme:
     - vartheme_bs5
-active_version: 51d4dbf0e7cd55e2
+active_version: fallback
 versioned_properties:
   active:
     settings:

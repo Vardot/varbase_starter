@@ -94,8 +94,8 @@ default:
         bg_edge2edge: true
         section_footer: true
         section_header: true
-        padding_block_end: '5'
-        padding_block_start: '5'
+        padding_block_end: pb-5
+        padding_block_start: pt-5
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: header_slot
@@ -207,9 +207,9 @@ default:
         bg_edge2edge: true
         section_footer: false
         section_header: true
-        background_color: primary
-        padding_block_end: '5'
-        padding_block_start: '5'
+        background_color: bg-primary
+        padding_block_end: pb-5
+        padding_block_start: pt-5
     -
       parent_uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       slot: header_slot
@@ -311,14 +311,13 @@ default:
       uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
       component_id: sdc.vartheme_bs5.section
       inputs:
-        width: 100%
-        gutter: '5'
+        gutter: 'gx-5 gy-5'
         bg_edge2edge: false
         section_footer: false
         section_header: false
-        padding_block_end: '5'
-        margin_block_start: '5'
-        padding_block_start: '5'
+        padding_block_end: pb-5
+        margin_block_start: mt-5
+        padding_block_start: pt-5
     -
       parent_uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
       slot: col_1
@@ -364,8 +363,8 @@ default:
         bg_edge2edge: false
         section_footer: true
         section_header: true
-        padding_block_end: '5'
-        padding_block_start: '5'
+        padding_block_end: pb-5
+        padding_block_start: pt-5
     -
       parent_uuid: 8eec24fb-cfd9-455e-a274-068ef27da301
       slot: header_slot
@@ -406,14 +405,13 @@ default:
       inputs:
         columns: '100'
         bg_edge2edge: false
-        extra_classes: 'ps-5 pe-5'
         section_footer: true
         section_header: true
-        background_color: light
-        margin_block_end: '5'
-        padding_block_end: '5'
-        margin_block_start: '5'
-        padding_block_start: '5'
+        background_color: bg-light
+        margin_block_end: mb-5
+        padding_block_end: pb-5
+        margin_block_start: mt-5
+        padding_block_start: pt-5
     -
       parent_uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       slot: header_slot

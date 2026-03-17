@@ -4,7 +4,7 @@ dependencies:
   module:
     - navigation
     - options
-active_version: f7072e7d10fc2cb1
+active_version: fallback
 versioned_properties:
   active:
     settings:

@@ -5,7 +5,7 @@ dependencies:
     - system.menu.navigation-user-links
   module:
     - system
-active_version: c2da439fd84e7fa0
+active_version: fallback
 versioned_properties:
   active:
     settings:

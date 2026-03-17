@@ -8,18 +8,8 @@ id: sdc.vartheme_bs5.details
 source: sdc
 source_local_id: 'vartheme_bs5:details'
 provider: vartheme_bs5
-active_version: d44eac70d24437ec
+active_version: fallback
 versioned_properties:
   active:
     settings:
-      prop_field_definitions:
-        title:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions: {  }
+      last_active_version: placeholder

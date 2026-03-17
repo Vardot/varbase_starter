@@ -8,12 +8,8 @@ id: sdc.vartheme_bs5.user
 source: sdc
 source_local_id: 'vartheme_bs5:user'
 provider: vartheme_bs5
-active_version: d54b181baa9953d9
+active_version: fallback
 versioned_properties:
   active:
     settings:
-      prop_field_definitions: {  }
-    fallback_metadata:
-      slot_definitions:
-        content:
-          title: Content
+      last_active_version: placeholder

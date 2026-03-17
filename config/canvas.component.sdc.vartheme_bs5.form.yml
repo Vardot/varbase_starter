@@ -8,19 +8,8 @@ id: sdc.vartheme_bs5.form
 source: sdc
 source_local_id: 'vartheme_bs5:form'
 provider: vartheme_bs5
-active_version: 109233c75f64af88
+active_version: fallback
 versioned_properties:
   active:
     settings:
-      prop_field_definitions:
-        form_utility_classes:
-          required: false
-          field_type: string
-          cardinality: -1
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions: {  }
+      last_active_version: placeholder

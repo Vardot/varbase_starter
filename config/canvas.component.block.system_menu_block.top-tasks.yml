@@ -5,7 +5,7 @@ dependencies:
     - system.menu.top-tasks
   module:
     - system
-active_version: 790459812222bae2
+active_version: fallback
 versioned_properties:
   active:
     settings:

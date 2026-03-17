@@ -5,7 +5,7 @@ dependencies:
     - views.view.publishing_content
   module:
     - views
-active_version: fdff265c95eaf1da
+active_version: fallback
 versioned_properties:
   active:
     settings:

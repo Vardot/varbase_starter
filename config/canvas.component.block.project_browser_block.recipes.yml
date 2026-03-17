@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - project_browser
-active_version: 96035fd5a9b0e1b6
+active_version: fallback
 versioned_properties:
   active:
     settings:
