@@ -96,6 +96,7 @@ default:
         section_header: true
         padding_block_end: pb-5
         padding_block_start: pt-5
+        container_type: container
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: header_slot
@@ -210,6 +211,7 @@ default:
         background_color: bg-primary
         padding_block_end: pb-5
         padding_block_start: pt-5
+        container_type: container
     -
       parent_uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       slot: header_slot
@@ -312,32 +314,36 @@ default:
       component_id: sdc.vartheme_bs5.section
       inputs:
         gutter: 'gx-5 gy-5'
-        bg_edge2edge: false
+        bg_edge2edge: true
         section_footer: false
         section_header: false
         padding_block_end: pb-5
         margin_block_start: mt-5
         padding_block_start: pt-5
+        container_type: container
+        columns: '100'
     -
       parent_uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
       slot: col_1
-      uuid: fcda4d66-f01c-4756-92bc-14e33ac854c2
-      component_id: sdc.vartheme_bs5.image
+      uuid: 7961d72a-a406-4ce5-bc62-08505b7e5f31
+      component_id: sdc.vartheme_bs5.card-featured
       inputs:
-        fit: object-fit-cover
-        align: me-auto
-        media:
+        media_image:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: b45820f4-7a2f-48f7-9869-0a48a26330d1
             target_type: media
-        ratio: ratio-auto
-        width: w-auto
-        target: self
-        loading: lazy
-        rounded: rounded-0
+        ratio: ratio-16x9
+        card_border: false
+        padded: true
+        equal_height: true
+        stretched_link: false
+        media_position: start
+        content_vertical_alignment: justify-content-center
+        gutters_between: g-4
+        columns_xs_size: '06_06'
     -
-      parent_uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
-      slot: col_2
+      parent_uuid: 7961d72a-a406-4ce5-bc62-08505b7e5f31
+      slot: content
       uuid: 0fd72bfa-3ce3-4f19-80a8-bdfd28639e32
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -345,8 +351,8 @@ default:
         text_size: h3
         heading_text: 'Security Standards'
     -
-      parent_uuid: b8305894-381a-4ad3-a3f8-1e6a38e6b1a4
-      slot: col_2
+      parent_uuid: 7961d72a-a406-4ce5-bc62-08505b7e5f31
+      slot: content
       uuid: 45310ad3-913b-4f16-9c27-01ab94e10b12
       component_id: sdc.vartheme_bs5.text
       inputs:
@@ -381,10 +387,10 @@ default:
       component_id: block.views_block.blog-latest
       inputs:
         label: 'Blog: Latest blog posts'
-        exposed: {  }
-        views_label: ''
         label_display: '0'
+        views_label: ''
         items_per_page: 3
+        exposed: {  }
     -
       parent_uuid: 8eec24fb-cfd9-455e-a274-068ef27da301
       slot: footer_slot
@@ -412,6 +418,7 @@ default:
         padding_block_end: pb-5
         margin_block_start: mt-5
         padding_block_start: pt-5
+        container_type: container
     -
       parent_uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       slot: header_slot

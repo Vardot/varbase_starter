@@ -27,14 +27,25 @@ default:
         level: 1
         heading_text: Blog
     -
+      uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
+      component_id: sdc.vartheme_bs5.section
+      inputs:
+        bg_edge2edge: true
+        container_type: container
+        section_header: false
+        section_footer: false
+        columns: '100'
+    -
+      parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
+      slot: col_1
       uuid: ef1a9ade-5633-4bb2-bef9-665d58878f9b
       component_id: block.views_block.blog-all
       inputs:
         label: 'Blog: All blog posts'
-        exposed: {  }
-        views_label: ''
         label_display: '0'
+        views_label: ''
         items_per_page: 8
+        exposed: {  }
   path:
     -
       alias: /blog

@@ -31,12 +31,13 @@ default:
       uuid: e35f7f76-b49e-4356-9bd3-46863e47d7ce
       component_id: sdc.vartheme_bs5.section
       inputs:
-        bg_edge2edge: false
+        bg_edge2edge: true
         columns: 67-33
         section_header: false
         section_footer: false
         gutter: 'gx-4 gy-4'
         padding_block_end: pb-5
+        container_type: container
     -
       parent_uuid: e35f7f76-b49e-4356-9bd3-46863e47d7ce
       slot: col_1
@@ -71,6 +72,7 @@ default:
         gutter: 'gx-4 gy-4'
         padding_block_start: pt-4
         padding_block_end: pb-4
+        container_type: container
     -
       parent_uuid: 54551352-7823-452e-8e14-1f34b4330380
       slot: col_1
@@ -95,12 +97,13 @@ default:
       uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       component_id: sdc.vartheme_bs5.section
       inputs:
-        bg_edge2edge: false
+        bg_edge2edge: true
         margin_block_start: mt-5
         section_header: false
         section_footer: false
         gutter: 'gx-4 gy-4'
         margin_block_end: mb-5
+        container_type: container
     -
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       slot: col_1
@@ -114,6 +117,7 @@ default:
         columns: '100'
         padding_block_start: pt-5
         padding_block_end: pb-5
+        container_type: container
     -
       parent_uuid: d67a9b60-5495-47b8-80d6-64a84a9c5ad5
       slot: header_slot
@@ -161,6 +165,7 @@ default:
         columns: '100'
         padding_block_start: pt-5
         padding_block_end: pb-5
+        container_type: container
     -
       parent_uuid: 95742802-4867-4ee1-baab-82786db3d934
       slot: header_slot
