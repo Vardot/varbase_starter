@@ -14,7 +14,12 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Hero billboard'
+id: sdc.vartheme_bs5.hero-billboard
+source: sdc
+source_local_id: 'vartheme_bs5:hero-billboard'
+provider: vartheme_bs5
+active_version: b0167b38487bb096
 versioned_properties:
   active:
     settings:
@@ -264,8 +269,3 @@ versioned_properties:
       slot_definitions:
         hero_slot:
           title: 'Hero content'
-label: 'Hero billboard'
-id: sdc.vartheme_bs5.hero-billboard
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:hero-billboard'

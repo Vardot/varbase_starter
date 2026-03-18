@@ -5,7 +5,12 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: Accordion
+id: sdc.vartheme_bs5.accordion-block
+source: sdc
+source_local_id: 'vartheme_bs5:accordion-block'
+provider: vartheme_bs5
+active_version: d7664cf07c35f7d5
 versioned_properties:
   active:
     settings:
@@ -171,8 +176,3 @@ versioned_properties:
           description: 'Content in this slot will be hidden when the accordion is collapsed.'
           examples:
             - '<p>Accordion body content…</p>'
-label: Accordion
-id: sdc.vartheme_bs5.accordion-block
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:accordion-block'

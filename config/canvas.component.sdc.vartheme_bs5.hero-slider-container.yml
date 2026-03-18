@@ -5,7 +5,12 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Hero Slider (Container)'
+id: sdc.vartheme_bs5.hero-slider-container
+source: sdc
+source_local_id: 'vartheme_bs5:hero-slider-container'
+provider: vartheme_bs5
+active_version: 7e3e0e80906e1bb0
 versioned_properties:
   active:
     settings:
@@ -154,8 +159,3 @@ versioned_properties:
         slides:
           title: Slides
           description: 'Add one or more "Hero Slide" components here (unlimited, drag & drop reorder).'
-label: 'Hero Slider (Container)'
-id: sdc.vartheme_bs5.hero-slider-container
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:hero-slider-container'

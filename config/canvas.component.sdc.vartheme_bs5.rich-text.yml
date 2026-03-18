@@ -4,10 +4,16 @@ dependencies:
   config:
     - filter.format.canvas_html_block
   module:
+    - options
     - text
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Rich Text'
+id: sdc.vartheme_bs5.rich-text
+source: sdc
+source_local_id: 'vartheme_bs5:rich-text'
+provider: vartheme_bs5
+active_version: 81e8d07ea267bfa1
 versioned_properties:
   active:
     settings:
@@ -25,10 +31,58 @@ versioned_properties:
               value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+        trim:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: false
+          expression: ℹ︎boolean␟value
+        trim_length:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings:
+            min: 0
+            max: null
+          field_widget: number
+          default_value:
+            -
+              value: 50
+          expression: ℹ︎integer␟value
+        trim_units:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: words
+          expression: ℹ︎list_string␟value
+        suffix:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: ...
+          expression: ℹ︎string␟value
+        strip_html:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: false
+          expression: ℹ︎boolean␟value
     fallback_metadata:
       slot_definitions: {  }
-label: 'Rich Text'
-id: sdc.vartheme_bs5.rich-text
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:rich-text'

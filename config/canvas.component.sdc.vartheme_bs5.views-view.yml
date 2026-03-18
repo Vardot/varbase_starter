@@ -1,15 +1,13 @@
 langcode: en
 status: false
-dependencies:
-  theme:
-    - vartheme_bs5
-label: 'Views view'
-id: sdc.vartheme_bs5.views-view
-source: sdc
-source_local_id: 'vartheme_bs5:views-view'
-provider: vartheme_bs5
+dependencies: {  }
 active_version: fallback
 versioned_properties:
   active:
     settings:
       last_active_version: placeholder
+label: 'Views view'
+id: sdc.vartheme_bs5.views-view
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:views-view'

@@ -1,15 +1,13 @@
 langcode: en
 status: false
-dependencies:
-  theme:
-    - vartheme_bs5
-label: 'Local Tasks'
-id: sdc.vartheme_bs5.local-tasks
-source: sdc
-source_local_id: 'vartheme_bs5:local-tasks'
-provider: vartheme_bs5
+dependencies: {  }
 active_version: fallback
 versioned_properties:
   active:
     settings:
       last_active_version: placeholder
+label: 'Local Tasks'
+id: sdc.vartheme_bs5.local-tasks
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:local-tasks'

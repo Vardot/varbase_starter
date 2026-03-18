@@ -11,7 +11,12 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: Video
+id: sdc.vartheme_bs5.video
+source: sdc
+source_local_id: 'vartheme_bs5:video'
+provider: vartheme_bs5
+active_version: cf98e6ecf2cca690
 versioned_properties:
   active:
     settings:
@@ -57,8 +62,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: Video
-id: sdc.vartheme_bs5.video
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:video'

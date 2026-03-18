@@ -9,13 +9,17 @@ dependencies:
     - media.type.svg_image
   module:
     - file
-    - link
     - media
     - media_library
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Testimonial card'
+id: sdc.vartheme_bs5.card-testimonial
+source: sdc
+source_local_id: 'vartheme_bs5:card-testimonial'
+provider: vartheme_bs5
+active_version: b8aa7d2fd9753aa2
 versioned_properties:
   active:
     settings:
@@ -29,83 +33,7 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: default
-          expression: ℹ︎list_string␟value
-        shadow:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        border:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        rounded:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        padding:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: normal
-          expression: ℹ︎list_string␟value
-        align:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: center
-          expression: ℹ︎list_string␟value
-        show_quote_icon:
-          required: false
-          field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: boolean_checkbox
-          default_value:
-            -
-              value: true
-          expression: ℹ︎boolean␟value
-        quote_size:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: md
+              value: bg-body
           expression: ℹ︎list_string␟value
         text:
           required: false
@@ -137,27 +65,6 @@ versioned_properties:
             -
               value: 'Engineer, Technical Services'
           expression: ℹ︎string␟value
-        cite_url:
-          required: false
-          field_type: link
-          field_storage_settings: {  }
-          field_instance_settings:
-            title: 0
-            link_type: 16
-          field_widget: link_default
-          default_value: null
-          expression: ℹ︎link␟url
-        cite_target:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: self
-          expression: ℹ︎list_string␟value
         media:
           required: false
           field_type: entity_reference
@@ -172,7 +79,7 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        avatar_size:
+        shadow:
           required: false
           field_type: list_string
           field_storage_settings:
@@ -181,10 +88,10 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: md
+              value: shadow
           expression: ℹ︎list_string␟value
-        avatar_shape:
-          required: false
+        align:
+          required: true
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
@@ -192,24 +99,18 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: circle
+              value: text-center
           expression: ℹ︎list_string␟value
-        id:
+        show_quote_icon:
           required: false
-          field_type: string
+          field_type: boolean
           field_storage_settings: {  }
           field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
     fallback_metadata:
       slot_definitions: {  }
   15ae7cd125ec1a4b:
@@ -472,8 +373,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: 'Testimonial card'
-id: sdc.vartheme_bs5.card-testimonial
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:card-testimonial'

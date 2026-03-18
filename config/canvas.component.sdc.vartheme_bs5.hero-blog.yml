@@ -9,6 +9,7 @@ dependencies:
     - media.type.svg_image
   module:
     - file
+    - link
     - media
     - media_library
     - options
@@ -19,7 +20,7 @@ id: sdc.vartheme_bs5.hero-blog
 source: sdc
 source_local_id: 'vartheme_bs5:hero-blog'
 provider: vartheme_bs5
-active_version: fallback
+active_version: 2179939d48dea9ec
 versioned_properties:
   active:
     settings:
@@ -76,14 +77,17 @@ versioned_properties:
           expression: ℹ︎string␟value
         author_url:
           required: false
-          field_type: string
+          field_type: link
           field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
           default_value:
             -
-              value: 'https://example.com/author/john-smith'
-          expression: ℹ︎string␟value
+              uri: 'https://example.com/author/john-smith'
+              options: {  }
+          expression: ℹ︎link␟url
         container_width:
           required: false
           field_type: list_string
@@ -110,19 +114,19 @@ versioned_properties:
           default_value: null
           expression: ℹ︎string␟value
         media:
-          default_value: {  }
-          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+          required: false
+          field_type: entity_reference
+          field_storage_settings:
+            target_type: media
           field_instance_settings:
             handler: 'default:media'
             handler_settings:
               target_bundles:
                 image: image
                 svg_image: svg_image
-          field_storage_settings:
-            target_type: media
-          field_type: entity_reference
           field_widget: media_library_widget
-          required: false
+          default_value: {  }
+          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
     fallback_metadata:
       slot_definitions:
         blog_media:

@@ -9,71 +9,22 @@ dependencies:
     - media.type.svg_image
   module:
     - file
+    - link
     - media
     - media_library
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: Card
+id: sdc.vartheme_bs5.card
+source: sdc
+source_local_id: 'vartheme_bs5:card'
+provider: vartheme_bs5
+active_version: 91ca18128c643751
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
-        shadow:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        border:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        rounded:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        background:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        style:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: framed
-          expression: ℹ︎list_string␟value
         orientation:
           required: true
           field_type: list_string
@@ -83,9 +34,9 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: vertical
+              value: image-top
           expression: ℹ︎list_string␟value
-        media_ratio:
+        content_vertical:
           required: false
           field_type: list_string
           field_storage_settings:
@@ -94,7 +45,7 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: 16x9
+              value: justify-content-center
           expression: ℹ︎list_string␟value
         heading_text:
           required: true
@@ -106,25 +57,16 @@ versioned_properties:
             -
               value: 'This is your card title'
           expression: ℹ︎string␟value
-        level:
+        text:
           required: false
-          field_type: list_float
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: '3'
-          expression: ℹ︎list_float␟value
-        url:
-          required: false
-          field_type: string
+          field_type: string_long
           field_storage_settings: {  }
           field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
+          field_widget: string_textarea
+          default_value:
+            -
+              value: 'A short description goes here.'
+          expression: ℹ︎string_long␟value
         media:
           required: false
           field_type: entity_reference
@@ -139,17 +81,40 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        text:
+        media_ratio:
           required: false
-          field_type: string_long
-          field_storage_settings: {  }
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
           field_instance_settings: {  }
-          field_widget: string_textarea
+          field_widget: options_select
           default_value:
             -
-              value: 'A short description goes here.'
-          expression: ℹ︎string_long␟value
-        is_text_centered:
+              value: ratio-16x9
+          expression: ℹ︎list_string␟value
+        background:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: bg-body
+          expression: ℹ︎list_string␟value
+        shadow:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: shadow
+          expression: ℹ︎list_string␟value
+        has_padding:
           required: false
           field_type: boolean
           field_storage_settings: {  }
@@ -157,8 +122,18 @@ versioned_properties:
           field_widget: boolean_checkbox
           default_value:
             -
-              value: false
+              value: true
           expression: ℹ︎boolean␟value
+        url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value: null
+          expression: ℹ︎link␟url
         button_label:
           required: false
           field_type: string
@@ -178,24 +153,8 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: primary
+              value: btn-primary
           expression: ℹ︎list_string␟value
-        id:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
   4f23a2c56ff923b7:
@@ -520,8 +479,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: Card
-id: sdc.vartheme_bs5.card
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:card'

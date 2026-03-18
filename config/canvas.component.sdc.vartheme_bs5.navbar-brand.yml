@@ -8,7 +8,7 @@ id: sdc.vartheme_bs5.navbar-brand
 source: sdc
 source_local_id: 'vartheme_bs5:navbar-brand'
 provider: vartheme_bs5
-active_version: fallback
+active_version: 814cd70680d38fc0
 versioned_properties:
   active:
     settings:

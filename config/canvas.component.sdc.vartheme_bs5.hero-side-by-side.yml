@@ -10,13 +10,19 @@ dependencies:
     - media.type.svg_image
   module:
     - file
+    - link
     - media
     - media_library
     - options
     - text
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Hero side by side'
+id: sdc.vartheme_bs5.hero-side-by-side
+source: sdc
+source_local_id: 'vartheme_bs5:hero-side-by-side'
+provider: vartheme_bs5
+active_version: bfc61e0ba02ad9c2
 versioned_properties:
   active:
     settings:
@@ -100,12 +106,14 @@ versioned_properties:
           expression: ℹ︎string␟value
         button_url:
           required: false
-          field_type: string
+          field_type: link
           field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
           default_value: null
-          expression: ℹ︎string␟value
+          expression: ℹ︎link␟url
         button_variant:
           required: false
           field_type: list_string
@@ -239,8 +247,3 @@ versioned_properties:
           expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: 'Hero side by side'
-id: sdc.vartheme_bs5.hero-side-by-side
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:hero-side-by-side'

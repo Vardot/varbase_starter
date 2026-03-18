@@ -191,7 +191,6 @@ default:
       uuid: acf5f68f-797d-4419-b2d2-f0ecefd3587d
       component_id: sdc.vartheme_bs5.button
       inputs:
-        href: '#'
         icon: none
         size: btn-md
         label: "See All Varbase's Features"

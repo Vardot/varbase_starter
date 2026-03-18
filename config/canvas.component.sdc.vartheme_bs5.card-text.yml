@@ -2,19 +2,28 @@ langcode: en
 status: true
 dependencies:
   module:
+    - link
     - options
   theme:
     - vartheme_bs5
-label: Group
-id: sdc.vartheme_bs5.group
+label: 'Text Card'
+id: sdc.vartheme_bs5.card-text
 source: sdc
-source_local_id: 'vartheme_bs5:group'
+source_local_id: 'vartheme_bs5:card-text'
 provider: vartheme_bs5
-active_version: 56d1b06e8d929e6a
+active_version: e967d8799a3f772e
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
+        card_border:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
         background_color:
           required: false
           field_type: list_string
@@ -24,7 +33,15 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
-        direction:
+        padded:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
+        box_shadow:
           required: false
           field_type: list_string
           field_storage_settings:
@@ -33,7 +50,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
-        gap:
+        corner_style:
           required: false
           field_type: list_string
           field_storage_settings:
@@ -42,61 +59,33 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
-        wrap:
+        equal_height:
           required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_type: boolean
+          field_storage_settings: {  }
           field_instance_settings: {  }
-          field_widget: options_select
+          field_widget: boolean_checkbox
           default_value: null
-          expression: ℹ︎list_string␟value
-        align_items:
+          expression: ℹ︎boolean␟value
+        stretched_link:
           required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_type: boolean
+          field_storage_settings: {  }
           field_instance_settings: {  }
-          field_widget: options_select
+          field_widget: boolean_checkbox
           default_value: null
-          expression: ℹ︎list_string␟value
-        justify_content:
+          expression: ℹ︎boolean␟value
+        link_url:
           required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
           default_value: null
-          expression: ℹ︎list_string␟value
-        padding_block_start:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        padding_block_end:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        margin_block_start:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        margin_block_end:
+          expression: ℹ︎link␟url
+        link_target:
           required: false
           field_type: list_string
           field_storage_settings:
@@ -108,4 +97,5 @@ versioned_properties:
     fallback_metadata:
       slot_definitions:
         content:
-          title: Content
+          title: 'Card content'
+          description: 'Drag & drop content slot for text/buttons/etc.'

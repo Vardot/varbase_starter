@@ -2,20 +2,30 @@ langcode: en
 status: true
 dependencies:
   module:
+    - datetime
     - options
   theme:
     - vartheme_bs5
-label: Icon
-id: sdc.vartheme_bs5.icon
+label: Date
+id: sdc.vartheme_bs5.date
 source: sdc
-source_local_id: 'vartheme_bs5:icon'
+source_local_id: 'vartheme_bs5:date'
 provider: vartheme_bs5
-active_version: 85eaef72458e59ff
+active_version: 3eae6f5d223f6bda
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
-        icon:
+        date:
+          required: false
+          field_type: datetime
+          field_storage_settings:
+            datetime_type: date
+          field_instance_settings: {  }
+          field_widget: datetime_default
+          default_value: null
+          expression: ℹ︎datetime␟value
+        text_color:
           required: false
           field_type: list_string
           field_storage_settings:
@@ -24,62 +34,54 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: people
+              value: text-primary
+          expression: ℹ︎list_string␟value
+        size:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: fs-4
           expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }
-  bccca6ce1b9268e1:
+  419d2b516956a02e:
     settings:
       prop_field_definitions:
-        icon:
+        date:
           required: false
-          field_type: string
-          field_storage_settings: {  }
+          field_type: datetime
+          field_storage_settings:
+            datetime_type: date
           field_instance_settings: {  }
-          field_widget: string_textfield
+          field_widget: datetime_default
           default_value: null
-          expression: ℹ︎string␟value
-        icon_size:
+          expression: ℹ︎datetime␟value
+        text_color:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
           field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: text-primary
           expression: ℹ︎list_string␟value
-        color:
+        size:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
           field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: fs-4
           expression: ℹ︎list_string␟value
-        alt:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        id:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }

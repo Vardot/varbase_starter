@@ -10,7 +10,7 @@ id: sdc.vartheme_bs5.accordion-container
 source: sdc
 source_local_id: 'vartheme_bs5:accordion-container'
 provider: vartheme_bs5
-active_version: fallback
+active_version: d3331567517a1596
 versioned_properties:
   active:
     settings:

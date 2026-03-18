@@ -9,12 +9,18 @@ dependencies:
     - media.type.svg_image
   module:
     - file
+    - link
     - media
     - media_library
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Overlay Card'
+id: sdc.vartheme_bs5.card-overlay
+source: sdc
+source_local_id: 'vartheme_bs5:card-overlay'
+provider: vartheme_bs5
+active_version: a888f80614f996a0
 versioned_properties:
   active:
     settings:
@@ -124,12 +130,14 @@ versioned_properties:
           expression: ℹ︎boolean␟value
         link_url:
           required: false
-          field_type: string
+          field_type: link
           field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
           default_value: null
-          expression: ℹ︎string␟value
+          expression: ℹ︎link␟url
         link_target:
           required: false
           field_type: list_string
@@ -144,8 +152,3 @@ versioned_properties:
         content:
           title: 'Card content'
           description: 'Drag & drop content slot for text, buttons, and other components.'
-label: 'Overlay Card'
-id: sdc.vartheme_bs5.card-overlay
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:card-overlay'

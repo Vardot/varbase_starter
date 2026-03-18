@@ -4,59 +4,21 @@ dependencies:
   config:
     - filter.format.canvas_html_block
   module:
+    - link
     - options
     - text
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'Pricing card'
+id: sdc.vartheme_bs5.card-pricing
+source: sdc
+source_local_id: 'vartheme_bs5:card-pricing'
+provider: vartheme_bs5
+active_version: 24a898e280da334a
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
-        shadow:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        border:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        background_color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: default
-          expression: ℹ︎list_string␟value
-        text_align:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
-          default_value:
-            -
-              value: start
-          expression: ℹ︎list_string␟value
         badge_text:
           required: false
           field_type: string
@@ -90,14 +52,14 @@ versioned_properties:
           expression: ℹ︎list_float␟value
         description:
           required: false
-          field_type: string
+          field_type: string_long
           field_storage_settings: {  }
           field_instance_settings: {  }
-          field_widget: string_textfield
+          field_widget: string_textarea
           default_value:
             -
               value: 'Curabitur nascetur non potenti pede luctus vivamus.'
-          expression: ℹ︎string␟value
+          expression: ℹ︎string_long␟value
         price:
           required: false
           field_type: string
@@ -182,14 +144,60 @@ versioned_properties:
               value: '<ul><li>Example item 1</li><li>Example item 2</li></ul>'
               format: canvas_html_block
           expression: ℹ︎text_long␟processed
+        shadow:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: shadow
+          expression: ℹ︎list_string␟value
+        border:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: border
+          expression: ℹ︎list_string␟value
+        background_color:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: bg-body
+          expression: ℹ︎list_string␟value
+        text_align:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: text-start
+          expression: ℹ︎list_string␟value
         button_url:
           required: false
-          field_type: string
+          field_type: link
           field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
           default_value: null
-          expression: ℹ︎string␟value
+          expression: ℹ︎link␟url
         button_target:
           required: false
           field_type: list_string
@@ -220,7 +228,7 @@ versioned_properties:
           field_widget: options_select
           default_value:
             -
-              value: primary
+              value: btn-primary
           expression: ℹ︎list_string␟value
         promote:
           required: false
@@ -232,22 +240,6 @@ versioned_properties:
             -
               value: false
           expression: ℹ︎boolean␟value
-        id:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
   f893d392e8db8201:
@@ -417,8 +409,3 @@ versioned_properties:
           expression: ℹ︎string␟value
     fallback_metadata:
       slot_definitions: {  }
-label: 'Pricing card'
-id: sdc.vartheme_bs5.card-pricing
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:card-pricing'

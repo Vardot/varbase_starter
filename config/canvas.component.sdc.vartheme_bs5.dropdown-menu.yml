@@ -8,7 +8,7 @@ id: sdc.vartheme_bs5.dropdown-menu
 source: sdc
 source_local_id: 'vartheme_bs5:dropdown-menu'
 provider: vartheme_bs5
-active_version: fallback
+active_version: 1570c5ddfb282be7
 versioned_properties:
   active:
     settings:

@@ -2,10 +2,11 @@ langcode: en
 status: true
 dependencies:
   module:
+    - link
     - options
   theme:
     - vartheme_bs5
-active_version: fallback
+active_version: 9658d7e35d15d3d5
 versioned_properties:
   active:
     settings:
@@ -18,7 +19,7 @@ versioned_properties:
           field_widget: string_textfield
           default_value:
             -
-              value: 'Page title'
+              value: 'Your heading goes here'
           expression: ℹ︎string␟value
         level:
           required: false
@@ -58,12 +59,14 @@ versioned_properties:
           expression: ℹ︎list_string␟value
         url:
           required: false
-          field_type: string
+          field_type: link
           field_storage_settings: {  }
-          field_instance_settings: {  }
-          field_widget: string_textfield
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
           default_value: null
-          expression: ℹ︎string␟value
+          expression: ℹ︎link␟url
         target:
           required: false
           field_type: list_string

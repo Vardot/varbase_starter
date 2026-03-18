@@ -3,7 +3,12 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
-active_version: fallback
+label: 'HTML Code'
+id: sdc.vartheme_bs5.html-code
+source: sdc
+source_local_id: 'vartheme_bs5:html-code'
+provider: vartheme_bs5
+active_version: 656471f14c4594ec
 versioned_properties:
   active:
     settings:
@@ -20,8 +25,3 @@ versioned_properties:
           expression: ℹ︎string_long␟value
     fallback_metadata:
       slot_definitions: {  }
-label: 'HTML Code'
-id: sdc.vartheme_bs5.html-code
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:html-code'
