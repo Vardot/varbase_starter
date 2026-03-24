@@ -55,6 +55,8 @@ default:
           format: canvas_html_block
         enabled: true
         overlay_bg: none
+        button_url: /home
+        button_text: 'Learn more'
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
       slot: slides
@@ -71,6 +73,8 @@ default:
           format: canvas_html_block
         enabled: true
         overlay_bg: none
+        button_url: /home
+        button_text: 'Learn more'
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
       slot: slides
@@ -87,6 +91,8 @@ default:
           format: canvas_html_block
         enabled: true
         overlay_bg: none
+        button_url: /home
+        button_text: 'Learn more'
     -
       uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       component_id: sdc.vartheme_bs5.section
