@@ -30,24 +30,24 @@ versioned_properties:
         html_id:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
         eyebrow:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
         title:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
@@ -56,14 +56,14 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         content_text:
           required: false
           field_type: text_long
-          field_storage_settings: {  }
+          field_storage_settings:
           field_instance_settings:
             allowed_formats:
               - canvas_html_block
@@ -76,8 +76,8 @@ versioned_properties:
         card_content:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
@@ -100,7 +100,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -109,15 +109,15 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         bg_edge2edge:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value: null
           expression: ℹ︎boolean␟value
@@ -126,7 +126,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -135,23 +135,23 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         card_border:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value: null
           expression: ℹ︎boolean␟value
         padding:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value: null
           expression: ℹ︎boolean␟value
@@ -160,7 +160,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -169,7 +169,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -178,7 +178,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -187,7 +187,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -196,7 +196,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -205,7 +205,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -214,7 +214,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -223,7 +223,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -232,7 +232,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -241,30 +241,30 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         extra_classes:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
         button_1_label:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
         button_1_url:
           required: false
           field_type: link
-          field_storage_settings: {  }
+          field_storage_settings:
           field_instance_settings:
             title: 0
             link_type: 17
@@ -276,7 +276,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -285,7 +285,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -294,7 +294,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value

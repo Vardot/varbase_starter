@@ -30,20 +30,9 @@ install:
 config:
   strict: false
   import:
-    vartheme_bs5:
-    - block.block.vartheme_bs5_branding 
-    - block.block.vartheme_bs5_breadcrumbs 
-    - block.block.vartheme_bs5_content 
-    - block.block.vartheme_bs5_copyright 
-    - block.block.vartheme_bs5_footer_logo 
-    - block.block.vartheme_bs5_footer_sitemap 
-    - block.block.vartheme_bs5_footer 
-    - block.block.vartheme_bs5_help 
-    - block.block.vartheme_bs5_local_actions 
-    - block.block.vartheme_bs5_local_tasks 
-    - block.block.vartheme_bs5_main_menu 
-    - block.block.vartheme_bs5_messages 
-    - block.block.vartheme_bs5_social_media_menu 
+    canvas:
+    - canvas.page_region.vartheme_bs5.header
+    - canvas.page_region.vartheme_bs5.footer
   actions:
     system.site:
       simpleConfigUpdate:

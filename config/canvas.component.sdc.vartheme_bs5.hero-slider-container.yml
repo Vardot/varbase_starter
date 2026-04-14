@@ -18,8 +18,8 @@ versioned_properties:
         html_id:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
@@ -28,7 +28,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -37,15 +37,15 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         bg_edge2edge:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
@@ -56,7 +56,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -65,15 +65,15 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         autoplay:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
@@ -82,7 +82,7 @@ versioned_properties:
         interval_ms:
           required: false
           field_type: integer
-          field_storage_settings: {  }
+          field_storage_settings:
           field_instance_settings:
             min: 1000
             max: 60000
@@ -92,8 +92,8 @@ versioned_properties:
         pause_on_hover:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
@@ -102,8 +102,8 @@ versioned_properties:
         show_indicators:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
@@ -112,8 +112,8 @@ versioned_properties:
         show_controls:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
@@ -124,7 +124,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -133,7 +133,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -142,15 +142,15 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         extra_classes:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value

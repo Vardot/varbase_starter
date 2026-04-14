@@ -18,8 +18,8 @@ versioned_properties:
         text:
           required: false
           field_type: string_long
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textarea
           default_value:
             -
@@ -28,8 +28,8 @@ versioned_properties:
         trim:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
@@ -38,7 +38,7 @@ versioned_properties:
         trim_length:
           required: false
           field_type: integer
-          field_storage_settings: {  }
+          field_storage_settings:
           field_instance_settings:
             min: 0
             max: null
@@ -52,7 +52,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
+          field_instance_settings:
           field_widget: options_select
           default_value:
             -
@@ -61,8 +61,8 @@ versioned_properties:
         suffix:
           required: false
           field_type: string
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: string_textfield
           default_value:
             -
@@ -71,8 +71,8 @@ versioned_properties:
         strip_html:
           required: false
           field_type: boolean
-          field_storage_settings: {  }
-          field_instance_settings: {  }
+          field_storage_settings:
+          field_instance_settings:
           field_widget: boolean_checkbox
           default_value:
             -
