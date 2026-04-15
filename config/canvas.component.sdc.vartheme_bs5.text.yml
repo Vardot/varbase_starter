@@ -8,12 +8,7 @@ dependencies:
     - text
   theme:
     - vartheme_bs5
-label: Text
-id: sdc.vartheme_bs5.text
-source: sdc
-source_local_id: 'vartheme_bs5:text'
-provider: vartheme_bs5
-active_version: 4743e86f0a4eafed
+active_version: 4350d66a270fbd2c
 versioned_properties:
   active:
     settings:
@@ -21,7 +16,7 @@ versioned_properties:
         text:
           required: false
           field_type: text_long
-          field_storage_settings:
+          field_storage_settings: {  }
           field_instance_settings:
             allowed_formats:
               - canvas_html_block
@@ -36,7 +31,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -47,104 +42,16 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
               value: text-body
           expression: ℹ︎list_string␟value
-        trim_length:
-          required: false
-          field_type: float
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: number
-          default_value:
-            -
-              value: 20.0
-          expression: ℹ︎float␟value
-        trim_units:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: characters
-          expression: ℹ︎list_string␟value
-        suffix:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: ...
-          expression: ℹ︎string␟value
-        strip_html:
-          required: false
-          field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: boolean_checkbox
-          default_value:
-            -
-              value: false
-          expression: ℹ︎boolean␟value
     fallback_metadata:
       slot_definitions: {  }
-  6d5fce63333b4423:
-    settings:
-      prop_field_definitions:
-        text:
-          required: false
-          field_type: text_long
-          field_storage_settings:
-          field_instance_settings:
-            allowed_formats:
-              - canvas_html_block
-          field_widget: text_textarea
-          default_value:
-            -
-              value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>'
-              format: canvas_html_block
-          expression: ℹ︎text_long␟processed
-        text_size:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        text_color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        id:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions: {  }
+label: Text
+id: sdc.vartheme_bs5.text
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:text'

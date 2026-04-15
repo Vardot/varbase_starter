@@ -19,8 +19,8 @@ versioned_properties:
         label:
           required: true
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: string_textfield
           default_value:
             -
@@ -29,7 +29,7 @@ versioned_properties:
         url:
           required: false
           field_type: link
-          field_storage_settings:
+          field_storage_settings: null
           field_instance_settings:
             title: 0
             link_type: 17
@@ -41,7 +41,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: null
           field_widget: options_select
           default_value:
             -
@@ -52,7 +52,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: null
           field_widget: options_select
           default_value:
             -
@@ -63,7 +63,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: null
           field_widget: options_select
           default_value:
             -
@@ -72,8 +72,8 @@ versioned_properties:
         icon_first:
           required: false
           field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: boolean_checkbox
           default_value:
             -
@@ -84,7 +84,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: null
           field_widget: options_select
           default_value:
             -
@@ -95,73 +95,19 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: null
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
         indicator_text:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: string_textfield
           default_value:
             -
               value: 99+
           expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions: {  }
-  f34559967287caf0:
-    settings:
-      prop_field_definitions:
-        label:
-          required: true
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Badge text'
-          expression: ℹ︎string␟value
-        url:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        icon:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: rocket
-          expression: ℹ︎string␟value
-        icon_first:
-          required: false
-          field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: boolean_checkbox
-          default_value:
-            -
-              value: true
-          expression: ℹ︎boolean␟value
-        radius:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: pill
-          expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }

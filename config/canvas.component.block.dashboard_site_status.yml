@@ -14,15 +14,6 @@ versioned_properties:
         provider: dashboard
     fallback_metadata:
       slot_definitions: null
-  0b51e33f5f49694c:
-    settings:
-      default_settings:
-        id: dashboard_site_status
-        label: 'Site Status'
-        label_display: '0'
-        provider: dashboard
-    fallback_metadata:
-      slot_definitions: null
 label: 'Site Status'
 id: block.dashboard_site_status
 provider: dashboard

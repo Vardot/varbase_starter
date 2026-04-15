@@ -15,31 +15,24 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: 'Hero CTA'
-id: sdc.vartheme_bs5.cta
-source: sdc
-source_local_id: 'vartheme_bs5:cta'
-provider: vartheme_bs5
-active_version: 1d7ba61379cd2f47
+active_version: 9242a8492dd88122
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
-        eyebrow:
+        bg_edge2edge:
           required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Get started'
-          expression: ℹ︎string␟value
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
         heading_text:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: string_textfield
           default_value:
             -
@@ -50,7 +43,7 @@ versioned_properties:
           field_type: list_integer
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -59,8 +52,8 @@ versioned_properties:
         text:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: string_textfield
           default_value:
             -
@@ -71,62 +64,11 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
               value: display-5
-          expression: ℹ︎list_string␟value
-        text_align:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center
-          expression: ℹ︎list_string␟value
-        content_width:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: normal
-          expression: ℹ︎list_string␟value
-        background_color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        content_color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        overlay_opacity:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: 40%
           expression: ℹ︎list_string␟value
         background_image:
           required: false
@@ -142,51 +84,51 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        media:
-          required: false
-          field_type: entity_reference
-          field_storage_settings:
-            target_type: media
-          field_instance_settings:
-            handler: 'default:media'
-            handler_settings:
-              target_bundles:
-                image: image
-                svg_image: svg_image
-          field_widget: media_library_widget
-          default_value: {  }
-          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        padding_y:
+        overlay_opacity:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: 40%
           expression: ℹ︎list_string␟value
-        container_width:
+        background_color:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
-        bg_edge2edge:
+        content_color:
           required: false
-          field_type: boolean
+          field_type: list_string
           field_storage_settings:
-          field_instance_settings:
-          field_widget: boolean_checkbox
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
           default_value: null
-          expression: ℹ︎boolean␟value
+          expression: ℹ︎list_string␟value
+        text_align:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: text-center
+          expression: ℹ︎list_string␟value
         button_text:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: string_textfield
           default_value:
             -
@@ -195,7 +137,7 @@ versioned_properties:
         button_url:
           required: false
           field_type: link
-          field_storage_settings:
+          field_storage_settings: {  }
           field_instance_settings:
             title: 0
             link_type: 17
@@ -210,250 +152,14 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
-        button_size:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        button_new_tab:
-          required: false
-          field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: boolean_checkbox
-          default_value: null
-          expression: ℹ︎boolean␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
     fallback_metadata:
-      slot_definitions:
-        actions:
-          title: Buttons
-  d7fb4bdb4bdf9712:
-    settings:
-      prop_field_definitions:
-        heading_text:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Your heading goes here'
-          expression: ℹ︎string␟value
-        level:
-          required: true
-          field_type: list_integer
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: 2
-          expression: ℹ︎list_integer␟value
-        text:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Lorem ipsum dolor sit amet.'
-          expression: ℹ︎string␟value
-        text_align:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center
-          expression: ℹ︎list_string␟value
-        background_color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        overlay_opacity:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        media:
-          required: false
-          field_type: entity_reference
-          field_storage_settings:
-            target_type: media
-          field_instance_settings:
-            handler: 'default:media'
-            handler_settings:
-              target_bundles:
-                image: image
-                svg_image: svg_image
-          field_widget: media_library_widget
-          default_value: {  }
-          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        padding_y:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        container_width:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        extra_classes:
-          default_value: null
-          expression: ℹ︎string␟value
-          field_instance_settings:
-          field_storage_settings:
-          field_type: string
-          field_widget: string_textfield
-          required: false
-    fallback_metadata:
-      slot_definitions:
-        actions:
-          title: Buttons
-  c71652f1364a5a5e:
-    settings:
-      prop_field_definitions:
-        heading_text:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Your heading goes here'
-          expression: ℹ︎string␟value
-        level:
-          required: true
-          field_type: list_integer
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: 2
-          expression: ℹ︎list_integer␟value
-        text:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Lorem ipsum dolor sit amet.'
-          expression: ℹ︎string␟value
-        text_align:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center
-          expression: ℹ︎list_string␟value
-        background_color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        overlay_opacity:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        media:
-          required: false
-          field_type: entity_reference
-          field_storage_settings:
-            target_type: media
-          field_instance_settings:
-            handler: 'default:media'
-            handler_settings:
-              target_bundles:
-                image: image
-                svg_image: svg_image
-          field_widget: media_library_widget
-          default_value: {  }
-          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        padding_y:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        container_width:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions:
-        actions:
-          title: Buttons
+      slot_definitions: {  }
+label: 'Hero CTA'
+id: sdc.vartheme_bs5.cta
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:cta'

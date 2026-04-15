@@ -5,12 +5,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: Group
-id: sdc.vartheme_bs5.group
-source: sdc
-source_local_id: 'vartheme_bs5:group'
-provider: vartheme_bs5
-active_version: 56d1b06e8d929e6a
+active_version: ea94c659cdc09364
 versioned_properties:
   active:
     settings:
@@ -20,7 +15,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -29,7 +24,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -38,7 +33,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -47,7 +42,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -56,7 +51,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -65,7 +60,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -74,7 +69,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -83,7 +78,25 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        padding_inline_start:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        padding_inline_end:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -92,7 +105,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -101,7 +114,25 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        margin_inline_start:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        margin_inline_end:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -109,3 +140,8 @@ versioned_properties:
       slot_definitions:
         content:
           title: Content
+label: Group
+id: sdc.vartheme_bs5.group
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:group'

@@ -12,15 +12,6 @@ versioned_properties:
         provider: core
     fallback_metadata:
       slot_definitions: null
-  90ce139b2d3e2601:
-    settings:
-      default_settings:
-        id: page_title_block
-        label: 'Page title'
-        label_display: '0'
-        provider: core
-    fallback_metadata:
-      slot_definitions: null
 label: 'Page title'
 id: block.page_title_block
 provider: core

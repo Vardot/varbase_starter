@@ -5,12 +5,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: Icon
-id: sdc.vartheme_bs5.icon
-source: sdc
-source_local_id: 'vartheme_bs5:icon'
-provider: vartheme_bs5
-active_version: 85eaef72458e59ff
+active_version: 68a00ff1df185883
 versioned_properties:
   active:
     settings:
@@ -20,7 +15,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -28,58 +23,8 @@ versioned_properties:
           expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }
-  bccca6ce1b9268e1:
-    settings:
-      prop_field_definitions:
-        icon:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        icon_size:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        color:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        alt:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        id:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions: {  }
+label: Icon
+id: sdc.vartheme_bs5.icon
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:icon'

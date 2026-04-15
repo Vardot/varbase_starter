@@ -17,21 +17,24 @@ dependencies:
     - text
   theme:
     - vartheme_bs5
-label: 'Hero side by side'
-id: sdc.vartheme_bs5.hero-side-by-side
-source: sdc
-source_local_id: 'vartheme_bs5:hero-side-by-side'
-provider: vartheme_bs5
-active_version: bfc61e0ba02ad9c2
+active_version: ce26cd1e5ef3270e
 versioned_properties:
   active:
     settings:
       prop_field_definitions:
+        bg_edge2edge:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
         heading:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: string_textfield
           default_value:
             -
@@ -39,19 +42,19 @@ versioned_properties:
           expression: ℹ︎string␟value
         heading_level:
           required: false
-          field_type: list_float
+          field_type: list_integer
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
-              value: '1'
-          expression: ℹ︎list_float␟value
+              value: 2
+          expression: ℹ︎list_integer␟value
         text:
           required: false
           field_type: text_long
-          field_storage_settings:
+          field_storage_settings: {  }
           field_instance_settings:
             allowed_formats:
               - canvas_html_block
@@ -80,86 +83,29 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
               value: right
-          expression: ℹ︎list_string␟value
-        bg_edge2edge:
-          required: false
-          field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: boolean_checkbox
-          default_value: null
-          expression: ℹ︎boolean␟value
-        button_label:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value:
-            -
-              value: 'Get started'
-          expression: ℹ︎string␟value
-        button_url:
-          required: false
-          field_type: link
-          field_storage_settings:
-          field_instance_settings:
-            title: 0
-            link_type: 17
-          field_widget: link_default
-          default_value: null
-          expression: ℹ︎link␟url
-        button_variant:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        button_size:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value: null
-          expression: ℹ︎list_string␟value
-        button_target:
-          required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: self
           expression: ℹ︎list_string␟value
         align:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
-              value: start
+              value: text-start
           expression: ℹ︎list_string␟value
         background_color:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -168,7 +114,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -191,7 +137,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -200,7 +146,7 @@ versioned_properties:
           field_type: list_integer
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_integer␟value
@@ -209,41 +155,69 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
-        id:
+        button_label:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Get started'
+          expression: ℹ︎string␟value
+        button_url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions: {  }
-  b6116f32fab42842:
-    settings:
-      prop_field_definitions:
-        image_position:
+        button_variant:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        button_outline:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
+        button_size:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value: null
+          expression: ℹ︎list_string␟value
+        button_target:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
-              value: left
+              value: self
           expression: ℹ︎list_string␟value
     fallback_metadata:
       slot_definitions: {  }
+label: 'Hero side by side'
+id: sdc.vartheme_bs5.hero-side-by-side
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:hero-side-by-side'

@@ -6,17 +6,19 @@ dependencies:
     - canvas.component.block.system_menu_block.main
     - canvas.component.sdc.vartheme_bs5.group
     - canvas.component.sdc.vartheme_bs5.section
+  module:
+    - options
   theme:
     - vartheme_bs5
 id: vartheme_bs5.header
-theme: vartheme_bs5
 region: header
+theme: vartheme_bs5
 component_tree:
   0:
     uuid: baa39131-18c3-466a-95ea-15034b6fb94a
     component_id: sdc.vartheme_bs5.section
     component_version: 2d629f4558ed382d
-    inputs: '{"container_type":"container","background_color":"none","text_color":"auto","columns":"25-75","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-3","section_header":false,"section_footer":false}'
+    inputs: '{"container_type":"container","background_color":"none","text_color":"auto","columns":"25-75","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-3","section_header":false,"section_footer":false,"bg_edge2edge":true}'
   '0:col_1:0':
     parent_uuid: baa39131-18c3-466a-95ea-15034b6fb94a
     slot: col_1

@@ -346,6 +346,7 @@ default:
         content_vertical_alignment: justify-content-center
         gutters_between: g-4
         columns_xs_size: '06_06'
+        fit: object-fit-cover
     -
       parent_uuid: 7961d72a-a406-4ce5-bc62-08505b7e5f31
       slot: content
@@ -402,7 +403,9 @@ default:
       uuid: f768c7b7-7751-4ca1-ac54-979a2201ce50
       component_id: sdc.vartheme_bs5.button
       inputs:
-        href: /blog
+        href:
+          uri: 'internal:/blog'
+          options: {  }
         icon: none
         size: btn-md
         label: 'View All Articles'
@@ -424,6 +427,8 @@ default:
         margin_block_start: mt-5
         padding_block_start: pt-5
         container_type: container
+        padding_inline_start: ps-5
+        padding_inline_end: pe-5
     -
       parent_uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       slot: header_slot
@@ -450,7 +455,9 @@ default:
       uuid: b45dd2de-057f-49ec-8e13-5114da89ffe7
       component_id: sdc.vartheme_bs5.button
       inputs:
-        href: /contact-us
+        href:
+          uri: 'internal:/contact-us'
+          options: {  }
         icon: none
         size: btn-md
         label: 'Contact Us'

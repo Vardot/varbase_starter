@@ -14,15 +14,6 @@ versioned_properties:
         provider: navigation
     fallback_metadata:
       slot_definitions: null
-  2891751bf7069a8f:
-    settings:
-      default_settings:
-        id: navigation_shortcuts
-        label: 'Navigation Shortcuts'
-        label_display: '0'
-        provider: navigation
-    fallback_metadata:
-      slot_definitions: null
 label: 'Navigation Shortcuts'
 id: block.navigation_shortcuts
 provider: navigation

@@ -18,32 +18,32 @@ versioned_properties:
         id:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
         flush:
           required: false
           field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: boolean_checkbox
           default_value: null
           expression: ℹ︎boolean␟value
         always_open:
           required: false
           field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: boolean_checkbox
           default_value: null
           expression: ℹ︎boolean␟value
         extra_classes:
           required: false
           field_type: string
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
@@ -52,7 +52,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: null
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value

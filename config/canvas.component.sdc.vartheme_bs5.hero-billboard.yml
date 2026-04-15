@@ -14,12 +14,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: 'Hero billboard'
-id: sdc.vartheme_bs5.hero-billboard
-source: sdc
-source_local_id: 'vartheme_bs5:hero-billboard'
-provider: vartheme_bs5
-active_version: b0167b38487bb096
+active_version: 63b680ed0bc39a7a
 versioned_properties:
   active:
     settings:
@@ -29,7 +24,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -38,8 +33,8 @@ versioned_properties:
         bg_edge2edge:
           required: false
           field_type: boolean
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: boolean_checkbox
           default_value:
             -
@@ -50,7 +45,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -61,7 +56,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -72,7 +67,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -81,7 +76,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -90,7 +85,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
@@ -99,153 +94,7 @@ versioned_properties:
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center
-          expression: ℹ︎list_string␟value
-        media:
-          required: false
-          field_type: entity_reference
-          field_storage_settings:
-            target_type: media
-          field_instance_settings:
-            handler: 'default:media'
-            handler_settings:
-              target_bundles:
-                image: image
-                svg_image: svg_image
-          field_widget: media_library_widget
-          default_value: {  }
-          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-        html_id:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-        extra_classes:
-          required: false
-          field_type: string
-          field_storage_settings:
-          field_instance_settings:
-          field_widget: string_textfield
-          default_value: null
-          expression: ℹ︎string␟value
-    fallback_metadata:
-      slot_definitions:
-        hero_slot:
-          title: 'Hero content'
-  9ade387e60d9d11f:
-    settings:
-      prop_field_definitions:
-        height:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: full
-          expression: ℹ︎list_string␟value
-        flex_position:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center-left
-          expression: ℹ︎list_string␟value
-        overlay_opacity:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: 0%
-          expression: ℹ︎list_string␟value
-        object_position:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center
-          expression: ℹ︎list_string␟value
-        media:
-          default_value: {  }
-          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
-          field_instance_settings:
-            handler: 'default:media'
-            handler_settings:
-              target_bundles:
-                image: image
-                svg_image: svg_image
-          field_storage_settings:
-            target_type: media
-          field_type: entity_reference
-          field_widget: media_library_widget
-          required: false
-    fallback_metadata:
-      slot_definitions:
-        hero_slot:
-          title: 'Hero content'
-  04ac3d8a93a3e66f:
-    settings:
-      prop_field_definitions:
-        height:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: full
-          expression: ℹ︎list_string␟value
-        flex_position:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: center-left
-          expression: ℹ︎list_string␟value
-        overlay_opacity:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
-          field_widget: options_select
-          default_value:
-            -
-              value: 0%
-          expression: ℹ︎list_string␟value
-        object_position:
-          required: true
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings:
+          field_instance_settings: {  }
           field_widget: options_select
           default_value:
             -
@@ -269,3 +118,8 @@ versioned_properties:
       slot_definitions:
         hero_slot:
           title: 'Hero content'
+label: 'Hero billboard'
+id: sdc.vartheme_bs5.hero-billboard
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:hero-billboard'

@@ -19,18 +19,6 @@ versioned_properties:
         expand_all_items: false
     fallback_metadata:
       slot_definitions: null
-  4b3fb59b8eadb12d:
-    settings:
-      default_settings:
-        id: 'system_menu_block:account'
-        label: 'User account menu'
-        label_display: '0'
-        provider: system
-        level: 1
-        depth: null
-        expand_all_items: false
-    fallback_metadata:
-      slot_definitions: null
 label: 'User account menu'
 id: block.system_menu_block.account
 provider: system

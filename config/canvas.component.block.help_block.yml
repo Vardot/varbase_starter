@@ -14,15 +14,6 @@ versioned_properties:
         provider: help
     fallback_metadata:
       slot_definitions: null
-  f0baefd21cddb437:
-    settings:
-      default_settings:
-        id: help_block
-        label: Help
-        label_display: '0'
-        provider: help
-    fallback_metadata:
-      slot_definitions: null
 label: Help
 id: block.help_block
 provider: help

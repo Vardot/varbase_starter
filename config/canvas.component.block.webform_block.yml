@@ -18,19 +18,6 @@ versioned_properties:
         lazy: false
     fallback_metadata:
       slot_definitions: null
-  75298500addde82f:
-    settings:
-      default_settings:
-        id: webform_block
-        label: Webform
-        label_display: '0'
-        provider: webform
-        webform_id: ''
-        default_data: ''
-        redirect: false
-        lazy: false
-    fallback_metadata:
-      slot_definitions: null
 label: Webform
 id: block.webform_block
 provider: webform

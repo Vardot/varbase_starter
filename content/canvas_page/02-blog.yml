@@ -21,11 +21,22 @@ default:
       value: Blog
   components:
     -
+      uuid: 7343fb7e-44f7-4092-8956-4aeb159fb6bf
+      component_id: block.system_breadcrumb_block
+      inputs:
+        label: Breadcrumbs
+        label_display: '0'
+    -
       uuid: 4dcf611c-a513-461b-9145-856b641d7c8e
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 1
         heading_text: Blog
+    -
+      uuid: d5fadb51-a3ec-4e7c-9f47-d2d37e6527b1
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-5
     -
       uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
       component_id: sdc.vartheme_bs5.section

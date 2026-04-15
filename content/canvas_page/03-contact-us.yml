@@ -21,12 +21,23 @@ default:
       value: 'Contact Us'
   components:
     -
+      uuid: 7222120b-d1eb-4332-9d21-87a4a97b37b0
+      component_id: block.system_breadcrumb_block
+      inputs:
+        label: Breadcrumbs
+        label_display: '0'
+    -
       uuid: 5541b26a-671d-41b0-9361-c760d8573d50
       component_id: sdc.vartheme_bs5.heading
       inputs:
         heading_text: 'Contact Us'
         level: 1
         text_size: h1
+    -
+      uuid: 3fd9081e-64e2-4539-897b-8508995df18c
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-5
     -
       uuid: e35f7f76-b49e-4356-9bd3-46863e47d7ce
       component_id: sdc.vartheme_bs5.section
@@ -61,21 +72,20 @@ default:
     -
       parent_uuid: e35f7f76-b49e-4356-9bd3-46863e47d7ce
       slot: col_2
-      uuid: 54551352-7823-452e-8e14-1f34b4330380
-      component_id: sdc.vartheme_bs5.section
+      uuid: 2781114e-2797-4a3c-b19d-13f93ffdf0ce
+      component_id: sdc.vartheme_bs5.group
       inputs:
-        bg_edge2edge: false
-        section_header: false
-        section_footer: false
         background_color: bg-light
-        columns: '100'
-        gutter: 'gx-4 gy-4'
-        padding_block_start: pt-4
-        padding_block_end: pb-4
-        container_type: container
+        gap: gap-2
+        padding_block_start: pt-3
+        padding_block_end: pb-3
+        padding_inline_start: ps-4
+        padding_inline_end: pe-4
+        margin_block_start: mt-4
+        margin_block_end: mb-4
     -
-      parent_uuid: 54551352-7823-452e-8e14-1f34b4330380
-      slot: col_1
+      parent_uuid: 2781114e-2797-4a3c-b19d-13f93ffdf0ce
+      slot: content
       uuid: 82ec0833-5594-40a2-8aa0-b1819be5f017
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -83,8 +93,8 @@ default:
         level: 2
         text_size: h5
     -
-      parent_uuid: 54551352-7823-452e-8e14-1f34b4330380
-      slot: col_1
+      parent_uuid: 2781114e-2797-4a3c-b19d-13f93ffdf0ce
+      slot: content
       uuid: cf9de012-e64b-4ce8-98d2-70dff3731c8e
       component_id: sdc.vartheme_bs5.text
       inputs:
@@ -93,6 +103,26 @@ default:
           format: canvas_html_block
         text_size: none
         text_color: text-body
+    -
+      parent_uuid: 2781114e-2797-4a3c-b19d-13f93ffdf0ce
+      slot: content
+      uuid: 9006122b-fd72-4afd-8f1e-50c32930cce7
+      component_id: sdc.vartheme_bs5.button
+      inputs:
+        variant: btn-primary
+        outline: false
+        size: btn-md
+        target: self
+        disabled: false
+        icon: none
+        icon_first: false
+        alignment: inline
+        full_width: false
+        radius: rounded
+        label: 'Learn More About Varbase'
+        href:
+          uri: 'https://docs.varbase.vardot.com/11.0.x'
+          options: {  }
     -
       uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       component_id: sdc.vartheme_bs5.section
@@ -107,20 +137,19 @@ default:
     -
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       slot: col_1
-      uuid: d67a9b60-5495-47b8-80d6-64a84a9c5ad5
-      component_id: sdc.vartheme_bs5.section
+      uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
+      component_id: sdc.vartheme_bs5.group
       inputs:
-        bg_edge2edge: false
         background_color: bg-light
-        section_header: true
-        section_footer: true
-        columns: '100'
+        direction: vertical
+        gap: gap-2
         padding_block_start: pt-5
         padding_block_end: pb-5
-        container_type: container
+        padding_inline_start: ps-5
+        padding_inline_end: pe-5
     -
-      parent_uuid: d67a9b60-5495-47b8-80d6-64a84a9c5ad5
-      slot: header_slot
+      parent_uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
+      slot: content
       uuid: 71af8e1f-ad09-448f-b149-10f2a3d97bbf
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -128,8 +157,8 @@ default:
         level: 2
         text_size: h2
     -
-      parent_uuid: d67a9b60-5495-47b8-80d6-64a84a9c5ad5
-      slot: col_1
+      parent_uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
+      slot: content
       uuid: 766dc5b8-e269-440e-b45a-fa43e0b960ee
       component_id: sdc.vartheme_bs5.text
       inputs:
@@ -139,8 +168,8 @@ default:
         text_size: none
         text_color: text-body
     -
-      parent_uuid: d67a9b60-5495-47b8-80d6-64a84a9c5ad5
-      slot: footer_slot
+      parent_uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
+      slot: content
       uuid: 4ec7d907-5fd5-42d5-b0ff-0e7060219b34
       component_id: sdc.vartheme_bs5.button
       inputs:
@@ -151,24 +180,27 @@ default:
         icon_first: false
         disabled: false
         radius: rounded
-        href: 'https://www.vardot.com/en/solutions/varbase'
+        href:
+          uri: 'https://www.vardot.com/en/solutions/varbase'
+          options: {  }
+        outline: false
+        full_width: false
+        alignment: left
     -
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       slot: col_2
-      uuid: 95742802-4867-4ee1-baab-82786db3d934
-      component_id: sdc.vartheme_bs5.section
+      uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
+      component_id: sdc.vartheme_bs5.group
       inputs:
-        bg_edge2edge: false
         background_color: bg-light
-        section_header: true
-        section_footer: true
-        columns: '100'
         padding_block_start: pt-5
         padding_block_end: pb-5
-        container_type: container
+        padding_inline_start: ps-5
+        padding_inline_end: pe-5
+        gap: gap-2
     -
-      parent_uuid: 95742802-4867-4ee1-baab-82786db3d934
-      slot: header_slot
+      parent_uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
+      slot: content
       uuid: 71a5f995-c309-456d-9e4e-45165801c5aa
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -176,8 +208,8 @@ default:
         level: 2
         text_size: h2
     -
-      parent_uuid: 95742802-4867-4ee1-baab-82786db3d934
-      slot: col_1
+      parent_uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
+      slot: content
       uuid: be95c7b8-d275-46b9-a094-6f3e411e9a0c
       component_id: sdc.vartheme_bs5.text
       inputs:
@@ -187,8 +219,8 @@ default:
         text_size: none
         text_color: text-body
     -
-      parent_uuid: 95742802-4867-4ee1-baab-82786db3d934
-      slot: footer_slot
+      parent_uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
+      slot: content
       uuid: 7373576c-9de3-4d45-a5c3-fdb612672cba
       component_id: sdc.vartheme_bs5.button
       inputs:
@@ -199,7 +231,12 @@ default:
         icon_first: false
         disabled: false
         radius: rounded
-        href: /blog
+        href:
+          uri: 'internal:/blog'
+          options: {  }
+        outline: false
+        full_width: false
+        alignment: left
   path:
     -
       alias: /contact-us

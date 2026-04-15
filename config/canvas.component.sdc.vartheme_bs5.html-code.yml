@@ -16,8 +16,8 @@ versioned_properties:
         code:
           required: false
           field_type: string_long
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: string_textarea
           default_value:
             -

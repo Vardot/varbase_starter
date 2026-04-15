@@ -17,8 +17,8 @@ versioned_properties:
           required: false
           field_type: string
           cardinality: -1
-          field_storage_settings:
-          field_instance_settings:
+          field_storage_settings: null
+          field_instance_settings: null
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value

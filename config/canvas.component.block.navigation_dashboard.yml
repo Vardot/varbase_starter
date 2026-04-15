@@ -14,15 +14,6 @@ versioned_properties:
         provider: dashboard
     fallback_metadata:
       slot_definitions: null
-  b8299fffa95ae6ca:
-    settings:
-      default_settings:
-        id: navigation_dashboard
-        label: 'Navigation Dashboard'
-        label_display: '0'
-        provider: dashboard
-    fallback_metadata:
-      slot_definitions: null
 label: 'Navigation Dashboard'
 id: block.navigation_dashboard
 provider: dashboard
