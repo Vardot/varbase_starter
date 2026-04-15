@@ -5,7 +5,7 @@ active_version: fallback
 versioned_properties:
   active:
     settings:
-      last_active_version: placeholder
+      last_active_version: ''
 label: Select
 id: sdc.vartheme_bs5.select
 provider: vartheme_bs5

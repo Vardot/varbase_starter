@@ -5,7 +5,7 @@ active_version: fallback
 versioned_properties:
   active:
     settings:
-      last_active_version: placeholder
+      last_active_version: ''
 label: 'Local Tasks'
 id: sdc.vartheme_bs5.local-tasks
 provider: vartheme_bs5
