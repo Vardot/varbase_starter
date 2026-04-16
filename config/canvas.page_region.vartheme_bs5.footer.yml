@@ -21,7 +21,7 @@ component_tree:
     uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     component_id: sdc.vartheme_bs5.section
     component_version: 2d629f4558ed382d
-    inputs: '{"container_type":"container","background_color":"bg-primary","text_color":"text-white","columns":"33-67","gutter":"gx-3 gy-3","padding_block_start":"pt-5","padding_block_end":"pb-0","section_header":false,"section_footer":true,"bg_edge2edge":true}'
+    inputs: '{"container_type":"container","background_color":"bg-dark","text_color":"text-white","columns":"33-67","gutter":"gx-3 gy-3","padding_block_start":"pt-5","padding_block_end":"pb-0","section_header":false,"section_footer":true,"bg_edge2edge":true}'
   '0:col_1:0':
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     slot: col_1
@@ -54,7 +54,7 @@ component_tree:
     uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
     component_id: sdc.vartheme_bs5.section
     component_version: 2d629f4558ed382d
-    inputs: '{"container_type":"container","background_color":"bg-primary","text_color":"text-white","columns":"25-75","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-4","section_header":false,"section_footer":false,"bg_edge2edge":true}'
+    inputs: '{"container_type":"container","background_color":"bg-dark","text_color":"text-white","columns":"25-75","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-4","section_header":false,"section_footer":false,"bg_edge2edge":true}'
   '1:col_1:0':
     parent_uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
     slot: col_1
