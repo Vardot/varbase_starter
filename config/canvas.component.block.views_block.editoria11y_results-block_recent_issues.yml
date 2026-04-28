@@ -5,7 +5,7 @@ dependencies:
     - views.view.editoria11y_results
   module:
     - views
-active_version: fallback
+active_version: 2b7e3b1c7e11d0f6
 versioned_properties:
   active:
     settings:

@@ -10,7 +10,7 @@ id: sdc.vartheme_bs5.spacer
 source: sdc
 source_local_id: 'vartheme_bs5:spacer'
 provider: vartheme_bs5
-active_version: e62b9a2394578426
+active_version: 409081be7dd0a59b
 versioned_properties:
   active:
     settings:

@@ -5,7 +5,7 @@ dependencies:
     - views.view.recent_pages
   module:
     - views
-active_version: fallback
+active_version: 11ab09cde1993f24
 versioned_properties:
   active:
     settings:

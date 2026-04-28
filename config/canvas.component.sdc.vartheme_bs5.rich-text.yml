@@ -13,7 +13,7 @@ id: sdc.vartheme_bs5.rich-text
 source: sdc
 source_local_id: 'vartheme_bs5:rich-text'
 provider: vartheme_bs5
-active_version: 81e8d07ea267bfa1
+active_version: 1f6fe433026fe38e
 versioned_properties:
   active:
     settings:

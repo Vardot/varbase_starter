@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - announcements_feed
-active_version: fallback
+active_version: d2ee7918676f072c
 versioned_properties:
   active:
     settings:

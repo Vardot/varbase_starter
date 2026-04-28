@@ -10,7 +10,7 @@ id: sdc.vartheme_bs5.blockquote
 source: sdc
 source_local_id: 'vartheme_bs5:blockquote'
 provider: vartheme_bs5
-active_version: 3f13e748cd805335
+active_version: 3780c109ff196e06
 versioned_properties:
   active:
     settings:

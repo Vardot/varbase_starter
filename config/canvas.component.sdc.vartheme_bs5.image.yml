@@ -20,7 +20,7 @@ id: sdc.vartheme_bs5.image
 source: sdc
 source_local_id: 'vartheme_bs5:image'
 provider: vartheme_bs5
-active_version: 334ae55c75fd088a
+active_version: 5184771bfefa5a67
 versioned_properties:
   active:
     settings:

@@ -19,7 +19,7 @@ id: sdc.vartheme_bs5.card-testimonial
 source: sdc
 source_local_id: 'vartheme_bs5:card-testimonial'
 provider: vartheme_bs5
-active_version: b8aa7d2fd9753aa2
+active_version: 4f947a7daad5d879
 versioned_properties:
   active:
     settings:

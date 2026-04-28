@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - dashboard
-active_version: fallback
+active_version: 0b51e33f5f49694c
 versioned_properties:
   active:
     settings:

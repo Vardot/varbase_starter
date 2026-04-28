@@ -5,7 +5,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-active_version: ea94c659cdc09364
+active_version: 70c3b2595298b977
 versioned_properties:
   active:
     settings:

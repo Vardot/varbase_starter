@@ -16,7 +16,7 @@ id: sdc.vartheme_bs5.video
 source: sdc
 source_local_id: 'vartheme_bs5:video'
 provider: vartheme_bs5
-active_version: cf98e6ecf2cca690
+active_version: 9e5580fde4a899b0
 versioned_properties:
   active:
     settings:

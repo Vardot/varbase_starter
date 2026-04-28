@@ -20,7 +20,7 @@ id: sdc.vartheme_bs5.card-impressed
 source: sdc
 source_local_id: 'vartheme_bs5:card-impressed'
 provider: vartheme_bs5
-active_version: 8181eed6ae681360
+active_version: aa6c2c2cab020330
 versioned_properties:
   active:
     settings:

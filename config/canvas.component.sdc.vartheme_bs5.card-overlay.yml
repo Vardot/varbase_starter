@@ -20,7 +20,7 @@ id: sdc.vartheme_bs5.card-overlay
 source: sdc
 source_local_id: 'vartheme_bs5:card-overlay'
 provider: vartheme_bs5
-active_version: a888f80614f996a0
+active_version: cbb9d1d2a9df39a3
 versioned_properties:
   active:
     settings:

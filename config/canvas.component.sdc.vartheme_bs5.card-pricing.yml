@@ -14,7 +14,7 @@ id: sdc.vartheme_bs5.card-pricing
 source: sdc
 source_local_id: 'vartheme_bs5:card-pricing'
 provider: vartheme_bs5
-active_version: 24a898e280da334a
+active_version: 797ccd2d9920ac30
 versioned_properties:
   active:
     settings:

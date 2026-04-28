@@ -11,7 +11,7 @@ id: sdc.vartheme_bs5.date
 source: sdc
 source_local_id: 'vartheme_bs5:date'
 provider: vartheme_bs5
-active_version: 3eae6f5d223f6bda
+active_version: 69cd1843b2f2a0e5
 versioned_properties:
   active:
     settings:

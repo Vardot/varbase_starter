@@ -5,7 +5,7 @@ dependencies:
     - system.menu.main
   module:
     - system
-active_version: fallback
+active_version: 023ff7ba63f80798
 versioned_properties:
   active:
     settings:

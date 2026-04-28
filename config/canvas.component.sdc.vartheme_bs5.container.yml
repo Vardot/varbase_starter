@@ -8,7 +8,7 @@ id: sdc.vartheme_bs5.container
 source: sdc
 source_local_id: 'vartheme_bs5:container'
 provider: vartheme_bs5
-active_version: f5657c2c005b5815
+active_version: fa52873866906783
 versioned_properties:
   active:
     settings:

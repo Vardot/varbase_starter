@@ -11,7 +11,7 @@ id: sdc.vartheme_bs5.badge
 source: sdc
 source_local_id: 'vartheme_bs5:badge'
 provider: vartheme_bs5
-active_version: 172ec7a3ff923612
+active_version: 6110e8f5a7d6d5cf
 versioned_properties:
   active:
     settings:

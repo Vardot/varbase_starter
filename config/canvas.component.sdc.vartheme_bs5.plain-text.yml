@@ -10,7 +10,7 @@ id: sdc.vartheme_bs5.plain-text
 source: sdc
 source_local_id: 'vartheme_bs5:plain-text'
 provider: vartheme_bs5
-active_version: c76d95a53d0ac94f
+active_version: bfe147e394eb8c50
 versioned_properties:
   active:
     settings:

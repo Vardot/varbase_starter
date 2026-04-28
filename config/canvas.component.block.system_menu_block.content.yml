@@ -5,7 +5,7 @@ dependencies:
     - system.menu.content
   module:
     - system
-active_version: fallback
+active_version: d795a50fdf185e45
 versioned_properties:
   active:
     settings:

@@ -5,7 +5,7 @@ dependencies:
     - views.view.editoria11y_dismissals
   module:
     - views
-active_version: fallback
+active_version: 6e6b2203753b7da7
 versioned_properties:
   active:
     settings:

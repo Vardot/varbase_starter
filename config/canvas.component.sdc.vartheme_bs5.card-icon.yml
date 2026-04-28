@@ -14,7 +14,7 @@ id: sdc.vartheme_bs5.card-icon
 source: sdc
 source_local_id: 'vartheme_bs5:card-icon'
 provider: vartheme_bs5
-active_version: f56c0d946d77b524
+active_version: 9569f97cd80b42f0
 versioned_properties:
   active:
     settings:

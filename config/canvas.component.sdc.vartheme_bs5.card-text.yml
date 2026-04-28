@@ -11,7 +11,7 @@ id: sdc.vartheme_bs5.card-text
 source: sdc
 source_local_id: 'vartheme_bs5:card-text'
 provider: vartheme_bs5
-active_version: e967d8799a3f772e
+active_version: 1b5e59a0921b3d9c
 versioned_properties:
   active:
     settings:

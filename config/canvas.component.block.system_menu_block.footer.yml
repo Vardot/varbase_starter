@@ -5,7 +5,7 @@ dependencies:
     - system.menu.footer
   module:
     - system
-active_version: fallback
+active_version: 68bdb40e1ac48125
 versioned_properties:
   active:
     settings:

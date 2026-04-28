@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - webform
-active_version: fallback
+active_version: 75298500addde82f
 versioned_properties:
   active:
     settings:

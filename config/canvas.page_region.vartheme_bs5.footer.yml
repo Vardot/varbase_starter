@@ -20,7 +20,7 @@ component_tree:
   0:
     uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     component_id: sdc.vartheme_bs5.section
-    component_version: 2d629f4558ed382d
+    component_version: 430108359a34d02e
     inputs: '{"container_type":"container","background_color":"bg-dark","text_color":"text-white","columns":"33-67","gutter":"gx-3 gy-3","padding_block_start":"pt-5","padding_block_end":"pb-0","section_header":false,"section_footer":true,"bg_edge2edge":true}'
   '0:col_1:0':
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
@@ -34,7 +34,7 @@ component_tree:
     slot: col_2
     uuid: 0a1a8d5f-5d54-4cae-b9b4-31a89f54f2c2
     component_id: sdc.vartheme_bs5.group
-    component_version: ea94c659cdc09364
+    component_version: af0b31efb9fbca1d
     inputs: '{"direction":"horizontal","gap":"gap-0","wrap":"wrap","align_items":"align-items-start","justify_content":"justify-content-end"}'
   '0:col_2:0:content:0':
     parent_uuid: 0a1a8d5f-5d54-4cae-b9b4-31a89f54f2c2
@@ -53,7 +53,7 @@ component_tree:
   1:
     uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
     component_id: sdc.vartheme_bs5.section
-    component_version: 2d629f4558ed382d
+    component_version: 430108359a34d02e
     inputs: '{"container_type":"container","background_color":"bg-dark","text_color":"text-white","columns":"25-75","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-4","section_header":false,"section_footer":false,"bg_edge2edge":true}'
   '1:col_1:0':
     parent_uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
@@ -67,7 +67,7 @@ component_tree:
     slot: col_2
     uuid: 9b3a8d8e-2f0a-4c84-b1e7-9a6e5d2f4b91
     component_id: sdc.vartheme_bs5.group
-    component_version: ea94c659cdc09364
+    component_version: af0b31efb9fbca1d
     inputs: '{"direction":"vertical","gap":"gap-2","wrap":"wrap","align_items":"align-items-end","justify_content":"justify-content-end"}'
   '1:col_2:0:content:0':
     parent_uuid: 9b3a8d8e-2f0a-4c84-b1e7-9a6e5d2f4b91

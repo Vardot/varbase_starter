@@ -20,7 +20,7 @@ id: sdc.vartheme_bs5.card-logo
 source: sdc
 source_local_id: 'vartheme_bs5:card-logo'
 provider: vartheme_bs5
-active_version: 939396ebae987d23
+active_version: aa8dff92f50c7951
 versioned_properties:
   active:
     settings:
