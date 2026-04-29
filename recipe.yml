@@ -170,8 +170,6 @@ config:
       disable: []
     canvas.component.sdc.vartheme_bs5.social-auth:
       disable: []
-    canvas.component.sdc.vartheme_bs5.taxonomy:
-      disable: []
     canvas.component.sdc.vartheme_bs5.user:
       disable: []
     canvas.component.sdc.vartheme_bs5.views-view:
