@@ -3,8 +3,11 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
-_core:
-  default_config_hash: mmYo5OnVQIuwVEjSCKJHFpgBFNTXMH-ScwrwmNaAhXc
+label: 'HTML Code'
+id: sdc.vartheme_bs5.html-code
+source: sdc
+source_local_id: 'vartheme_bs5:html-code'
+provider: vartheme_bs5
 active_version: 656471f14c4594ec
 versioned_properties:
   active:
@@ -22,24 +25,4 @@ versioned_properties:
           expression: ℹ︎string_long␟value
     fallback_metadata:
       slot_definitions: {  }
-  de112631ee8aa167:
-    settings:
-      prop_field_definitions:
-        code:
-          required: false
-          field_type: string_long
-          field_storage_settings: null
-          field_instance_settings: null
-          field_widget: string_textarea
-          default_value:
-            -
-              value: '<p class="mb-0">Hello <strong>world</strong>.</p>'
-          expression: ℹ︎string_long␟value
-    fallback_metadata:
-      slot_definitions: {  }
-label: 'HTML Code'
-id: sdc.vartheme_bs5.html-code
-provider: vartheme_bs5
-source: sdc
-source_local_id: 'vartheme_bs5:html-code'
 
