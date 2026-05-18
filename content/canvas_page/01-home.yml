@@ -550,7 +550,7 @@ default:
         size: py-2
     -
       uuid: b85dfcf4-651e-41a1-936e-c309fb4f0e49
-      component_id: sdc.vartheme_bs5.horizontal-ruler
+      component_id: sdc.vartheme_bs5.divider
       inputs:
         border_color: border-dark
         opacity: opacity-25

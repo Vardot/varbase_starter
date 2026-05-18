@@ -58,7 +58,7 @@ versioned_properties:
     fallback_metadata:
       slot_definitions: {  }
 label: 'Horizontal Ruler'
-id: sdc.vartheme_bs5.horizontal-ruler
+id: sdc.vartheme_bs5.divider
 provider: vartheme_bs5
 source: sdc
-source_local_id: 'vartheme_bs5:horizontal-ruler'
+source_local_id: 'vartheme_bs5:divider'

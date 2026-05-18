@@ -5,7 +5,7 @@ dependencies:
   - canvas.component.block.system_menu_block.footer
   - canvas.component.block.system_menu_block.secondary
   - canvas.component.block.system_menu_block.social-media-menu
-  - canvas.component.sdc.vartheme_bs5.horizontal-ruler
+  - canvas.component.sdc.vartheme_bs5.divider
   - canvas.component.sdc.vartheme_bs5.html-code
   - canvas.component.sdc.vartheme_bs5.section
   - canvas.component.sdc.vartheme_bs5.spacer
@@ -47,7 +47,7 @@ component_tree:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     slot: footer_slot
     uuid: d3c1cd06-e9bc-4f2e-85fb-f0a3faa8dd1f
-    component_id: sdc.vartheme_bs5.horizontal-ruler
+    component_id: sdc.vartheme_bs5.divider
     component_version: dd38f638caa85cf9
     inputs: '{"border_width":"border-1","border_color":"border-light","opacity":"opacity-50","margin_top":"mt-0","margin_bottom":"mb-0"}'
   1:
