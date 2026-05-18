@@ -30,9 +30,6 @@ install:
   - better_exposed_filters
 config:
   strict: false
-  import:
-    canvas:
-    - canvas.page_region.vartheme_bs5.header
   actions:
     system.site:
       simpleConfigUpdate:
