@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: secondary
-label: Secondary
-description: 'Secondary footer menu — mini sitemap links shown in the footer.'
+label: 'Secondary menu'
+description: 'Mini sitemap links shown in the footer.'
 locked: false
