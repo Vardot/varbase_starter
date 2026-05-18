@@ -35,7 +35,7 @@ component_tree:
     uuid: 8a0001f5-0e61-4176-b3ff-45bc3a5fde1e
     component_id: sdc.vartheme_bs5.html-code
     component_version: 656471f14c4594ec
-    inputs: '{"code":"<div class=\"footer-logo-wrapper\"><p><img class=\"footer-logo-image\" src=\"/sites/default/files/Group-632618.svg\" alt=\"Varbase logo\"></p><p class=\"footer-tagline mt-4\">Enjoy the free software, or <a href=\"https://www.vardot.com/form/get-support-varbase?utm_source=varbase&amp;utm_campaign=varbase%20default%20links\" target=\"_blank\" rel=\"noopener noreferrer noreferrer\" class=\"ext\" data-extlink=\"\" title=\"(opens in a new window)\">get a quote</a> for enterprise support and fully functional websites.</p></div>"}'
+    inputs: '{"code":"<div class=\"footer-logo-wrapper\"><p><img class=\"footer-logo-image\" src=\"/themes/contrib/vartheme_bs5/logo.svg\" alt=\"Varbase logo\"></p><p class=\"footer-tagline mt-4\">Enjoy the free software, or <a href=\"https://www.vardot.com/form/get-support-varbase?utm_source=varbase&amp;utm_campaign=varbase%20default%20links\" target=\"_blank\" rel=\"noopener noreferrer noreferrer\" class=\"ext\" data-extlink=\"\" title=\"(opens in a new window)\">get a quote</a> for enterprise support and fully functional websites.</p></div>"}'
   0:col_2:1:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     slot: col_2
