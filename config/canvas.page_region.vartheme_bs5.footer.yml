@@ -2,17 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - canvas.component.block.system_menu_block.footer
-    - canvas.component.block.system_menu_block.main
-    - canvas.component.block.system_menu_block.social-media-menu
-    - canvas.component.sdc.vartheme_bs5.group
-    - canvas.component.sdc.vartheme_bs5.horizontal-ruler
-    - canvas.component.sdc.vartheme_bs5.html-code
-    - canvas.component.sdc.vartheme_bs5.section
+  - canvas.component.block.system_menu_block.footer
+  - canvas.component.block.system_menu_block.secondary
+  - canvas.component.block.system_menu_block.social-media-menu
+  - canvas.component.sdc.vartheme_bs5.horizontal-ruler
+  - canvas.component.sdc.vartheme_bs5.html-code
+  - canvas.component.sdc.vartheme_bs5.section
+  - canvas.component.sdc.vartheme_bs5.spacer
   module:
-    - options
+  - options
   theme:
-    - vartheme_bs5
+  - vartheme_bs5
 id: vartheme_bs5.footer
 region: footer
 theme: vartheme_bs5
@@ -20,30 +20,30 @@ component_tree:
   0:
     uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     component_id: sdc.vartheme_bs5.section
-    component_version: 430108359a34d02e
-    inputs: '{"container_type":"container","background_color":"bg-dark","text_color":"text-white","columns":"33-67","gutter":"gx-3 gy-3","padding_block_start":"pt-5","padding_block_end":"pb-0","section_header":false,"section_footer":true,"bg_edge2edge":true}'
-  '0:col_1:0':
+    component_version: 4cb943ab82c97d2d
+    inputs: '{"container_type":"container","text_color":"text-dark","gutter":"gx-3 gy-3","padding_block_start":"pt-5","padding_block_end":"pb-0","section_header":false,"section_footer":true,"bg_edge2edge":true,"aos_once":false,"columns":"50-50","background_color":"bg-light"}'
+  0:col_1:2:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     slot: col_1
-    uuid: 5ffd6c66-962b-447f-9102-59b395ca8453
-    component_id: sdc.vartheme_bs5.html-code
-    component_version: 656471f14c4594ec
-    inputs: '{"code":"\u003Cdiv class=\u0022footer-logo-wrapper\u0022\u003E\u003Cp\u003E\u003Cimg class=\u0022footer-logo-image\u0022 src=\u0022\/themes\/contrib\/vartheme_bs5\/logo-white.svg\u0022 alt=\u0022Varbase logo\u0022\u003E\u003C\/p\u003E\u003Cp class=\u0022footer-tagline mt-4\u0022\u003EEnjoy the free software, or \u003Ca href=\u0022https:\/\/www.vardot.com\/form\/get-support-varbase?utm_source=varbase\u0026amp;utm_campaign=varbase%20default%20links\u0022 target=\u0022_blank\u0022 rel=\u0022noopener noreferrer\u0022\u003Eget a quote\u003C\/a\u003E for enterprise support and fully functional websites.\u003C\/p\u003E\u003C\/div\u003E"}'
-  '0:col_2:0':
+    uuid: 1b8d6230-40b5-4224-b5c1-db5e805d31ac
+    component_id: block.system_menu_block.secondary
+    component_version: 8601a0c2eaaf3c94
+    inputs: '{"label":"Footer sitemap menu","label_display":"0","level":"1","depth":"2","expand_all_items":true}'
+  0:col_2:0:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     slot: col_2
-    uuid: 0a1a8d5f-5d54-4cae-b9b4-31a89f54f2c2
-    component_id: sdc.vartheme_bs5.group
-    component_version: af0b31efb9fbca1d
-    inputs: '{"direction":"horizontal","gap":"gap-0","wrap":"wrap","align_items":"align-items-start","justify_content":"justify-content-end"}'
-  '0:col_2:0:content:0':
-    parent_uuid: 0a1a8d5f-5d54-4cae-b9b4-31a89f54f2c2
-    slot: content
-    uuid: e453cb74-26f5-45fc-9847-31e8396162c2
-    component_id: block.system_menu_block.main
-    component_version: 023ff7ba63f80798
-    inputs: '{"label":"Footer sitemap menu","label_display":"0","level":1,"depth":null,"expand_all_items":true}'
-  '0:footer_slot:0':
+    uuid: 8a0001f5-0e61-4176-b3ff-45bc3a5fde1e
+    component_id: sdc.vartheme_bs5.html-code
+    component_version: 656471f14c4594ec
+    inputs: '{"code":"<div class=\"footer-logo-wrapper\"><p><img class=\"footer-logo-image\" src=\"/sites/default/files/Group-632618.svg\" alt=\"Varbase logo\"></p><p class=\"footer-tagline mt-4\">Enjoy the free software, or <a href=\"https://www.vardot.com/form/get-support-varbase?utm_source=varbase&amp;utm_campaign=varbase%20default%20links\" target=\"_blank\" rel=\"noopener noreferrer noreferrer\" class=\"ext\" data-extlink=\"\" title=\"(opens in a new window)\">get a quote</a> for enterprise support and fully functional websites.</p></div>"}'
+  0:col_2:1:
+    parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
+    slot: col_2
+    uuid: e40a249a-c360-4f7b-b00f-9b3cbf0b04de
+    component_id: block.system_menu_block.social-media-menu
+    component_version: abcd467f30a079a8
+    inputs: '{"label":"Social media menu","label_display":"0","level":1,"depth":null,"expand_all_items":true}'
+  0:footer_slot:0:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
     slot: footer_slot
     uuid: d3c1cd06-e9bc-4f2e-85fb-f0a3faa8dd1f
@@ -53,33 +53,19 @@ component_tree:
   1:
     uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
     component_id: sdc.vartheme_bs5.section
-    component_version: 430108359a34d02e
-    inputs: '{"container_type":"container","background_color":"bg-dark","text_color":"text-white","columns":"25-75","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-4","section_header":false,"section_footer":false,"bg_edge2edge":true}'
-  '1:col_1:0':
+    component_version: 4cb943ab82c97d2d
+    inputs: '{"text_color":"text-dark","columns":"50-50","gutter":"gx-3 gy-3","padding_block_start":"pt-3","padding_block_end":"pb-4","section_header":false,"section_footer":false,"bg_edge2edge":true,"aos_once":false,"vertical_alignment":"align-items-center","background_color":"bg-light","container_type":"container"}'
+  1:col_1:0:
     parent_uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
     slot: col_1
-    uuid: e40a249a-c360-4f7b-b00f-9b3cbf0b04de
-    component_id: block.system_menu_block.social-media-menu
-    component_version: abcd467f30a079a8
-    inputs: '{"label":"Social media menu","label_display":"0","level":1,"depth":null,"expand_all_items":true}'
-  '1:col_2:0':
-    parent_uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
-    slot: col_2
-    uuid: 9b3a8d8e-2f0a-4c84-b1e7-9a6e5d2f4b91
-    component_id: sdc.vartheme_bs5.group
-    component_version: af0b31efb9fbca1d
-    inputs: '{"direction":"vertical","gap":"gap-2","wrap":"wrap","align_items":"align-items-end","justify_content":"justify-content-end"}'
-  '1:col_2:0:content:0':
-    parent_uuid: 9b3a8d8e-2f0a-4c84-b1e7-9a6e5d2f4b91
-    slot: content
     uuid: 8bea199b-c0d7-4dd3-9540-7be4f4017f47
     component_id: block.system_menu_block.footer
     component_version: 68bdb40e1ac48125
-    inputs: '{"label":"Footer menu","label_display":"0","level":1,"depth":null,"expand_all_items":false}'
-  '1:col_2:0:content:1':
-    parent_uuid: 9b3a8d8e-2f0a-4c84-b1e7-9a6e5d2f4b91
-    slot: content
+    inputs: '{"label":"Footer menu","label_display":"0","level":1,"depth":null,"expand_all_items":true}'
+  1:col_2:0:
+    parent_uuid: 0bf79239-de05-498c-b5f0-2c07794b9444
+    slot: col_2
     uuid: 6d18f41a-a332-42fa-b763-35cacb60adbd
     component_id: sdc.vartheme_bs5.html-code
     component_version: 656471f14c4594ec
-    inputs: '{"code":"\u003Cdiv class=\u0022copyright-text mt-2 mb-0\u0022\u003E\u003Cp class=\u0022mb-0\u0022\u003EPowered by \u003Ca href=\u0022https:\/\/www.vardot.com\/?utm_source=varbase\u0026amp;utm_campaign=varbase%20default%20links\u0022 target=\u0022_blank\u0022 rel=\u0022noopener noreferrer\u0022\u003EVardot\u003C\/a\u003E.\u003C\/p\u003E\u003C\/div\u003E"}'
+    inputs: '{"code":"<div class=\"copyright-text mt-2 mb-0 text-end\"><p class=\"mb-0\">Powered by <a href=\"https://www.vardot.com/?utm_source=varbase&amp;utm_campaign=varbase%20default%20links\" target=\"_blank\" rel=\"noopener noreferrer\">Vardot</a>.</p></div>"}'

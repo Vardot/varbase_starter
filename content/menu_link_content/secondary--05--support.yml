@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 26924f83-3e7f-4b4f-965b-75582517a497
+  uuid: a89ece4d-d5e4-48db-8ef5-f224dc99b60f
   bundle: menu_link_content
   default_langcode: en
 default:
@@ -10,23 +10,15 @@ default:
       value: true
   title:
     -
-      value: Instagram
+      value: Support
   menu_name:
     -
-      value: social-media-menu
+      value: secondary
   link:
     -
-      uri: 'https://www.instagram.com/vardotters/'
+      uri: 'route:<nolink>'
       title: ''
-      options:
-        attributes:
-          target: _blank
-          class:
-            - bi
-            - bi-instagram
-            - fs-4
-            - ps-2
-            - pe-2
+      options: {  }
   external:
     -
       value: false
@@ -35,11 +27,10 @@ default:
       value: false
   weight:
     -
-      value: 2
+      value: 0
   expanded:
     -
-      value: false
+      value: true
   revision_translation_affected:
     -
       value: true
-  metatag: { }

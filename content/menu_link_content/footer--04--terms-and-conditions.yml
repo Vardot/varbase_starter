@@ -1,33 +1,39 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 605e9416-aac7-4076-b477-78bc4d786ec1
+  uuid: d66edc99-246b-4167-b927-192ed34053fb
   bundle: menu_link_content
   default_langcode: en
 default:
+  revision_log_message:
+    -
+      value: 'Created new Custom menu link'
   enabled:
     -
-      value: false
+      value: true
   title:
     -
-      value: Home
+      value: 'Terms and Conditions'
   menu_name:
     -
-      value: main
+      value: footer
   link:
     -
-      uri: 'internal:/home'
+      uri: 'internal:/terms-and-conditions'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          class:
+            - small
   external:
     -
       value: false
   rediscover:
     -
-      value: true
+      value: false
   weight:
     -
-      value: -100
+      value: 10
   expanded:
     -
       value: false

@@ -27,12 +27,12 @@ recipes:
   - varbase_demo_content
 install:
   - vartheme_bs5
+  - better_exposed_filters
 config:
   strict: false
   import:
     canvas:
     - canvas.page_region.vartheme_bs5.header
-    - canvas.page_region.vartheme_bs5.footer
   actions:
     system.site:
       simpleConfigUpdate:

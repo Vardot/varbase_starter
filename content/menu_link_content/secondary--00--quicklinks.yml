@@ -1,22 +1,22 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 605e9416-aac7-4076-b477-78bc4d786ec1
+  uuid: d6d4c475-2a54-4c8c-bf68-ae0e40ccb63d
   bundle: menu_link_content
   default_langcode: en
 default:
   enabled:
     -
-      value: false
+      value: true
   title:
     -
-      value: Home
+      value: Quicklinks
   menu_name:
     -
-      value: main
+      value: secondary
   link:
     -
-      uri: 'internal:/home'
+      uri: 'route:<nolink>'
       title: ''
       options: {  }
   external:
@@ -24,13 +24,13 @@ default:
       value: false
   rediscover:
     -
-      value: true
+      value: false
   weight:
     -
-      value: -100
+      value: -20
   expanded:
     -
-      value: false
+      value: true
   revision_translation_affected:
     -
       value: true

@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 9277735d-4214-40eb-8b2d-aa79ba7f489e
+  uuid: 37cbe7f0-73c6-4e02-9825-60044ace42c3
   bundle: menu_link_content
   default_langcode: en
 default:
@@ -10,36 +10,30 @@ default:
       value: true
   title:
     -
-      value: Facebook
+      value: Features
   menu_name:
     -
-      value: social-media-menu
+      value: secondary
   link:
     -
-      uri: 'https://www.facebook.com/vardotters/'
+      uri: 'internal:/features'
       title: ''
-      options:
-        attributes:
-          target: _blank
-          class:
-            - bi
-            - bi-facebook
-            - fs-4
-            - ps-1
-            - pe-2
+      options: {  }
   external:
     -
       value: false
+  parent:
+    -
+      value: 'menu_link_content:d6d4c475-2a54-4c8c-bf68-ae0e40ccb63d'
   rediscover:
     -
       value: false
   weight:
     -
-      value: 1
+      value: 0
   expanded:
     -
       value: false
   revision_translation_affected:
     -
       value: true
-  metatag: { }

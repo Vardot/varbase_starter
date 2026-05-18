@@ -49,13 +49,23 @@ default:
     -
       parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
       slot: col_1
+      uuid: 26b72b2d-fc7b-4d69-acd1-82da0d84787d
+      component_id: block.views_exposed_filter_block.blog-all
+      inputs:
+        label: 'Filter blog posts'
+        label_display: '0'
+        views_label: ''
+      label: 'Blog filters'
+    -
+      parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
+      slot: col_1
       uuid: ef1a9ade-5633-4bb2-bef9-665d58878f9b
       component_id: block.views_block.blog-all
       inputs:
         label: 'Blog: All blog posts'
         label_display: '0'
         views_label: ''
-        items_per_page: 8
+        items_per_page: 12
         exposed: {  }
   path:
     -

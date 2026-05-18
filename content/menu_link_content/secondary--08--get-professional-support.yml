@@ -13,7 +13,7 @@ default:
       value: 'Get Professional Support'
   menu_name:
     -
-      value: footer
+      value: secondary
   link:
     -
       uri: 'https://www.vardot.com/form/get-support-varbase?utm_source=varbase&utm_campaign=varbase%20default%20links'
@@ -26,12 +26,15 @@ default:
   external:
     -
       value: false
+  parent:
+    -
+      value: 'menu_link_content:a89ece4d-d5e4-48db-8ef5-f224dc99b60f'
   rediscover:
     -
       value: false
   weight:
     -
-      value: 0
+      value: 60
   expanded:
     -
       value: false

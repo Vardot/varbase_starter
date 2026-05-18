@@ -1,33 +1,36 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 605e9416-aac7-4076-b477-78bc4d786ec1
+  uuid: 815af79c-7cae-4937-80f1-a4ffefc1b9df
   bundle: menu_link_content
   default_langcode: en
 default:
   enabled:
     -
-      value: false
+      value: true
   title:
     -
-      value: Home
+      value: Blog
   menu_name:
     -
-      value: main
+      value: secondary
   link:
     -
-      uri: 'internal:/home'
+      uri: 'internal:/blog'
       title: ''
       options: {  }
   external:
     -
       value: false
+  parent:
+    -
+      value: 'menu_link_content:d6d4c475-2a54-4c8c-bf68-ae0e40ccb63d'
   rediscover:
     -
-      value: true
+      value: false
   weight:
     -
-      value: -100
+      value: 20
   expanded:
     -
       value: false
