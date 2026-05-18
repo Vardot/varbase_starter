@@ -27,7 +27,7 @@ component_tree:
     slot: col_1
     uuid: 1b8d6230-40b5-4224-b5c1-db5e805d31ac
     component_id: block.system_menu_block.secondary
-    component_version: dba0b5285997433e
+    component_version: 31ecc6cc06f17d4e
     inputs: '{"label":"Footer sitemap menu","label_display":"0","level":"1","depth":"2","expand_all_items":true}'
   0:col_2:0:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
@@ -41,7 +41,7 @@ component_tree:
     slot: col_2
     uuid: e40a249a-c360-4f7b-b00f-9b3cbf0b04de
     component_id: block.system_menu_block.social-media-menu
-    component_version: 19a1dff8e3f56e57
+    component_version: abcd467f30a079a8
     inputs: '{"label":"Social media menu","label_display":"0","level":1,"depth":null,"expand_all_items":true}'
   0:footer_slot:0:
     parent_uuid: b6a309fb-cbd0-4601-918a-15294d8b1673
@@ -60,7 +60,7 @@ component_tree:
     slot: col_1
     uuid: 8bea199b-c0d7-4dd3-9540-7be4f4017f47
     component_id: block.system_menu_block.footer
-    component_version: e5ef7f3e493f51fa
+    component_version: 68bdb40e1ac48125
     inputs: '{"label":"Footer menu","label_display":"0","level":1,"depth":null,"expand_all_items":true}'
   1:col_2:0:
     parent_uuid: 0bf79239-de05-498c-b5f0-2c07794b9444

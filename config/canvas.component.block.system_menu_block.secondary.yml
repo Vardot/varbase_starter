@@ -5,9 +5,21 @@ dependencies:
   - system.menu.secondary
   module:
   - system
-active_version: dba0b5285997433e
+active_version: 31ecc6cc06f17d4e
 versioned_properties:
   active:
+    settings:
+      default_settings:
+        id: system_menu_block:secondary
+        label: Secondary menu
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+  dba0b5285997433e:
     settings:
       default_settings:
         id: system_menu_block:secondary
@@ -31,7 +43,7 @@ versioned_properties:
         expand_all_items: false
     fallback_metadata:
       slot_definitions: null
-label: Secondary
+label: Secondary menu
 id: block.system_menu_block.secondary
 provider: system
 source: block
