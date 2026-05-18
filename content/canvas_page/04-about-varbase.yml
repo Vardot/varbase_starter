@@ -39,7 +39,7 @@ default:
   components:
     -
       uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      component_id: sdc.vartheme_bs5.hero-billboard
+      component_id: sdc.vartheme_bs5.media-banner
       inputs:
         container_type: container
         bg_edge2edge: false
@@ -57,21 +57,21 @@ default:
         padding_inline_end: pe-5
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: hero_slot
+      slot: media_banner_slot
       uuid: 547465f8-8ed0-4d58-ad48-4aae1140cd80
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: hero_slot
+      slot: media_banner_slot
       uuid: b50250fe-11ce-4862-b45d-e133dcf01e6c
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-3
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: hero_slot
+      slot: media_banner_slot
       uuid: 6062dd19-a33e-4ecb-882b-00607dac6c4a
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -80,7 +80,7 @@ default:
         text_size: display-2
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: hero_slot
+      slot: media_banner_slot
       uuid: b899df87-9c6d-4bc4-ad9a-51d9614e82bd
       component_id: sdc.vartheme_bs5.text
       inputs:
@@ -91,14 +91,14 @@ default:
         text_color: text-white
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: hero_slot
+      slot: media_banner_slot
       uuid: c7b36303-2adf-4806-ab65-224cefa5521d
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: hero_slot
+      slot: media_banner_slot
       uuid: fcb3e8c4-0e4d-4ec5-ade3-94d2fead6134
       component_id: sdc.vartheme_bs5.spacer
       inputs:
