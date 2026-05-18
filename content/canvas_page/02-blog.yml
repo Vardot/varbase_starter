@@ -3,77 +3,110 @@ _meta:
   entity_type: canvas_page
   uuid: 33086ffd-e0c1-45c3-b5c0-75969873791c
   default_langcode: en
+  depends:
+    7576a2bc-db28-4777-af19-41f638781822: media
+    3396e9bd-04ea-411b-b783-bdc577caf7f5: file
 default:
   revision_user:
-    -
-      target_id: 1
+  - target_id: 1
   revision_log:
-    -
-      value: 'Created English translation'
+  - value: Created English translation
   status:
-    -
-      value: true
+  - value: true
   owner:
-    -
-      target_id: 1
+  - target_id: 1
   title:
-    -
-      value: Blog
+  - value: Blog
   components:
-    -
-      uuid: 7343fb7e-44f7-4092-8956-4aeb159fb6bf
-      component_id: block.system_breadcrumb_block
-      inputs:
-        label: Breadcrumbs
-        label_display: '0'
-    -
-      uuid: 4dcf611c-a513-461b-9145-856b641d7c8e
-      component_id: sdc.vartheme_bs5.heading
-      inputs:
-        level: 1
-        heading_text: Blog
-    -
-      uuid: d5fadb51-a3ec-4e7c-9f47-d2d37e6527b1
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-5
-    -
-      uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
-      component_id: sdc.vartheme_bs5.section
-      inputs:
-        bg_edge2edge: true
-        container_type: container
-        section_header: false
-        section_footer: false
-        columns: '100'
-    -
-      parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
-      slot: col_1
-      uuid: 26b72b2d-fc7b-4d69-acd1-82da0d84787d
-      component_id: block.views_exposed_filter_block.blog-all
-      inputs:
-        label: 'Filter blog posts'
-        label_display: '0'
-        views_label: ''
-      label: 'Blog filters'
-    -
-      parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
-      slot: col_1
-      uuid: ef1a9ade-5633-4bb2-bef9-665d58878f9b
-      component_id: block.views_block.blog-all
-      inputs:
-        label: 'Blog: All blog posts'
-        label_display: '0'
-        views_label: ''
-        items_per_page: 12
-        exposed: {  }
+  - uuid: cc1ea7d0-48fc-4714-bc08-e4430b4bdc42
+    component_id: sdc.vartheme_bs5.media-banner
+    inputs:
+      container_type: container
+      bg_edge2edge: false
+      height: ribbon
+      flex_position: center-left
+      object_position: center
+      radius: rounded-2
+      media:
+        CANVAS_ENTITY_REFERENCE:
+          target_uuid: 7576a2bc-db28-4777-af19-41f638781822
+          target_type: media
+      overlay_bg: bg-dark
+      overlay_opacity: opacity-50
+      padding_inline_start: ps-5
+      padding_inline_end: pe-5
+  - uuid: 7343fb7e-44f7-4092-8956-4aeb159fb6bf
+    component_id: block.system_breadcrumb_block
+    inputs:
+      label: Breadcrumbs
+      label_display: '0'
+    parent_uuid: cc1ea7d0-48fc-4714-bc08-e4430b4bdc42
+    slot: media_banner_slot
+  - parent_uuid: cc1ea7d0-48fc-4714-bc08-e4430b4bdc42
+    slot: media_banner_slot
+    uuid: 3bec2f38-2be3-4146-bff4-99dd0a2f4e87
+    component_id: sdc.vartheme_bs5.spacer
+    inputs:
+      size: py-4
+  - parent_uuid: cc1ea7d0-48fc-4714-bc08-e4430b4bdc42
+    slot: media_banner_slot
+    uuid: 6237189d-0891-46b9-89ef-79081bbba74a
+    component_id: sdc.vartheme_bs5.heading
+    inputs:
+      heading_text: Blog
+      text_color: text-white
+      text_size: display-2
+  - parent_uuid: cc1ea7d0-48fc-4714-bc08-e4430b4bdc42
+    slot: media_banner_slot
+    uuid: 3de31731-3965-4030-8963-83cfba69cead
+    component_id: sdc.vartheme_bs5.text
+    inputs:
+      text:
+        value: <p>Insights, updates, and stories from the Varbase team.</p>
+        format: canvas_html_block
+      text_size: none
+      text_color: text-white
+  - parent_uuid: cc1ea7d0-48fc-4714-bc08-e4430b4bdc42
+    slot: media_banner_slot
+    uuid: 6d3550bc-312b-4566-99f7-19152aa98202
+    component_id: sdc.vartheme_bs5.spacer
+    inputs:
+      size: py-4
+  - uuid: d5fadb51-a3ec-4e7c-9f47-d2d37e6527b1
+    component_id: sdc.vartheme_bs5.spacer
+    inputs:
+      size: py-5
+  - uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
+    component_id: sdc.vartheme_bs5.section
+    inputs:
+      bg_edge2edge: true
+      container_type: container
+      section_header: false
+      section_footer: false
+      columns: '100'
+  - parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
+    slot: col_1
+    uuid: 26b72b2d-fc7b-4d69-acd1-82da0d84787d
+    component_id: block.views_exposed_filter_block.blog-all
+    inputs:
+      label: Filter blog posts
+      label_display: '0'
+      views_label: ''
+    label: Blog filters
+  - parent_uuid: 5a258afe-3992-4d6a-a556-502d052b81a5
+    slot: col_1
+    uuid: ef1a9ade-5633-4bb2-bef9-665d58878f9b
+    component_id: block.views_block.blog-all
+    inputs:
+      label: 'Blog: All blog posts'
+      label_display: '0'
+      views_label: ''
+      items_per_page: 12
+      exposed: {}
   path:
-    -
-      alias: /blog
-      langcode: en
+  - alias: /blog
+    langcode: en
   revision_translation_affected:
-    -
-      value: true
+  - value: true
   metatags:
-    -
-      value: '{"canonical_url":"[canvas_page:url]","description":"[canvas_page:description]","image_src":"[canvas_page:image:entity:field_media_image:entity:url]","title":"[canvas_page:title] | [site:name]"}'
+  - value: '{"canonical_url":"[canvas_page:url]","description":"[canvas_page:description]","image_src":"[canvas_page:image:entity:field_media_image:entity:url]","title":"[canvas_page:title] | [site:name]"}'
