@@ -226,7 +226,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
@@ -281,7 +281,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
@@ -336,7 +336,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
@@ -391,7 +391,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
@@ -649,7 +649,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
@@ -718,7 +718,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
@@ -866,7 +866,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-info
+        background_color: bg-body-tertiary
         corner_style: rounded-3
     -
       parent_uuid: b707b7bc-f637-4fb5-9bf9-f8b89a22d5ee

@@ -75,7 +75,7 @@ default:
       uuid: 2781114e-2797-4a3c-b19d-13f93ffdf0ce
       component_id: sdc.vartheme_bs5.group
       inputs:
-        background_color: bg-light
+        background_color: bg-body-tertiary
         gap: gap-2
         padding_block_start: pt-3
         padding_block_end: pb-3
@@ -140,7 +140,7 @@ default:
       uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
       component_id: sdc.vartheme_bs5.group
       inputs:
-        background_color: bg-light
+        background_color: bg-body-tertiary
         direction: vertical
         gap: gap-2
         padding_block_start: pt-5
@@ -192,7 +192,7 @@ default:
       uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
       component_id: sdc.vartheme_bs5.group
       inputs:
-        background_color: bg-light
+        background_color: bg-body-tertiary
         padding_block_start: pt-5
         padding_block_end: pb-5
         padding_inline_start: ps-5
