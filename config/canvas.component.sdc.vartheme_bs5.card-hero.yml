@@ -243,7 +243,7 @@ versioned_properties:
           title: 'Actions (slot)'
           description: 'Optional override for buttons rendering.'
 label: 'Hero Card'
-id: sdc.vartheme_bs5.hero-card
+id: sdc.vartheme_bs5.card-hero
 provider: vartheme_bs5
 source: sdc
-source_local_id: 'vartheme_bs5:hero-card'
+source_local_id: 'vartheme_bs5:card-hero'
