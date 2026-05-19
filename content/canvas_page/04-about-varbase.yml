@@ -77,7 +77,7 @@ default:
       inputs:
         heading_text: 'About Varbase'
         text_color: text-white
-        text_size: display-2
+        level: 1
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
       slot: media_banner_slot
@@ -145,11 +145,8 @@ default:
       uuid: 5323df02-3189-44e2-84e7-0715fb9022ba
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text:
-          value: Introduction
-          format: canvas_html_inline
+        heading_text: Introduction
         level: 2
-        text_size: h1
     -
       parent_uuid: 511995e9-8184-45b3-b2d8-6fb7cbae3de3
       slot: content
@@ -167,7 +164,7 @@ default:
           value: '<p>Varbase accelerates your Drupal projects with a fully-featured, enterprise-ready distribution. Built on best practices and pre-configured for speed, security, and scalability, Varbase helps organizations launch websites faster while reducing development complexity.</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 511995e9-8184-45b3-b2d8-6fb7cbae3de3
       slot: content
@@ -178,7 +175,7 @@ default:
           value: '<p>Varbase has successfully delivered over 200 digital experience projects for global brands and international enterprises that need the best Drupal 10 web development and design capabilities for their custom and complex technical requirements.</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       component_id: sdc.vartheme_bs5.section
@@ -208,7 +205,7 @@ default:
       inputs:
         level: 2
         heading_text: 'Varbase can bring ease to you if you are '
-        text_size: h1
+        align: text-center
     -
       parent_uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       slot: header_slot
@@ -226,7 +223,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
@@ -270,7 +267,7 @@ default:
           value: '<p>Multilingual options with localized and translated content, and more.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       slot: col_2
@@ -281,7 +278,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
@@ -325,7 +322,7 @@ default:
           value: '<p>Applied industry-standard coding and compliance practices against risks.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       slot: col_3
@@ -336,7 +333,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
@@ -377,10 +374,10 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Using the latest web standards to be accessible to all users, wherever possible.</p>'
+          value: '<p>Using the latest web standards to be accessible to all users, wherever.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       slot: col_4
@@ -391,7 +388,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
@@ -435,7 +432,7 @@ default:
           value: '<p>Wasting so much time on choosing the suitable functionalities</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       slot: footer_slot
@@ -459,6 +456,7 @@ default:
         icon_first: false
         full_width: false
         radius: rounded
+        alignment: center
     -
       uuid: a41927fc-205c-4597-95af-75a9c5576898
       component_id: sdc.vartheme_bs5.section
@@ -502,11 +500,8 @@ default:
       uuid: b8d0d15e-77ca-4712-b626-ed67f2cecfc6
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text:
-          value: 'Join Varbase Slack Team for Feedback & Support'
-          format: canvas_html_inline
+        heading_text: 'Join Varbase Slack Team for Feedback & Support'
         level: 2
-        text_size: h1
     -
       parent_uuid: 1926b54e-ee95-4397-9e0f-0368748772fc
       slot: content
@@ -524,7 +519,7 @@ default:
           value: '<p>It comes with top security standards for an enterprise-security level website. You will find Password Policy, Security Review, Security Kit, &amp; Username Enumeration Prevention are installed and configured to secure your site. It also locks your forms from spam bots.</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 1926b54e-ee95-4397-9e0f-0368748772fc
       slot: content
@@ -567,7 +562,6 @@ default:
         heading_text: 'Give It a Spin and Try It'
         align: text-center
         text_color: text-white
-        text_size: h1
     -
       parent_uuid: cd4048d5-b6ef-455f-945a-93bb755bf421
       slot: content
@@ -611,6 +605,7 @@ default:
         icon_first: false
         outline: false
         full_width: false
+        alignment: center
     -
       parent_uuid: cd4048d5-b6ef-455f-945a-93bb755bf421
       slot: content
@@ -649,7 +644,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
@@ -658,7 +653,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: Roadmap
     -
       parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
@@ -677,7 +671,7 @@ default:
           value: '<p>Varbase is released every 2 to 3 weeks. Minor releases will be tagged when new features are introduced.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
       slot: content
@@ -718,7 +712,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
@@ -727,7 +721,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: 'Release Cycle'
     -
       parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
@@ -746,7 +739,7 @@ default:
           value: '<p>Varbase follows the Drupal 9/10/11 release cycle. Therefore, a version of Varbase is named 10.0.x uses the same major version of Drupal 10.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
       slot: content
@@ -819,11 +812,8 @@ default:
       uuid: f23809f4-6926-4975-b324-a0b3c82ee2e3
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text:
-          value: 'How To Get Support'
-          format: canvas_html_inline
+        heading_text: 'How To Get Support'
         level: 2
-        text_size: h1
     -
       parent_uuid: 34a9496e-36e2-4d1f-b008-294929261961
       slot: content
@@ -841,7 +831,7 @@ default:
           value: '<p>Varbase is developed by a core team of experienced Drupal developments and is funded and supported by Vardot, a leading Drupal agency with offices in the USA, Egypt, and Jordan.&nbsp;</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 34a9496e-36e2-4d1f-b008-294929261961
       slot: content
@@ -852,7 +842,7 @@ default:
           value: '<p>However, if you need professional support for implementation, customization, training, or hosted management, please contact Vardot at https://www.vardot.com/contact</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 03514a73-c059-49a0-8cfd-e28da05207e8
       component_id: sdc.vartheme_bs5.spacer
@@ -866,7 +856,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: b707b7bc-f637-4fb5-9bf9-f8b89a22d5ee
@@ -875,7 +865,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: Credits
     -
       parent_uuid: b707b7bc-f637-4fb5-9bf9-f8b89a22d5ee
@@ -894,12 +883,12 @@ default:
           value: '<p>Varbase is a product of Vardot, the enterprise Drupal solutions provider.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 1a5aa83d-a1b6-44f6-bd55-c000d1b75efd
       component_id: sdc.vartheme_bs5.spacer
       inputs:
-        size: py-5
+        size: py-3
   path:
     -
       alias: /about-varbase

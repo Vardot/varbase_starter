@@ -4,16 +4,20 @@ _meta:
   uuid: fefadd5b-d980-4eb9-aa2c-d58f0826bdc1
   default_langcode: en
   depends:
-    eb511b83-295e-495d-a996-c74f6685facc: file
-    79c88ce1-3513-4ac2-a597-1f3512f4f869: media
-    88c6d838-bd1e-45a9-b701-618057ca0a7b: file
-    ac0a336c-2904-4661-8eb6-f3cb19669367: media
+    2d85a3ba-b9fb-42f4-bb02-3e4662b5e4ff: file
+    8e1ac1f0-8fa9-470d-ad15-6e9f7f0e38b6: media
+    9f9cf049-c0d9-4596-9a17-a43e6ba81bfb: file
+    8aa9c55f-602b-482a-b834-a94f06768e97: media
+    ef46d5fb-c867-4451-8a2a-9f35a94b50a5: file
+    59d9ce37-b406-4b0d-8f7c-6002f3447554: media
+    a9465d07-8e21-4374-b5f6-683e787d1388: file
+    54f43ead-20b5-4c46-9e39-4a9e38a43e43: media
     eaf16eb0-d3ec-41fd-aa1c-7bc59ad77f46: file
     2c67e03f-83a2-428f-bd05-63cc57656904: media
-    ac348243-e2bb-436f-8435-5490d1ce4353: file
-    7e87c97d-66d2-4928-b832-d77cc82fe3a8: media
-    1a296a43-cf81-4f76-935d-ed0c2d82c1d4: file
-    687598bb-3c8b-4ae2-a164-abe196ee224f: media
+    d057ab71-f108-4b78-8629-779d0733fc1e: file
+    695eb435-3fde-4cb8-847f-0ebcab829099: media
+    be5e970d-ee14-46ff-bb19-a02671c0c7f7: file
+    fe0dcce4-40cf-4b41-9816-b923db8beb83: media
     1ed03271-fb0a-4ef9-a392-53beaac4b6c0: file
     5200fb24-f055-401f-a089-986beab888cf: media
     96aca23f-a815-4807-b9f4-242088880fd9: file
@@ -77,8 +81,9 @@ default:
         overlay_bg: none
         button_url: /about-varbase
         button_text: 'Try Varbase for Free'
-        title_size: display-2
+        title_size: h1
         title: 'Varbase, better than ever'
+        title_tag: h2
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
       slot: slides
@@ -98,7 +103,7 @@ default:
         button_url: /about-varbase
         button_text: 'Try Varbase for Free'
         title_tag: h2
-        title_size: display-2
+        title_size: h1
         title: 'Varbase, better than ever'
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
@@ -119,7 +124,7 @@ default:
         button_url: /about-varbase
         button_text: 'Try Varbase for Free'
         title_tag: h2
-        title_size: display-2
+        title_size: h1
         title: 'Varbase, better than ever'
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
@@ -140,7 +145,7 @@ default:
         button_url: /about-varbase
         button_text: 'Try Varbase for Free'
         title_tag: h2
-        title_size: display-2
+        title_size: h1
         title: 'Varbase, better than ever'
     -
       uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
@@ -167,12 +172,18 @@ default:
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
+      uuid: f4093f60-2b57-4233-9b52-f205d9993874
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-2
+    -
+      parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
+      slot: col_1
       uuid: c7f91db3-6262-48e7-8fcb-b12098ed2f93
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        text_size: h1
-        heading_text: 'Flexible Content and Fields'
+        heading_text: 'Built to empower organizations'
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -182,7 +193,7 @@ default:
         text:
           value: '<p>Ready to accelerate your projects with a fully-featured, enterprise-ready distribution.</p>'
           format: canvas_html_block
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -212,7 +223,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
@@ -246,7 +257,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: 'AI Integration'
     -
       parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
@@ -265,7 +275,7 @@ default:
           value: '<p>Deliver personalized, real-time customer experiences with built-in AI capabilities.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_3
@@ -276,7 +286,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
@@ -286,7 +296,7 @@ default:
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 7e87c97d-66d2-4928-b832-d77cc82fe3a8
+            target_uuid: 695eb435-3fde-4cb8-847f-0ebcab829099
             target_type: media
         shadow: shadow-none
     -
@@ -310,7 +320,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: 'Mobile Responsiveness'
     -
       parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
@@ -329,7 +338,7 @@ default:
           value: '<p>Reach all audience members across all devices and mediums.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 86cb81aa-d1a9-4e3f-9531-46ce01ecfe55
       component_id: sdc.vartheme_bs5.section
@@ -361,7 +370,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
@@ -371,7 +380,7 @@ default:
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 687598bb-3c8b-4ae2-a164-abe196ee224f
+            target_uuid: fe0dcce4-40cf-4b41-9816-b923db8beb83
             target_type: media
         shadow: shadow-none
     -
@@ -395,7 +404,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: Multilingual
     -
       parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
@@ -414,7 +422,7 @@ default:
           value: '<p>Multilingual options with localized and translated content, and more.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 86cb81aa-d1a9-4e3f-9531-46ce01ecfe55
       slot: col_2
@@ -425,7 +433,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
@@ -459,7 +467,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: 'Enterprise Security'
     -
       parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
@@ -478,7 +485,7 @@ default:
           value: '<p>Applied industry-standard coding and compliance practices against risks.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 86cb81aa-d1a9-4e3f-9531-46ce01ecfe55
       slot: col_3
@@ -489,7 +496,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
@@ -523,7 +530,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: Accessibility
     -
       parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
@@ -542,7 +548,7 @@ default:
           value: '<p>Using the latest web standards to be accessible to all users, wherever possible.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: e91d8ad8-47ac-40b1-98b8-04768b1f3604
       component_id: sdc.vartheme_bs5.spacer
@@ -586,7 +592,6 @@ default:
         text_size: display-1
         heading_text: 20K+
         text_color: text-dark
-        font_weight: fw-bold
     -
       parent_uuid: 7c02190c-4d81-452e-abc5-bd919b9e28ed
       slot: content
@@ -616,7 +621,6 @@ default:
         level: 3
         text_size: display-1
         heading_text: 137K+
-        font_weight: fw-bold
     -
       parent_uuid: 38e4a868-3e12-4f63-a342-fb933c15c4fd
       slot: content
@@ -645,7 +649,6 @@ default:
         level: 3
         text_size: display-1
         heading_text: 11K+
-        font_weight: fw-bold
     -
       parent_uuid: 9a3b0e71-b3b5-4239-9cf7-ae2f3b32fb27
       slot: content
@@ -698,11 +701,8 @@ default:
       uuid: 0e9b21c0-3cfe-47b3-ac0b-c518f80aecb2
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text:
-          value: 'Security Standards'
-          format: canvas_html_inline
+        heading_text: 'Security Standards'
         level: 2
-        text_size: h1
     -
       parent_uuid: d182c4c4-bd72-44db-9eb4-258efa6b56e0
       slot: content
@@ -720,7 +720,7 @@ default:
           value: '<p>Varbase comes with top security standards for an enterprise-security level website. You will find Password Policy, Security Review, Security Kit, and Username Enumeration Prevention are installed and configured to secure your site. Honeypot is also being used to lock your forms from spam bots.</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 8eec24fb-cfd9-455e-a274-068ef27da301
       component_id: sdc.vartheme_bs5.section
@@ -738,8 +738,8 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        text_size: h1
         heading_text: 'Latest Updates'
+        align: text-center
     -
       parent_uuid: 8eec24fb-cfd9-455e-a274-068ef27da301
       slot: header_slot
@@ -771,7 +771,7 @@ default:
       component_id: sdc.vartheme_bs5.button
       inputs:
         href:
-          uri: 'internal:/blogs'
+          uri: 'internal:/blog'
           options: {  }
         icon: none
         size: btn-md
@@ -782,6 +782,7 @@ default:
         icon_first: false
         outline: true
         full_width: false
+        alignment: center
     -
       uuid: 9a3b9f55-721f-45ae-9bff-3e519367efcd
       component_id: sdc.vartheme_bs5.section
@@ -866,6 +867,7 @@ default:
         icon_first: false
         outline: false
         full_width: false
+        alignment: center
     -
       parent_uuid: 9c4f4fac-8f03-4680-85a3-6861e4d8993d
       slot: content

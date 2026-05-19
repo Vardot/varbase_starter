@@ -8,8 +8,8 @@ _meta:
     765511dc-95e1-4f1b-8b93-f1f058ab0bef: media
     c6afd163-0a47-48e1-84d1-7893dd11cc79: file
     5720b791-3bc4-4bdb-925c-461432d7ad83: media
-    1a296a43-cf81-4f76-935d-ed0c2d82c1d4: file
-    687598bb-3c8b-4ae2-a164-abe196ee224f: media
+    be5e970d-ee14-46ff-bb19-a02671c0c7f7: file
+    fe0dcce4-40cf-4b41-9816-b923db8beb83: media
     1ed03271-fb0a-4ef9-a392-53beaac4b6c0: file
     5200fb24-f055-401f-a089-986beab888cf: media
     96aca23f-a815-4807-b9f4-242088880fd9: file
@@ -71,7 +71,7 @@ default:
       inputs:
         heading_text: Features
         text_color: text-white
-        text_size: display-2
+        level: 1
     -
       parent_uuid: f7af211e-ef13-405b-8f78-5a018e5d7556
       slot: media_banner_slot
@@ -139,11 +139,8 @@ default:
       uuid: f24fd5ec-49ec-4e87-9f4e-24b19466c6ee
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text:
-          value: 'Security Standards'
-          format: canvas_html_inline
+        heading_text: 'Security Standards'
         level: 2
-        text_size: h1
     -
       parent_uuid: dd547174-414a-4d87-bb60-2d550d63373d
       slot: content
@@ -161,7 +158,7 @@ default:
           value: '<p>Varbase comes with top security standards for an enterprise-security level website. You will find Password Policy, Security Review, Security Kit, and Username Enumeration Prevention are installed and configured to secure your site. Honeypot is also being used to lock your forms from spam bots.</p>'
           format: canvas_html_block
         text_size: none
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 0d26b7d5-55e1-4a2e-97a0-b64b8b131b82
       component_id: sdc.vartheme_bs5.section
@@ -195,7 +192,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: c950c93a-d040-424a-9874-4d69f12b7f7c
@@ -205,7 +202,7 @@ default:
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 687598bb-3c8b-4ae2-a164-abe196ee224f
+            target_uuid: fe0dcce4-40cf-4b41-9816-b923db8beb83
             target_type: media
         shadow: shadow-none
     -
@@ -229,7 +226,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h3
         heading_text: Multilingual
     -
       parent_uuid: c950c93a-d040-424a-9874-4d69f12b7f7c
@@ -248,7 +244,7 @@ default:
           value: '<p>Multilingual options with localized and translated content, and more.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 0d26b7d5-55e1-4a2e-97a0-b64b8b131b82
       slot: col_2
@@ -259,7 +255,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 48c259b4-8a7a-42fa-a988-e9eacc50da27
@@ -293,7 +289,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h3
         heading_text: 'Enterprise Security'
     -
       parent_uuid: 48c259b4-8a7a-42fa-a988-e9eacc50da27
@@ -312,7 +307,7 @@ default:
           value: '<p>Applied industry-standard coding and compliance practices against risks.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 0d26b7d5-55e1-4a2e-97a0-b64b8b131b82
       slot: col_3
@@ -323,7 +318,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 614cb7e0-4cdd-49fe-aa37-34a9c7ff1dd2
@@ -357,7 +352,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h3
         heading_text: Accessibility
     -
       parent_uuid: 614cb7e0-4cdd-49fe-aa37-34a9c7ff1dd2
@@ -376,7 +370,7 @@ default:
           value: '<p>Using the latest web standards to be accessible to all users, wherever possible.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       uuid: 47ffad9d-3918-4b01-b396-3e30b3965388
       component_id: sdc.vartheme_bs5.card-text
@@ -403,7 +397,6 @@ default:
         heading_text: 'Kick-start Your Journey with us Today!'
         align: text-center
         text_color: text-white
-        text_size: h1
     -
       parent_uuid: 47ffad9d-3918-4b01-b396-3e30b3965388
       slot: content
@@ -447,6 +440,7 @@ default:
         icon_first: false
         outline: false
         full_width: false
+        alignment: center
     -
       parent_uuid: 47ffad9d-3918-4b01-b396-3e30b3965388
       slot: content
@@ -485,7 +479,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: 27f58c35-f9a4-4154-9056-710ec5a5759b
@@ -494,7 +488,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: Roadmap
     -
       parent_uuid: 27f58c35-f9a4-4154-9056-710ec5a5759b
@@ -513,7 +506,7 @@ default:
           value: '<p>Varbase is released every 2 to 3 weeks. Minor releases will be tagged when new features are introduced.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: 27f58c35-f9a4-4154-9056-710ec5a5759b
       slot: content
@@ -554,7 +547,7 @@ default:
         padded: true
         equal_height: false
         stretched_link: false
-        background_color: bg-body-tertiary
+        background_color: bg-secondary-subtle
         corner_style: rounded-3
     -
       parent_uuid: d1d8448d-da93-4659-82d3-cc597354640a
@@ -563,7 +556,6 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 3
-        text_size: h2
         heading_text: 'Release Cycle'
     -
       parent_uuid: d1d8448d-da93-4659-82d3-cc597354640a
@@ -582,7 +574,7 @@ default:
           value: '<p>Varbase follows the Drupal 9/10/11 release cycle. Therefore, a version of Varbase is named 10.0.x uses the same major version of Drupal 10.</p>'
           format: canvas_html_block
         text_size: fs-6
-        text_color: text-body
+        text_color: text-subtle-text
     -
       parent_uuid: d1d8448d-da93-4659-82d3-cc597354640a
       slot: content
