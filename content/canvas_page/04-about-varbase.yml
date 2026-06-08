@@ -9,13 +9,13 @@ _meta:
     d10e3528-5bf6-4dfc-be41-2b95ae9f42d3: file
     31ef2c99-a592-4c7a-a401-9e9843cb968d: media
     eaf16eb0-d3ec-41fd-aa1c-7bc59ad77f46: file
-    2c67e03f-83a2-428f-bd05-63cc57656904: media
+    29e1d4c3-4817-5921-972d-0a276e6f9b19: media
     ac348243-e2bb-436f-8435-5490d1ce4353: file
-    7e87c97d-66d2-4928-b832-d77cc82fe3a8: media
+    5fb606b9-9b43-54e7-9bf4-357a3360993d: media
     1ed03271-fb0a-4ef9-a392-53beaac4b6c0: file
-    5200fb24-f055-401f-a089-986beab888cf: media
+    1fbeced8-3376-5027-a8df-67d07c1352e3: media
     96aca23f-a815-4807-b9f4-242088880fd9: file
-    2a20b0ad-e590-4811-a389-6459f9a94ed8: media
+    70e666ba-6af5-5456-bf74-13c53e653fb5: media
     8cd271e8-6372-44c4-a525-c8f313514f27: file
     862c68b6-8714-41e2-9879-f53da2d9b6fc: media
     971e3817-186c-4d35-8fe2-eaaa2438b5fd: file
@@ -229,13 +229,12 @@ default:
       parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
       slot: content
       uuid: c57961e8-5082-4a81-91f8-4527c2843f69
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 2c67e03f-83a2-428f-bd05-63cc57656904
+            target_uuid: 29e1d4c3-4817-5921-972d-0a276e6f9b19
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
       slot: content
@@ -284,13 +283,12 @@ default:
       parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
       slot: content
       uuid: 5fb929fc-c82c-4687-b81c-de9063e70079
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 7e87c97d-66d2-4928-b832-d77cc82fe3a8
+            target_uuid: 5fb606b9-9b43-54e7-9bf4-357a3360993d
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
       slot: content
@@ -339,13 +337,12 @@ default:
       parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
       slot: content
       uuid: 2dcc62d2-f492-43fc-b28d-1446ccf3f84b
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 5200fb24-f055-401f-a089-986beab888cf
+            target_uuid: 1fbeced8-3376-5027-a8df-67d07c1352e3
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
       slot: content
@@ -394,13 +391,12 @@ default:
       parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
       slot: content
       uuid: dbd56303-5d9d-4591-8962-bf4ded24c932
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 2a20b0ad-e590-4811-a389-6459f9a94ed8
+            target_uuid: 70e666ba-6af5-5456-bf74-13c53e653fb5
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
       slot: content

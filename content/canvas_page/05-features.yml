@@ -9,11 +9,11 @@ _meta:
     c6afd163-0a47-48e1-84d1-7893dd11cc79: file
     5720b791-3bc4-4bdb-925c-461432d7ad83: media
     be5e970d-ee14-46ff-bb19-a02671c0c7f7: file
-    fe0dcce4-40cf-4b41-9816-b923db8beb83: media
+    1955c46d-6f86-50a7-880a-fa8d434c5abb: media
     1ed03271-fb0a-4ef9-a392-53beaac4b6c0: file
-    5200fb24-f055-401f-a089-986beab888cf: media
+    1fbeced8-3376-5027-a8df-67d07c1352e3: media
     96aca23f-a815-4807-b9f4-242088880fd9: file
-    2a20b0ad-e590-4811-a389-6459f9a94ed8: media
+    70e666ba-6af5-5456-bf74-13c53e653fb5: media
 default:
   revision_user:
     -
@@ -198,13 +198,12 @@ default:
       parent_uuid: c950c93a-d040-424a-9874-4d69f12b7f7c
       slot: content
       uuid: 465a62eb-5540-4e3c-8e0c-d010b71b1c3a
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: fe0dcce4-40cf-4b41-9816-b923db8beb83
+            target_uuid: 1955c46d-6f86-50a7-880a-fa8d434c5abb
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: c950c93a-d040-424a-9874-4d69f12b7f7c
       slot: content
@@ -261,13 +260,12 @@ default:
       parent_uuid: 48c259b4-8a7a-42fa-a988-e9eacc50da27
       slot: content
       uuid: 1e10faa8-357c-45cb-bd2e-7f72eb2c1500
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 5200fb24-f055-401f-a089-986beab888cf
+            target_uuid: 1fbeced8-3376-5027-a8df-67d07c1352e3
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: 48c259b4-8a7a-42fa-a988-e9eacc50da27
       slot: content
@@ -324,13 +322,12 @@ default:
       parent_uuid: 614cb7e0-4cdd-49fe-aa37-34a9c7ff1dd2
       slot: content
       uuid: 6d157ed0-053f-4ab8-b045-f1a4c659295a
-      component_id: sdc.vartheme_bs5.card-logo
+      component_id: sdc.vartheme_bs5.image
       inputs:
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 2a20b0ad-e590-4811-a389-6459f9a94ed8
+            target_uuid: 70e666ba-6af5-5456-bf74-13c53e653fb5
             target_type: media
-        shadow: shadow-none
     -
       parent_uuid: 614cb7e0-4cdd-49fe-aa37-34a9c7ff1dd2
       slot: content
