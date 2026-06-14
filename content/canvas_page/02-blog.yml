@@ -4,8 +4,8 @@ _meta:
   uuid: 33086ffd-e0c1-45c3-b5c0-75969873791c
   default_langcode: en
   depends:
-    56e0f11d-c8c4-4c9c-9db6-4fab93368631: file
-    07d29a34-45e7-47c6-88ef-7f0799d6dcd8: media
+    fc33ecab-1c3d-4287-bd73-3927abb86a49: file
+    96101fa7-b093-4238-9259-38f22da6fa9c: media
 default:
   revision_user:
     -
@@ -35,7 +35,7 @@ default:
         radius: rounded-2
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 07d29a34-45e7-47c6-88ef-7f0799d6dcd8
+            target_uuid: 96101fa7-b093-4238-9259-38f22da6fa9c
             target_type: media
         overlay_bg: bg-dark
         overlay_opacity: opacity-50

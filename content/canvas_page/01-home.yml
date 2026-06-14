@@ -22,8 +22,8 @@ _meta:
     1fbeced8-3376-5027-a8df-67d07c1352e3: media
     2652f6cd-284e-5598-8d07-2242cad1c3e5: file
     70e666ba-6af5-5456-bf74-13c53e653fb5: media
-    c6afd163-0a47-48e1-84d1-7893dd11cc79: file
-    5720b791-3bc4-4bdb-925c-461432d7ad83: media
+    a7aa3456-4327-4324-a9dd-e2112cb267cb: file
+    ab0b9ce8-81b8-4656-b877-d80b44b4397c: media
 default:
   revision_user:
     -
@@ -221,31 +221,25 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-    -
-      parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
-      slot: content
-      uuid: 1e7f8d5a-68a8-4b9c-857d-ccaf069bca5b
-      component_id: sdc.vartheme_bs5.image
-      inputs:
-        media:
+        icon_image:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 29e1d4c3-4817-5921-972d-0a276e6f9b19
             target_type: media
     -
       parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
       slot: content
-      uuid: 5a5f7262-1f75-46b9-bab2-0a2fda288b2c
+      uuid: f9edc6a0-4c00-40eb-b552-7719e1a4f3f2
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
       slot: content
-      uuid: 790ef193-f44f-45dc-8eb9-10fa7c60c059
+      uuid: 3677cca9-23f9-4315-9f67-0421cea9cd17
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-2
@@ -260,7 +254,7 @@ default:
     -
       parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
       slot: content
-      uuid: bb2e2c3f-50a3-40ed-a285-74bbafc0cc27
+      uuid: 8312abd1-91a7-4b49-b993-2c41be993aff
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-1
@@ -283,31 +277,25 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-    -
-      parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
-      slot: content
-      uuid: 6d9c0d50-feea-43cd-9075-6aa74f22b441
-      component_id: sdc.vartheme_bs5.image
-      inputs:
-        media:
+        icon_image:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 4636b88f-f27b-502e-8f04-257ae082a013
             target_type: media
     -
       parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
       slot: content
-      uuid: c92bcf87-c586-4d45-8a94-025cb3479b2f
+      uuid: 9e8f6af2-f655-490e-b122-e475f15b2f9e
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
       slot: content
-      uuid: bc29baca-478d-4a08-a093-ffc6e76ad86c
+      uuid: 979b95fb-bfbb-484f-9df9-1da5167e1ba6
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-2
@@ -322,7 +310,7 @@ default:
     -
       parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
       slot: content
-      uuid: 08e70ca3-60fe-47eb-bec1-1f04cc1a1a92
+      uuid: a9318690-69af-442f-b9d8-811314283998
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-1
@@ -366,31 +354,25 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-    -
-      parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
-      slot: content
-      uuid: 22b8a213-0505-4b22-afbd-44f028309709
-      component_id: sdc.vartheme_bs5.image
-      inputs:
-        media:
+        icon_image:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 1955c46d-6f86-50a7-880a-fa8d434c5abb
             target_type: media
     -
       parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
       slot: content
-      uuid: 1972b6e3-0c25-4488-92cf-8843649e3bf5
+      uuid: 7ebf569a-08b1-48aa-bcb1-1781c7cbd1e4
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
       slot: content
-      uuid: 6c0a8378-0ad7-43e3-ae62-2904cdf79658
+      uuid: 0db01362-57b8-4a5b-9585-2bb40996a0d1
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-2
@@ -405,7 +387,7 @@ default:
     -
       parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
       slot: content
-      uuid: 081e5690-2d23-4009-b446-c107a05a2cd4
+      uuid: 157b5e28-9118-4e8a-ad96-f07c3c818050
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-1
@@ -428,31 +410,25 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-    -
-      parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
-      slot: content
-      uuid: c2f0dc6a-0292-4cb4-8860-f6a0c3a1e5ec
-      component_id: sdc.vartheme_bs5.image
-      inputs:
-        media:
+        icon_image:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 1fbeced8-3376-5027-a8df-67d07c1352e3
             target_type: media
     -
       parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
       slot: content
-      uuid: 906d8124-3c58-43db-868e-7442ff33a75b
+      uuid: 824fe626-971d-4570-a803-da9df1c698db
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
       slot: content
-      uuid: 774b2c06-bf6b-4a71-9d92-7ec50896940f
+      uuid: ec77c526-10cf-4639-b6fa-5b00295cbf66
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-2
@@ -467,7 +443,7 @@ default:
     -
       parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
       slot: content
-      uuid: 076133a1-d508-47ab-9e83-5ae48fcaf9fb
+      uuid: afc44960-4443-49db-8585-5ecb30926f15
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-1
@@ -490,31 +466,25 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-    -
-      parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
-      slot: content
-      uuid: 4aa90309-ae80-4600-8903-f086d7f5096b
-      component_id: sdc.vartheme_bs5.image
-      inputs:
-        media:
+        icon_image:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 70e666ba-6af5-5456-bf74-13c53e653fb5
             target_type: media
     -
       parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
       slot: content
-      uuid: 3538ccae-6819-425b-8d21-ad725c79b568
+      uuid: 63ad7307-31f9-4372-a612-bda739db1f49
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
     -
       parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
       slot: content
-      uuid: 73ded919-6bd9-4dcc-8687-9b9a3ca698ed
+      uuid: aec371ef-be5a-4e1f-9f15-a4ce9e3dfc6f
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-2
@@ -529,7 +499,7 @@ default:
     -
       parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
       slot: content
-      uuid: b9496988-0386-45f8-9944-7a61081044a1
+      uuid: e706da4f-7e9a-4765-b233-2cad82cf2517
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-1
@@ -678,7 +648,7 @@ default:
         media_position: end
         media_image:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 5720b791-3bc4-4bdb-925c-461432d7ad83
+            target_uuid: ab0b9ce8-81b8-4656-b877-d80b44b4397c
             target_type: media
         ratio: ratio-auto
         fit: object-fit-contain
