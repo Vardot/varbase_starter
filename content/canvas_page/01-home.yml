@@ -96,15 +96,15 @@ default:
             target_type: media
         active: false
         content:
-          value: "<p>Elevate your digital experience with Varbase's dynamic design system, seamlessly blending aesthetic appeal with unparalleled functionality. Unleash the power of intuitive design for a compelling web presence.</p>"
+          value: "<p>Assemble your site from composable Drupal recipes, applied on their own or grouped together. Start from an enterprise-ready baseline instead of wiring everything up by hand.</p>"
           format: canvas_html_block
         enabled: true
         overlay_bg: none
         button_url: /about-varbase
-        button_text: 'Try Varbase for Free'
+        button_text: 'About Varbase'
         title_tag: h2
         title_size: h1
-        title: 'Varbase, better than ever'
+        title: 'Compose your site from recipes'
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
       slot: slides
@@ -117,15 +117,15 @@ default:
             target_type: media
         active: false
         content:
-          value: "<p>Elevate your digital experience with Varbase's dynamic design system, seamlessly blending aesthetic appeal with unparalleled functionality. Unleash the power of intuitive design for a compelling web presence.</p>"
+          value: "<p>Build and arrange pages visually with Drupal Canvas, no code required. The Bootstrap 5 based Vartheme keeps every layout responsive and on brand.</p>"
           format: canvas_html_block
         enabled: true
         overlay_bg: none
-        button_url: /about-varbase
-        button_text: 'Try Varbase for Free'
+        button_url: /features
+        button_text: 'Try the page builder'
         title_tag: h2
         title_size: h1
-        title: 'Varbase, better than ever'
+        title: 'Design pages without code'
     -
       parent_uuid: 7a90b078-dabb-44db-bd3f-59f7554d1a35
       slot: slides
@@ -138,19 +138,20 @@ default:
             target_type: media
         active: false
         content:
-          value: "<p>Elevate your digital experience with Varbase's dynamic design system, seamlessly blending aesthetic appeal with unparalleled functionality. Unleash the power of intuitive design for a compelling web presence.</p>"
+          value: "<p>Security hardening, accessibility, and SEO come configured out of the box. Launch with confidence on a foundation built for real-world production sites.</p>"
           format: canvas_html_block
         enabled: true
         overlay_bg: none
-        button_url: /about-varbase
-        button_text: 'Try Varbase for Free'
+        button_url: /contact-us
+        button_text: 'Contact us'
         title_tag: h2
         title_size: h1
-        title: 'Varbase, better than ever'
+        title: 'Secure and ready for production'
     -
       uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         section_footer: false
         section_header: false
@@ -168,7 +169,7 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        heading_text: 'Build Your Site Using Varbase!'
+        heading_text: 'Everything you need to build'
     -
       parent_uuid: 9ba04802-017a-4acd-b59b-b16e85b522a6
       slot: col_1
@@ -191,7 +192,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Ready to accelerate your projects with a fully-featured, enterprise-ready distribution.</p>'
+          value: '<p>Varbase accelerates your projects with a fully featured, enterprise-ready Drupal distribution.</p>'
           format: canvas_html_block
         text_color: text-subtle-text
     -
@@ -258,7 +259,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Deliver personalized, real-time customer experiences with built-in AI capabilities.</p>'
+          value: '<p>Optional AI recipes add content and workflow automation, like alt text and tagging.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -307,7 +308,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Reach all audience members across all devices and mediums.</p>'
+          value: '<p>A mobile-first, responsive theme that adapts to every screen size.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -315,6 +316,7 @@ default:
       uuid: 86cb81aa-d1a9-4e3f-9531-46ce01ecfe55
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         section_footer: false
         section_header: false
@@ -331,7 +333,7 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        heading_text: 'Build Your Site Using Varbase!'
+        heading_text: 'More reasons to choose Varbase'
     -
       parent_uuid: 86cb81aa-d1a9-4e3f-9531-46ce01ecfe55
       slot: col_1
@@ -377,7 +379,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Multilingual options with localized and translated content, and more.</p>'
+          value: '<p>Build and translate content in multiple languages, with localization ready out of the box.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -426,7 +428,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Applied industry-standard coding and compliance practices against risks.</p>'
+          value: '<p>Hardened with security best practices, spam protection, and access controls.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -475,7 +477,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Using the latest web standards to be accessible to all users, wherever possible.</p>'
+          value: '<p>Built to current web standards so your site stays usable for everyone.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -494,6 +496,7 @@ default:
       uuid: ea6fa419-9ea4-4b01-80b4-0bfa6244181b
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         columns: 33-33-33
         bg_edge2edge: false
         section_footer: false
@@ -520,7 +523,7 @@ default:
       inputs:
         level: 3
         text_size: display-1
-        heading_text: 20K+
+        heading_text: 469+
         text_color: text-dark
     -
       parent_uuid: 7c02190c-4d81-452e-abc5-bd919b9e28ed
@@ -529,7 +532,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase Usage</p>'
+          value: '<p>Sites using Varbase</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-dark
@@ -550,7 +553,7 @@ default:
       inputs:
         level: 3
         text_size: display-1
-        heading_text: 137K+
+        heading_text: 200+
     -
       parent_uuid: 38e4a868-3e12-4f63-a342-fb933c15c4fd
       slot: content
@@ -558,7 +561,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Overall Installs</p>'
+          value: '<p>Projects delivered by Vardot</p>'
           format: canvas_html_block
         text_size: fs-6
     -
@@ -578,7 +581,7 @@ default:
       inputs:
         level: 3
         text_size: display-1
-        heading_text: 11K+
+        heading_text: 10+
     -
       parent_uuid: 9a3b0e71-b3b5-4239-9cf7-ae2f3b32fb27
       slot: content
@@ -586,7 +589,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Installs Last 30 Days</p>'
+          value: '<p>Years building Drupal</p>'
           format: canvas_html_block
         text_size: fs-6
     -
@@ -619,7 +622,7 @@ default:
         fit: object-fit-contain
         card_border: false
         padded: false
-        equal_height: false
+        equal_height: true
         stretched_link: false
         gutters_between: 'g-4 g-lg-5'
         corner_style: rounded-3
@@ -734,7 +737,7 @@ default:
         card_border: false
         background_color: bg-dark
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         corner_style: rounded-3
     -
@@ -768,7 +771,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p class="text-align-center">The websites you build using Varbase are load lightning fast, are SEO optimized and are fully responsive.</p>'
+          value: '<p class="text-align-center">Websites you build with Varbase load fast, rank well, and stay fully responsive.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-white

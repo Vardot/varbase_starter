@@ -132,6 +132,7 @@ default:
       uuid: f17121ec-392c-47fd-b7cd-c9fcf5cf5fb0
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         container_type: container
         columns: 50-50
@@ -148,7 +149,7 @@ default:
       uuid: 26638469-abb9-48d8-b62d-6e1ad1f511d2
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text: 'Build Your Site Using Varbase!'
+        heading_text: 'Get started with Varbase'
         level: 2
     -
       parent_uuid: f17121ec-392c-47fd-b7cd-c9fcf5cf5fb0
@@ -160,7 +161,7 @@ default:
         background_color: bg-secondary-subtle
         padded: true
         corner_style: rounded-3
-        equal_height: false
+        equal_height: true
         stretched_link: false
     -
       parent_uuid: 7e43aaaa-3bca-425b-853e-74e953c1133e
@@ -184,7 +185,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase is released every 2 to 3 weeks. Minor releases will be tagged when new features are introduced.</p>'
+          value: '<p>Varbase is an enterprise Drupal distribution by Vardot, built on Drupal 11 and assembled from reusable recipes.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -221,7 +222,7 @@ default:
         background_color: bg-secondary-subtle
         padded: true
         corner_style: rounded-3
-        equal_height: false
+        equal_height: true
         stretched_link: false
     -
       parent_uuid: e92eaa04-7d8e-44d1-a8fc-48e3cb3e71d7
@@ -245,7 +246,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase follows the Drupal 9/10/11 release cycle. Therefore, a version of Varbase is named 10.0.x uses the same major version of Drupal 10.</p>'
+          value: '<p>Need help with your Varbase project? Get in touch with our team and we will respond.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text

@@ -72,7 +72,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Get in touch with the Varbase team — we are here to help.</p>'
+          value: '<p>Get in touch with the Varbase team. We are here to help.</p>'
           format: canvas_html_block
         text_size: none
         text_color: text-white
@@ -183,6 +183,7 @@ default:
       uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         margin_block_start: mt-5
         section_header: true
@@ -203,17 +204,14 @@ default:
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       slot: col_1
       uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
-      component_id: sdc.vartheme_bs5.group
+      component_id: sdc.vartheme_bs5.card-text
       inputs:
+        card_border: false
+        padded: true
+        equal_height: true
+        stretched_link: false
         background_color: bg-secondary-subtle
-        direction: vertical
-        gap: gap-2
-        padding_block_start: pt-5
-        padding_block_end: pb-5
-        padding_inline_start: ps-5
-        padding_inline_end: pe-5
-        aos_once: false
-        radius: rounded-2
+        corner_style: rounded-3
     -
       parent_uuid: 9a1108bc-e6d2-4f6d-85c6-64a916ba1abf
       slot: content
@@ -263,16 +261,14 @@ default:
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       slot: col_2
       uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
-      component_id: sdc.vartheme_bs5.group
+      component_id: sdc.vartheme_bs5.card-text
       inputs:
+        card_border: false
+        padded: true
+        equal_height: true
+        stretched_link: false
         background_color: bg-secondary-subtle
-        padding_block_start: pt-5
-        padding_block_end: pb-5
-        padding_inline_start: ps-5
-        padding_inline_end: pe-5
-        gap: gap-2
-        aos_once: false
-        radius: rounded-2
+        corner_style: rounded-3
     -
       parent_uuid: cc5eaedb-de33-46db-b9c5-c1a22b0fdaad
       slot: content
@@ -288,7 +284,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase has successfully delivered over 200 digital experience projects for global brands and international enterprises that need the best Drupal web development and design capabilities for their custom and complex technical requirements.</p>'
+          value: '<p>Read the latest articles, tutorials, and release notes on the Varbase blog.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text

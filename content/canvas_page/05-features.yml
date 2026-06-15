@@ -72,7 +72,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: "<p>Varbase is the ultimate enterprise Drupal distribution. It's AI-Powered, secured, and scalable.</p>"
+          value: "<p>Varbase is an enterprise Drupal distribution built on Drupal 11. Recipe-based, secure, and scalable.</p>"
           format: canvas_html_block
         text_size: none
         text_color: text-white
@@ -113,7 +113,7 @@ default:
         fit: object-fit-contain
         card_border: false
         padded: false
-        equal_height: false
+        equal_height: true
         stretched_link: false
         gutters_between: 'g-4 g-lg-5'
         corner_style: rounded-3
@@ -149,6 +149,7 @@ default:
       uuid: 0d26b7d5-55e1-4a2e-97a0-b64b8b131b82
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         section_footer: false
         section_header: false
@@ -167,7 +168,7 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        heading_text: 'Build Your Site Using Varbase!'
+        heading_text: 'What you get out of the box'
     -
       parent_uuid: 0d26b7d5-55e1-4a2e-97a0-b64b8b131b82
       slot: col_1
@@ -213,7 +214,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Multilingual options with localized and translated content, and more.</p>'
+          value: '<p>Build and translate content in multiple languages, with localization ready out of the box.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -262,7 +263,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Applied industry-standard coding and compliance practices against risks.</p>'
+          value: '<p>Hardened with security best practices, spam protection, and access controls.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -311,7 +312,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Using the latest web standards to be accessible to all users, wherever possible.</p>'
+          value: '<p>Built to current web standards so your site stays usable for everyone.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -322,7 +323,7 @@ default:
         card_border: false
         background_color: bg-dark
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         corner_style: rounded-3
     -
@@ -355,7 +356,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p class="text-align-center">The websites you build using Varbase are load lightning fast, are SEO optimized and are fully responsive.</p>'
+          value: '<p class="text-align-center">Websites you build with Varbase load fast, rank well, and stay fully responsive.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-white
@@ -395,6 +396,7 @@ default:
       uuid: 931a7fa2-b4d0-42f5-9d9a-990b7b2aaab4
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         section_footer: false
         section_header: false
@@ -412,7 +414,7 @@ default:
       component_id: sdc.vartheme_bs5.heading
       inputs:
         level: 2
-        heading_text: 'Build Your Site Using Varbase!'
+        heading_text: 'Roadmap and releases'
     -
       parent_uuid: 931a7fa2-b4d0-42f5-9d9a-990b7b2aaab4
       slot: col_1
@@ -421,7 +423,7 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
@@ -474,6 +476,9 @@ default:
         icon_first: false
         full_width: false
         radius: rounded
+        href:
+          uri: 'https://docs.varbase.vardot.com/11.0.x'
+          options: {  }
     -
       parent_uuid: 931a7fa2-b4d0-42f5-9d9a-990b7b2aaab4
       slot: col_2
@@ -482,7 +487,7 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
@@ -508,7 +513,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase follows the Drupal 9/10/11 release cycle. Therefore, a version of Varbase is named 10.0.x uses the same major version of Drupal 10.</p>'
+          value: '<p>Varbase follows the Drupal release cycle. A Varbase version such as 11.0.x runs on its matching Drupal major version, Drupal 11.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -535,6 +540,9 @@ default:
         icon_first: false
         full_width: false
         radius: rounded
+        href:
+          uri: 'https://docs.varbase.vardot.com/readme/whats-new-in-varbase-11'
+          options: {  }
   path:
     -
       alias: /features

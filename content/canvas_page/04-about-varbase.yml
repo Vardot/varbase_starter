@@ -80,7 +80,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: "<p>Varbase is the ultimate enterprise Drupal distribution. It's AI-Powered, secured, and scalable.</p>"
+          value: "<p>Varbase is an enterprise Drupal distribution built on Drupal 11. Recipe-based, secure, and scalable.</p>"
           format: canvas_html_block
         text_size: none
         text_color: text-white
@@ -121,7 +121,7 @@ default:
         fit: object-fit-contain
         card_border: false
         padded: false
-        equal_height: false
+        equal_height: true
         stretched_link: false
         gutters_between: 'g-4 g-lg-5'
         corner_style: rounded-3
@@ -168,6 +168,7 @@ default:
       uuid: 476eda07-4f5e-43cc-bcd1-db3ff43705a6
       component_id: sdc.vartheme_bs5.section
       inputs:
+        vertical_alignment: align-items-stretch
         bg_edge2edge: true
         section_footer: true
         section_header: true
@@ -209,7 +210,7 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
@@ -237,7 +238,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Multilingual options with localized and translated content, and more.</p>'
+          value: '<p>Launching multilingual sites and need translation ready from day one.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -249,7 +250,7 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
@@ -277,7 +278,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Applied industry-standard coding and compliance practices against risks.</p>'
+          value: '<p>Responsible for security and compliance on every project you ship.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -289,7 +290,7 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
@@ -317,7 +318,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Using the latest web standards to be accessible to all users, wherever.</p>'
+          value: '<p>Required to meet accessibility standards for every user.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -329,7 +330,7 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
@@ -357,7 +358,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Wasting so much time on choosing the suitable functionalities</p>'
+          value: '<p>Tired of wiring up the same modules and settings on every new site.</p>'
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -416,7 +417,7 @@ default:
         fit: object-fit-contain
         card_border: false
         padded: false
-        equal_height: false
+        equal_height: true
         stretched_link: false
         gutters_between: 'g-4 g-lg-5'
         corner_style: rounded-3
@@ -444,7 +445,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>It comes with top security standards for an enterprise-security level website. You will find Password Policy, Security Review, Security Kit, &amp; Username Enumeration Prevention are installed and configured to secure your site. It also locks your forms from spam bots.</p>'
+          value: '<p>Join the Varbase community and core team on Slack to ask questions, share feedback, and get help as you build.</p>'
           format: canvas_html_block
         text_size: none
         text_color: text-subtle-text
@@ -471,7 +472,7 @@ default:
         card_border: false
         background_color: bg-dark
         padded: true
-        equal_height: false
+        equal_height: true
         stretched_link: false
         corner_style: rounded-3
     -
@@ -662,7 +663,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: "<p>With Varbase, you won't spend much time creating new view modes and configuring each to use a responsive image style! It comes ready for you.</p>"
+          value: "<p>Have a question or a project in mind? Get in touch and the Varbase team will help.</p>"
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
@@ -722,7 +723,7 @@ default:
         fit: object-fit-contain
         card_border: false
         padded: false
-        equal_height: false
+        equal_height: true
         stretched_link: false
         gutters_between: 'g-4 g-lg-5'
         corner_style: rounded-3
@@ -776,7 +777,7 @@ default:
       inputs:
         card_border: false
         padded: false
-        equal_height: false
+        equal_height: true
         stretched_link: false
         background_color: none
         corner_style: rounded-0

@@ -68,4 +68,4 @@ component_tree:
     uuid: 6d18f41a-a332-42fa-b763-35cacb60adbd
     component_id: sdc.vartheme_bs5.html-code
     component_version: 656471f14c4594ec
-    inputs: '{"code":"<div class=\"copyright-text mt-2 mb-0 text-end\"><p class=\"mb-0\">Powered by <a href=\"https://www.vardot.com/?utm_source=varbase&amp;utm_campaign=varbase%20default%20links\" target=\"_blank\" rel=\"noopener noreferrer\">Vardot</a>.</p></div>"}'
+    inputs: '{"code":"<div class=\"copyright-text mt-2 mb-0\"><p class=\"mb-0 d-flex align-items-center gap-1 justify-content-start justify-content-md-end\">Powered by <a class=\"d-inline-flex align-items-center\" href=\"https://www.vardot.com/?utm_source=varbase&amp;utm_campaign=varbase%20default%20links\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Vardot\"><img src=\"/themes/contrib/vartheme_bs5/vardot-logo.svg\" alt=\"Vardot\" class=\"powered-by-vardot-logo\"></a></p></div>"}'
