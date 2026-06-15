@@ -22,8 +22,8 @@ _meta:
     1fbeced8-3376-5027-a8df-67d07c1352e3: media
     2652f6cd-284e-5598-8d07-2242cad1c3e5: file
     70e666ba-6af5-5456-bf74-13c53e653fb5: media
-    a7aa3456-4327-4324-a9dd-e2112cb267cb: file
-    ab0b9ce8-81b8-4656-b877-d80b44b4397c: media
+    20f5e582-98d4-41be-a3cd-7cf937c05a0d: file
+    464c44f5-2ba4-46c0-909b-d6c82ad48a3e: media
 default:
   revision_user:
     -
@@ -239,13 +239,6 @@ default:
     -
       parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
       slot: content
-      uuid: 3677cca9-23f9-4315-9f67-0421cea9cd17
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: 08e9b963-0c02-4537-bffb-c0dce658a60f
-      slot: content
       uuid: 9f2f5477-0256-4690-98ac-1d7ad5ca37e8
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -292,13 +285,6 @@ default:
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
-      slot: content
-      uuid: 979b95fb-bfbb-484f-9df9-1da5167e1ba6
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: 1f09e83e-a0d7-4de0-ad79-2bbdcc2968a6
       slot: content
@@ -372,13 +358,6 @@ default:
     -
       parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
       slot: content
-      uuid: 0db01362-57b8-4a5b-9585-2bb40996a0d1
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: be0c6f81-65d7-4d2e-a2ee-cec9c8f4050a
-      slot: content
       uuid: 7ac79280-8e86-4cfb-b8dc-6b2f42d19221
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -428,13 +407,6 @@ default:
     -
       parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
       slot: content
-      uuid: ec77c526-10cf-4639-b6fa-5b00295cbf66
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: 1c078a7c-4b80-4496-a701-01c8513039a5
-      slot: content
       uuid: b370272d-fe89-488c-88f7-a6723b9f2fa0
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -481,13 +453,6 @@ default:
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
-      slot: content
-      uuid: aec371ef-be5a-4e1f-9f15-a4ce9e3dfc6f
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: 87467a31-5d06-49eb-ade5-2672dc26e4fd
       slot: content
@@ -648,7 +613,7 @@ default:
         media_position: end
         media_image:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: ab0b9ce8-81b8-4656-b877-d80b44b4397c
+            target_uuid: 464c44f5-2ba4-46c0-909b-d6c82ad48a3e
             target_type: media
         ratio: ratio-auto
         fit: object-fit-contain

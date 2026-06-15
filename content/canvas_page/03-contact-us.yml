@@ -4,8 +4,8 @@ _meta:
   uuid: 0ac28534-833d-4fee-b4f8-0ea304c7b98f
   default_langcode: en
   depends:
-    5a67d435-a946-4c25-a5fd-f2379f46560a: file
-    066a4a0e-66c4-411a-9f24-40dbc48d21e4: media
+    55be58cb-39aa-43a3-a011-bd3c2711d669: file
+    65af2f45-8bb9-4c0c-b2fd-9dae1e4ff1c9: media
 default:
   revision_user:
     -
@@ -35,7 +35,7 @@ default:
         radius: rounded-2
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 066a4a0e-66c4-411a-9f24-40dbc48d21e4
+            target_uuid: 65af2f45-8bb9-4c0c-b2fd-9dae1e4ff1c9
             target_type: media
         overlay_bg: bg-dark
         overlay_opacity: opacity-50
@@ -106,7 +106,7 @@ default:
       uuid: a4ed961b-4066-499c-8391-e8ba3d7b693c
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        heading_text: 'Ask Us About Anything!'
+        heading_text: 'Ask us about anything'
         level: 2
     -
       parent_uuid: e35f7f76-b49e-4356-9bd3-46863e47d7ce
@@ -149,7 +149,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p><strong>US &amp; Canada</strong></p><p>Phone Number: <a href="tel:4083299888">(408) 329 9888</a><br>Address: <a href="https://goo.gl/maps/buSjPMHTjQb4eW4s7">3080 Olcott St, Suite A115, Santa Clara, CA 95054</a></p>'
+          value: '<p><strong>US &amp; Canada</strong></p><p>Phone Number: (408) 329 9888<br>Address: 3080 Olcott St, Suite A115, Santa Clara, CA 95054</p>'
           format: canvas_html_block
         text_size: none
         text_color: text-body
@@ -185,11 +185,20 @@ default:
       inputs:
         bg_edge2edge: true
         margin_block_start: mt-5
-        section_header: false
+        section_header: true
         section_footer: false
         gutter: 'gx-4 gy-4'
         margin_block_end: mb-5
         container_type: container
+    -
+      parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
+      slot: header_slot
+      uuid: 78a513da-28a5-4e29-8081-a557d89a13f2
+      component_id: sdc.vartheme_bs5.heading
+      inputs:
+        heading_text: 'Explore More'
+        level: 2
+        align: text-center
     -
       parent_uuid: 3c1a9eaa-84da-42d1-9cf1-41c910fe3755
       slot: col_1
@@ -239,7 +248,7 @@ default:
       inputs:
         variant: btn-primary
         size: btn-md
-        label: 'Learn More About Varbase'
+        label: 'Learn more'
         icon: none
         icon_first: false
         disabled: false

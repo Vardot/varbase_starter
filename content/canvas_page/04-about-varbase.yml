@@ -4,20 +4,24 @@ _meta:
   uuid: 4c26d116-854e-4cfa-af90-d4cf1a32a91e
   default_langcode: en
   depends:
-    0177f1f7-cd70-40dd-b7f2-954e6f9d801f: file
-    da32d7c8-2266-4f7f-bf69-ba0de3f7e00d: media
-    fb67b53e-582b-4530-bb25-e8bcead223f1: file
-    e2ba85fc-2736-406f-a66d-7e86efb2d676: media
+    9d596f4c-b779-4674-8d86-aa243f9598d5: file
+    765511dc-95e1-4f1b-8b93-f1f058ab0bef: media
+    d10e3528-5bf6-4dfc-be41-2b95ae9f42d3: file
+    31ef2c99-a592-4c7a-a401-9e9843cb968d: media
     3bef5ee9-daa4-5584-a37c-7dc22bc78997: file
     29e1d4c3-4817-5921-972d-0a276e6f9b19: media
+    9adc6fbf-e17a-5869-ad75-1b65f09b106c: file
+    5fb606b9-9b43-54e7-9bf4-357a3360993d: media
     b9309646-f2ca-5c0d-8f2b-6e99da354e87: file
     1fbeced8-3376-5027-a8df-67d07c1352e3: media
     2652f6cd-284e-5598-8d07-2242cad1c3e5: file
     70e666ba-6af5-5456-bf74-13c53e653fb5: media
-    5b2aba04-84ad-45a8-9d68-ceeda017fe2c: file
-    cd7bf8da-8b94-4fc3-b144-e225ca6d8341: media
-    d8460e00-634c-4c5b-8a92-0c2ceec3bc01: file
-    82595ed9-bb81-48a0-94ea-369965b7b4c1: media
+    8cd271e8-6372-44c4-a525-c8f313514f27: file
+    862c68b6-8714-41e2-9879-f53da2d9b6fc: media
+    971e3817-186c-4d35-8fe2-eaaa2438b5fd: file
+    16074811-b54d-49d7-acd7-e251794d3170: media
+    ed60a78f-204f-4892-8d2c-7eeb22d69e72: file
+    89de671c-691d-4b1c-a8e8-7de4870f12ad: media
 default:
   revision_user:
     -
@@ -47,7 +51,7 @@ default:
         radius: rounded-2
         media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: da32d7c8-2266-4f7f-bf69-ba0de3f7e00d
+            target_uuid: 765511dc-95e1-4f1b-8b93-f1f058ab0bef
             target_type: media
         overlay_bg: bg-dark
         overlay_opacity: opacity-50
@@ -60,13 +64,6 @@ default:
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: media_banner_slot
-      uuid: b50250fe-11ce-4862-b45d-e133dcf01e6c
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-3
     -
       parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
       slot: media_banner_slot
@@ -95,13 +92,6 @@ default:
       inputs:
         size: py-4
     -
-      parent_uuid: bc907f33-472e-4721-8f9d-443eb6aec796
-      slot: media_banner_slot
-      uuid: fcb3e8c4-0e4d-4ec5-ade3-94d2fead6134
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-3
-    -
       uuid: b8381052-5fc7-4ab8-b17f-3b7292208264
       component_id: sdc.vartheme_bs5.section
       inputs:
@@ -125,7 +115,7 @@ default:
         media_position: end
         media_image:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: e2ba85fc-2736-406f-a66d-7e86efb2d676
+            target_uuid: 31ef2c99-a592-4c7a-a401-9e9843cb968d
             target_type: media
         ratio: ratio-auto
         fit: object-fit-contain
@@ -219,28 +209,27 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: true
+        equal_height: false
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-        icon_image:
+    -
+      parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
+      slot: content
+      uuid: c57961e8-5082-4a81-91f8-4527c2843f69
+      component_id: sdc.vartheme_bs5.image
+      inputs:
+        media:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 29e1d4c3-4817-5921-972d-0a276e6f9b19
             target_type: media
     -
       parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
       slot: content
-      uuid: 7573e2c0-e9ae-46ac-bc4c-e6026ea25959
+      uuid: 29f15396-a752-45e1-a8db-08fdf5a4e611
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
-      slot: content
-      uuid: b2a9c00c-5f7b-4d72-ba72-c3419ed8beb1
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: 0c6182f5-97c2-4bd2-bc85-81c489c206eb
       slot: content
@@ -260,28 +249,27 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: true
+        equal_height: false
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-        icon_image:
+    -
+      parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
+      slot: content
+      uuid: 5fb929fc-c82c-4687-b81c-de9063e70079
+      component_id: sdc.vartheme_bs5.image
+      inputs:
+        media:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 1fbeced8-3376-5027-a8df-67d07c1352e3
+            target_uuid: 5fb606b9-9b43-54e7-9bf4-357a3360993d
             target_type: media
     -
       parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
       slot: content
-      uuid: 1181cdf3-217a-42e9-b987-1d1bcf031da6
+      uuid: a59c19bc-13e5-432f-86cf-8e432102e6b8
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
-      slot: content
-      uuid: ffa45115-6361-40a3-9f37-4a70bb3653b0
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: 09bbc5a1-5f6b-4cd6-8b56-c7993e4e2c0f
       slot: content
@@ -301,28 +289,27 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: true
+        equal_height: false
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-        icon_image:
+    -
+      parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
+      slot: content
+      uuid: 2dcc62d2-f492-43fc-b28d-1446ccf3f84b
+      component_id: sdc.vartheme_bs5.image
+      inputs:
+        media:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 1fbeced8-3376-5027-a8df-67d07c1352e3
             target_type: media
     -
       parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
       slot: content
-      uuid: 9c1a2873-4fb1-4b3d-be1a-55fabb79faea
+      uuid: 2fe0a7ba-4ccd-48da-bc7a-126d57cda85a
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
-      slot: content
-      uuid: 6b3538f8-40cb-46a2-94ce-1b10f16d2439
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: 7381e5ea-2f24-4428-ba88-e32837fd1de1
       slot: content
@@ -342,28 +329,27 @@ default:
       inputs:
         card_border: false
         padded: true
-        equal_height: true
+        equal_height: false
         stretched_link: false
         background_color: bg-secondary-subtle
         corner_style: rounded-3
-        icon_image:
+    -
+      parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
+      slot: content
+      uuid: dbd56303-5d9d-4591-8962-bf4ded24c932
+      component_id: sdc.vartheme_bs5.image
+      inputs:
+        media:
           CANVAS_ENTITY_REFERENCE:
             target_uuid: 70e666ba-6af5-5456-bf74-13c53e653fb5
             target_type: media
     -
       parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
       slot: content
-      uuid: 890ca415-9d15-45c3-a15a-d4744003dfb3
+      uuid: 39b3c995-f47c-49d2-935a-a0e091637190
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
-      slot: content
-      uuid: d27f491b-d6c5-45b7-9fdc-d7d667d57fa5
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: d3585e00-54d6-44e1-8646-d8052b73b76e
       slot: content
@@ -424,7 +410,7 @@ default:
         media_position: end
         media_image:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: cd7bf8da-8b94-4fc3-b144-e225ca6d8341
+            target_uuid: 862c68b6-8714-41e2-9879-f53da2d9b6fc
             target_type: media
         ratio: ratio-auto
         fit: object-fit-contain
@@ -477,7 +463,7 @@ default:
         icon: arrow-up-right
         icon_first: false
         full_width: false
-        radius: rounded
+        radius: rounded-1
     -
       uuid: cd4048d5-b6ef-455f-945a-93bb755bf421
       component_id: sdc.vartheme_bs5.card-text
@@ -488,171 +474,6 @@ default:
         equal_height: false
         stretched_link: false
         corner_style: rounded-3
-    -
-      uuid: b83e3fc1-bc8d-470f-b1d3-6e4957c75733
-      component_id: sdc.vartheme_bs5.section
-      inputs:
-        bg_edge2edge: true
-        section_footer: false
-        section_header: true
-        padding_block_end: pb-5
-        padding_block_start: pt-5
-        container_type: container
-        aos_once: false
-        columns: 50-50
-        gutter: 'gx-5 gy-5'
-        margin_block_start: mt-5
-    -
-      parent_uuid: b83e3fc1-bc8d-470f-b1d3-6e4957c75733
-      slot: header_slot
-      uuid: 9fc27fc6-cf59-49c3-bbdd-2b059217d645
-      component_id: sdc.vartheme_bs5.heading
-      inputs:
-        level: 2
-        heading_text: 'Explore More'
-        align: text-center
-    -
-      parent_uuid: b83e3fc1-bc8d-470f-b1d3-6e4957c75733
-      slot: col_1
-      uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      component_id: sdc.vartheme_bs5.card-text
-      inputs:
-        card_border: false
-        padded: true
-        equal_height: true
-        stretched_link: false
-        background_color: bg-secondary-subtle
-        corner_style: rounded-3
-    -
-      parent_uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      slot: content
-      uuid: 13ab743a-4fcd-476d-bc0d-0867581a8cd8
-      component_id: sdc.vartheme_bs5.heading
-      inputs:
-        level: 3
-        heading_text: Blog
-    -
-      parent_uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      slot: content
-      uuid: 1f8f00af-717e-40ae-aef2-9d96191709d4
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-1
-    -
-      parent_uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      slot: content
-      uuid: be2e7819-fe5b-4248-b1bd-5d6b38e80b1c
-      component_id: sdc.vartheme_bs5.text
-      inputs:
-        text:
-          value: '<p>Read our latest articles, guides, and insights from the Varbase team.</p>'
-          format: canvas_html_block
-        text_size: fs-6
-        text_color: text-subtle-text
-    -
-      parent_uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      slot: content
-      uuid: d54e19dc-2968-4536-b5a3-c9aa7654b123
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      slot: content
-      uuid: 3c2039f6-542a-4ff6-ae20-99c3665bb921
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-4
-    -
-      parent_uuid: 36e5d75d-5611-458e-9e5b-3138c0520479
-      slot: content
-      uuid: a71ebf00-1c8b-4d15-aba5-bfc07456cd9e
-      component_id: sdc.vartheme_bs5.button
-      inputs:
-        href:
-          uri: 'internal:/blog'
-          options: {  }
-        variant: btn-primary
-        outline: true
-        size: btn-md
-        label: 'See all articles'
-        target: self
-        disabled: false
-        icon: none
-        icon_first: false
-        full_width: false
-        radius: rounded
-    -
-      parent_uuid: b83e3fc1-bc8d-470f-b1d3-6e4957c75733
-      slot: col_2
-      uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      component_id: sdc.vartheme_bs5.card-text
-      inputs:
-        card_border: false
-        padded: true
-        equal_height: true
-        stretched_link: false
-        background_color: bg-secondary-subtle
-        corner_style: rounded-3
-    -
-      parent_uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      slot: content
-      uuid: b83fdd22-5453-4714-8aec-5bafab8dddd3
-      component_id: sdc.vartheme_bs5.heading
-      inputs:
-        level: 3
-        heading_text: 'Contact Us'
-    -
-      parent_uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      slot: content
-      uuid: 4b627d9c-c89a-4790-a356-020a7ba9bca5
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-1
-    -
-      parent_uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      slot: content
-      uuid: a2b80c74-4055-4266-9543-34e9a30f7ea5
-      component_id: sdc.vartheme_bs5.text
-      inputs:
-        text:
-          value: '<p>Get in touch with the Varbase team — we are here to help.</p>'
-          format: canvas_html_block
-        text_size: fs-6
-        text_color: text-subtle-text
-    -
-      parent_uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      slot: content
-      uuid: c65b6b02-69ed-44bd-9998-1691ebc8d406
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      slot: content
-      uuid: 01a5b8e3-4e3f-434c-8438-494e626c32c5
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-4
-    -
-      parent_uuid: 99c7da94-6ec3-4746-9360-fe00dab8a001
-      slot: content
-      uuid: 81aab8ce-5ca7-480a-84a5-90d68ce8a029
-      component_id: sdc.vartheme_bs5.button
-      inputs:
-        href:
-          uri: 'internal:/contact-us'
-          options: {  }
-        variant: btn-primary
-        outline: true
-        size: btn-md
-        label: 'Get in touch'
-        target: self
-        disabled: false
-        icon: none
-        icon_first: false
-        full_width: false
-        radius: rounded
     -
       parent_uuid: cd4048d5-b6ef-455f-945a-93bb755bf421
       slot: content
@@ -720,6 +541,158 @@ default:
       component_id: sdc.vartheme_bs5.spacer
       inputs: {  }
     -
+      uuid: 901f8371-102b-49c4-9948-4855e695461e
+      component_id: sdc.vartheme_bs5.section
+      inputs:
+        bg_edge2edge: true
+        section_footer: false
+        section_header: true
+        padding_block_end: pb-5
+        padding_block_start: pt-5
+        container_type: container
+        aos_once: false
+        columns: 50-50
+        gutter: 'gx-5 gy-5'
+        margin_block_start: mt-5
+        vertical_alignment: align-items-stretch
+    -
+      parent_uuid: 901f8371-102b-49c4-9948-4855e695461e
+      slot: header_slot
+      uuid: 5619175d-9324-4adf-acfb-af338bcf7dc1
+      component_id: sdc.vartheme_bs5.heading
+      inputs:
+        level: 2
+        heading_text: 'Explore More'
+        align: text-center
+    -
+      parent_uuid: 901f8371-102b-49c4-9948-4855e695461e
+      slot: col_1
+      uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
+      component_id: sdc.vartheme_bs5.card-text
+      inputs:
+        card_border: false
+        padded: true
+        equal_height: true
+        stretched_link: false
+        background_color: bg-secondary-subtle
+        corner_style: rounded-3
+    -
+      parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
+      slot: content
+      uuid: 759667d4-b368-4d35-bd05-8451172bcdef
+      component_id: sdc.vartheme_bs5.heading
+      inputs:
+        level: 3
+        heading_text: Blog
+    -
+      parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
+      slot: content
+      uuid: 2505b65f-cb2d-4afb-858b-873be459ac9e
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-1
+    -
+      parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
+      slot: content
+      uuid: ae117ede-58a3-4f64-b7e3-d5248c253c01
+      component_id: sdc.vartheme_bs5.text
+      inputs:
+        text:
+          value: '<p>Explore the latest articles, tutorials, and release updates from the Varbase team.</p>'
+          format: canvas_html_block
+        text_size: fs-6
+        text_color: text-subtle-text
+    -
+      parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
+      slot: content
+      uuid: 349dec23-7186-445d-baa3-69f12d085eb6
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-4
+    -
+      parent_uuid: cc87b558-abd6-4cef-ae5c-870a6953bf77
+      slot: content
+      uuid: f99dd76d-fef1-4724-97d5-fe21e64e696e
+      component_id: sdc.vartheme_bs5.button
+      inputs:
+        variant: btn-primary
+        outline: true
+        size: btn-md
+        label: 'See all articles'
+        target: self
+        disabled: false
+        icon: none
+        icon_first: false
+        full_width: false
+        radius: rounded-1
+        href:
+          uri: 'internal:/blog'
+          options: {  }
+    -
+      parent_uuid: 901f8371-102b-49c4-9948-4855e695461e
+      slot: col_2
+      uuid: 70921eac-576c-4253-a171-d67f180d091f
+      component_id: sdc.vartheme_bs5.card-text
+      inputs:
+        card_border: false
+        padded: true
+        equal_height: true
+        stretched_link: false
+        background_color: bg-secondary-subtle
+        corner_style: rounded-3
+    -
+      parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
+      slot: content
+      uuid: 39f277bd-59f1-4b5f-8c36-f05f2c4b1eda
+      component_id: sdc.vartheme_bs5.heading
+      inputs:
+        level: 3
+        heading_text: 'Contact us'
+    -
+      parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
+      slot: content
+      uuid: 0bcc8ad8-2408-4e99-a3cf-00272cc50587
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-1
+    -
+      parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
+      slot: content
+      uuid: 42eec236-3e8d-40df-b3ef-2022280d89c4
+      component_id: sdc.vartheme_bs5.text
+      inputs:
+        text:
+          value: "<p>With Varbase, you won't spend much time creating new view modes and configuring each to use a responsive image style! It comes ready for you.</p>"
+          format: canvas_html_block
+        text_size: fs-6
+        text_color: text-subtle-text
+    -
+      parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
+      slot: content
+      uuid: 83087e5c-c8da-4a2b-b473-a0be769bf78f
+      component_id: sdc.vartheme_bs5.spacer
+      inputs:
+        size: py-4
+    -
+      parent_uuid: 70921eac-576c-4253-a171-d67f180d091f
+      slot: content
+      uuid: 487c9a6c-3b5b-4e11-a959-9d01b3a700a4
+      component_id: sdc.vartheme_bs5.button
+      inputs:
+        variant: btn-primary
+        outline: true
+        size: btn-md
+        label: 'Get in touch'
+        target: self
+        disabled: false
+        icon: none
+        icon_first: false
+        full_width: false
+        radius: rounded-1
+        href:
+          uri: 'internal:/contact-us'
+          options: {  }
+    -
       uuid: d343261f-9389-4060-af57-d9170af6ee71
       component_id: sdc.vartheme_bs5.section
       inputs:
@@ -743,7 +716,7 @@ default:
         media_position: end
         media_image:
           CANVAS_ENTITY_REFERENCE:
-            target_uuid: 82595ed9-bb81-48a0-94ea-369965b7b4c1
+            target_uuid: 89de671c-691d-4b1c-a8e8-7de4870f12ad
             target_type: media
         ratio: ratio-auto
         fit: object-fit-contain
@@ -777,7 +750,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase is developed by a core team of experienced Drupal developments and is funded and supported by Vardot, a leading Drupal agency with offices in the USA, Egypt, and Jordan.&nbsp;</p>'
+          value: '<p>Varbase is developed by a core team of experienced Drupal developers and is funded and supported by Vardot, a leading Drupal agency with offices in the USA, Egypt, and Jordan.</p>'
           format: canvas_html_block
         text_size: none
         text_color: text-subtle-text
@@ -788,7 +761,7 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>However, if you need professional support for implementation, customization, training, or hosted management, please contact Vardot at https://www.vardot.com/contact</p>'
+          value: '<p>However, if you need professional support for implementation, customization, training, or hosted management, please contact Vardot at <a href="https://www.vardot.com/contact">https://www.vardot.com/contact</a></p>'
           format: canvas_html_block
         text_size: none
         text_color: text-subtle-text
@@ -802,19 +775,20 @@ default:
       component_id: sdc.vartheme_bs5.card-text
       inputs:
         card_border: false
-        padded: true
+        padded: false
         equal_height: false
         stretched_link: false
-        background_color: bg-secondary-subtle
-        corner_style: rounded-3
+        background_color: none
+        corner_style: rounded-0
     -
       parent_uuid: b707b7bc-f637-4fb5-9bf9-f8b89a22d5ee
       slot: content
       uuid: 57b6be81-54fe-4715-9c49-5b94eaac417c
       component_id: sdc.vartheme_bs5.heading
       inputs:
-        level: 3
+        level: 2
         heading_text: Credits
+        align: text-center
     -
       parent_uuid: b707b7bc-f637-4fb5-9bf9-f8b89a22d5ee
       slot: content
@@ -829,9 +803,9 @@ default:
       component_id: sdc.vartheme_bs5.text
       inputs:
         text:
-          value: '<p>Varbase is a product of Vardot, the enterprise Drupal solutions provider.</p>'
+          value: '<p class="text-align-center">Varbase is a product of Vardot, the enterprise Drupal solutions provider.</p>'
           format: canvas_html_block
-        text_size: fs-6
+        text_size: none
         text_color: text-subtle-text
     -
       uuid: 1a5aa83d-a1b6-44f6-bd55-c000d1b75efd

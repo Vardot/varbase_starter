@@ -59,13 +59,6 @@ default:
     -
       parent_uuid: f7af211e-ef13-405b-8f78-5a018e5d7556
       slot: media_banner_slot
-      uuid: 438720cc-026c-40f2-95a5-2ccb237009f2
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-3
-    -
-      parent_uuid: f7af211e-ef13-405b-8f78-5a018e5d7556
-      slot: media_banner_slot
       uuid: c5ce5a43-e34c-4a95-a25a-7630897a27aa
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -90,13 +83,6 @@ default:
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: f7af211e-ef13-405b-8f78-5a018e5d7556
-      slot: media_banner_slot
-      uuid: 5f89c9d0-ef97-4887-8352-7df78b62a266
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-3
     -
       uuid: e718550d-6536-4145-9e0b-ff1e2eeda79b
       component_id: sdc.vartheme_bs5.section
@@ -208,13 +194,6 @@ default:
     -
       parent_uuid: c950c93a-d040-424a-9874-4d69f12b7f7c
       slot: content
-      uuid: 551bd7b1-5625-4baa-95ec-da29d3aaed8a
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: c950c93a-d040-424a-9874-4d69f12b7f7c
-      slot: content
       uuid: a608c31d-7a04-4024-bec4-60306cc41c48
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -264,13 +243,6 @@ default:
     -
       parent_uuid: 48c259b4-8a7a-42fa-a988-e9eacc50da27
       slot: content
-      uuid: e0533a1e-33b7-418d-a185-553144c6506b
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: 48c259b4-8a7a-42fa-a988-e9eacc50da27
-      slot: content
       uuid: 2a8b6908-b305-4eaa-a7d9-0096df54c437
       component_id: sdc.vartheme_bs5.heading
       inputs:
@@ -317,13 +289,6 @@ default:
       component_id: sdc.vartheme_bs5.spacer
       inputs:
         size: py-4
-    -
-      parent_uuid: 614cb7e0-4cdd-49fe-aa37-34a9c7ff1dd2
-      slot: content
-      uuid: be25e3d4-5742-4826-83cf-c0ecd11d6073
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: 614cb7e0-4cdd-49fe-aa37-34a9c7ff1dd2
       slot: content
@@ -489,13 +454,6 @@ default:
     -
       parent_uuid: 27f58c35-f9a4-4154-9056-710ec5a5759b
       slot: content
-      uuid: 3e662e57-443c-405a-b4fe-84e37f9359ba
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
-    -
-      parent_uuid: 27f58c35-f9a4-4154-9056-710ec5a5759b
-      slot: content
       uuid: c805e44a-4435-43b1-899c-44f36e7ec158
       component_id: sdc.vartheme_bs5.spacer
       inputs:
@@ -554,13 +512,6 @@ default:
           format: canvas_html_block
         text_size: fs-6
         text_color: text-subtle-text
-    -
-      parent_uuid: d1d8448d-da93-4659-82d3-cc597354640a
-      slot: content
-      uuid: 3a224807-5923-4cc2-9e17-7f7fe4b6a7cc
-      component_id: sdc.vartheme_bs5.spacer
-      inputs:
-        size: py-2
     -
       parent_uuid: d1d8448d-da93-4659-82d3-cc597354640a
       slot: content
