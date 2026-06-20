@@ -1,3 +1,5 @@
+[![Varbase](https://raw.githubusercontent.com/Vardot/varbase/11.0.x/images/varbase-logo.png)](https://www.drupal.org/project/varbase)
+
 # Varbase Starter
 
 A starter site template recipe for Varbase, providing a modern recipe-first approach to initializing Varbase sites.
