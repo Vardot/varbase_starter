@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.vartheme_bs5.cta
+    - canvas.component.sdc.vartheme_bs5.section
+  module:
+    - link
+    - options
+id: cta_band
+label: 'Call To Action Band'
+component_tree:
+  0e068b8c-51c7-4be1-a90d-b0dc025462b5:
+    uuid: 0e068b8c-51c7-4be1-a90d-b0dc025462b5
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      bg_edge2edge: true
+      container_type: container
+      background_color: bg-primary
+      text_color: text-white
+      columns: '100'
+      padding_block_start: pt-5
+      padding_block_end: pb-5
+      vertical_alignment: align-items-center
+      horizontal_alignment: text-center
+      section_header: false
+      section_footer: false
+  5a1e004d-3330-451a-9d43-320054882aba:
+    parent_uuid: 0e068b8c-51c7-4be1-a90d-b0dc025462b5
+    slot: col_1
+    uuid: 5a1e004d-3330-451a-9d43-320054882aba
+    component_id: sdc.vartheme_bs5.cta
+    component_version: 5e15d2b8bbbe566b
+    inputs:
+      heading_text: 'Ready to build your next site with Varbase?'
+      level: 2
+      text: 'Launch faster with a governed design system, accessible components, and Drupal Canvas authoring out of the box.'
+      heading_size: display-5
+      background_color: bg-none
+      content_color: text-white
+      text_align: text-center
+      button_text: 'Get started'
+      button_url: /get-started
+      button_variant: btn-light

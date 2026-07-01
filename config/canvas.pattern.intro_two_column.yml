@@ -1,0 +1,109 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.vartheme_bs5.button
+    - canvas.component.sdc.vartheme_bs5.card-text
+    - canvas.component.sdc.vartheme_bs5.heading
+    - canvas.component.sdc.vartheme_bs5.section
+    - canvas.component.sdc.vartheme_bs5.text
+    - filter.format.canvas_html_block
+  module:
+    - link
+    - options
+    - text
+id: intro_two_column
+label: 'Two-column Intro + Card'
+component_tree:
+  01eed7ff-34de-49a3-8595-79a9fb627fa4:
+    uuid: 01eed7ff-34de-49a3-8595-79a9fb627fa4
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      container_type: container
+      columns: 50-50
+      gutter: 'gx-4 gy-4'
+      padding_block_start: pt-4
+      padding_block_end: pb-4
+      vertical_alignment: align-items-center
+      section_header: true
+      section_footer: false
+  dee91ef3-3ad2-483d-999f-cc4c7524b9bc:
+    parent_uuid: 01eed7ff-34de-49a3-8595-79a9fb627fa4
+    slot: header_slot
+    uuid: dee91ef3-3ad2-483d-999f-cc4c7524b9bc
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Build faster with Varbase'
+      level: 2
+      text_size: h2
+      align: text-start
+      font_weight: fw-bold
+  9dcd2b1c-806a-45d7-84d3-a99ac78df797:
+    parent_uuid: 01eed7ff-34de-49a3-8595-79a9fb627fa4
+    slot: col_1
+    uuid: 9dcd2b1c-806a-45d7-84d3-a99ac78df797
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'A composable starting point'
+      level: 3
+      text_size: h4
+      font_weight: fw-semibold
+  13ad84f4-417d-41b3-9e8c-383b49be8f49:
+    parent_uuid: 01eed7ff-34de-49a3-8595-79a9fb627fa4
+    slot: col_1
+    uuid: 13ad84f4-417d-41b3-9e8c-383b49be8f49
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text: '<p>Varbase brings together the tools, recipes, and Bootstrap 5 components you need to launch enterprise-ready Drupal sites. Assemble pages visually and keep every layout responsive and on brand.</p>'
+      text_size: fs-5
+      text_color: text-body
+  3fb8138b-f16c-49a3-83e6-26eb4f26fcbe:
+    parent_uuid: 01eed7ff-34de-49a3-8595-79a9fb627fa4
+    slot: col_1
+    uuid: 3fb8138b-f16c-49a3-83e6-26eb4f26fcbe
+    component_id: sdc.vartheme_bs5.button
+    component_version: de3d2ab04711f861
+    inputs:
+      variant: btn-primary
+      size: btn-lg
+      label: 'Explore features'
+      href: /features
+      alignment: left
+  2e10a2a2-59a0-4767-921a-f809ac738d40:
+    parent_uuid: 01eed7ff-34de-49a3-8595-79a9fb627fa4
+    slot: col_2
+    uuid: 2e10a2a2-59a0-4767-921a-f809ac738d40
+    component_id: sdc.vartheme_bs5.card-text
+    component_version: e029fefa26d20f4f
+    inputs:
+      card_border: true
+      background_color: bg-body-tertiary
+      padded: true
+      box_shadow: shadow-sm
+      corner_style: rounded-3
+      equal_height: false
+  5410fc69-b30c-4235-a8a7-c2a8e5a255b1:
+    parent_uuid: 2e10a2a2-59a0-4767-921a-f809ac738d40
+    slot: content
+    uuid: 5410fc69-b30c-4235-a8a7-c2a8e5a255b1
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Why teams choose Varbase'
+      level: 3
+      text_size: h5
+      font_weight: fw-semibold
+  5ef9e8f1-18d8-4b2f-8a53-edcbe05355fd:
+    parent_uuid: 2e10a2a2-59a0-4767-921a-f809ac738d40
+    slot: content
+    uuid: 5ef9e8f1-18d8-4b2f-8a53-edcbe05355fd
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text: '<p>Ship accessible, secure, and standards-based sites with a governed design system. Reuse proven patterns instead of wiring everything up by hand.</p>'
+      text_size: none
+      text_color: text-body

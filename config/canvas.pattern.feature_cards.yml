@@ -1,0 +1,200 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.vartheme_bs5.button
+    - canvas.component.sdc.vartheme_bs5.card-text
+    - canvas.component.sdc.vartheme_bs5.heading
+    - canvas.component.sdc.vartheme_bs5.section
+    - canvas.component.sdc.vartheme_bs5.text
+    - filter.format.canvas_html_block
+  module:
+    - link
+    - options
+    - text
+id: feature_cards
+label: 'Feature Cards'
+component_tree:
+  1fb6fc19-e0f5-4ccb-ae68-aa8931bfa1a8:
+    uuid: 1fb6fc19-e0f5-4ccb-ae68-aa8931bfa1a8
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      bg_edge2edge: true
+      container_type: container
+      columns: 33-33-33
+      gutter: 'gx-5 gy-5'
+      padding_block_start: pt-5
+      padding_block_end: pb-5
+      margin_block_start: mt-5
+      margin_block_end: mb-5
+      vertical_alignment: align-items-stretch
+      section_header: true
+      section_footer: false
+      aos_once: false
+  3aee9126-2545-4d7b-930f-c9256a91d5e3:
+    parent_uuid: 1fb6fc19-e0f5-4ccb-ae68-aa8931bfa1a8
+    slot: header_slot
+    uuid: 3aee9126-2545-4d7b-930f-c9256a91d5e3
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Why teams choose Varbase'
+      level: 2
+      align: text-center
+  e04162d4-a922-4875-a989-aa7ac613b60c:
+    parent_uuid: 1fb6fc19-e0f5-4ccb-ae68-aa8931bfa1a8
+    slot: col_1
+    uuid: e04162d4-a922-4875-a989-aa7ac613b60c
+    component_id: sdc.vartheme_bs5.card-text
+    component_version: e029fefa26d20f4f
+    inputs:
+      card_border: false
+      background_color: bg-secondary-subtle
+      padded: true
+      corner_style: rounded-3
+      equal_height: true
+      stretched_link: false
+  2e771532-fb0f-4979-9049-c4daeef533c3:
+    parent_uuid: e04162d4-a922-4875-a989-aa7ac613b60c
+    slot: content
+    uuid: 2e771532-fb0f-4979-9049-c4daeef533c3
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Recipe-based setup'
+      level: 3
+  04773100-4221-46b5-bf6e-3948d5b31e8c:
+    parent_uuid: e04162d4-a922-4875-a989-aa7ac613b60c
+    slot: content
+    uuid: 04773100-4221-46b5-bf6e-3948d5b31e8c
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text:
+        value: '<p>Install only the features you need with composable Drupal recipes, and extend your site as it grows.</p>'
+        format: canvas_html_block
+      text_size: fs-6
+      text_color: text-subtle-text
+  3f0d32ca-0938-444c-9801-79d876dd99e2:
+    parent_uuid: e04162d4-a922-4875-a989-aa7ac613b60c
+    slot: content
+    uuid: 3f0d32ca-0938-444c-9801-79d876dd99e2
+    component_id: sdc.vartheme_bs5.button
+    component_version: de3d2ab04711f861
+    inputs:
+      variant: btn-primary
+      outline: true
+      size: btn-md
+      label: 'Explore recipes'
+      href: 'internal:/features'
+      disabled: false
+      icon: none
+      icon_first: false
+      alignment: left
+      full_width: false
+      radius: rounded-1
+  a411a34e-1553-4951-8278-f0c4594ce1c2:
+    parent_uuid: 1fb6fc19-e0f5-4ccb-ae68-aa8931bfa1a8
+    slot: col_2
+    uuid: a411a34e-1553-4951-8278-f0c4594ce1c2
+    component_id: sdc.vartheme_bs5.card-text
+    component_version: e029fefa26d20f4f
+    inputs:
+      card_border: false
+      background_color: bg-secondary-subtle
+      padded: true
+      corner_style: rounded-3
+      equal_height: true
+      stretched_link: false
+  9e02f70d-eecc-4972-ba88-7ff68404e3e1:
+    parent_uuid: a411a34e-1553-4951-8278-f0c4594ce1c2
+    slot: content
+    uuid: 9e02f70d-eecc-4972-ba88-7ff68404e3e1
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Enterprise security'
+      level: 3
+  71a66772-b570-4179-be4f-34f091f19fe4:
+    parent_uuid: a411a34e-1553-4951-8278-f0c4594ce1c2
+    slot: content
+    uuid: 71a66772-b570-4179-be4f-34f091f19fe4
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text:
+        value: '<p>Hardened out of the box with password policies, spam protection, and access controls to keep your site safe.</p>'
+        format: canvas_html_block
+      text_size: fs-6
+      text_color: text-subtle-text
+  1dd09e33-4498-432f-99c8-1c62b1fd2422:
+    parent_uuid: a411a34e-1553-4951-8278-f0c4594ce1c2
+    slot: content
+    uuid: 1dd09e33-4498-432f-99c8-1c62b1fd2422
+    component_id: sdc.vartheme_bs5.button
+    component_version: de3d2ab04711f861
+    inputs:
+      variant: btn-primary
+      outline: true
+      size: btn-md
+      label: 'See security features'
+      href: 'internal:/security'
+      disabled: false
+      icon: none
+      icon_first: false
+      alignment: left
+      full_width: false
+      radius: rounded-1
+  6da2ca81-c75a-4043-8ef0-9500d333b8b1:
+    parent_uuid: 1fb6fc19-e0f5-4ccb-ae68-aa8931bfa1a8
+    slot: col_3
+    uuid: 6da2ca81-c75a-4043-8ef0-9500d333b8b1
+    component_id: sdc.vartheme_bs5.card-text
+    component_version: e029fefa26d20f4f
+    inputs:
+      card_border: false
+      background_color: bg-secondary-subtle
+      padded: true
+      corner_style: rounded-3
+      equal_height: true
+      stretched_link: false
+  5d73ba2f-a8b9-4998-bad6-3862f7418df7:
+    parent_uuid: 6da2ca81-c75a-4043-8ef0-9500d333b8b1
+    slot: content
+    uuid: 5d73ba2f-a8b9-4998-bad6-3862f7418df7
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Multilingual ready'
+      level: 3
+  0f0cfd9b-a16a-4c78-97e2-cdbf85cb4f67:
+    parent_uuid: 6da2ca81-c75a-4043-8ef0-9500d333b8b1
+    slot: content
+    uuid: 0f0cfd9b-a16a-4c78-97e2-cdbf85cb4f67
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text:
+        value: '<p>Build and translate content in multiple languages, with localization configured and ready from day one.</p>'
+        format: canvas_html_block
+      text_size: fs-6
+      text_color: text-subtle-text
+  eb12e0cc-5fee-4cb4-ab53-41b2b938c68b:
+    parent_uuid: 6da2ca81-c75a-4043-8ef0-9500d333b8b1
+    slot: content
+    uuid: eb12e0cc-5fee-4cb4-ab53-41b2b938c68b
+    component_id: sdc.vartheme_bs5.button
+    component_version: de3d2ab04711f861
+    inputs:
+      variant: btn-primary
+      outline: true
+      size: btn-md
+      label: 'Learn about translations'
+      href: 'internal:/contact-us'
+      disabled: false
+      icon: none
+      icon_first: false
+      alignment: left
+      full_width: false
+      radius: rounded-1

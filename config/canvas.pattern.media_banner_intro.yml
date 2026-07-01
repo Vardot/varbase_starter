@@ -1,0 +1,93 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.vartheme_bs5.button
+    - canvas.component.sdc.vartheme_bs5.heading
+    - canvas.component.sdc.vartheme_bs5.media-banner
+    - canvas.component.sdc.vartheme_bs5.section
+    - canvas.component.sdc.vartheme_bs5.text
+    - filter.format.canvas_html_block
+  module:
+    - link
+    - options
+    - text
+id: media_banner_intro
+label: 'Media Banner Intro'
+component_tree:
+  5625b117-0362-40d1-a15e-9a09cbf0cee7:
+    uuid: 5625b117-0362-40d1-a15e-9a09cbf0cee7
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      bg_edge2edge: true
+      container_type: none
+      columns: '100'
+      gutter: 'gx-3 gy-3'
+      padding_block_start: pt-0
+      padding_block_end: pb-0
+      margin_block_start: mt-0
+      margin_block_end: mb-5
+      vertical_alignment: align-items-center
+      horizontal_alignment: text-start
+      section_header: false
+      section_footer: false
+      aos_once: true
+  a0a52051-4200-41c8-89fb-6035be7de6ec:
+    parent_uuid: 5625b117-0362-40d1-a15e-9a09cbf0cee7
+    slot: col_1
+    uuid: a0a52051-4200-41c8-89fb-6035be7de6ec
+    component_id: sdc.vartheme_bs5.media-banner
+    component_version: 2233a9bacd7d69e9
+    inputs:
+      container_type: container
+      bg_edge2edge: false
+      height: large
+      flex_position: center-left
+      overlay_bg: bg-dark
+      overlay_opacity: opacity-50
+      content_width: w-75
+      object_position: center
+      padding_inline_start: ps-5
+      padding_inline_end: pe-5
+      radius: rounded-2
+  5841b320-00ee-4b2a-a69f-583c4a8b6d90:
+    parent_uuid: a0a52051-4200-41c8-89fb-6035be7de6ec
+    slot: media_banner_slot
+    uuid: 5841b320-00ee-4b2a-a69f-583c4a8b6d90
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Build enterprise sites faster with Varbase'
+      level: 1
+      text_color: text-white
+  0bfb4a40-aa72-4283-96a2-2393ddd1fdbc:
+    parent_uuid: a0a52051-4200-41c8-89fb-6035be7de6ec
+    slot: media_banner_slot
+    uuid: 0bfb4a40-aa72-4283-96a2-2393ddd1fdbc
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text:
+        value: '<p>A recipe-based Drupal distribution with security, accessibility, and multilingual support ready out of the box.</p>'
+        format: canvas_html_block
+      text_size: none
+      text_color: text-white
+  7f4d859a-7893-4a36-a6a5-5089f089fae2:
+    parent_uuid: a0a52051-4200-41c8-89fb-6035be7de6ec
+    slot: media_banner_slot
+    uuid: 7f4d859a-7893-4a36-a6a5-5089f089fae2
+    component_id: sdc.vartheme_bs5.button
+    component_version: de3d2ab04711f861
+    inputs:
+      variant: btn-primary
+      outline: false
+      size: btn-lg
+      label: 'Get started'
+      href: 'internal:/features'
+      disabled: false
+      icon: none
+      icon_first: false
+      alignment: left
+      full_width: false
+      radius: rounded-1

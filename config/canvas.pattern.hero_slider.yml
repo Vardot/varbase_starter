@@ -1,0 +1,110 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.vartheme_bs5.hero-slide
+    - canvas.component.sdc.vartheme_bs5.hero-slider-container
+    - canvas.component.sdc.vartheme_bs5.section
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+id: hero_slider
+label: 'Hero Slider'
+component_tree:
+  49803c33-3c95-433f-973f-62dd5e445d3e:
+    uuid: 49803c33-3c95-433f-973f-62dd5e445d3e
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      bg_edge2edge: true
+      container_type: none
+      columns: '100'
+      section_header: false
+      section_footer: false
+      aos_once: true
+  16380a52-4230-44a2-a4cf-f12a762c6609:
+    parent_uuid: 49803c33-3c95-433f-973f-62dd5e445d3e
+    slot: col_1
+    uuid: 16380a52-4230-44a2-a4cf-f12a762c6609
+    component_id: sdc.vartheme_bs5.hero-slider-container
+    component_version: e2e20b3c130bcb2d
+    inputs:
+      bg_edge2edge: false
+      transition: slide
+      autoplay: true
+      interval_ms: 5000
+      pause_on_hover: true
+      show_indicators: true
+      show_controls: true
+      slider_height: '700'
+      controller_color: white
+  d02405b9-bd16-4c01-b40b-695b95f9af4c:
+    parent_uuid: 16380a52-4230-44a2-a4cf-f12a762c6609
+    slot: slides
+    uuid: d02405b9-bd16-4c01-b40b-695b95f9af4c
+    component_id: sdc.vartheme_bs5.hero-slide
+    component_version: 1b3b48066d8f9c3a
+    inputs:
+      enabled: true
+      active: true
+      title: 'Varbase, better than ever'
+      content: "<p>Elevate your digital experience with Varbase's dynamic design system, seamlessly blending aesthetic appeal with unparalleled functionality.</p>"
+      media_position: inherit
+      title_tag: h2
+      title_size: h1
+      content_max_width: normal
+      vertical_alignment: center
+      text_align: text-start
+      text_color: text-white
+      overlay_bg: bg-dark
+      overlay_opacity: opacity-50
+      button_text: 'Try Varbase for Free'
+      button_url: /about-varbase
+      button_variant: btn-primary
+  4abd3e75-dad3-45d4-84e7-e9d376d546f3:
+    parent_uuid: 16380a52-4230-44a2-a4cf-f12a762c6609
+    slot: slides
+    uuid: 4abd3e75-dad3-45d4-84e7-e9d376d546f3
+    component_id: sdc.vartheme_bs5.hero-slide
+    component_version: 1b3b48066d8f9c3a
+    inputs:
+      enabled: true
+      active: false
+      title: 'Compose your site from recipes'
+      content: '<p>Assemble your site from composable Drupal recipes, applied on their own or grouped together. Start from an enterprise-ready baseline.</p>'
+      media_position: inherit
+      title_tag: h2
+      title_size: h1
+      content_max_width: normal
+      vertical_alignment: center
+      text_align: text-start
+      text_color: text-white
+      overlay_bg: bg-dark
+      overlay_opacity: opacity-50
+      button_text: 'Explore recipes'
+      button_url: /features
+      button_variant: btn-primary
+  f33809c5-f22f-41b3-85f8-d7f7f5c2f394:
+    parent_uuid: 16380a52-4230-44a2-a4cf-f12a762c6609
+    slot: slides
+    uuid: f33809c5-f22f-41b3-85f8-d7f7f5c2f394
+    component_id: sdc.vartheme_bs5.hero-slide
+    component_version: 1b3b48066d8f9c3a
+    inputs:
+      enabled: true
+      active: false
+      title: 'Design pages without code'
+      content: '<p>Build and arrange pages visually with Drupal Canvas, no code required. The Bootstrap 5 based Vartheme keeps every layout responsive and on brand.</p>'
+      media_position: inherit
+      title_tag: h2
+      title_size: h1
+      content_max_width: normal
+      vertical_alignment: center
+      text_align: text-start
+      text_color: text-white
+      overlay_bg: bg-dark
+      overlay_opacity: opacity-50
+      button_text: 'Contact us'
+      button_url: /contact-us
+      button_variant: btn-primary

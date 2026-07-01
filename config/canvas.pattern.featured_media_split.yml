@@ -1,0 +1,88 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.vartheme_bs5.button
+    - canvas.component.sdc.vartheme_bs5.card-featured
+    - canvas.component.sdc.vartheme_bs5.heading
+    - canvas.component.sdc.vartheme_bs5.section
+    - canvas.component.sdc.vartheme_bs5.text
+    - filter.format.canvas_html_block
+  module:
+    - link
+    - options
+    - text
+id: featured_media_split
+label: 'Featured Media Split'
+component_tree:
+  0897663e-9513-4f0e-9351-b8d4dfa470c8:
+    uuid: 0897663e-9513-4f0e-9351-b8d4dfa470c8
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      bg_edge2edge: true
+      container_type: container
+      columns: '100'
+      gutter: 'gx-5 gy-5'
+      padding_block_start: pt-5
+      padding_block_end: pb-5
+      margin_block_start: mt-5
+      vertical_alignment: align-items-center
+      section_header: false
+      section_footer: false
+  1ba2ad25-b8f8-4390-8e6b-d9068bdde7d3:
+    parent_uuid: 0897663e-9513-4f0e-9351-b8d4dfa470c8
+    slot: col_1
+    uuid: 1ba2ad25-b8f8-4390-8e6b-d9068bdde7d3
+    component_id: sdc.vartheme_bs5.card-featured
+    component_version: 760a4a6c1117384e
+    inputs:
+      media_position: start
+      ratio: ratio-16x9
+      fit: object-fit-cover
+      card_border: false
+      corner_style: rounded-3
+      padded: true
+      equal_height: true
+      stretched_link: false
+      content_vertical_alignment: align-items-center
+      gutters_between: 'g-4 g-lg-5'
+      columns_xs_size: '06_06'
+  544e83ed-7ab4-47d7-bee7-09d5ff04b27b:
+    parent_uuid: 1ba2ad25-b8f8-4390-8e6b-d9068bdde7d3
+    slot: content
+    uuid: 544e83ed-7ab4-47d7-bee7-09d5ff04b27b
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text: 'Build faster with Varbase'
+      level: 2
+  f43eecce-b9b5-4d74-9a6a-2c5fbbb85f65:
+    parent_uuid: 1ba2ad25-b8f8-4390-8e6b-d9068bdde7d3
+    slot: content
+    uuid: f43eecce-b9b5-4d74-9a6a-2c5fbbb85f65
+    component_id: sdc.vartheme_bs5.text
+    component_version: c4ddb22de87220b3
+    inputs:
+      text:
+        value: '<p>Varbase pairs an enterprise-ready Drupal foundation with a flexible, media-rich layout system. Pair a striking visual with clear, focused copy to guide visitors toward the next step.</p>'
+        format: canvas_html_block
+      text_size: none
+      text_color: text-subtle-text
+  7345511b-866a-44f7-9465-6a0ccaee47c7:
+    parent_uuid: 1ba2ad25-b8f8-4390-8e6b-d9068bdde7d3
+    slot: content
+    uuid: 7345511b-866a-44f7-9465-6a0ccaee47c7
+    component_id: sdc.vartheme_bs5.button
+    component_version: de3d2ab04711f861
+    inputs:
+      variant: btn-primary
+      outline: false
+      size: btn-md
+      label: 'Explore features'
+      href: 'internal:/features'
+      disabled: false
+      icon: arrow-up-right
+      icon_first: false
+      full_width: false
+      radius: rounded-1
