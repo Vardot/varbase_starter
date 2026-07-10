@@ -5,14 +5,51 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: Blockquote
-id: sdc.vartheme_bs5.blockquote
-source: sdc
-source_local_id: 'vartheme_bs5:blockquote'
-provider: vartheme_bs5
-active_version: 3780c109ff196e06
+active_version: d9f2a0dbc457bdc4
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        type:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: dark
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+        text:
+          required: true
+          field_type: string_long
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textarea
+          default_value:
+            -
+              value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non sapien lacinia, pellentesque elit sit amet, tempor orci.'
+          expression: ℹ︎string_long␟value
+          derived_schema_metadata:
+            string_shape:
+              pattern: '(.|\r?\n)*'
+        cite_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Quotee Name and Position'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  3780c109ff196e06:
     settings:
       prop_field_definitions:
         type:
@@ -24,6 +61,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text:
           required: true
           field_type: string_long
@@ -34,6 +72,9 @@ versioned_properties:
             -
               value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non sapien lacinia, pellentesque elit sit amet, tempor orci.'
           expression: ℹ︎string_long␟value
+          derived_schema_metadata:
+            string_shape:
+              pattern: '(.|\r?\n)*'
         cite_text:
           required: false
           field_type: string
@@ -44,5 +85,12 @@ versioned_properties:
             -
               value: 'Quotee Name and Position'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
+label: Blockquote
+id: sdc.vartheme_bs5.blockquote
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:blockquote'

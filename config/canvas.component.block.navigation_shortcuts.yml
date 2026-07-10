@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - navigation
-active_version: 2891751bf7069a8f
+active_version: a2ddb9f467280871
 versioned_properties:
   active:
     settings:

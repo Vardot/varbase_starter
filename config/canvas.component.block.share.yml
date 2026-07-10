@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - webshare
-active_version: cb0cfff9d1e4d086
+active_version: ec57cdd2ed827da8
 versioned_properties:
   active:
     settings:

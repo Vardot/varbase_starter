@@ -19,6 +19,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         color_mode:
           required: false
           field_type: list_string
@@ -28,6 +29,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         color:
           required: false
           field_type: list_string
@@ -37,6 +39,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         placement:
           required: false
           field_type: list_string
@@ -46,6 +49,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         navbar_expand:
           required: false
           field_type: list_string
@@ -55,6 +59,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         navbar_utility_classes:
           required: false
           field_type: string
@@ -64,6 +69,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions:
         branding:

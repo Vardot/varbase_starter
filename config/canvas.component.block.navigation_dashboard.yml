@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - dashboard
-active_version: b8299fffa95ae6ca
+active_version: 96919a0c9b7ec9ae
 versioned_properties:
   active:
     settings:

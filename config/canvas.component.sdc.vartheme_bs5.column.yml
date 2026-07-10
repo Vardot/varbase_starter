@@ -3,11 +3,6 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
-label: Column
-id: sdc.vartheme_bs5.column
-source: sdc
-source_local_id: 'vartheme_bs5:column'
-provider: vartheme_bs5
 active_version: d54b181baa9953d9
 versioned_properties:
   active:
@@ -18,3 +13,8 @@ versioned_properties:
         content:
           title: Content
           description: 'Content placed inside the column.'
+label: Column
+id: sdc.vartheme_bs5.column
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:column'

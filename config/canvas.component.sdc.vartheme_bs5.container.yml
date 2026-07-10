@@ -3,14 +3,35 @@ status: true
 dependencies:
   theme:
     - vartheme_bs5
-label: Container
-id: sdc.vartheme_bs5.container
-source: sdc
-source_local_id: 'vartheme_bs5:container'
-provider: vartheme_bs5
-active_version: fa52873866906783
+active_version: f5657c2c005b5815
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        container_utility_classes:
+          required: false
+          field_type: string
+          cardinality: -1
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        children:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value: null
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  fa52873866906783:
     settings:
       prop_field_definitions:
         container_utility_classes:
@@ -22,6 +43,8 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         children:
           required: false
           field_type: string
@@ -30,5 +53,12 @@ versioned_properties:
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
+label: Container
+id: sdc.vartheme_bs5.container
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:container'

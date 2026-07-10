@@ -21,6 +21,7 @@ versioned_properties:
             -
               value: none
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         direction:
           required: false
           field_type: list_string
@@ -32,6 +33,7 @@ versioned_properties:
             -
               value: vertical
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         gap:
           required: false
           field_type: list_string
@@ -43,6 +45,7 @@ versioned_properties:
             -
               value: gap-3
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         wrap:
           required: false
           field_type: list_string
@@ -54,6 +57,7 @@ versioned_properties:
             -
               value: wrap
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         align_items:
           required: false
           field_type: list_string
@@ -65,6 +69,7 @@ versioned_properties:
             -
               value: align-items-stretch
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         justify_content:
           required: false
           field_type: list_string
@@ -76,6 +81,7 @@ versioned_properties:
             -
               value: justify-content-start
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_block_start:
           required: false
           field_type: list_string
@@ -87,6 +93,7 @@ versioned_properties:
             -
               value: pt-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_block_end:
           required: false
           field_type: list_string
@@ -98,6 +105,7 @@ versioned_properties:
             -
               value: pb-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_inline_start:
           required: false
           field_type: list_string
@@ -109,6 +117,7 @@ versioned_properties:
             -
               value: ps-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_inline_end:
           required: false
           field_type: list_string
@@ -120,6 +129,7 @@ versioned_properties:
             -
               value: pe-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_block_start:
           required: false
           field_type: list_string
@@ -131,6 +141,7 @@ versioned_properties:
             -
               value: mt-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_block_end:
           required: false
           field_type: list_string
@@ -142,6 +153,7 @@ versioned_properties:
             -
               value: mb-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_inline_start:
           required: false
           field_type: list_string
@@ -153,6 +165,7 @@ versioned_properties:
             -
               value: ms-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_inline_end:
           required: false
           field_type: list_string
@@ -164,6 +177,7 @@ versioned_properties:
             -
               value: me-0
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         radius:
           required: false
           field_type: list_string
@@ -175,6 +189,7 @@ versioned_properties:
             -
               value: none
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         border:
           required: false
           field_type: list_string
@@ -186,6 +201,7 @@ versioned_properties:
             -
               value: none
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         border_color:
           required: false
           field_type: list_string
@@ -197,6 +213,7 @@ versioned_properties:
             -
               value: none
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         border_width:
           required: false
           field_type: list_string
@@ -208,6 +225,7 @@ versioned_properties:
             -
               value: none
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_animation:
           required: false
           field_type: list_string
@@ -219,6 +237,7 @@ versioned_properties:
             -
               value: none
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_duration:
           required: false
           field_type: list_string
@@ -230,6 +249,7 @@ versioned_properties:
             -
               value: default
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_delay:
           required: false
           field_type: list_string
@@ -241,6 +261,7 @@ versioned_properties:
             -
               value: '0'
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_once:
           required: false
           field_type: boolean
@@ -251,6 +272,7 @@ versioned_properties:
             -
               value: true
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         content:
@@ -267,6 +289,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         direction:
           required: false
           field_type: list_string
@@ -276,6 +299,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         gap:
           required: false
           field_type: list_string
@@ -285,6 +309,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         wrap:
           required: false
           field_type: list_string
@@ -294,6 +319,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         align_items:
           required: false
           field_type: list_string
@@ -303,6 +329,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         justify_content:
           required: false
           field_type: list_string
@@ -312,6 +339,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_block_start:
           required: false
           field_type: list_string
@@ -321,6 +349,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_block_end:
           required: false
           field_type: list_string
@@ -330,6 +359,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_inline_start:
           required: false
           field_type: list_string
@@ -339,6 +369,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         padding_inline_end:
           required: false
           field_type: list_string
@@ -348,6 +379,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_block_start:
           required: false
           field_type: list_string
@@ -357,6 +389,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_block_end:
           required: false
           field_type: list_string
@@ -366,6 +399,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_inline_start:
           required: false
           field_type: list_string
@@ -375,6 +409,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         margin_inline_end:
           required: false
           field_type: list_string
@@ -384,6 +419,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_animation:
           required: false
           field_type: list_string
@@ -393,6 +429,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_duration:
           required: false
           field_type: list_string
@@ -402,6 +439,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_delay:
           required: false
           field_type: list_string
@@ -411,6 +449,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         aos_once:
           required: false
           field_type: boolean
@@ -421,6 +460,7 @@ versioned_properties:
             -
               value: true
           expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions:
         content:
@@ -430,4 +470,3 @@ id: sdc.vartheme_bs5.group
 provider: vartheme_bs5
 source: sdc
 source_local_id: 'vartheme_bs5:group'
-

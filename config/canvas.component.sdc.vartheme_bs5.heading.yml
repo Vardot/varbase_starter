@@ -6,12 +6,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: Heading
-id: sdc.vartheme_bs5.heading
-source: sdc
-source_local_id: 'vartheme_bs5:heading'
-provider: vartheme_bs5
-active_version: 98b47f40fce531b1
+active_version: 0889e2ce906c3164
 versioned_properties:
   active:
     settings:
@@ -26,6 +21,8 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
         level:
           required: false
           field_type: list_integer
@@ -33,8 +30,11 @@ versioned_properties:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
           field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: 3
           expression: ℹ︎list_integer␟value
+          derived_schema_metadata: {  }
         text_size:
           required: false
           field_type: list_string
@@ -44,6 +44,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: false
           field_type: list_string
@@ -53,6 +54,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         align:
           required: false
           field_type: list_string
@@ -62,6 +64,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         font_weight:
           required: false
           field_type: list_string
@@ -71,6 +74,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         font_style:
           required: false
           field_type: list_string
@@ -80,6 +84,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -90,6 +95,9 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
         target:
           required: false
           field_type: list_string
@@ -97,8 +105,11 @@ versioned_properties:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
           field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: _self
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
   98b47f40fce531b1:
@@ -114,6 +125,7 @@ versioned_properties:
             -
               value: 'Your heading goes here'
           expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
         level:
           required: false
           field_type: list_integer
@@ -123,6 +135,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_integer␟value
+          derived_schema_metadata: {  }
         text_size:
           required: false
           field_type: list_string
@@ -132,6 +145,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         text_color:
           required: false
           field_type: list_string
@@ -141,6 +155,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         align:
           required: false
           field_type: list_string
@@ -150,6 +165,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         font_weight:
           required: false
           field_type: list_string
@@ -159,6 +175,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         font_style:
           required: false
           field_type: list_string
@@ -168,6 +185,7 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         url:
           required: false
           field_type: link
@@ -178,6 +196,7 @@ versioned_properties:
           field_widget: link_default
           default_value: null
           expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
         target:
           required: false
           field_type: list_string
@@ -187,6 +206,11 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
-
+label: Heading
+id: sdc.vartheme_bs5.heading
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:heading'

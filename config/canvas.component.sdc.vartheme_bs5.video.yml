@@ -11,12 +11,7 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: Video
-id: sdc.vartheme_bs5.video
-source: sdc
-source_local_id: 'vartheme_bs5:video'
-provider: vartheme_bs5
-active_version: 9e5580fde4a899b0
+active_version: 854f1e9956fee88d
 versioned_properties:
   active:
     settings:
@@ -34,31 +29,45 @@ versioned_properties:
           field_widget: media_library_widget
           default_value: {  }
           expression: 'ℹ︎entity_reference␟entity␜␜entity:media:video␝field_media_video_file␞␟{src↝entity␜␜entity:file␝uri␞␟url}'
+          derived_schema_metadata: {  }
         ratio:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: null
+          field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: 16x9
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         loading:
           required: false
           field_type: list_string
           field_storage_settings:
             allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: null
+          field_instance_settings: {  }
           field_widget: options_select
-          default_value: null
+          default_value:
+            -
+              value: lazy
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
         extra_classes:
           required: false
           field_type: string
-          field_storage_settings: null
-          field_instance_settings: null
+          field_storage_settings: {  }
+          field_instance_settings: {  }
           field_widget: string_textfield
           default_value: null
           expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
     fallback_metadata:
       slot_definitions: {  }
+label: Video
+id: sdc.vartheme_bs5.video
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:video'

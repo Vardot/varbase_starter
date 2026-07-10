@@ -5,14 +5,26 @@ dependencies:
     - options
   theme:
     - vartheme_bs5
-label: Spacer
-id: sdc.vartheme_bs5.spacer
-source: sdc
-source_local_id: 'vartheme_bs5:spacer'
-provider: vartheme_bs5
-active_version: 409081be7dd0a59b
+active_version: 80de1b3919d08f87
 versioned_properties:
   active:
+    settings:
+      prop_field_definitions:
+        size:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: py-3
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  409081be7dd0a59b:
     settings:
       prop_field_definitions:
         size:
@@ -24,5 +36,11 @@ versioned_properties:
           field_widget: options_select
           default_value: null
           expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
     fallback_metadata:
       slot_definitions: {  }
+label: Spacer
+id: sdc.vartheme_bs5.spacer
+provider: vartheme_bs5
+source: sdc
+source_local_id: 'vartheme_bs5:spacer'

@@ -5,7 +5,7 @@ dependencies:
     - views.view.blog
   module:
     - views
-active_version: 06d7c7c76f56dae5
+active_version: d867ddf5712e30fb
 versioned_properties:
   active:
     settings:

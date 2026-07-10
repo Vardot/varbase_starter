@@ -3,7 +3,7 @@ status: false
 dependencies:
   module:
     - drupical
-active_version: 190c703c16aaf9ac
+active_version: 7f0d7c64a7196c20
 versioned_properties:
   active:
     settings:
