@@ -182,4 +182,4 @@ config:
       disable: []
 extra:
   recipe_installer_kit:
-    finish_url: '/admin/dashboard/welcome'
+    finish_url: 'admin/dashboard/welcome'
