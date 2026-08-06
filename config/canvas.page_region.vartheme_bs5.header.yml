@@ -4,7 +4,9 @@ dependencies:
   config:
     - canvas.component.block.system_branding_block
     - canvas.component.block.system_menu_block.main
+    - canvas.component.block.views_exposed_filter_block.search-page
     - canvas.component.sdc.vartheme_bs5.group
+    - canvas.component.sdc.vartheme_bs5.icon-toggle
     - canvas.component.sdc.vartheme_bs5.section
   module:
     - options
@@ -65,3 +67,25 @@ component_tree:
       level: 1
       depth: 3
       expand_all_items: true
+  afd25b14-039e-464e-8c0c-4ca7eeeeae9c:
+    parent_uuid: b7d6ef10-663c-4e98-9e2d-982dc7573a4c
+    slot: content
+    uuid: afd25b14-039e-464e-8c0c-4ca7eeeeae9c
+    component_id: sdc.vartheme_bs5.icon-toggle
+    component_version: 5a87298f3691cd43
+    inputs:
+      icon: search
+      label: Search
+      open_label: 'Close search'
+      placement: end
+      panel: bar
+  64cc6d33-c24c-45be-a52b-1deb85fcab0b:
+    parent_uuid: afd25b14-039e-464e-8c0c-4ca7eeeeae9c
+    slot: content
+    uuid: 64cc6d33-c24c-45be-a52b-1deb85fcab0b
+    component_id: block.views_exposed_filter_block.search-page
+    component_version: 435ec28df1ef5629
+    inputs:
+      label: Search
+      label_display: '0'
+      views_label: ''

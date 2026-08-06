@@ -38,6 +38,12 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: vartheme_bs5
+    # The header search box shows the placeholder as its only prompt, so it
+    # carries the header design's wording instead of the Drupal CMS Search
+    # default. Set here rather than by patching that third-party recipe.
+    views.view.search:
+      simpleConfigUpdate:
+        display.default.display_options.filters.search_api_fulltext.expose.placeholder: 'Search by keyword'
     package_manager.settings:
       simpleConfigUpdate:
         additional_trusted_composer_plugins:
