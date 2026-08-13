@@ -1,54 +1,520 @@
 ################################################################################
-# Basic build + validate GitLab CI for the Varbase recipe release.
+# GitLab CI for the Varbase Starter site template recipe.
 #
-# Mirrors the build / validate stages of the Varbase project template, reduced
-# to the minimum a recipe needs: validate composer.json (build) and lint every
-# YAML file - recipe.yml + config (validate). No dependency install / browser
-# tests here (kept basic).
+# build    - validate the recipe's composer.json.
+# validate - lint YAML, spell-check + ESLint the suite, and a Cucumber dry-run
+#            that proves every step phrasing in the Varbase functional testing
+#            suite resolves (all reproducible offline in gitlab-ci-local).
+# pre-test - 📦 Install Varbase Starter site template (varbase): build a Varbase 11 host project, require the
+#            checked-out Varbase Starter recipe, install it with
+#            `drush site:install recipes/varbase_starter`, prepare it for deterministic
+#            testing, then DUMP the DB (gzip). The built site (testsite/), the
+#            varbase-e2e node_modules and the Playwright browser are cached so
+#            the test jobs reuse them instead of rebuilding per job.
+# test     - one parallel varbase-e2e job per feature bucket: pull the build
+#            cache, restore the DB dump (seconds), serve the site and drive it
+#            through the browser. No composer create-project / require /
+#            site:install / npm install per job.
+# report   - merge every bucket's cucumber JSON into one HTML + PDF report.
+#
+# = Automated Functional Acceptance Testing (varbase-e2e) =
 ################################################################################
 
 stages:
   - build
   - validate
+  - pre-test
+  - test
+  - report
 
 variables:
-  # Drupal 11.4.0 released 2026-07-01; pinned templates ref $CORE_STABLE is still 11.3.
-  DRUPAL_CORE: "11.4.0"
-  IGNORE_PROJECT_DRUPAL_CORE_VERSION: "1"
   COMPOSER_ALLOW_SUPERUSER: "1"
   COMPOSER_MEMORY_LIMIT: "-1"
+  COMPOSER_NO_INTERACTION: "1"
+  VARBASE_PROJECT: "drupal/varbase_project:11.0.x-dev"
+  DRUPAL_ADMIN_USERNAME: "webmaster"
+  DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
+  # Host site is built under testsite/ (this repo is a recipe, not a docroot).
+  SITE_DIR: "$CI_PROJECT_DIR/testsite"
+  WEB_ROOT: "$CI_PROJECT_DIR/testsite/web"
+  DB_URL: "mysql://drupal:drupal@database/drupal"
+  LAUNCH_URL: "http://127.0.0.1:8888"
+  FORCE_COLOR: "1"
+  VARBASE_E2E_REPORT_DISABLE: "1"
+  # Cache locations: composer downloads + the Playwright browser go inside the
+  # project dir so the Install job can cache them for the pull-only test jobs.
+  COMPOSER_CACHE_DIR: "${CI_PROJECT_DIR}/.cache/composer"
+  PLAYWRIGHT_BROWSERS_PATH: "${CI_PROJECT_DIR}/.cache/ms-playwright"
 
-# Run for merge requests and branch pushes.
 workflow:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
     - if: $CI_COMMIT_BRANCH
     - if: $CI_COMMIT_TAG
 
+# = Path-based job gating (Reduce CI usage) ===================================
+# Skip a job when the files it cares about did not change, but ALWAYS run the
+# full pipeline on the default branch, release branches and tags. A job whose
+# files did not change stays LISTED as a non-optional manual (allow_failure:
+# false), never dropped.
+.run_on_release_refs: &run_on_release_refs
+  if: '$CI_COMMIT_TAG || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+  when: on_success
+
+# What a recipe developer edits: the recipe itself (recipe.yml / recommended.yml
+# / config / content / scripts) and the functional testing suite + its config.
+.recipe_app_changes: &recipe_app_changes
+  - "composer.json"
+  - ".gitlab-ci.yml"
+  - ".gitlab-ci/**/*"
+  - "recipe.yml"
+  - "recommended.yml"
+  - "config/**/*"
+  - "content/**/*"
+  - "scripts/**/*"
+  - "tests/**/*"
+  - "package.json"
+  - "package-lock.json"
+  - "cucumber.js"
+  - "eslint.config.js"
+  - "playwright.config.ts"
+
+# Build cache populated by 📦 Install Varbase Starter site template (varbase): the built host site (testsite/),
+# the varbase-e2e node_modules and the composer + Playwright download caches.
+# The test jobs pull this (see .test_cache) so they skip the whole host build
+# and only restore the DB dump.
+.varbase_cache: &varbase_cache
+  key: "varbase-starter-build-v2-$CI_COMMIT_REF_SLUG"
+  paths:
+    - .cache/composer
+    - .cache/ms-playwright
+    - testsite
+    - node_modules
+
+.test_cache: &test_cache
+  key: "varbase-starter-build-v2-$CI_COMMIT_REF_SLUG"
+  policy: pull
+  paths:
+    - .cache/composer
+    - .cache/ms-playwright
+    - testsite
+    - node_modules
+
+# = Reusable before_script fragments =
+.fragments:
+  # The Playwright image is Ubuntu noble (PHP 8.3 default); add ondrej/php for
+  # PHP 8.4, then PHP + Composer + ImageMagick/WebP + a MySQL client. Needed by
+  # the Install job (build + drush) and by every test job (drush restore/serve).
+  host_php_setup:
+    - export DEBIAN_FRONTEND=noninteractive
+    - apt-get update -y
+    - apt-get install -y --no-install-recommends software-properties-common ca-certificates curl gnupg lsb-release
+    - add-apt-repository -y ppa:ondrej/php
+    - apt-get update -y
+    - apt-get install -y --no-install-recommends php8.4-cli php8.4-mysql php8.4-gd php8.4-curl php8.4-xml php8.4-mbstring php8.4-zip php8.4-intl unzip git default-mysql-client webp imagemagick libmagickcore-6.q16-6-extra
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    - corepack enable || true
+    - composer --version && php --version
+    - sed -i 's/rights="none"\s*pattern="WEBP"/rights="read|write" pattern="WEBP"/I' /etc/ImageMagick-*/policy.xml 2>/dev/null || true
+
 # = build = validate the recipe's composer.json (schema + metadata, offline).
-build:composer-validate:
+"📦 Composer validate":
   stage: build
+  rules:
+    - <<: *run_on_release_refs
+    - changes:
+        - "composer.json"
+      when: on_success
+    # Its files did not change: keep the job LISTED as a manual (play button)
+    # so it never auto-runs on unrelated changes but stays visible. allow_failure
+    # stays false so that when it IS run it must pass.
+    - when: manual
+      allow_failure: false
   image: composer:2
   script:
     - composer --version
     - composer validate --no-check-all --no-check-publish
 
 # = validate = lint every YAML file (recipe.yml + config/*) for syntax errors.
-validate:yaml-lint:
+"📐 YAML lint":
   stage: validate
+  rules:
+    - <<: *run_on_release_refs
+    - changes:
+        - "**/*.yml"
+        - "**/*.yaml"
+      when: on_success
+    - when: manual
+      allow_failure: false
   image: python:3.12-slim
+  needs: []
+  before_script:
+    - pip install --no-cache-dir pyyaml
   script:
-    - python --version
-    - pip install --quiet pyyaml
     - |
       python - <<'PY'
-      import glob, sys, yaml
-      bad = 0
-      for f in sorted(glob.glob('**/*.yml', recursive=True)):
+      import sys, yaml
+      from pathlib import Path
+      class Loader(yaml.SafeLoader):
+          pass
+      Loader.add_multi_constructor('', lambda loader, suffix, node: None)
+      SKIP = ('node_modules/', '.cache/', 'tests/reports/', 'testsite/')
+      errors = count = 0
+      for path in sorted(Path('.').rglob('*.y*ml')):
+          rel = str(path)
+          if any(s in rel for s in SKIP):
+              continue
+          count += 1
           try:
-              list(yaml.safe_load_all(open(f, encoding='utf-8')))
-          except Exception as e:
-              print('YAML ERROR:', f, '->', e); bad += 1
-      print('Checked YAML files; errors:', bad)
-      sys.exit(1 if bad else 0)
+              with open(path) as fh:
+                  list(yaml.load_all(fh, Loader=Loader))
+          except yaml.YAMLError as e:
+              errors += 1
+              print(f"INVALID: {rel}\n  {e}")
+      print(f"Checked {count} YAML files, {errors} invalid.")
+      sys.exit(1 if errors else 0)
       PY
+  allow_failure: false
+
+"🔤 Cspell":
+  stage: validate
+  rules:
+    - <<: *run_on_release_refs
+    - changes:
+        - "tests/**/*.feature"
+        - "tests/README.md"
+        - "cucumber.js"
+        - "eslint.config.js"
+        - ".cspell.json"
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: node:20
+  needs: []
+  before_script:
+    - npm install -g cspell
+  script:
+    - cspell "tests/**/*.feature" "tests/README.md" "cucumber.js" "eslint.config.js" --no-progress
+  allow_failure: false
+
+"🟨 ESLint":
+  stage: validate
+  rules:
+    - <<: *run_on_release_refs
+    - changes:
+        - "**/*.js"
+        - "eslint.config.js"
+        - "package.json"
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: node:20
+  needs: []
+  before_script:
+    - npm install --no-audit --no-fund
+  script:
+    - node --version
+    - ./node_modules/.bin/eslint .
+
+# = Cucumber dry-run = every step phrasing resolves, no browser, no site.
+"🧩 Cucumber dry-run":
+  stage: validate
+  rules:
+    - <<: *run_on_release_refs
+    - changes:
+        - "tests/**/*"
+        - "cucumber.js"
+        - "package.json"
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: node:20
+  needs: []
+  before_script:
+    - npm install --no-audit --no-fund
+  script:
+    - VARBASE_E2E_REPORT_DISABLE=1 ./node_modules/.bin/cucumber-js --config cucumber.js --dry-run
+
+# = pre-test = build the host Varbase site, apply the Varbase Starter recipe, seed the
+# site, dump the DB, and cache the built site + node_modules + browser.
+"📦 Install Varbase Starter site template (varbase)":
+  stage: pre-test
+  rules:
+    - <<: *run_on_release_refs
+    - changes: *recipe_app_changes
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  needs: []
+  timeout: 2h
+  # composer pulls dists from github.com unauthenticated; a rate limit there is
+  # transient, so let the runner re-attempt before the pipeline goes red.
+  retry:
+    max: 2
+    when:
+      - script_failure
+      - runner_system_failure
+      - stuck_or_timeout_failure
+  cache: *varbase_cache
+  services:
+    - name: mariadb:10.11
+      alias: database
+      variables:
+        MARIADB_DATABASE: drupal
+        MARIADB_USER: drupal
+        MARIADB_PASSWORD: drupal
+        MARIADB_ROOT_PASSWORD: root
+  artifacts:
+    when: on_success
+    expire_in: 1 day
+    paths:
+      - varbase-starter-db.sql.gz
+  before_script:
+    - !reference [.fragments, host_php_setup]
+  script:
+    # = Build a Varbase 11 project, then require the checked-out recipe =
+    # The build cache may restore a stale testsite/; composer create-project
+    # refuses a non-empty target, so start from a clean dir on every run.
+    - rm -rf "$SITE_DIR"
+    - composer create-project $VARBASE_PROJECT "$SITE_DIR" --no-interaction --no-install --no-scripts
+    - cd "$SITE_DIR"
+    - composer config minimum-stability dev
+    - composer config repositories.varbase_starter path "$CI_PROJECT_DIR"
+    - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
+    # = Install the site from the Varbase Starter recipe =
+    - ./bin/drush site:install recipes/varbase_starter --db-url=$DB_URL
+        --account-name=$DRUPAL_ADMIN_USERNAME --account-pass=$DRUPAL_ADMIN_PASSWORD
+        --account-mail=webmaster@vardot.com --site-name="Varbase Starter" --locale=en -y
+    # = Prepare for deterministic testing =
+    - ./bin/drush pm:uninstall antibot -y || true
+    # Neutralize Honeypot (added by drupal_cms_anti_spam): its time-restriction
+    # rejects a form submitted faster than N seconds ("There was a problem with
+    # your form submission. Please wait N seconds and try again."), which the
+    # deterministic tests trip on. Mirror varbase_project's CI, which neutralizes
+    # antibot/honeypot/flood. Uninstall it, or fall back to disabling the timer.
+    - ./bin/drush pm:uninstall honeypot -y || ./bin/drush config:set honeypot.settings time_limit 0 -y || true
+    - ./bin/drush config:set user.flood ip_limit 1000000 -y
+    - ./bin/drush config:set user.flood user_limit 1000000 -y
+    - ./bin/drush config:set system.logging error_level all -y
+    - ./bin/drush cache:rebuild
+    # = Seed the per-role testing users the permission/role features log in as.
+    #   varbase-e2e's "I am a logged in user with the ..." step only submits the
+    #   login form; it does not create the user. Without these, every role-scoped
+    #   scenario lands anonymous and hits a 403. Roles come from varbase_users_base;
+    #   this mirrors scripts/add-testing-users.sh (adapted to the CI web/ layout).
+    - |
+      seed_user () {
+        ./bin/drush user:create "$1" --mail="$2" --password="dD.123123ddd" || \
+          ./bin/drush user:password "$1" "dD.123123ddd" || true
+        if [ "$3" != "_none_" ]; then ./bin/drush user:role:add "$3" "$1" || true; fi
+      }
+      seed_user "Normal user"    "test.authenticated@vardot.com"  "_none_"
+      seed_user "Content editor" "test.content_editor@vardot.com" "content_editor"
+      seed_user "Content admin"  "test.content_admin@vardot.com"  "content_admin"
+      seed_user "SEO admin"      "test.seo_admin@vardot.com"       "seo_admin"
+      seed_user "Site admin"     "test.site_admin@vardot.com"      "site_admin"
+      seed_user "Super admin"    "test.super_admin@vardot.com"     "administrator"
+    # = Install the varbase-e2e suite + the matching Chromium (cached) =
+    - cd "$CI_PROJECT_DIR"
+    - npm install --no-audit --no-fund
+    - ./node_modules/.bin/playwright install chromium
+    # = Dump the prepared DB for the parallel test jobs =
+    - $SITE_DIR/bin/drush --root=$WEB_ROOT sql:dump --gzip --result-file=$CI_PROJECT_DIR/varbase-starter-db.sql
+  allow_failure: false
+
+# = Smoke canary = a single fast pre-flight test that does the same runtime-only
+# restore and drives ONE assertion-free suite (the 01-00 warm-up: visit every
+# public page, assert nothing). Every parallel matrix job `needs` this canary,
+# so a systemic break (formatter/dependency/install-level) fails HERE once and
+# SKIPS the 24 matrix jobs instead of burning each one to the same failure.
+# GitLab has no native "cancel sibling parallel jobs on failure"; this is the
+# portable stand-in. Trade-off: on a green run it serialises this ~5-min canary
+# before the parallel fan-out; on a systemic break it saves 24x wasted jobs.
+"🧪 varbase-e2e (smoke)":
+  stage: test
+  rules:
+    - <<: *run_on_release_refs
+    - changes: *recipe_app_changes
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  needs: ["📦 Install Varbase Starter site template (varbase)"]
+  timeout: 30m
+  retry:
+    max: 2
+    when:
+      - script_failure
+      - runner_system_failure
+      - stuck_or_timeout_failure
+  cache: *test_cache
+  services:
+    - name: mariadb:10.11
+      alias: database
+      variables:
+        MARIADB_DATABASE: drupal
+        MARIADB_USER: drupal
+        MARIADB_PASSWORD: drupal
+        MARIADB_ROOT_PASSWORD: root
+  variables:
+    SUITE: "00-smoke"
+    CUCUMBER_JSON: "cucumber_report--00-smoke"
+    FEATURES_GLOB: "tests/features/01-website-base-requirements/01-00-*.feature"
+  artifacts:
+    when: always
+    paths:
+      - tests/reports/
+      - tests/screenshots/
+      - tests/videos/
+    expire_in: 30 days
+  before_script:
+    - !reference [.fragments, host_php_setup]
+    - gunzip -c $CI_PROJECT_DIR/varbase-starter-db.sql.gz | $SITE_DIR/bin/drush --root=$WEB_ROOT sql:cli
+    - $SITE_DIR/bin/drush --root=$WEB_ROOT cache:rebuild
+  script:
+    - PHP_CLI_SERVER_WORKERS=8 $SITE_DIR/bin/drush --root=$WEB_ROOT runserver 127.0.0.1:8888 > $CI_PROJECT_DIR/runserver.log 2>&1 &
+    - sleep 8
+    - cd "$CI_PROJECT_DIR"
+    - FEATURES="${FEATURES_GLOB}" VARBASE_E2E_REPORT_DISABLE=1 CUCUMBER_JSON="${CUCUMBER_JSON}" ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
+  allow_failure: false
+
+# = Automated Functional Acceptance Testing (varbase-e2e) - one parallel job per
+# feature bucket. Restores the built site + DB dump from 📦 Install Varbase Starter site template (varbase).
+"🧪 varbase-e2e":
+  stage: test
+  rules:
+    - <<: *run_on_release_refs
+    - changes: *recipe_app_changes
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  needs: ["📦 Install Varbase Starter site template (varbase)", "🧪 varbase-e2e (smoke)"]
+  timeout: 2h
+  retry:
+    max: 2
+    when:
+      - script_failure
+      - runner_system_failure
+      - stuck_or_timeout_failure
+  cache: *test_cache
+  parallel:
+    matrix:
+      # Suites that already fit one small job stay whole (FEATURES_GLOB defaults
+      # to tests/features/$SUITE per the job variables below).
+      - SUITE:
+          - "02-user-management"
+          - "03-admin-pages"
+          - "05-content-pages"
+          - "06-content-blog"
+          - "07-content-contact"
+          - "08-content-homepage"
+          - "10-content-permissions"
+          - "11-content-workflow"
+          - "13-varbase-recipes"
+          - "14-ai"
+          - "15-quality"
+          - "16-eca-workflow-modeler"
+      # The heaviest suites are split by feature-file globs so each parallel job
+      # stays short (concurrent, so more jobs LOWER wall-clock). SUITE names the
+      # report; FEATURES_GLOB overrides the glob (fed to cucumber.js as FEATURES).
+      - SUITE: "01-website-base-requirements-a"
+        FEATURES_GLOB: "tests/features/01-website-base-requirements/01-{00,01,02,03}-*.feature"
+      - SUITE: "01-website-base-requirements-b"
+        FEATURES_GLOB: "tests/features/01-website-base-requirements/01-{04,05,06}-*.feature"
+      - SUITE: "01-website-base-requirements-c"
+        FEATURES_GLOB: "tests/features/01-website-base-requirements/01-07-*.feature"
+      - SUITE: "04-admin-users-a"
+        FEATURES_GLOB: "tests/features/04-admin-users/04-01-*.feature"
+      - SUITE: "04-admin-users-b"
+        FEATURES_GLOB: "tests/features/04-admin-users/04-{02,03}-*.feature"
+      - SUITE: "09-drupal-canvas-a"
+        FEATURES_GLOB: "tests/features/09-drupal-canvas/09-01-*.feature"
+      - SUITE: "09-drupal-canvas-b"
+        FEATURES_GLOB: "tests/features/09-drupal-canvas/09-02-*.feature"
+      - SUITE: "09-drupal-canvas-c"
+        FEATURES_GLOB: "tests/features/09-drupal-canvas/09-{03,04,05}-*.feature"
+      - SUITE: "09-drupal-canvas-d"
+        FEATURES_GLOB: "tests/features/09-drupal-canvas/09-06-*.feature"
+      - SUITE: "12-content-access-and-lock-a"
+        FEATURES_GLOB: "tests/features/12-content-access-and-lock/12-01-*.feature"
+      - SUITE: "12-content-access-and-lock-b"
+        FEATURES_GLOB: "tests/features/12-content-access-and-lock/12-02-*.feature"
+  services:
+    - name: mariadb:10.11
+      alias: database
+      variables:
+        MARIADB_DATABASE: drupal
+        MARIADB_USER: drupal
+        MARIADB_PASSWORD: drupal
+        MARIADB_ROOT_PASSWORD: root
+  variables:
+    CUCUMBER_JSON: "cucumber_report--${SUITE}"
+    # Whole-suite jobs glob their whole folder; split jobs override this.
+    FEATURES_GLOB: "tests/features/${SUITE}/**/*.feature"
+  artifacts:
+    when: always
+    paths:
+      - tests/reports/
+      - tests/screenshots/
+      - tests/videos/
+    expire_in: 30 days
+  before_script:
+    # testsite/ + node_modules + the browser arrive from the pull-only cache;
+    # only PHP (for drush) is added, then the seeded DB dump is restored.
+    - !reference [.fragments, host_php_setup]
+    - gunzip -c $CI_PROJECT_DIR/varbase-starter-db.sql.gz | $SITE_DIR/bin/drush --root=$WEB_ROOT sql:cli
+    - $SITE_DIR/bin/drush --root=$WEB_ROOT cache:rebuild
+  script:
+    # Serve the restored site (parallel workers for the Canvas editor mounts).
+    - PHP_CLI_SERVER_WORKERS=8 $SITE_DIR/bin/drush --root=$WEB_ROOT runserver 127.0.0.1:8888 > $CI_PROJECT_DIR/runserver.log 2>&1 &
+    - sleep 8
+    - cd "$CI_PROJECT_DIR"
+    # One feature bucket per matrix job. cucumber.js reads FEATURES.
+    - FEATURES="${FEATURES_GLOB}" VARBASE_E2E_REPORT_DISABLE=1 CUCUMBER_JSON="cucumber_report--${SUITE}" ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
+  after_script:
+    - cd "$CI_PROJECT_DIR"
+    - export REPORT="varbase-starter--${CI_COMMIT_REF_SLUG:-local}--${SUITE}--automated-functional-testing-report--$(date +%Y-%m-%d)--$(date +%H-%M)"
+    - node ./node_modules/@vardot/varbase-e2e/bin/generate-reports.js
+        --json "tests/reports/cucumber_report--${SUITE}.json"
+        --out  "tests/reports/${REPORT}.html"
+        --format all
+        --pdf-out "tests/reports/${REPORT}.pdf" || true
+  allow_failure: false
+
+# = report = merge every matrix job's cucumber JSON into one combined report.
+"📊 Create reports":
+  stage: report
+  rules:
+    # Auto-run whenever the test chain ran (release refs or the app changed),
+    # even if a test failed, so the full report is published. DAG-scheduled via
+    # needs so it is not held behind an un-played blocking-manual validate job.
+    - if: '$CI_COMMIT_TAG || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: always
+    - changes: *recipe_app_changes
+      when: always
+    - when: never
+  image: node:20
+  needs: ["🧪 varbase-e2e"]
+  dependencies:
+    - "🧪 varbase-e2e"
+  before_script:
+    - apt-get update -y && apt-get install -y jq
+    - npm install --no-save --no-audit --no-fund @vardot/varbase-e2e
+    - ./node_modules/.bin/playwright install --with-deps chromium
+  script:
+    - jq -s 'add' tests/reports/cucumber_report--*.json > tests/reports/cucumber_report.json
+    - export REPORT="varbase-starter--${CI_COMMIT_REF_SLUG}--automated-functional-testing-report--$(date +%Y-%m-%d)--$(date +%H-%M)"
+    - node ./node_modules/@vardot/varbase-e2e/bin/generate-reports.js
+        --json tests/reports/cucumber_report.json
+        --out  "tests/reports/${REPORT}.html"
+        --format all
+        --pdf-out "tests/reports/${REPORT}.pdf"
+  artifacts:
+    when: always
+    paths:
+      - tests/reports/
+      - tests/screenshots/
+    expire_in: 30 days
+  allow_failure: false
