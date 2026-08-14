@@ -14,10 +14,7 @@ Feature: Pre-check important administrator and development pages
      Then I should see "Content"
 
 
-  # @wip: /admin/content/files (core file-listing view) is not installed on
-  #   Varbase Starter, which manages files through /admin/content/media, so
-  #   this page 404s. CI runs --tags "not @wip".
-  @wip @check @local @development @staging @production
+  @check @local @development @staging @production
   Scenario: Check Files admin page
      When I go to "/admin/content/files"
       And wait

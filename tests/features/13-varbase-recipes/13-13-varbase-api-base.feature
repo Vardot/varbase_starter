@@ -1,7 +1,4 @@
-# @wip: varbase_api_base is not applied by Varbase Starter, so the admin pages this checks are absent on the
-# installed Starter site and the scenario cannot pass. CI runs --tags
-# "not @wip". Re-enable when the recipe is added to Varbase Starter.
-@wip @regression @any @admin
+@regression @any @admin
 Feature: Varbase Recipe - API Base (JSON:API + OpenAPI)
       As a webmaster
       I want this Varbase recipe to deliver its user-facing behaviour

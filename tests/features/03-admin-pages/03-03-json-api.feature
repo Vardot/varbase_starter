@@ -1,7 +1,4 @@
-# @wip: varbase_api_base is not applied by Varbase Starter, so the JSON:API /
-# OpenAPI admin pages are absent on the installed site. CI runs --tags
-# "not @wip". Re-enable when the recipe is added to Varbase Starter.
-@wip @regression @any @admin
+@regression @any @admin
 Feature: Check JSON API admin interface and services and Varbase API settings
       As a site admin user
       I want to be able to check the JSON:API available interface options

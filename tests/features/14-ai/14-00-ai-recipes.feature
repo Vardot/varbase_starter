@@ -1,7 +1,4 @@
-# @wip: the Varbase AI stack (a varbase_ai_* recipe) is not applied by Varbase Starter, so the admin pages this checks are absent on the
-# installed Starter site and the scenario cannot pass. CI runs --tags
-# "not @wip". Re-enable when the recipe is added to Varbase Starter.
-@wip @regression @any @ai
+@regression @any @ai
 Feature: Varbase AI Recipes module - AI core is installed
       As a webmaster
       I want this Varbase AI recipe to deliver its admin surface and behaviour

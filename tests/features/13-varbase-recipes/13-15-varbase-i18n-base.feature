@@ -1,7 +1,4 @@
-# @wip: varbase_i18n_base is not applied by Varbase Starter, so the admin pages this checks are absent on the
-# installed Starter site and the scenario cannot pass. CI runs --tags
-# "not @wip". Re-enable when the recipe is added to Varbase Starter.
-@wip @regression @any @i18n
+@regression @any @i18n
 Feature: Varbase Recipe - i18n Base (languages + translation)
       As a webmaster
       I want this Varbase recipe to deliver its user-facing behaviour

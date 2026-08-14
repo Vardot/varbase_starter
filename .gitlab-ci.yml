@@ -280,12 +280,60 @@ workflow:
     - composer create-project $VARBASE_PROJECT "$SITE_DIR" --no-interaction --no-install --no-scripts
     - cd "$SITE_DIR"
     - composer config minimum-stability dev
+    # Disable recipe unpacking BEFORE the first `composer require`. Otherwise
+    # requiring the Starter recipe unpacks its recipe dependencies into the
+    # root composer.json and deletes the packages, so recipes/<name> never
+    # exists and every `dr recipe` apply below fails with "not a directory"
+    # (a later require then reports "Nothing to modify in lock file").
+    # --json so the flag is stored as a boolean, not the truthy string "false".
+    - composer config extra.drupal-recipe-unpack.on-require --json false
     - composer config repositories.varbase_starter path "$CI_PROJECT_DIR"
     - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
+    # The copied varbase_project suites exercise the API / Auth / i18n / AI
+    # stacks, which the Varbase Starter recipe deliberately does not compose.
+    # Pull those recipe packages into the TEST HOST (the Starter recipe itself
+    # is unchanged) so the `dr recipe` applies below find them. on-require must
+    # be false or core-recipe-unpack unpacks each recipe into the root
+    # composer.json and removes the package, leaving recipes/<name> absent.
+    - composer require
+        drupal/varbase_dev_base drupal/varbase_i18n_base drupal/varbase_api_base
+        drupal/varbase_auth_base drupal/varbase_ai_base drupal/varbase_ai_context
+        drupal/varbase_ai_safety
+        --no-interaction --no-progress --prefer-dist --with-all-dependencies
     # = Install the site from the Varbase Starter recipe =
     - ./bin/drush site:install recipes/varbase_starter --db-url=$DB_URL
         --account-name=$DRUPAL_ADMIN_USERNAME --account-pass=$DRUPAL_ADMIN_PASSWORD
         --account-mail=webmaster@vardot.com --site-name="Varbase Starter" --locale=en -y
+    # = Top-level base + AI recipes (sub-recipes apply transitively) =
+    # The copied suites exercise the API / Auth / i18n / AI stacks, so the test
+    # host applies the same recipes varbase_project's own CI applies. Drupal
+    # 11.4 recipes run through core's `dr` runner (Drush 13.x has no `recipe`
+    # command); a cache rebuild BEFORE each apply is required so a recipe sees
+    # the modules/hooks the previous one enabled.
+    # Resolve each recipe's real install path from composer instead of assuming
+    # recipes/<name>: the packages are installed (composer reports them) but the
+    # hardcoded path did not exist, so every apply failed with "not a directory".
+    - |
+      for R in varbase_dev_base varbase_i18n_base varbase_api_base varbase_auth_base varbase_ai_base varbase_ai_context varbase_ai_safety; do
+        RP=$(composer info "drupal/$R" --path 2>/dev/null | awk '{print $2}')
+        if [ -n "$RP" ] && [ -d "$RP" ]; then
+          echo "Applying recipe $R from $RP"
+          ./bin/drush cache:rebuild || true
+          ./bin/dr recipe "$RP" || true
+        else
+          echo "Recipe $R has no resolvable install path; skipping." >&2
+          composer info "drupal/$R" || true
+        fi
+      done
+    # The AI safety/taxonomy sub-recipes abort on config actions that need a live
+    # AI provider (unavailable in CI), so enable their modules explicitly.
+    - ./bin/drush cache:rebuild || true
+    - ./bin/drush pm:enable ai_logging ai_observability ai_automators -y || true
+    # Strip the ai_ckeditor button/plugin from every editor: rendering its
+    # settings subform performs a live AI-provider lookup that hangs on the
+    # firewalled runner and times out the text-format page.
+    - ./bin/drush php:eval 'foreach(\Drupal::entityTypeManager()->getStorage("editor")->loadMultiple() as $e){$s=$e->getSettings();$c=false;if(!empty($s["toolbar"]["items"])&&is_array($s["toolbar"]["items"])){$n=array_values(array_filter($s["toolbar"]["items"],function($i){return stripos((string)$i,"ai_ckeditor")===false&&stripos((string)$i,"aickeditor")===false;}));if($n!==$s["toolbar"]["items"]){$s["toolbar"]["items"]=$n;$c=true;}}if(!empty($s["plugins"])&&is_array($s["plugins"])){foreach(array_keys($s["plugins"]) as $k){if(stripos($k,"ai_ckeditor")!==false){unset($s["plugins"][$k]);$c=true;}}}if($c){$e->setSettings($s);$e->save();}}' || true
+    - ./bin/drush cache:rebuild || true
     # = Prepare for deterministic testing =
     - ./bin/drush pm:uninstall antibot -y || true
     # Neutralize Honeypot (added by drupal_cms_anti_spam): its time-restriction
@@ -321,6 +369,141 @@ workflow:
     - ./node_modules/.bin/playwright install chromium
     # = Dump the prepared DB for the parallel test jobs =
     - $SITE_DIR/bin/drush --root=$WEB_ROOT sql:dump --gzip --result-file=$CI_PROJECT_DIR/varbase-starter-db.sql
+  allow_failure: false
+
+# = pre-test = prove the Drupal CMS wiring: build a plain drupal/cms codebase,
+# run scripts/drupal-cms-wiring.php on it, require this recipe and install the
+# site template through the Drupal CMS installer. This is the only job that
+# exercises Varbase Starter off a Varbase base, so it guards the wiring script and the
+# vardot/varbase-patches requirement against drifting out of use.
+"🧩 (Drupal CMS) Install Varbase Starter site template":
+  stage: pre-test
+  rules:
+    - <<: *run_on_release_refs
+    - changes: *recipe_app_changes
+      when: on_success
+    - when: manual
+      allow_failure: false
+  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  needs: []
+  timeout: 2h
+  # composer pulls dists from github.com unauthenticated; a rate limit there is
+  # transient, so let the runner re-attempt before the pipeline goes red.
+  retry:
+    max: 2
+    when:
+      - script_failure
+      - runner_system_failure
+      - stuck_or_timeout_failure
+  # Its own per-branch cache (composer + Playwright downloads only), kept
+  # separate from the Varbase build cache so it can never clobber the testsite/
+  # that the test matrix restores.
+  cache:
+    key: "varbase-starter-cms-build-v1-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .cache/composer
+      - .cache/ms-playwright
+  services:
+    - name: mariadb:10.11
+      alias: database
+      variables:
+        MARIADB_DATABASE: drupal
+        MARIADB_USER: drupal
+        MARIADB_PASSWORD: drupal
+        MARIADB_ROOT_PASSWORD: root
+  variables:
+    # A separate root from the Varbase job's testsite/, so both can run in one
+    # pipeline without sharing a codebase.
+    CMS_SITE_DIR: "$CI_PROJECT_DIR/cmssite"
+  before_script:
+    - !reference [.fragments, host_php_setup]
+  script:
+    # = Build a plain Drupal CMS project — no Varbase wiring of any kind =
+    # composer create-project refuses a non-empty target, so start clean on every
+    # run (idempotent across retries), mirroring the Varbase Install job.
+    - rm -rf "$CMS_SITE_DIR"
+    - composer create-project drupal/cms "$CMS_SITE_DIR" --no-interaction --no-install --no-scripts
+    - cd "$CMS_SITE_DIR"
+    # = Wire it for a Site recipe: dev stability, allow-plugins, the patches
+    #   allowlist, the drupal-libraries block and Yarn's node-modules linker.
+    #   Run from the project root; the script resolves the root from getcwd().
+    - php "$CI_PROJECT_DIR/scripts/drupal-cms-wiring.php"
+    # = Point at the checked-out recipe and require it. --with-all-dependencies is
+    #   required: a partial update keeps the locked symfony/css-selector, which
+    #   drupal/storybook (via varbase_dev_base) conflicts with.
+    # symlink:false — the recipe must be COPIED in. A path-repo symlink would
+    # point recipes/varbase_starter back at $CI_PROJECT_DIR, which contains this build,
+    # and any recursive scan then loops until "Too many levels of symbolic links".
+    - composer config repositories.varbase_starter '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":false}}' --json
+    - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
+    # = Assert the wiring took effect, so a silent no-op cannot pass =
+    - test -d recipes/varbase_starter || (echo "❌ recipes/varbase_starter missing" && exit 1)
+    - test -d web/modules/contrib/canvas || (echo "❌ drupal/canvas missing" && exit 1)
+    - composer show vardot/varbase-patches
+    - |
+      php -r '
+        $c = json_decode(file_get_contents("composer.json"), TRUE);
+        $p = $c["config"]["allow-plugins"] ?? [];
+        $need = ["cweagans/composer-patches", "vardot/varbase-patches", "oomphinc/composer-installers-extender"];
+        foreach ($need as $k) {
+          if (($p[$k] ?? FALSE) !== TRUE) {
+            fwrite(STDERR, "❌ allow-plugins missing: $k\n");
+            exit(1);
+          }
+        }
+        if (($c["minimum-stability"] ?? "") !== "dev") {
+          fwrite(STDERR, "❌ minimum-stability is not dev\n");
+          exit(1);
+        }
+        // Dependencies that declare patches with a path relative to the project
+        // root cannot resolve here (drupal/ai_context is one), so patch
+        // resolution is default-deny and those are ignored outright, exactly as
+        // varbase_project does it.
+        $cp = $c["extra"]["composer-patches"] ?? [];
+        foreach (["vardot/varbase-patches", "vardot/drupal-core-patches"] as $a) {
+          if (!in_array($a, $cp["allowed-dependency-patches"] ?? [], TRUE)) {
+            fwrite(STDERR, "❌ allowed-dependency-patches missing: $a\n");
+            exit(1);
+          }
+        }
+        foreach (["drupal/*", "drupal/ai_context"] as $i) {
+          if (!in_array($i, $cp["ignore-dependency-patches"] ?? [], TRUE)) {
+            fwrite(STDERR, "❌ ignore-dependency-patches missing: $i\n");
+            exit(1);
+          }
+        }
+        print "✅ composer wiring in place\n";
+      '
+    # = Sync the front-end libraries the recipe components expect =
+    - corepack enable && corepack yarn install --no-immutable
+    - |
+      php -r '
+        $libs = json_decode(file_get_contents("package.json"), TRUE)["drupal-libraries"]["libraries"] ?? [];
+        if (count($libs) < 6) {
+          fwrite(STDERR, "❌ the drupal-libraries block is not wired\n");
+          exit(1);
+        }
+        printf("✅ %d libraries declared\n", count($libs));
+      '
+    - ls web/libraries
+    # = Install the site template through the Drupal CMS installer =
+    - ./vendor/bin/drush site:install drupal_cms_installer
+      installer_site_template_form.add_ons=varbase_starter
+      --db-url=$DB_URL
+      --account-name=$DRUPAL_ADMIN_USERNAME --account-pass=$DRUPAL_ADMIN_PASSWORD
+      --account-mail=webmaster@vardot.com --site-name="Varbase Starter on Drupal CMS" --locale=en -y
+    # = Prove the template is applied, not merely that the install exited 0 =
+    - ./vendor/bin/drush status --fields=drupal-version,theme,db-status
+    - |
+      THEME=$(./vendor/bin/drush config:get system.theme default --format=string)
+      echo "default theme: $THEME"
+      test "$THEME" = "vartheme_bs5" || (echo "❌ vartheme_bs5 is not the default theme" && exit 1)
+  artifacts:
+    when: always
+    expire_in: 1 day
+    paths:
+      - cmssite/composer.json
+      - cmssite/package.json
   allow_failure: false
 
 # = Smoke canary = a single fast pre-flight test that does the same runtime-only
