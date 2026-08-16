@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_index
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.search_index
+targetEntityType: taxonomy_term
+bundle: tags
+mode: search_index
+content: {  }
+hidden: {  }
