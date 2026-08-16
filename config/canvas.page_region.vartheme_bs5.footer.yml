@@ -37,7 +37,7 @@ component_tree:
     slot: col_1
     uuid: 1b8d6230-40b5-4224-b5c1-db5e805d31ac
     component_id: block.system_menu_block.secondary
-    component_version: 31ecc6cc06f17d4e
+    component_version: 7206ccf6a90c8941
     inputs:
       label: 'Footer sitemap menu'
       label_display: '0'

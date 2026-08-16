@@ -72,13 +72,14 @@ component_tree:
     slot: content
     uuid: afd25b14-039e-464e-8c0c-4ca7eeeeae9c
     component_id: sdc.vartheme_bs5.icon-toggle
-    component_version: 5a87298f3691cd43
+    component_version: c42c2d3c773c4f6c
     inputs:
       icon: search
       label: Search
       open_label: 'Close search'
       placement: end
       panel: bar
+      expand_in_editor: true
   64cc6d33-c24c-45be-a52b-1deb85fcab0b:
     parent_uuid: afd25b14-039e-464e-8c0c-4ca7eeeeae9c
     slot: content
