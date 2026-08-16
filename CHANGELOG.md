@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc1] - 2026-08-15
+### Added
+- Add the header search box to the Varbase Starter header region.
+- Add Varbase Patches to the composer requirements and a Drupal CMS wiring script.
+- Add Varbase E2E Automated Functional Testing and fast CI.
+### Changed
+- Pin the bundled Varbase base recipes (`varbase_*_base`, `varbase_demo_content`, `varbase_ai_base`) to `~1.0.0`, `drupal/vartheme_bs5` to `~5.0.0`, and `vardot/varbase-patches` to `~11.0.0`.
+- Update the version badge to `1.0.0-rc1` in `README.md`.
+### Fixed
+- Remove the leading slash from the site template finish_url.
+
 ## [1.0.0-beta1] - 2026-07-10
 ### Added
 - Add reusable Canvas Patterns (sections) to Varbase Starter.
@@ -26,7 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-beta1...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc1...1.0.x
+[1.0.0-rc1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-beta1...1.0.0-rc1
 [1.0.0-beta1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-alpha2...1.0.0-beta1
 [1.0.0-alpha2]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-alpha1...1.0.0-alpha2
 [1.0.0-alpha1]: https://git.drupalcode.org/project/varbase_starter/-/tags/1.0.0-alpha1

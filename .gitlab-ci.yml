@@ -117,6 +117,29 @@ workflow:
     - composer --version && php --version
     - sed -i 's/rights="none"\s*pattern="WEBP"/rights="read|write" pattern="WEBP"/I' /etc/ImageMagick-*/policy.xml 2>/dev/null || true
 
+  # The version the path repo must advertise for this checkout.
+  #
+  # Both install jobs register $CI_PROJECT_DIR as a path repository so the site is
+  # built from THIS branch and not from a published copy. A path repository is
+  # canonical, so it shadows Packagist for drupal/varbase_starter entirely: the
+  # only version of this package Composer can see is the one the path repo
+  # advertises, and by default that is whatever `version` composer.json carries.
+  #
+  # A release MR must set `"version": "1.0.0-rc1"` in composer.json. Left alone,
+  # the path repo would then advertise 1.0.0-rc1 as the ONLY available version,
+  # while the host project's graph (vardot/varbase 11.0.x-dev) requires
+  # drupal/varbase_starter 1.0.x-dev — unsatisfiable, and every release would go
+  # red on its own version bump.
+  #
+  # Override the advertised version instead of removing the `version` key: the
+  # repo stays canonical (so the branch checkout is still definitively what gets
+  # installed) and it advertises the dev version the graph asks for. Derived from
+  # the branch the commit is FOR, never the source branch, so no release has to
+  # edit this file.
+  recipe_dev_version:
+    - export RECIPE_DEV_VERSION="${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:-$CI_DEFAULT_BRANCH}-dev"
+    - echo "Path repo advertises drupal/varbase_starter as $RECIPE_DEV_VERSION"
+
 # = build = validate the recipe's composer.json (schema + metadata, offline).
 "📦 Composer validate":
   stage: build
@@ -272,6 +295,7 @@ workflow:
       - varbase-starter-db.sql.gz
   before_script:
     - !reference [.fragments, host_php_setup]
+    - !reference [.fragments, recipe_dev_version]
   script:
     # = Build a Varbase 11 project, then require the checked-out recipe =
     # The build cache may restore a stale testsite/; composer create-project
@@ -287,8 +311,32 @@ workflow:
     # (a later require then reports "Nothing to modify in lock file").
     # --json so the flag is stored as a boolean, not the truthy string "false".
     - composer config extra.drupal-recipe-unpack.on-require --json false
-    - composer config repositories.varbase_starter path "$CI_PROJECT_DIR"
+    # Canonical path repo (the branch checkout wins over Packagist), advertising
+    # the branch dev version rather than the release version composer.json may
+    # carry. See .fragments.recipe_dev_version.
+    - composer config repositories.varbase_starter
+        '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"versions":{"drupal/varbase_starter":"'"$RECIPE_DEV_VERSION"'"}}}'
+        --json
     - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
+    # Prove the recipe under test came from the path repo, not from a published
+    # copy: a silent fall back to Packagist would stop testing this branch.
+    - |
+      php -r '
+        $l = json_decode(file_get_contents("composer.lock"), TRUE);
+        foreach ($l["packages"] as $p) {
+          if ($p["name"] !== "drupal/varbase_starter") { continue; }
+          $src = $p["dist"]["url"] ?? "";
+          printf("drupal/varbase_starter %s from %s\n", $p["version"], $src);
+          if (($p["dist"]["type"] ?? "") !== "path" || $src !== getenv("CI_PROJECT_DIR")) {
+            fwrite(STDERR, "❌ not installed from the branch checkout\n");
+            exit(1);
+          }
+          print "✅ installed from the branch checkout\n";
+          exit(0);
+        }
+        fwrite(STDERR, "❌ drupal/varbase_starter is not in the lock file\n");
+        exit(1);
+      '
     # The copied varbase_project suites exercise the API / Auth / i18n / AI
     # stacks, which the Varbase Starter recipe deliberately does not compose.
     # Pull those recipe packages into the TEST HOST (the Starter recipe itself
@@ -417,6 +465,7 @@ workflow:
     CMS_SITE_DIR: "$CI_PROJECT_DIR/cmssite"
   before_script:
     - !reference [.fragments, host_php_setup]
+    - !reference [.fragments, recipe_dev_version]
   script:
     # = Build a plain Drupal CMS project — no Varbase wiring of any kind =
     # composer create-project refuses a non-empty target, so start clean on every
@@ -434,10 +483,34 @@ workflow:
     # symlink:false — the recipe must be COPIED in. A path-repo symlink would
     # point recipes/varbase_starter back at $CI_PROJECT_DIR, which contains this build,
     # and any recursive scan then loops until "Too many levels of symbolic links".
-    - composer config repositories.varbase_starter '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":false}}' --json
+    # Same version override as the Varbase install job, for the same reason: the
+    # repo stays canonical so this branch is what gets installed, and it
+    # advertises the branch dev version instead of the release version
+    # composer.json may carry. See .fragments.recipe_dev_version.
+    - composer config repositories.varbase_starter
+        '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":false,"versions":{"drupal/varbase_starter":"'"$RECIPE_DEV_VERSION"'"}}}'
+        --json
     - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
     # = Assert the wiring took effect, so a silent no-op cannot pass =
     - test -d recipes/varbase_starter || (echo "❌ recipes/varbase_starter missing" && exit 1)
+    # The recipe under test must come from the path repo, not a published copy.
+    - |
+      php -r '
+        $l = json_decode(file_get_contents("composer.lock"), TRUE);
+        foreach ($l["packages"] as $p) {
+          if ($p["name"] !== "drupal/varbase_starter") { continue; }
+          $src = $p["dist"]["url"] ?? "";
+          printf("drupal/varbase_starter %s from %s\n", $p["version"], $src);
+          if (($p["dist"]["type"] ?? "") !== "path" || $src !== getenv("CI_PROJECT_DIR")) {
+            fwrite(STDERR, "❌ not installed from the branch checkout\n");
+            exit(1);
+          }
+          print "✅ installed from the branch checkout\n";
+          exit(0);
+        }
+        fwrite(STDERR, "❌ drupal/varbase_starter is not in the lock file\n");
+        exit(1);
+      '
     - test -d web/modules/contrib/canvas || (echo "❌ drupal/canvas missing" && exit 1)
     - composer show vardot/varbase-patches
     - |
