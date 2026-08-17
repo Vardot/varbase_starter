@@ -6,7 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.0-rc2] - 2026-08-17
+Supersedes 1.0.0-rc1. The Composer artifact published for 1.0.0-rc1 was built from a
+commit that predates the search index configuration and the Canvas component version
+re-mint, so `composer require drupal/varbase_starter` installed a tree without them.
+Use 1.0.0-rc2 instead.
+### Changed
+- Add the search index view modes and displays for the content types and taxonomy terms.
+- Give the search results page a heading and one readable result per row.
+- Update the version badge to `1.0.0-rc2` in `README.md`.
 ### Fixed
+- Re-mint the stale Canvas component version pins.
 - Create the header search block after the search view display that provides it, so the install no longer warns that the `views_exposed_filter_block:search-block_1` block plugin was not found and the header region no longer pins a stale Canvas component version.
 
 ## [1.0.0-rc1] - 2026-08-15
@@ -39,7 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc1...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc2...1.0.x
+[1.0.0-rc2]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc1...1.0.0-rc2
 [1.0.0-rc1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-beta1...1.0.0-rc1
 [1.0.0-beta1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-alpha2...1.0.0-beta1
 [1.0.0-alpha2]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-alpha1...1.0.0-alpha2
