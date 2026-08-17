@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Create the header search block after the search view display that provides it, so the install no longer warns that the `views_exposed_filter_block:search-block_1` block plugin was not found and the header region no longer pins a stale Canvas component version.
 
 ## [1.0.0-rc1] - 2026-08-15
 ### Added
