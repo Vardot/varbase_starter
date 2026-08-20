@@ -187,6 +187,8 @@ What it sets:
 * `config.allow-plugins` for `cweagans/composer-patches`, `vardot/varbase-patches` and
   `oomphinc/composer-installers-extender` — varbase-patches is a plugin and pulls the
   extender in, and `drupal/cms` allows neither, so composer aborts its install step.
+* `require.vardot/varbase-patches` — the patch-applier plugin itself, added at the
+  project level; it is no longer declared in the recipe's own `composer.json`.
 * `extra.enable-patching`, `extra.composer-exit-on-patch-failure` and the default-deny
   `extra.composer-patches.allowed-dependency-patches` allowlist — this is what lets
   `drupal/canvas` resolve with its patches.
@@ -202,8 +204,9 @@ composer require drupal/varbase_starter -W
 corepack enable && corepack yarn install
 ```
 
-`vardot/varbase-patches` arrives as a requirement of this recipe, so it does not need
-requiring separately: the wiring above only has to permit its plugin first.
+`vardot/varbase-patches` is no longer declared in the recipe's own `composer.json`; the
+wiring above adds it to the project-root `composer.json` require and permits its plugin,
+so a project gets the patch tooling without the recipe depending on a Composer plugin.
 
 `-W` is required: a partial update keeps the locked `symfony/css-selector`, which
 `drupal/storybook` (via `varbase_dev_base`) conflicts with.

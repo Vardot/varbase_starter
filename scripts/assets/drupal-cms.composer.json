@@ -1,6 +1,9 @@
 {
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "require": {
+        "vardot/varbase-patches": "~11.0.0"
+    },
     "config": {
         "allow-plugins": {
             "cweagans/composer-patches": true,
