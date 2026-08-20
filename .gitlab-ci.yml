@@ -420,9 +420,10 @@ workflow:
   allow_failure: false
 
 # = pre-test = prove the Drupal CMS wiring: build a plain drupal/cms codebase,
-# run scripts/drupal-cms-wiring.php on it, require this recipe and install the
-# site template through the Drupal CMS installer. This is the only job that
-# exercises Varbase Starter off a Varbase base, so it guards the wiring script and the
+# wire it inline (dev stability, allow-plugins, the patches allowlist, the
+# drupal-libraries block and Yarn's node-modules linker), require this recipe and
+# install the site template through the Drupal CMS installer. This is the only job
+# that exercises Varbase Starter off a Varbase base, so it guards that wiring and the
 # vardot/varbase-patches requirement against drifting out of use.
 "🧩 (Drupal CMS) Install Varbase Starter site template":
   stage: pre-test
@@ -473,10 +474,62 @@ workflow:
     - rm -rf "$CMS_SITE_DIR"
     - composer create-project drupal/cms "$CMS_SITE_DIR" --no-interaction --no-install --no-scripts
     - cd "$CMS_SITE_DIR"
-    # = Wire it for a Site recipe: dev stability, allow-plugins, the patches
-    #   allowlist, the drupal-libraries block and Yarn's node-modules linker.
-    #   Run from the project root; the script resolves the root from getcwd().
-    - php "$CI_PROJECT_DIR/scripts/drupal-cms-wiring.php"
+    # = Wire the plain Drupal CMS root for a Site recipe, inline (formerly
+    #   scripts/drupal-cms-wiring.php, which this recipe no longer ships): dev
+    #   stability, the allow-plugins + patches allowlist, vardot/varbase-patches,
+    #   the drupal-libraries block, Yarn's node-modules linker and the sync script.
+    - composer config minimum-stability dev
+    - composer config prefer-stable true
+    - composer config allow-plugins.cweagans/composer-patches true
+    - composer config allow-plugins.vardot/varbase-patches true
+    - composer config allow-plugins.oomphinc/composer-installers-extender true
+    - composer config --json extra.enable-patching true
+    - composer config --json extra.composer-exit-on-patch-failure true
+    - composer config --json extra.composer-patches.allowed-dependency-patches '["vardot/varbase-patches","vardot/drupal-core-patches"]'
+    - composer config --json extra.drupal-recipe-unpack.on-require false
+    - composer require vardot/varbase-patches:~11.0.0 --no-update
+    - |
+      cat > .yarnrc.yml <<'YARNRC'
+      nodeLinker: node-modules
+
+      enableScripts: true
+
+      npmMinimalAgeGate: 0
+      YARNRC
+    - |
+      node <<'NODE'
+      const fs = require('fs');
+      const pkg = fs.existsSync('package.json')
+        ? JSON.parse(fs.readFileSync('package.json', 'utf8'))
+        : { name: 'varbase_starter-drupalcms-project', private: true };
+      pkg.scripts = Object.assign({}, pkg.scripts, {
+        'drupal-libraries-sync': 'node ./scripts/drupal-libraries-sync.js',
+        postinstall: 'node ./scripts/drupal-libraries-sync.js',
+      });
+      pkg.dependencies = Object.assign({}, pkg.dependencies, {
+        '@ckeditor/ckeditor5-media-embed': '^47.6.0',
+        'ace-builds': '~1',
+        aos: '~2',
+        dropzone: '~5',
+        'jquery.fancytree': '~2',
+        'swagger-ui-dist': '~3',
+      });
+      pkg['drupal-libraries'] = {
+        'library-directory': 'web/libraries',
+        libraries: [
+          { name: 'ckeditor5/plugins/media-embed', package: '@ckeditor/ckeditor5-media-embed' },
+          { name: 'ace', package: 'ace-builds' },
+          { name: 'dropzone', package: 'dropzone/dist' },
+          { name: 'jquery.fancytree', package: 'jquery.fancytree' },
+          { name: 'swagger-ui/dist', package: 'swagger-ui-dist' },
+          { name: 'aos', package: 'aos/dist' },
+        ],
+      };
+      fs.writeFileSync('package.json', JSON.stringify(pkg, null, 4) + '\n');
+      console.log('✅ package.json drupal-libraries wiring in place');
+      NODE
+    - mkdir -p scripts
+    - cp "$CI_PROJECT_DIR/scripts/drupal-libraries-sync.js" scripts/drupal-libraries-sync.js
     # = Point at the checked-out recipe and require it. --with-all-dependencies is
     #   required: a partial update keeps the locked symfony/css-selector, which
     #   drupal/storybook (via varbase_dev_base) conflicts with.
