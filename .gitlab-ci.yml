@@ -735,7 +735,7 @@ workflow:
       - SUITE: "09-drupal-canvas-b"
         FEATURES_GLOB: "tests/features/09-drupal-canvas/09-02-*.feature"
       - SUITE: "09-drupal-canvas-c"
-        FEATURES_GLOB: "tests/features/09-drupal-canvas/09-{03,04,05}-*.feature"
+        FEATURES_GLOB: "tests/features/09-drupal-canvas/09-{03,04,05,07}-*.feature"
       - SUITE: "09-drupal-canvas-d"
         FEATURES_GLOB: "tests/features/09-drupal-canvas/09-06-*.feature"
       - SUITE: "12-content-access-and-lock-a"
