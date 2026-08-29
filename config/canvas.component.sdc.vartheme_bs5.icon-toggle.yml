@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - canvas_icon_picker
     - options
   theme:
     - vartheme_bs5
@@ -12,15 +13,16 @@ versioned_properties:
       prop_field_definitions:
         icon:
           required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings:
+            allowed_icon_pack:
+              - bootstrap_icons
+          field_widget: canvas_icon_picker
           default_value:
             -
               value: search
-          expression: ℹ︎list_string␟value
+          expression: ℹ︎string␟value
           derived_schema_metadata: {  }
         label:
           required: false
@@ -91,15 +93,16 @@ versioned_properties:
       prop_field_definitions:
         icon:
           required: false
-          field_type: list_string
-          field_storage_settings:
-            allowed_values_function: canvas_load_allowed_values_for_component_prop
-          field_instance_settings: {  }
-          field_widget: options_select
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings:
+            allowed_icon_pack:
+              - bootstrap_icons
+          field_widget: canvas_icon_picker
           default_value:
             -
               value: search
-          expression: ℹ︎list_string␟value
+          expression: ℹ︎string␟value
           derived_schema_metadata: {  }
         label:
           required: false
