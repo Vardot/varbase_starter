@@ -42,5 +42,5 @@
     "drupal/varbase_demo_content": "~1.0.0",
     "drupal/vartheme_bs5": "~5.0.0"
   },
-  "version": "1.0.x-dev"
+  "version": "1.0.0-rc3"
 }

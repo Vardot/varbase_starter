@@ -6,10 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.0-rc3] - 2026-09-01
+### Added
+- Add the Canvas Icon Picker (`drupal/canvas_icon_picker`) to the recipe.
+- Add functional testing coverage for Drupal Canvas page translations.
 ### Changed
 - Apply the new `varbase_canvas_base` recipe, which now owns the `canvas_override`
   install and the Drupal Canvas page, component library, pattern, template and
   global region permissions that `varbase_content_base` used to grant.
+- Stop shipping `vardot/varbase-patches` and the Drupal CMS wiring script in the
+  recipe, and wire them inline in CI instead.
+- Update the version badge to `1.0.0-rc3` in `README.md`.
+### Fixed
+- Re-export the Vartheme BS5 icon component config for the whole Bootstrap Icons
+  pack, so editing a component no longer 500s when an icon prop drops its enum.
 
 ## [1.0.0-rc2] - 2026-08-17
 Supersedes 1.0.0-rc1. The Composer artifact published for 1.0.0-rc1 was built from a
@@ -54,7 +65,8 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc2...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc3...1.0.x
+[1.0.0-rc3]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc2...1.0.0-rc3
 [1.0.0-rc2]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc1...1.0.0-rc2
 [1.0.0-rc1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-beta1...1.0.0-rc1
 [1.0.0-beta1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-alpha2...1.0.0-beta1
