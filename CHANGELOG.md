@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Apply the new `varbase_canvas_base` recipe, which now owns the `canvas_override`
+  install and the Drupal Canvas page, component library, pattern, template and
+  global region permissions that `varbase_content_base` used to grant.
 
 ## [1.0.0-rc2] - 2026-08-17
 Supersedes 1.0.0-rc1. The Composer artifact published for 1.0.0-rc1 was built from a

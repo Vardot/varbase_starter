@@ -22,6 +22,7 @@
     "drupal/drupal_cms_google_analytics": "~2",
     "drupal/easy_email_express": "~1",
     "drupal/varbase_admin_base": "~1.0.0",
+    "drupal/varbase_canvas_base": "~1.0.0",
     "drupal/varbase_users_base": "~1.0.0",
     "drupal/varbase_dev_base": "~1.0.0",
     "drupal/varbase_security_base": "~1.0.0",
