@@ -420,9 +420,8 @@ workflow:
   allow_failure: false
 
 # = pre-test = prove the Drupal CMS wiring: build a plain drupal/cms codebase,
-# wire it inline (dev stability, allow-plugins, the patches allowlist, the
-# drupal-libraries block and Yarn's node-modules linker), require this recipe and
-# install the site template through the Drupal CMS installer. This is the only job
+# wire it inline (dev stability, allow-plugins and the patches allowlist), require
+# this recipe and install the site template through the Drupal CMS installer. This is the only job
 # that exercises Varbase Starter off a Varbase base, so it guards that wiring and the
 # vardot/varbase-patches requirement against drifting out of use.
 "🧩 (Drupal CMS) Install Varbase Starter site template":
@@ -477,7 +476,8 @@ workflow:
     # = Wire the plain Drupal CMS root for a Site recipe, inline (formerly
     #   scripts/drupal-cms-wiring.php, which this recipe no longer ships): dev
     #   stability, the allow-plugins + patches allowlist, vardot/varbase-patches,
-    #   the drupal-libraries block, Yarn's node-modules linker and the sync script.
+    #   and vardot/varbase-patches. The front-end libraries need nothing here:
+    #   each drupal-library package places itself.
     - composer config minimum-stability dev
     - composer config prefer-stable true
     - composer config allow-plugins.cweagans/composer-patches true
@@ -488,48 +488,28 @@ workflow:
     - composer config --json extra.composer-patches.allowed-dependency-patches '["vardot/varbase-patches","vardot/drupal-core-patches"]'
     - composer config --json extra.drupal-recipe-unpack.on-require false
     - composer require vardot/varbase-patches:~11.0.0 --no-update
-    - |
-      cat > .yarnrc.yml <<'YARNRC'
-      nodeLinker: node-modules
-
-      enableScripts: true
-
-      npmMinimalAgeGate: 0
-      YARNRC
-    - |
-      node <<'NODE'
-      const fs = require('fs');
-      const pkg = fs.existsSync('package.json')
-        ? JSON.parse(fs.readFileSync('package.json', 'utf8'))
-        : { name: 'varbase_starter-drupalcms-project', private: true };
-      pkg.scripts = Object.assign({}, pkg.scripts, {
-        'drupal-libraries-sync': 'node ./scripts/drupal-libraries-sync.js',
-        postinstall: 'node ./scripts/drupal-libraries-sync.js',
-      });
-      pkg.dependencies = Object.assign({}, pkg.dependencies, {
-        '@ckeditor/ckeditor5-media-embed': '^47.6.0',
-        'ace-builds': '~1',
-        aos: '~2',
-        dropzone: '~5',
-        'jquery.fancytree': '~2',
-        'swagger-ui-dist': '~3',
-      });
-      pkg['drupal-libraries'] = {
-        'library-directory': 'web/libraries',
-        libraries: [
-          { name: 'ckeditor5/plugins/media-embed', package: '@ckeditor/ckeditor5-media-embed' },
-          { name: 'ace', package: 'ace-builds' },
-          { name: 'dropzone', package: 'dropzone/dist' },
-          { name: 'jquery.fancytree', package: 'jquery.fancytree' },
-          { name: 'swagger-ui/dist', package: 'swagger-ui-dist' },
-          { name: 'aos', package: 'aos/dist' },
-        ],
-      };
-      fs.writeFileSync('package.json', JSON.stringify(pkg, null, 4) + '\n');
-      console.log('✅ package.json drupal-libraries wiring in place');
-      NODE
-    - mkdir -p scripts
-    - cp "$CI_PROJECT_DIR/scripts/drupal-libraries-sync.js" scripts/drupal-libraries-sync.js
+    # = Test the recipes under review, not the last release of each =
+    #   varbase_starter requires the varbase_*_base recipes at ~1.0.0, and this
+    #   job sets prefer-stable, so Composer resolves the newest RELEASE of each.
+    #   That makes the job structurally unable to validate a change that spans
+    #   several recipes: it tests whatever shipped last, never the branches the
+    #   change is actually on. The front-end-library migration is exactly such a
+    #   change - each recipe requires the drupal-library its modules load - so
+    #   the library assertion below failed against releases that predate it.
+    #   Pinning the recipes to their dev branch is what makes this a pre-test.
+    #   drupal/ace_editor is in the same list for the same reason, one layer
+    #   down: it is the one library whose require lives in a MODULE rather than
+    #   a recipe, and varbase_editor_base takes it at ~2, which resolves to the
+    #   2.0.4 release. That release predates the require; the 2.0.x branch has
+    #   it. Drop this pin once ace_editor 2.0.5 or later is released.
+    - composer require
+        drupal/varbase_admin_base:1.0.x-dev
+        drupal/varbase_content_base:1.0.x-dev
+        drupal/varbase_editor_base:1.0.x-dev
+        drupal/varbase_media_base:1.0.x-dev
+        drupal/varbase_api_base:1.0.x-dev
+        drupal/ace_editor:2.0.x-dev
+        --no-update
     # = Point at the checked-out recipe and require it. --with-all-dependencies is
     #   required: a partial update keeps the locked symfony/css-selector, which
     #   drupal/storybook (via varbase_dev_base) conflicts with.
@@ -592,16 +572,31 @@ workflow:
         }
         print "✅ composer wiring in place\n";
       '
-    # = Sync the front-end libraries the recipe components expect =
-    - corepack enable && corepack yarn install --no-immutable
+    # = Assert the front-end libraries the recipe components expect are on disk =
+    #   They come from Composer now: each varbase_* recipe requires its own
+    #   drupal-library, so requiring the recipe above already installed them.
+    #   Checking the FILES the .libraries.yml entries load, not a declaration,
+    #   is what catches a wrong installer path or a repacked upstream layout.
     - |
       php -r '
-        $libs = json_decode(file_get_contents("package.json"), TRUE)["drupal-libraries"]["libraries"] ?? [];
-        if (count($libs) < 6) {
-          fwrite(STDERR, "❌ the drupal-libraries block is not wired\n");
+        $need = [
+          "web/libraries/ace/src-min-noconflict/ace.js",
+          "web/libraries/aos/aos.js",
+          "web/libraries/aos/aos.css",
+          "web/libraries/dropzone/dropzone-min.js",
+          "web/libraries/dropzone/dropzone.css",
+          "web/libraries/jquery.fancytree/dist/jquery.fancytree.min.js",
+          "web/libraries/jquery.fancytree/dist/skin-lion/ui.fancytree.min.css",
+          "web/libraries/swagger-ui/dist/swagger-ui-bundle.js",
+          "web/libraries/swagger-ui/dist/swagger-ui.css",
+          "web/libraries/ckeditor5/plugins/media-embed/build/media-embed.js",
+        ];
+        $missing = array_values(array_filter($need, fn($f) => !is_file($f)));
+        if ($missing) {
+          fwrite(STDERR, "❌ front-end libraries missing:\n  " . implode("\n  ", $missing) . "\n");
           exit(1);
         }
-        printf("✅ %d libraries declared\n", count($libs));
+        printf("✅ %d front-end library files in place\n", count($need));
       '
     - ls web/libraries
     # = Install the site template through the Drupal CMS installer =
@@ -621,7 +616,6 @@ workflow:
     expire_in: 1 day
     paths:
       - cmssite/composer.json
-      - cmssite/package.json
   allow_failure: false
 
 # = Smoke canary = a single fast pre-flight test that does the same runtime-only
