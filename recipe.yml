@@ -28,7 +28,6 @@ recipes:
   - varbase_performance_base
   - varbase_demo_content
 install:
-  - canvas_icon_picker
   - vartheme_bs5
   - better_exposed_filters
 config:
