@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc4] - 2026-09-03
+### Changed
+- Stop declaring `drupal/canvas_icon_picker` here: the Canvas Icon Picker now
+  comes with `vartheme_bs5`, so the recipe no longer requires or installs it.
+- Drop the `scripts/drupal-libraries-sync.js` script and assert the front-end
+  library files in CI instead, now that the libraries come from Composer.
+- Drop the temporary CI pins that forced `varbase_admin_base`,
+  `varbase_content_base`, `varbase_editor_base`, `varbase_media_base`,
+  `varbase_api_base` and `ace_editor` to their dev branches. All six are
+  released and satisfied by the constraints in `composer.json`, so the pipeline
+  now tests the released packages the recipe actually resolves to.
+- Update the version badge to `1.0.0-rc4` in `README.md`.
+### Fixed
+- Pin the header and footer page-region block components to the `active`
+  component version, so a block config change no longer invalidates the region.
+
 ## [1.0.0-rc3] - 2026-09-01
 ### Added
 - Add the Canvas Icon Picker (`drupal/canvas_icon_picker`) to the recipe.
@@ -65,7 +81,8 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc3...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc4...1.0.x
+[1.0.0-rc4]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc3...1.0.0-rc4
 [1.0.0-rc3]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc2...1.0.0-rc3
 [1.0.0-rc2]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc1...1.0.0-rc2
 [1.0.0-rc1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-beta1...1.0.0-rc1

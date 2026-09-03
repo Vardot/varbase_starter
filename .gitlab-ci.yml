@@ -488,28 +488,6 @@ workflow:
     - composer config --json extra.composer-patches.allowed-dependency-patches '["vardot/varbase-patches","vardot/drupal-core-patches"]'
     - composer config --json extra.drupal-recipe-unpack.on-require false
     - composer require vardot/varbase-patches:~11.0.0 --no-update
-    # = Test the recipes under review, not the last release of each =
-    #   varbase_starter requires the varbase_*_base recipes at ~1.0.0, and this
-    #   job sets prefer-stable, so Composer resolves the newest RELEASE of each.
-    #   That makes the job structurally unable to validate a change that spans
-    #   several recipes: it tests whatever shipped last, never the branches the
-    #   change is actually on. The front-end-library migration is exactly such a
-    #   change - each recipe requires the drupal-library its modules load - so
-    #   the library assertion below failed against releases that predate it.
-    #   Pinning the recipes to their dev branch is what makes this a pre-test.
-    #   drupal/ace_editor is in the same list for the same reason, one layer
-    #   down: it is the one library whose require lives in a MODULE rather than
-    #   a recipe, and varbase_editor_base takes it at ~2, which resolves to the
-    #   2.0.4 release. That release predates the require; the 2.0.x branch has
-    #   it. Drop this pin once ace_editor 2.0.5 or later is released.
-    - composer require
-        drupal/varbase_admin_base:1.0.x-dev
-        drupal/varbase_content_base:1.0.x-dev
-        drupal/varbase_editor_base:1.0.x-dev
-        drupal/varbase_media_base:1.0.x-dev
-        drupal/varbase_api_base:1.0.x-dev
-        drupal/ace_editor:2.0.x-dev
-        --no-update
     # = Point at the checked-out recipe and require it. --with-all-dependencies is
     #   required: a partial update keeps the locked symfony/css-selector, which
     #   drupal/storybook (via varbase_dev_base) conflicts with.
