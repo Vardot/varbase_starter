@@ -1,6 +1,6 @@
 name: Varbase Starter
 type: Site
-description: 'A starter site template recipe for Varbase, providing a modern recipe-first approach to initializing Varbase sites.'
+description: 'Designed for teams starting a new Varbase site, this template features ready-made home, about, features, blog and contact pages, with blog posts, a media library, search, a contact form and built-in SEO and accessibility tools.'
 recipes:
   - varbase_users_base
   - varbase_canvas_base
