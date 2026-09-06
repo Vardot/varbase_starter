@@ -42,6 +42,12 @@ default:
       value: Home
   components:
     -
+      uuid: 2a2b0907-9ac7-4707-aab3-c4c1b7b4a3dd
+      component_id: sdc.vartheme_bs5.heading
+      inputs:
+        level: 1
+        heading_text: 'Varbase Starter'
+    -
       uuid: a34efb95-9572-4451-92ba-0ea843c05b8c
       component_id: sdc.vartheme_bs5.section
       inputs:
