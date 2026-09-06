@@ -2,7 +2,7 @@
 
 # Varbase Starter
 [![pipeline status](https://git.drupalcode.org/project/varbase_starter/badges/1.0.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_starter/-/pipelines)
-[![Varbase Starter](https://img.shields.io/badge/Varbase%20Starter-1.0.x--dev-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/varbase_starter/-/pipelines?ref=1.0.x)
+[![Varbase Starter](https://img.shields.io/badge/Varbase%20Starter-1.0.0-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/varbase_starter/-/pipelines?ref=1.0.0)
 [![Automated Functional Testing](https://git.drupalcode.org/project/varbase_project/badges/11.0.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_project/-/pipelines)
 
 A starter site template recipe for Varbase, providing a modern recipe-first approach to initializing Varbase sites.
