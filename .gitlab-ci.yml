@@ -502,6 +502,18 @@ workflow:
         '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":false,"versions":{"drupal/varbase_starter":"'"$RECIPE_DEV_VERSION"'"}}}'
         --json
     - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
+    # The Varbase Starter recipe deliberately does not compose the API / Auth /
+    # i18n / AI stacks, and no longer requires those recipe packages. Pull them
+    # into the TEST HOST (the Starter recipe itself is unchanged) so this lane
+    # still proves they resolve, and so they still install the front-end library
+    # files the assertion below checks. Same reasoning as the Varbase install
+    # job above. --with-all-dependencies is needed for the same reason it is
+    # there, and on-require is already false, so core-recipe-unpack leaves the
+    # packages in place instead of unpacking them into the root composer.json.
+    - composer require
+        drupal/varbase_ai_base drupal/varbase_api_base
+        drupal/varbase_auth_base drupal/varbase_i18n_base
+        --no-interaction --no-progress --prefer-dist --with-all-dependencies
     # = Assert the wiring took effect, so a silent no-op cannot pass =
     - test -d recipes/varbase_starter || (echo "❌ recipes/varbase_starter missing" && exit 1)
     # The recipe under test must come from the path repo, not a published copy.
