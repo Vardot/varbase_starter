@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-09-08
+### Changed
+- Set the recipe version to `1.0.1`.
+- Remove the four never-applied base recipes (`varbase_i18n_base`,
+  `varbase_ai_base`, `varbase_api_base` and `varbase_auth_base`), so the
+  template resolves on Stable for Drupal CMS.
+- Update `@vardot/varbase-e2e` to `^2.0.4`.
+- Require every Varbase base recipe at its stable release (`~1.0.0`) instead of
+  `1.0.x-dev`: `varbase_admin_base`, `varbase_users_base`,
+  `varbase_security_base`, `varbase_performance_base`, `varbase_media_base`,
+  `varbase_editor_base`, `varbase_content_base`, `varbase_canvas_base`,
+  `varbase_workflow_base`, `varbase_seo_base`, `varbase_webform_base`,
+  `varbase_page_base`, `varbase_blog_base` and `varbase_demo_content`. A stable
+  release must not ship dev constraints.
+- Require `drupal/vartheme_bs5` at `~5.0.0` instead of `5.0.x-dev`.
+- Update the version badge to `1.0.1` in `README.md`.
+### Fixed
+- Temporarily remove the Entity Clone functional testing coverage, which fails
+  now the module is not installed.
+
 ## [1.0.0] - 2026-09-06
 ### Changed
 - Set the recipe version to `1.0.0` for the first stable release.
@@ -95,7 +115,8 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.1...1.0.x
+[1.0.1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0...1.0.1
 [1.0.0]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc4...1.0.0
 [1.0.0-rc4]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc3...1.0.0-rc4
 [1.0.0-rc3]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc2...1.0.0-rc3
