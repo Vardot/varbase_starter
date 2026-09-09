@@ -524,51 +524,9 @@ config:
       disable: []
     canvas.component.sdc.navigation.title:
       disable: []
-    canvas.component.sdc.vartheme_bs5.details:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.field:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.fieldset:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.form:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.form-element:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.form-element-radiocheckbox:
-      disable: []
     canvas.component.sdc.vartheme_bs5.input-checkbox:
       disable: []
     canvas.component.sdc.vartheme_bs5.input-submit:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.links-dropbutton:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.list:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.local-tasks:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.page:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.page-footer:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.radios:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.region:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.select:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.social-auth:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.user:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.views-view:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.views-view-grid:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.views-view-list:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.views-view-summary:
-      disable: []
-    canvas.component.sdc.vartheme_bs5.views-view-unformatted:
       disable: []
 extra:
   recipe_installer_kit:
