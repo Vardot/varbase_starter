@@ -5,7 +5,7 @@
 # validate - lint YAML, spell-check + ESLint the suite, and a Cucumber dry-run
 #            that proves every step phrasing in the Varbase functional testing
 #            suite resolves (all reproducible offline in gitlab-ci-local).
-# pre-test - 🧩 Install Varbase Starter site template (Drupal CMS): build a plain
+# pre-test - 🧩 Drupal CMS - Varbase Starter: build a plain
 #            drupal/cms host project, wire it for a Site recipe, require the
 #            checked-out Varbase Starter recipe, install it through the Drupal
 #            CMS installer, prepare it for deterministic testing, then DUMP the
@@ -83,7 +83,7 @@ workflow:
   - "eslint.config.js"
   - "playwright.config.ts"
 
-# Build cache populated by 🧩 Install Varbase Starter site template (Drupal CMS):
+# Build cache populated by 🧩 Drupal CMS - Varbase Starter:
 # the built host site (cmssite/), the varbase-e2e node_modules and the composer +
 # Playwright download caches.
 # The test jobs pull this (see .test_cache) so they skip the whole host build
@@ -270,7 +270,7 @@ workflow:
 # a Drupal CMS site template, so Drupal CMS is the base it has to work on; the
 # former varbase_project lane was removed. This job also guards the
 # vardot/varbase-patches wiring against drifting out of use.
-"🧩 Install Varbase Starter site template (Drupal CMS)":
+"🧩 Drupal CMS - Varbase Starter":
   stage: pre-test
   rules:
     - <<: *run_on_release_refs
@@ -560,7 +560,7 @@ workflow:
     - when: manual
       allow_failure: false
   image: mcr.microsoft.com/playwright:v1.56.0-noble
-  needs: ["🧩 Install Varbase Starter site template (Drupal CMS)"]
+  needs: ["🧩 Drupal CMS - Varbase Starter"]
   timeout: 30m
   retry:
     max: 2
@@ -600,7 +600,7 @@ workflow:
   allow_failure: false
 
 # = Automated Functional Acceptance Testing (varbase-e2e) - one parallel job per
-# feature bucket. Restores the built site + DB dump from 🧩 Install Varbase Starter site template (Drupal CMS).
+# feature bucket. Restores the built site + DB dump from 🧩 Drupal CMS - Varbase Starter.
 "🧪 functional":
   stage: test
   rules:
@@ -610,7 +610,7 @@ workflow:
     - when: manual
       allow_failure: false
   image: mcr.microsoft.com/playwright:v1.56.0-noble
-  needs: ["🧩 Install Varbase Starter site template (Drupal CMS)", "🧪 functional (smoke)"]
+  needs: ["🧩 Drupal CMS - Varbase Starter", "🧪 functional (smoke)"]
   timeout: 2h
   retry:
     max: 2
