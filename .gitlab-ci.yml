@@ -5,13 +5,18 @@
 # validate - lint YAML, spell-check + ESLint the suite, and a Cucumber dry-run
 #            that proves every step phrasing in the Varbase functional testing
 #            suite resolves (all reproducible offline in gitlab-ci-local).
-# pre-test - 📦 Install Varbase Starter site template (varbase): build a Varbase 11 host project, require the
-#            checked-out Varbase Starter recipe, install it with
-#            `drush site:install recipes/varbase_starter`, prepare it for deterministic
-#            testing, then DUMP the DB (gzip). The built site (testsite/), the
-#            varbase-e2e node_modules and the Playwright browser are cached so
-#            the test jobs reuse them instead of rebuilding per job.
-# test     - one parallel varbase-e2e job per feature bucket: pull the build
+# pre-test - 🧩 Install Varbase Starter site template (Drupal CMS): build a plain
+#            drupal/cms host project, wire it for a Site recipe, require the
+#            checked-out Varbase Starter recipe, install it through the Drupal
+#            CMS installer, prepare it for deterministic testing, then DUMP the
+#            DB (gzip). The built site (cmssite/), the varbase-e2e node_modules
+#            and the Playwright browser are cached so the test jobs reuse them
+#            instead of rebuilding per job.
+#
+#            Drupal CMS is the ONLY base this pipeline builds on. The former
+#            varbase_project lane was removed: Varbase Starter is a Drupal CMS
+#            site template, so that is the base it has to work on.
+# test     - one parallel functional job per feature bucket: pull the build
 #            cache, restore the DB dump (seconds), serve the site and drive it
 #            through the browser. No composer create-project / require /
 #            site:install / npm install per job.
@@ -31,12 +36,11 @@ variables:
   COMPOSER_ALLOW_SUPERUSER: "1"
   COMPOSER_MEMORY_LIMIT: "-1"
   COMPOSER_NO_INTERACTION: "1"
-  VARBASE_PROJECT: "drupal/varbase_project:11.0.x-dev"
   DRUPAL_ADMIN_USERNAME: "webmaster"
   DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
-  # Host site is built under testsite/ (this repo is a recipe, not a docroot).
-  SITE_DIR: "$CI_PROJECT_DIR/testsite"
-  WEB_ROOT: "$CI_PROJECT_DIR/testsite/web"
+  # Host site is built under cmssite/ (this repo is a recipe, not a docroot).
+  SITE_DIR: "$CI_PROJECT_DIR/cmssite"
+  WEB_ROOT: "$CI_PROJECT_DIR/cmssite/web"
   DB_URL: "mysql://drupal:drupal@database/drupal"
   LAUNCH_URL: "http://127.0.0.1:8888"
   FORCE_COLOR: "1"
@@ -79,25 +83,26 @@ workflow:
   - "eslint.config.js"
   - "playwright.config.ts"
 
-# Build cache populated by 📦 Install Varbase Starter site template (varbase): the built host site (testsite/),
-# the varbase-e2e node_modules and the composer + Playwright download caches.
+# Build cache populated by 🧩 Install Varbase Starter site template (Drupal CMS):
+# the built host site (cmssite/), the varbase-e2e node_modules and the composer +
+# Playwright download caches.
 # The test jobs pull this (see .test_cache) so they skip the whole host build
 # and only restore the DB dump.
 .varbase_cache: &varbase_cache
-  key: "varbase-starter-build-v2-$CI_COMMIT_REF_SLUG"
+  key: "varbase-starter-cms-build-v3-$CI_COMMIT_REF_SLUG"
   paths:
     - .cache/composer
     - .cache/ms-playwright
-    - testsite
+    - cmssite
     - node_modules
 
 .test_cache: &test_cache
-  key: "varbase-starter-build-v2-$CI_COMMIT_REF_SLUG"
+  key: "varbase-starter-cms-build-v3-$CI_COMMIT_REF_SLUG"
   policy: pull
   paths:
     - .cache/composer
     - .cache/ms-playwright
-    - testsite
+    - cmssite
     - node_modules
 
 # = Reusable before_script fragments =
@@ -181,7 +186,7 @@ workflow:
       class Loader(yaml.SafeLoader):
           pass
       Loader.add_multi_constructor('', lambda loader, suffix, node: None)
-      SKIP = ('node_modules/', '.cache/', 'tests/reports/', 'testsite/')
+      SKIP = ('node_modules/', '.cache/', 'tests/reports/', 'cmssite/')
       errors = count = 0
       for path in sorted(Path('.').rglob('*.y*ml')):
           rel = str(path)
@@ -258,9 +263,14 @@ workflow:
   script:
     - VARBASE_E2E_REPORT_DISABLE=1 ./node_modules/.bin/cucumber-js --config cucumber.js --dry-run
 
-# = pre-test = build the host Varbase site, apply the Varbase Starter recipe, seed the
-# site, dump the DB, and cache the built site + node_modules + browser.
-"📦 Install Varbase Starter site template (varbase)":
+# = pre-test = the ONLY pre-test job, and the only base this recipe is tested on.
+# Build a plain drupal/cms codebase, wire it inline (dev stability, allow-plugins
+# and the patches allowlist), require this recipe from the branch checkout and
+# install the site template through the Drupal CMS installer. Varbase Starter is
+# a Drupal CMS site template, so Drupal CMS is the base it has to work on; the
+# former varbase_project lane was removed. This job also guards the
+# vardot/varbase-patches wiring against drifting out of use.
+"🧩 Install Varbase Starter site template (Drupal CMS)":
   stage: pre-test
   rules:
     - <<: *run_on_release_refs
@@ -288,181 +298,6 @@ workflow:
         MARIADB_USER: drupal
         MARIADB_PASSWORD: drupal
         MARIADB_ROOT_PASSWORD: root
-  artifacts:
-    when: on_success
-    expire_in: 1 day
-    paths:
-      - varbase-starter-db.sql.gz
-  before_script:
-    - !reference [.fragments, host_php_setup]
-    - !reference [.fragments, recipe_dev_version]
-  script:
-    # = Build a Varbase 11 project, then require the checked-out recipe =
-    # The build cache may restore a stale testsite/; composer create-project
-    # refuses a non-empty target, so start from a clean dir on every run.
-    - rm -rf "$SITE_DIR"
-    - composer create-project $VARBASE_PROJECT "$SITE_DIR" --no-interaction --no-install --no-scripts
-    - cd "$SITE_DIR"
-    - composer config minimum-stability dev
-    # Disable recipe unpacking BEFORE the first `composer require`. Otherwise
-    # requiring the Starter recipe unpacks its recipe dependencies into the
-    # root composer.json and deletes the packages, so recipes/<name> never
-    # exists and every `dr recipe` apply below fails with "not a directory"
-    # (a later require then reports "Nothing to modify in lock file").
-    # --json so the flag is stored as a boolean, not the truthy string "false".
-    - composer config extra.drupal-recipe-unpack.on-require --json false
-    # Canonical path repo (the branch checkout wins over Packagist), advertising
-    # the branch dev version rather than the release version composer.json may
-    # carry. See .fragments.recipe_dev_version.
-    - composer config repositories.varbase_starter
-        '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"versions":{"drupal/varbase_starter":"'"$RECIPE_DEV_VERSION"'"}}}'
-        --json
-    - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
-    # Prove the recipe under test came from the path repo, not from a published
-    # copy: a silent fall back to Packagist would stop testing this branch.
-    - |
-      php -r '
-        $l = json_decode(file_get_contents("composer.lock"), TRUE);
-        foreach ($l["packages"] as $p) {
-          if ($p["name"] !== "drupal/varbase_starter") { continue; }
-          $src = $p["dist"]["url"] ?? "";
-          printf("drupal/varbase_starter %s from %s\n", $p["version"], $src);
-          if (($p["dist"]["type"] ?? "") !== "path" || $src !== getenv("CI_PROJECT_DIR")) {
-            fwrite(STDERR, "❌ not installed from the branch checkout\n");
-            exit(1);
-          }
-          print "✅ installed from the branch checkout\n";
-          exit(0);
-        }
-        fwrite(STDERR, "❌ drupal/varbase_starter is not in the lock file\n");
-        exit(1);
-      '
-    # The copied varbase_project suites exercise the API / Auth / i18n / AI
-    # stacks, which the Varbase Starter recipe deliberately does not compose.
-    # Pull those recipe packages into the TEST HOST (the Starter recipe itself
-    # is unchanged) so the `dr recipe` applies below find them. on-require must
-    # be false or core-recipe-unpack unpacks each recipe into the root
-    # composer.json and removes the package, leaving recipes/<name> absent.
-    - composer require
-        drupal/varbase_dev_base drupal/varbase_i18n_base drupal/varbase_api_base
-        drupal/varbase_auth_base drupal/varbase_ai_base drupal/varbase_ai_context
-        drupal/varbase_ai_safety
-        --no-interaction --no-progress --prefer-dist --with-all-dependencies
-    # = Install the site from the Varbase Starter recipe =
-    - ./bin/drush site:install recipes/varbase_starter --db-url=$DB_URL
-        --account-name=$DRUPAL_ADMIN_USERNAME --account-pass=$DRUPAL_ADMIN_PASSWORD
-        --account-mail=webmaster@vardot.com --site-name="Varbase Starter" --locale=en -y
-    # = Top-level base + AI recipes (sub-recipes apply transitively) =
-    # The copied suites exercise the API / Auth / i18n / AI stacks, so the test
-    # host applies the same recipes varbase_project's own CI applies. Drupal
-    # 11.4 recipes run through core's `dr` runner (Drush 13.x has no `recipe`
-    # command); a cache rebuild BEFORE each apply is required so a recipe sees
-    # the modules/hooks the previous one enabled.
-    # Resolve each recipe's real install path from composer instead of assuming
-    # recipes/<name>: the packages are installed (composer reports them) but the
-    # hardcoded path did not exist, so every apply failed with "not a directory".
-    - |
-      for R in varbase_dev_base varbase_i18n_base varbase_api_base varbase_auth_base varbase_ai_base varbase_ai_context varbase_ai_safety; do
-        RP=$(composer info "drupal/$R" --path 2>/dev/null | awk '{print $2}')
-        if [ -n "$RP" ] && [ -d "$RP" ]; then
-          echo "Applying recipe $R from $RP"
-          ./bin/drush cache:rebuild || true
-          ./bin/dr recipe "$RP" || true
-        else
-          echo "Recipe $R has no resolvable install path; skipping." >&2
-          composer info "drupal/$R" || true
-        fi
-      done
-    # The AI safety/taxonomy sub-recipes abort on config actions that need a live
-    # AI provider (unavailable in CI), so enable their modules explicitly.
-    - ./bin/drush cache:rebuild || true
-    - ./bin/drush pm:enable ai_logging ai_observability ai_automators -y || true
-    # Strip the ai_ckeditor button/plugin from every editor: rendering its
-    # settings subform performs a live AI-provider lookup that hangs on the
-    # firewalled runner and times out the text-format page.
-    - ./bin/drush php:eval 'foreach(\Drupal::entityTypeManager()->getStorage("editor")->loadMultiple() as $e){$s=$e->getSettings();$c=false;if(!empty($s["toolbar"]["items"])&&is_array($s["toolbar"]["items"])){$n=array_values(array_filter($s["toolbar"]["items"],function($i){return stripos((string)$i,"ai_ckeditor")===false&&stripos((string)$i,"aickeditor")===false;}));if($n!==$s["toolbar"]["items"]){$s["toolbar"]["items"]=$n;$c=true;}}if(!empty($s["plugins"])&&is_array($s["plugins"])){foreach(array_keys($s["plugins"]) as $k){if(stripos($k,"ai_ckeditor")!==false){unset($s["plugins"][$k]);$c=true;}}}if($c){$e->setSettings($s);$e->save();}}' || true
-    - ./bin/drush cache:rebuild || true
-    # = Prepare for deterministic testing =
-    - ./bin/drush pm:uninstall antibot -y || true
-    # Neutralize Honeypot (added by drupal_cms_anti_spam): its time-restriction
-    # rejects a form submitted faster than N seconds ("There was a problem with
-    # your form submission. Please wait N seconds and try again."), which the
-    # deterministic tests trip on. Mirror varbase_project's CI, which neutralizes
-    # antibot/honeypot/flood. Uninstall it, or fall back to disabling the timer.
-    - ./bin/drush pm:uninstall honeypot -y || ./bin/drush config:set honeypot.settings time_limit 0 -y || true
-    - ./bin/drush config:set user.flood ip_limit 1000000 -y
-    - ./bin/drush config:set user.flood user_limit 1000000 -y
-    - ./bin/drush config:set system.logging error_level all -y
-    - ./bin/drush cache:rebuild
-    # = Seed the per-role testing users the permission/role features log in as.
-    #   varbase-e2e's "I am a logged in user with the ..." step only submits the
-    #   login form; it does not create the user. Without these, every role-scoped
-    #   scenario lands anonymous and hits a 403. Roles come from varbase_users_base;
-    #   this mirrors scripts/add-testing-users.sh (adapted to the CI web/ layout).
-    - |
-      seed_user () {
-        ./bin/drush user:create "$1" --mail="$2" --password="dD.123123ddd" || \
-          ./bin/drush user:password "$1" "dD.123123ddd" || true
-        if [ "$3" != "_none_" ]; then ./bin/drush user:role:add "$3" "$1" || true; fi
-      }
-      seed_user "Normal user"    "test.authenticated@vardot.com"  "_none_"
-      seed_user "Content editor" "test.content_editor@vardot.com" "content_editor"
-      seed_user "Content admin"  "test.content_admin@vardot.com"  "content_admin"
-      seed_user "SEO admin"      "test.seo_admin@vardot.com"       "seo_admin"
-      seed_user "Site admin"     "test.site_admin@vardot.com"      "site_admin"
-      seed_user "Super admin"    "test.super_admin@vardot.com"     "administrator"
-    # = Install the varbase-e2e suite + the matching Chromium (cached) =
-    - cd "$CI_PROJECT_DIR"
-    - npm install --no-audit --no-fund
-    - ./node_modules/.bin/playwright install chromium
-    # = Dump the prepared DB for the parallel test jobs =
-    - $SITE_DIR/bin/drush --root=$WEB_ROOT sql:dump --gzip --result-file=$CI_PROJECT_DIR/varbase-starter-db.sql
-  allow_failure: false
-
-# = pre-test = prove the Drupal CMS wiring: build a plain drupal/cms codebase,
-# wire it inline (dev stability, allow-plugins and the patches allowlist), require
-# this recipe and install the site template through the Drupal CMS installer. This is the only job
-# that exercises Varbase Starter off a Varbase base, so it guards that wiring and the
-# vardot/varbase-patches requirement against drifting out of use.
-"🧩 (Drupal CMS) Install Varbase Starter site template":
-  stage: pre-test
-  rules:
-    - <<: *run_on_release_refs
-    - changes: *recipe_app_changes
-      when: on_success
-    - when: manual
-      allow_failure: false
-  image: mcr.microsoft.com/playwright:v1.56.0-noble
-  needs: []
-  timeout: 2h
-  # composer pulls dists from github.com unauthenticated; a rate limit there is
-  # transient, so let the runner re-attempt before the pipeline goes red.
-  retry:
-    max: 2
-    when:
-      - script_failure
-      - runner_system_failure
-      - stuck_or_timeout_failure
-  # Its own per-branch cache (composer + Playwright downloads only), kept
-  # separate from the Varbase build cache so it can never clobber the testsite/
-  # that the test matrix restores.
-  cache:
-    key: "varbase-starter-cms-build-v1-$CI_COMMIT_REF_SLUG"
-    paths:
-      - .cache/composer
-      - .cache/ms-playwright
-  services:
-    - name: mariadb:10.11
-      alias: database
-      variables:
-        MARIADB_DATABASE: drupal
-        MARIADB_USER: drupal
-        MARIADB_PASSWORD: drupal
-        MARIADB_ROOT_PASSWORD: root
-  variables:
-    # A separate root from the Varbase job's testsite/, so both can run in one
-    # pipeline without sharing a codebase.
-    CMS_SITE_DIR: "$CI_PROJECT_DIR/cmssite"
   before_script:
     - !reference [.fragments, host_php_setup]
     - !reference [.fragments, recipe_dev_version]
@@ -470,13 +305,13 @@ workflow:
     # = Build a plain Drupal CMS project — no Varbase wiring of any kind =
     # composer create-project refuses a non-empty target, so start clean on every
     # run (idempotent across retries), mirroring the Varbase Install job.
-    - rm -rf "$CMS_SITE_DIR"
-    - composer create-project drupal/cms "$CMS_SITE_DIR" --no-interaction --no-install --no-scripts
-    - cd "$CMS_SITE_DIR"
+    - rm -rf "$SITE_DIR"
+    - composer create-project drupal/cms "$SITE_DIR" --no-interaction --no-install --no-scripts
+    - cd "$SITE_DIR"
     # = Wire the plain Drupal CMS root for a Site recipe, inline (formerly
     #   scripts/drupal-cms-wiring.php, which this recipe no longer ships): dev
-    #   stability, the allow-plugins + patches allowlist, vardot/varbase-patches,
-    #   and vardot/varbase-patches. The front-end libraries need nothing here:
+    #   stability, the allow-plugins + patches allowlist and
+    #   vardot/varbase-patches. The front-end libraries need nothing here:
     #   each drupal-library package places itself.
     - composer config minimum-stability dev
     - composer config prefer-stable true
@@ -494,8 +329,7 @@ workflow:
     # symlink:false — the recipe must be COPIED in. A path-repo symlink would
     # point recipes/varbase_starter back at $CI_PROJECT_DIR, which contains this build,
     # and any recursive scan then loops until "Too many levels of symbolic links".
-    # Same version override as the Varbase install job, for the same reason: the
-    # repo stays canonical so this branch is what gets installed, and it
+    # The repo stays canonical so this branch is what gets installed, and it
     # advertises the branch dev version instead of the release version
     # composer.json may carry. See .fragments.recipe_dev_version.
     - composer config repositories.varbase_starter
@@ -506,13 +340,20 @@ workflow:
     # i18n / AI stacks, and no longer requires those recipe packages. Pull them
     # into the TEST HOST (the Starter recipe itself is unchanged) so this lane
     # still proves they resolve, and so they still install the front-end library
-    # files the assertion below checks. Same reasoning as the Varbase install
-    # job above. --with-all-dependencies is needed for the same reason it is
-    # there, and on-require is already false, so core-recipe-unpack leaves the
-    # packages in place instead of unpacking them into the root composer.json.
+    # files the assertion below checks. --with-all-dependencies is needed for the
+    # same reason it is on the require above, and on-require is already false, so
+    # core-recipe-unpack leaves the packages in place instead of unpacking them
+    # into the root composer.json.
+    #
+    # varbase_ai_context and varbase_ai_safety are required and applied as
+    # top-level recipes, not left to varbase_ai_base to pull in transitively:
+    # tests/features/14-ai/14-05-ai-context.feature, 14-06-ai-safety.feature and
+    # 14-07-ai-guardrails.feature assert the Context Control Center and the
+    # global AI guardrails, and those scenarios fail on a Drupal CMS host that
+    # has not had these two applied.
     - composer require
-        drupal/varbase_ai_base drupal/varbase_api_base
-        drupal/varbase_auth_base drupal/varbase_i18n_base
+        drupal/varbase_ai_base drupal/varbase_ai_context drupal/varbase_ai_safety
+        drupal/varbase_api_base drupal/varbase_auth_base drupal/varbase_i18n_base
         --no-interaction --no-progress --prefer-dist --with-all-dependencies
     # = Assert the wiring took effect, so a silent no-op cannot pass =
     - test -d recipes/varbase_starter || (echo "❌ recipes/varbase_starter missing" && exit 1)
@@ -601,11 +442,105 @@ workflow:
       THEME=$(./vendor/bin/drush config:get system.theme default --format=string)
       echo "default theme: $THEME"
       test "$THEME" = "vartheme_bs5" || (echo "❌ vartheme_bs5 is not the default theme" && exit 1)
+    # = Apply the base recipes the copied suites exercise ====================
+    # Varbase Starter deliberately does not compose the API / Auth / i18n / AI
+    # stacks, but the functional suites copied from varbase_project still cover
+    # them. Apply them to the TEST HOST only (the recipe itself is unchanged),
+    # or 03-03-json-api, 13-13/14/15 and the whole 14-ai bucket fail on modules
+    # that were never installed. A cache rebuild before each apply is required
+    # so a recipe sees what the previous one enabled.
+    #
+    # `dr` is core's own CLI (drupal/core declares bin: scripts/dr), so
+    # vendor/bin/dr exists on a drupal/cms root and resolves the site from the
+    # PROJECT root, not the docroot. `recipe` is a registered alias of
+    # `recipe:apply` on Drupal 11.4. Drush 13.x has no `recipe` command of its
+    # own, which is why the applies go through `dr`.
+    #
+    # A missing install path is FATAL, not a skip: each of these packages is
+    # required a few lines above, so an unresolvable path means the require did
+    # not take effect. Skipping it here left the job green and pushed the
+    # failure out to the 03-03 / 13-* / 14-ai buckets twenty jobs later.
+    #
+    # An apply that ABORTS is tolerated but never silent: the AI sub-recipes
+    # abort on config actions that need a live AI provider, which the firewalled
+    # runner does not have. Each failure is reported and summarised so the log
+    # distinguishes a clean apply from an aborted one.
+    - |
+      APPLY_FAILED=""
+      for R in varbase_i18n_base varbase_api_base varbase_auth_base \
+               varbase_ai_base varbase_ai_context varbase_ai_safety; do
+        RP=$(composer info "drupal/$R" --path 2>/dev/null | awk '{print $2}')
+        if [ -z "$RP" ] || [ ! -d "$RP" ]; then
+          echo "❌ drupal/$R has no resolvable install path; it was required above, so this is a wiring break." >&2
+          composer info "drupal/$R" >&2 || true
+          exit 1
+        fi
+        echo "Applying recipe $R from $RP"
+        ./vendor/bin/drush cache:rebuild
+        if ./vendor/bin/dr recipe "$RP"; then
+          echo "✅ applied $R"
+        else
+          echo "⚠️  $R did not apply cleanly (exit $?) — continuing; see the summary below." >&2
+          APPLY_FAILED="$APPLY_FAILED $R"
+        fi
+      done
+      if [ -n "$APPLY_FAILED" ]; then
+        echo "⚠️  recipes that did not apply cleanly:$APPLY_FAILED" >&2
+      else
+        echo "✅ every base recipe applied cleanly"
+      fi
+    - ./vendor/bin/drush cache:rebuild
+    # The AI safety/taxonomy sub-recipes abort on config actions that need a live
+    # AI provider (unavailable in CI), so enable their modules explicitly.
+    - ./vendor/bin/drush pm:enable ai_logging ai_observability ai_automators -y || true
+    # Strip the ai_ckeditor button/plugin from every editor: rendering its
+    # settings subform performs a live AI-provider lookup that hangs on the
+    # firewalled runner and times out the text-format page. Carried over from the
+    # removed varbase lane — the AI stack is applied on this host too, so the
+    # hang applies here unchanged.
+    - ./vendor/bin/drush php:eval 'foreach(\Drupal::entityTypeManager()->getStorage("editor")->loadMultiple() as $e){$s=$e->getSettings();$c=false;if(!empty($s["toolbar"]["items"])&&is_array($s["toolbar"]["items"])){$n=array_values(array_filter($s["toolbar"]["items"],function($i){return stripos((string)$i,"ai_ckeditor")===false&&stripos((string)$i,"aickeditor")===false;}));if($n!==$s["toolbar"]["items"]){$s["toolbar"]["items"]=$n;$c=true;}}if(!empty($s["plugins"])&&is_array($s["plugins"])){foreach(array_keys($s["plugins"]) as $k){if(stripos($k,"ai_ckeditor")!==false){unset($s["plugins"][$k]);$c=true;}}}if($c){$e->setSettings($s);$e->save();}}' || true
+    - ./vendor/bin/drush cache:rebuild
+    # = Prepare for deterministic testing =
+    - ./vendor/bin/drush pm:uninstall antibot -y || true
+    # Neutralize Honeypot (added by drupal_cms_anti_spam): its time-restriction
+    # rejects a form submitted faster than N seconds ("There was a problem with
+    # your form submission. Please wait N seconds and try again."), which the
+    # deterministic tests trip on. Mirror varbase_project's CI, which neutralizes
+    # antibot/honeypot/flood. Uninstall it, or fall back to disabling the timer.
+    - ./vendor/bin/drush pm:uninstall honeypot -y || ./vendor/bin/drush config:set honeypot.settings time_limit 0 -y || true
+    - ./vendor/bin/drush config:set user.flood ip_limit 1000000 -y
+    - ./vendor/bin/drush config:set user.flood user_limit 1000000 -y
+    - ./vendor/bin/drush config:set system.logging error_level all -y
+    - ./vendor/bin/drush cache:rebuild
+    # = Seed the per-role testing users the permission/role features log in as.
+    #   varbase-e2e's "I am a logged in user with the ..." step only submits the
+    #   login form; it does not create the user. Without these, every role-scoped
+    #   scenario lands anonymous and hits a 403. Roles come from varbase_users_base;
+    #   this mirrors scripts/add-testing-users.sh (adapted to the CI web/ layout).
+    - |
+      seed_user () {
+        ./vendor/bin/drush user:create "$1" --mail="$2" --password="dD.123123ddd" || \
+          ./vendor/bin/drush user:password "$1" "dD.123123ddd" || true
+        if [ "$3" != "_none_" ]; then ./vendor/bin/drush user:role:add "$3" "$1" || true; fi
+      }
+      seed_user "Normal user"    "test.authenticated@vardot.com"  "_none_"
+      seed_user "Content editor" "test.content_editor@vardot.com" "content_editor"
+      seed_user "Content admin"  "test.content_admin@vardot.com"  "content_admin"
+      seed_user "SEO admin"      "test.seo_admin@vardot.com"       "seo_admin"
+      seed_user "Site admin"     "test.site_admin@vardot.com"      "site_admin"
+      seed_user "Super admin"    "test.super_admin@vardot.com"     "administrator"
+    # = Install the varbase-e2e suite + the matching Chromium (cached) =
+    - cd "$CI_PROJECT_DIR"
+    - npm install --no-audit --no-fund
+    - ./node_modules/.bin/playwright install chromium
+    # = Dump the prepared DB for the parallel test jobs =
+    - $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT sql:dump --gzip --result-file=$CI_PROJECT_DIR/varbase-starter-db.sql
   artifacts:
     when: always
     expire_in: 1 day
     paths:
       - cmssite/composer.json
+      - varbase-starter-db.sql.gz
   allow_failure: false
 
 # = Smoke canary = a single fast pre-flight test that does the same runtime-only
@@ -616,7 +551,7 @@ workflow:
 # GitLab has no native "cancel sibling parallel jobs on failure"; this is the
 # portable stand-in. Trade-off: on a green run it serialises this ~5-min canary
 # before the parallel fan-out; on a systemic break it saves 24x wasted jobs.
-"🧪 varbase-e2e (smoke)":
+"🧪 functional (smoke)":
   stage: test
   rules:
     - <<: *run_on_release_refs
@@ -625,7 +560,7 @@ workflow:
     - when: manual
       allow_failure: false
   image: mcr.microsoft.com/playwright:v1.56.0-noble
-  needs: ["📦 Install Varbase Starter site template (varbase)"]
+  needs: ["🧩 Install Varbase Starter site template (Drupal CMS)"]
   timeout: 30m
   retry:
     max: 2
@@ -655,18 +590,18 @@ workflow:
     expire_in: 30 days
   before_script:
     - !reference [.fragments, host_php_setup]
-    - gunzip -c $CI_PROJECT_DIR/varbase-starter-db.sql.gz | $SITE_DIR/bin/drush --root=$WEB_ROOT sql:cli
-    - $SITE_DIR/bin/drush --root=$WEB_ROOT cache:rebuild
+    - gunzip -c $CI_PROJECT_DIR/varbase-starter-db.sql.gz | $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT sql:cli
+    - $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT cache:rebuild
   script:
-    - PHP_CLI_SERVER_WORKERS=8 $SITE_DIR/bin/drush --root=$WEB_ROOT runserver 127.0.0.1:8888 > $CI_PROJECT_DIR/runserver.log 2>&1 &
+    - PHP_CLI_SERVER_WORKERS=8 $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT runserver 127.0.0.1:8888 > $CI_PROJECT_DIR/runserver.log 2>&1 &
     - sleep 8
     - cd "$CI_PROJECT_DIR"
     - FEATURES="${FEATURES_GLOB}" VARBASE_E2E_REPORT_DISABLE=1 CUCUMBER_JSON="${CUCUMBER_JSON}" ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
   allow_failure: false
 
 # = Automated Functional Acceptance Testing (varbase-e2e) - one parallel job per
-# feature bucket. Restores the built site + DB dump from 📦 Install Varbase Starter site template (varbase).
-"🧪 varbase-e2e":
+# feature bucket. Restores the built site + DB dump from 🧩 Install Varbase Starter site template (Drupal CMS).
+"🧪 functional":
   stage: test
   rules:
     - <<: *run_on_release_refs
@@ -675,7 +610,7 @@ workflow:
     - when: manual
       allow_failure: false
   image: mcr.microsoft.com/playwright:v1.56.0-noble
-  needs: ["📦 Install Varbase Starter site template (varbase)", "🧪 varbase-e2e (smoke)"]
+  needs: ["🧩 Install Varbase Starter site template (Drupal CMS)", "🧪 functional (smoke)"]
   timeout: 2h
   retry:
     max: 2
@@ -746,14 +681,14 @@ workflow:
       - tests/videos/
     expire_in: 30 days
   before_script:
-    # testsite/ + node_modules + the browser arrive from the pull-only cache;
+    # cmssite/ + node_modules + the browser arrive from the pull-only cache;
     # only PHP (for drush) is added, then the seeded DB dump is restored.
     - !reference [.fragments, host_php_setup]
-    - gunzip -c $CI_PROJECT_DIR/varbase-starter-db.sql.gz | $SITE_DIR/bin/drush --root=$WEB_ROOT sql:cli
-    - $SITE_DIR/bin/drush --root=$WEB_ROOT cache:rebuild
+    - gunzip -c $CI_PROJECT_DIR/varbase-starter-db.sql.gz | $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT sql:cli
+    - $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT cache:rebuild
   script:
     # Serve the restored site (parallel workers for the Canvas editor mounts).
-    - PHP_CLI_SERVER_WORKERS=8 $SITE_DIR/bin/drush --root=$WEB_ROOT runserver 127.0.0.1:8888 > $CI_PROJECT_DIR/runserver.log 2>&1 &
+    - PHP_CLI_SERVER_WORKERS=8 $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT runserver 127.0.0.1:8888 > $CI_PROJECT_DIR/runserver.log 2>&1 &
     - sleep 8
     - cd "$CI_PROJECT_DIR"
     # One feature bucket per matrix job. cucumber.js reads FEATURES.
@@ -772,18 +707,24 @@ workflow:
 "📊 Create reports":
   stage: report
   rules:
-    # Auto-run whenever the test chain ran (release refs or the app changed),
-    # even if a test failed, so the full report is published. DAG-scheduled via
-    # needs so it is not held behind an un-played blocking-manual validate job.
+    # Auto-run whenever the test chain ran (release refs or the app changed).
+    # DAG-scheduled via needs so it is not held behind an un-played
+    # blocking-manual validate job.
+    #
+    # NOTE: `when: always` here only governs RULE evaluation. `needs` has no
+    # run-on-failure form, so GitLab still skips this job if any 🧪 functional
+    # matrix job fails — the combined report publishes on a green matrix only.
+    # Each matrix job uploads its own per-suite HTML/PDF in after_script, so a
+    # red run is not left without a report.
     - if: '$CI_COMMIT_TAG || $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: always
     - changes: *recipe_app_changes
       when: always
     - when: never
   image: node:20
-  needs: ["🧪 varbase-e2e"]
+  needs: ["🧪 functional"]
   dependencies:
-    - "🧪 varbase-e2e"
+    - "🧪 functional"
   before_script:
     - apt-get update -y && apt-get install -y jq
     - npm install --no-save --no-audit --no-fund @vardot/varbase-e2e
