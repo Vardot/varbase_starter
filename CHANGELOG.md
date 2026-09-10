@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-09-10
+### Changed
+- Set the recipe version to `1.0.2`.
+- Require every Varbase base recipe at its stable release (`~1.0.0`) and
+  `drupal/vartheme_bs5` at `~5.0.0`, instead of dev branches.
+- Update the version badge to `1.0.2` in `README.md`.
+- Test the pipeline only with Drupal CMS, and rename the test jobs to
+  `functional`.
+- Rename the CI install job to `Drupal CMS - Varbase Starter`, and install the
+  site template from the recipe with a guard that fails the job when demo
+  content is missing.
+### Fixed
+- Remove the 21 broken `canvas.component.sdc.vartheme_bs5.*` fallback config
+  files and their `disable: []` actions. The install goes from 567 warnings to
+  0.
+- Install `canvas_page_template_component` from the recipe, so Canvas does not
+  install it during `RecipeAppliedEvent` and rebuild the container
+  mid-dispatch. `drush site:install` no longer fails with
+  `You have requested a synthetic service ("kernel")` on plain Drupal CMS.
+
 ## [1.0.1] - 2026-09-08
 ### Changed
 - Set the recipe version to `1.0.1`.
