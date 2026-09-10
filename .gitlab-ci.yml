@@ -430,9 +430,10 @@ workflow:
         printf("✅ %d front-end library files in place\n", count($need));
       '
     - ls web/libraries
-    # = Install the site template through the Drupal CMS installer =
-    - ./vendor/bin/drush site:install drupal_cms_installer
-      installer_site_template_form.add_ons=varbase_starter
+    # = Install the site template from the recipe =
+    - mkdir -p web/sites/default/files
+    - chmod 777 web/sites/default web/sites/default/files
+    - ./vendor/bin/drush site:install recipes/varbase_starter
       --db-url=$DB_URL
       --account-name=$DRUPAL_ADMIN_USERNAME --account-pass=$DRUPAL_ADMIN_PASSWORD
       --account-mail=webmaster@vardot.com --site-name="Varbase Starter on Drupal CMS" --locale=en -y
@@ -442,6 +443,12 @@ workflow:
       THEME=$(./vendor/bin/drush config:get system.theme default --format=string)
       echo "default theme: $THEME"
       test "$THEME" = "vartheme_bs5" || (echo "❌ vartheme_bs5 is not the default theme" && exit 1)
+    - |
+      PAGES=$(./vendor/bin/drush php:eval 'print \Drupal::entityQuery("canvas_page")->accessCheck(FALSE)->count()->execute();')
+      NODES=$(./vendor/bin/drush php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->count()->execute();')
+      echo "canvas pages: ${PAGES:-0}, nodes: ${NODES:-0}"
+      test "${PAGES:-0}" -ge 5 || (echo "❌ demo content missing: ${PAGES:-0} canvas pages" && exit 1)
+      test "${NODES:-0}" -ge 10 || (echo "❌ demo content missing: ${NODES:-0} nodes" && exit 1)
     # = Apply the base recipes the copied suites exercise ====================
     # Varbase Starter deliberately does not compose the API / Auth / i18n / AI
     # stacks, but the functional suites copied from varbase_project still cover
