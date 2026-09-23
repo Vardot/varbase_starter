@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-09-23
+### Added
+- Add the breadcrumb block to the About Varbase and Features banners.
+### Changed
+- Set the recipe version to `1.0.3`.
+- Require every Varbase base recipe at its stable release (`~1.0.0`) and
+  `drupal/vartheme_bs5` at `~5.0.0`, instead of dev branches.
+- Update the version badge to `1.0.3` in `README.md`.
+### Fixed
+- Set the Blog banner heading to level 1, so the Blog page has an h1.
+
 ## [1.0.2] - 2026-09-10
 ### Changed
 - Set the recipe version to `1.0.2`.
