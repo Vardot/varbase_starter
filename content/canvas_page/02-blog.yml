@@ -62,6 +62,7 @@ default:
       uuid: 6237189d-0891-46b9-89ef-79081bbba74a
       component_id: sdc.vartheme_bs5.heading
       inputs:
+        level: 1
         heading_text: Blog
         text_color: text-white
         text_size: display-2
