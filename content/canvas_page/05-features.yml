@@ -52,6 +52,14 @@ default:
     -
       parent_uuid: f7af211e-ef13-405b-8f78-5a018e5d7556
       slot: media_banner_slot
+      uuid: 918e8f14-f3ac-43c0-8ffe-e6120ebe910b
+      component_id: block.system_breadcrumb_block
+      inputs:
+        label: Breadcrumbs
+        label_display: '0'
+    -
+      parent_uuid: f7af211e-ef13-405b-8f78-5a018e5d7556
+      slot: media_banner_slot
       uuid: 1a361974-55a2-42d8-bcd8-dfa0b3baa194
       component_id: sdc.vartheme_bs5.spacer
       inputs:
