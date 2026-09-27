@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-09-27
+### Changed
+- Update `@vardot/varbase-e2e` to 2.0.6 for the deadline-budgeted Canvas editor
+  step and the smartSettle timeout fixes
+  ([#3625367](https://www.drupal.org/i/3625367)).
+- Update `@vardot/varbase-e2e` to 2.0.7 and add accessibility structure coverage,
+  and keep the functional testing suite green by building CI on Twig 3.29 until a
+  Twig release compatible with Drupal core is out
+  ([#3625607](https://www.drupal.org/i/3625607)).
+- Set the recipe version to `1.0.4`.
+- Require every Varbase base recipe at its stable release (`~1.0.0`) and
+  `drupal/vartheme_bs5` at `~5.0.0`, instead of dev branches.
+- Update the version badge to `1.0.4` in `README.md`.
+
 ## [1.0.3] - 2026-09-23
 ### Added
 - Add the breadcrumb block to the About Varbase and Features banners.
@@ -146,7 +160,10 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.1...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.4...1.0.x
+[1.0.4]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.3...1.0.4
+[1.0.3]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.2...1.0.3
+[1.0.2]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.1...1.0.2
 [1.0.1]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0...1.0.1
 [1.0.0]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc4...1.0.0
 [1.0.0-rc4]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.0-rc3...1.0.0-rc4
