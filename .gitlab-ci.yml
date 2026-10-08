@@ -338,6 +338,9 @@ workflow:
     - composer config repositories.varbase_starter
         '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":false,"versions":{"drupal/varbase_starter":"'"$RECIPE_DEV_VERSION"'"}}}'
         --json
+    # svg_image 3.x caps enshrined/svg-sanitize below 1.0, and the 2026-10-08
+    # advisories block every 0.x. Alias the fixed 1.0.0 until svg_image allows it.
+    - composer require "enshrined/svg-sanitize:1.0.0 as 0.22.1" --no-update
     - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
     # The Varbase Starter recipe deliberately does not compose the API / Auth /
     # i18n / AI stacks, and no longer requires those recipe packages. Pull them
@@ -543,6 +546,9 @@ workflow:
     - cd "$CI_PROJECT_DIR"
     - npm install --no-audit --no-fund
     - ./node_modules/.bin/playwright install chromium
+    # Answer the Drupal CMS telemetry prompt. Unanswered, its dialog form takes
+    # Gin's sticky actions on admin pages, so node forms lose "Published".
+    - $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT state:set drupal_cms_telemetry false --input-format=json
     # = Dump the prepared DB for the parallel test jobs =
     - $SITE_DIR/vendor/bin/drush --root=$WEB_ROOT sql:dump --gzip --result-file=$CI_PROJECT_DIR/varbase-starter-db.sql
   artifacts:
@@ -654,7 +660,7 @@ workflow:
       - SUITE: "01-website-base-requirements-b"
         FEATURES_GLOB: "tests/features/01-website-base-requirements/01-{04,05,06}-*.feature"
       - SUITE: "01-website-base-requirements-c"
-        FEATURES_GLOB: "tests/features/01-website-base-requirements/01-07-*.feature"
+        FEATURES_GLOB: "tests/features/01-website-base-requirements/01-{07,08}-*.feature"
       - SUITE: "04-admin-users-a"
         FEATURES_GLOB: "tests/features/04-admin-users/04-01-*.feature"
       - SUITE: "04-admin-users-b"
