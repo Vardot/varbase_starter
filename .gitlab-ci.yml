@@ -323,9 +323,6 @@ workflow:
     - composer config --json extra.composer-patches.allowed-dependency-patches '["vardot/varbase-patches","vardot/drupal-core-patches"]'
     - composer config --json extra.drupal-recipe-unpack.on-require false
     - composer require vardot/varbase-patches:~11.0.0 --no-update
-    # Temporary (#3625607): keep Twig below 3.30 until a Twig release compatible
-    # with Drupal core is out; 3.30.0 breaks every page render.
-    - composer require "twig/twig:<3.30" --no-update
     # = Point at the checked-out recipe and require it. --with-all-dependencies is
     #   required: a partial update keeps the locked symfony/css-selector, which
     #   drupal/storybook (via varbase_dev_base) conflicts with.
@@ -338,9 +335,6 @@ workflow:
     - composer config repositories.varbase_starter
         '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":false,"versions":{"drupal/varbase_starter":"'"$RECIPE_DEV_VERSION"'"}}}'
         --json
-    # svg_image 3.x caps enshrined/svg-sanitize below 1.0, and the 2026-10-08
-    # advisories block every 0.x. Alias the fixed 1.0.0 until svg_image allows it.
-    - composer require "enshrined/svg-sanitize:1.0.0 as 0.22.1" --no-update
     - composer require drupal/varbase_starter:@dev --no-interaction --no-progress --prefer-dist --with-all-dependencies
     # The Varbase Starter recipe deliberately does not compose the API / Auth /
     # i18n / AI stacks, and no longer requires those recipe packages. Pull them
