@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-10-11
+### Changed
+- Set the recipe version to `1.0.6`.
+- Require every Varbase base recipe at its stable release (`~1.0.0`) and
+  `drupal/vartheme_bs5` at `~5.0.0`, instead of dev branches.
+- Update the version badge to `1.0.6` in `README.md`.
+- Remove the temporary CI-only `twig/twig:<3.30` pin and `enshrined/svg-sanitize`
+  alias. Drupal core fixed the Twig 3.30 error, and `drupal/svg_image` 3.2.5
+  allows svg-sanitize 1.0, so installs no longer need the alias
+  ([#3629798](https://www.drupal.org/i/3629798)).
+
 ## [1.0.5] - 2026-10-09
 ### Changed
 - Set the recipe version to `1.0.5`.
@@ -172,7 +183,8 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.5...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.6...1.0.x
+[1.0.6]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.5...1.0.6
 [1.0.5]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.4...1.0.5
 [1.0.4]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.3...1.0.4
 [1.0.3]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.2...1.0.3
