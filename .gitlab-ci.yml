@@ -646,6 +646,7 @@ workflow:
           - "14-ai"
           - "15-quality"
           - "16-eca-workflow-modeler"
+          - "17-search"
       # The heaviest suites are split by feature-file globs so each parallel job
       # stays short (concurrent, so more jobs LOWER wall-clock). SUITE names the
       # report; FEATURES_GLOB overrides the glob (fed to cucumber.js as FEATURES).

@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.media.image.field_media_image
+    - field.field.node.blog.field_description
+    - field.field.node.blog.field_featured_image
+    - image.style.canvas_parametrized_width
+    - media.type.image
+    - node.type.blog
+  module:
+    - file
+    - media
+    - node
+id: node.blog.search_result
+content_entity_type_id: node
+content_entity_type_bundle: blog
+content_entity_type_view_mode: search_result
+component_tree:
+  c018cfc8-04b3-5a05-867f-433e70d315d9:
+    uuid: c018cfc8-04b3-5a05-867f-433e70d315d9
+    component_id: sdc.vartheme_bs5.card-featured
+    component_version: 760a4a6c1117384e
+    inputs:
+      media_position: start
+      media_image:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_featured_image␞␟entity␜␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      ratio: ratio-16x9
+      fit: object-fit-cover
+      card_border: false
+      padded: false
+      corner_style: rounded-3
+      equal_height: true
+      stretched_link: true
+      link_url:
+        sourceType: host-entity-url
+        absolute: false
+      content_vertical_alignment: align-items-center
+      columns_sm_size: '04_08'
+  0491c8dc-9824-5ce0-8a39-55d0ef9d4a41:
+    parent_uuid: c018cfc8-04b3-5a05-867f-433e70d315d9
+    slot: content
+    uuid: 0491c8dc-9824-5ce0-8a39-55d0ef9d4a41
+    component_id: sdc.vartheme_bs5.heading
+    component_version: 0889e2ce906c3164
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝title␞␟value'
+      level: 3
+  92c1d93c-4855-5c18-8298-c531f236bfb1:
+    parent_uuid: c018cfc8-04b3-5a05-867f-433e70d315d9
+    slot: content
+    uuid: 92c1d93c-4855-5c18-8298-c531f236bfb1
+    component_id: sdc.vartheme_bs5.plain-text
+    component_version: 70459740b04240e6
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝field_description␞␟value'
+      trim: true
+      trim_length: 30
+      trim_units: words
+      suffix: '...'
+      strip_html: true
+  99059dab-1d0d-5efe-a153-7b470fd6dfae:
+    parent_uuid: c018cfc8-04b3-5a05-867f-433e70d315d9
+    slot: content
+    uuid: 99059dab-1d0d-5efe-a153-7b470fd6dfae
+    component_id: sdc.vartheme_bs5.date
+    component_version: 3eae6f5d223f6bda
+    inputs:
+      date:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:blog␝created␞␟value'
+        adapter: unix_to_date
+exposed_slots: {  }
+page_variant: null

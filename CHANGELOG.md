@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - A Copy link item in the Social media menu, shipped disabled because the design does not show it
   in the footer. Enable it to copy the page address, through the HTMX handler in Vartheme BS5
   (#3631091) (#3631092).
+- Search built on the Varbase Search Base recipe: a Canvas `/search` page with blog result cards,
+  a Tags facet, the Content Type facet and the Date Published group (#3631161).
 
 ## [1.0.6] - 2026-10-11
 ### Changed
