@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.8] - 2026-10-27
+### Fixed
+- Stop switching off the search page display that Drupal CMS Search 2.2.7 removed, and require
+  `drupal/drupal_cms_search` `^2.2.7`. Fresh installs crashed on `views.view.search` without it
+  ([#3633434](https://www.drupal.org/i/3633434)).
+### Changed
+- Set the recipe version to `1.0.8`
+  ([#3633543](https://www.drupal.org/i/3633543)).
+
 ## [1.0.7] - 2026-10-19
 ### Added
 - A Copy link item in the Social media menu, shipped disabled because the design does not show it
@@ -198,7 +207,8 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.7...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.8...1.0.x
+[1.0.8]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.7...1.0.8
 [1.0.7]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.6...1.0.7
 [1.0.6]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.5...1.0.6
 [1.0.5]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.4...1.0.5
