@@ -307,7 +307,6 @@ config:
             rewrite:
               filter_rewrite_values: '- Any -|Any time'
               filter_rewrite_values_key: false
-        display.page.display_options.enabled: false
         # Keyword-only filters, so the header form has no Date Published group.
         display.block_1:
           id: block_1
