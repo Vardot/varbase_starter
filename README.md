@@ -35,6 +35,10 @@ This recipe bundles:
 
 Install via Drupal Recipe Installer Kit. After installation, you'll be redirected to `/admin/dashboard/welcome`.
 
+## Telemetry
+
+Drupal CMS telemetry is off in this project's CI (`DRUPAL_CMS_TELEMETRY=0`). To keep it off on your own install, set `DRUPAL_CMS_TELEMETRY=0` in the environment before installing the site template.
+
 ## Learn More
 
 - [Issue #3567072](https://www.drupal.org/project/varbase_starter/issues/3567072)
