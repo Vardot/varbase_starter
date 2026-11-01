@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.9] - 2026-11-01
+### Changed
+- Turn off Drupal CMS telemetry in CI (`DRUPAL_CMS_TELEMETRY=0`) and document how to opt out in
+  `README.md` ([#3633828](https://www.drupal.org/i/3633828)).
+- Set the recipe version to `1.0.9`
+  ([#3634623](https://www.drupal.org/i/3634623)).
+
 ## [1.0.8] - 2026-10-27
 ### Fixed
 - Stop switching off the search page display that Drupal CMS Search 2.2.7 removed, and require
