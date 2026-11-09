@@ -554,7 +554,6 @@ default:
   path:
     -
       alias: /features
-      langcode: en
   revision_translation_affected:
     -
       value: true

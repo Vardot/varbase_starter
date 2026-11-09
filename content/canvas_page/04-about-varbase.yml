@@ -824,7 +824,6 @@ default:
   path:
     -
       alias: /about-varbase
-      langcode: en
   revision_translation_affected:
     -
       value: true

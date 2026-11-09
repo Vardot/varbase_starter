@@ -154,4 +154,3 @@ default:
   path:
     -
       alias: /search
-      langcode: en
