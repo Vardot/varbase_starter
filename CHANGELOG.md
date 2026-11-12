@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   logo, which many email clients do not show
   ([#3637289](https://www.drupal.org/i/3637289)).
 
+## [1.0.10] - 2026-11-12
+### Fixed
+- Store the starter pages' path aliases without a fixed language, so the home page and the other
+  starter pages are found when the default language is not English
+  ([#3636515](https://www.drupal.org/i/3636515)).
+### Changed
+- Update Node.js to >= 24.0 and Yarn to 4.18.1 ([#3635669](https://www.drupal.org/i/3635669)).
+- Set the recipe version to `1.0.10`
+  ([#3637851](https://www.drupal.org/i/3637851)).
+
 ## [1.0.9] - 2026-11-01
 ### Changed
 - Turn off Drupal CMS telemetry in CI (`DRUPAL_CMS_TELEMETRY=0`) and document how to opt out in
