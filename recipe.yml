@@ -38,6 +38,15 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: vartheme_bs5
+    # The contact form lives in a Canvas page. There its Ajax submit gets the
+    # whole page back and shows "Oops, something went wrong", and a redirect
+    # confirmation throws inside the component and renders as an error. Submit
+    # normally and confirm inline, in place of the form.
+    webform.webform.business_contact:
+      simpleConfigUpdate:
+        settings.ajax: false
+        settings.confirmation_type: inline
+        settings.confirmation_message: 'Thank you for contacting us. We will get back to you soon.'
     # Tag names are indexed for the Tags facet.
     search_api.index.content:
       setProperties:

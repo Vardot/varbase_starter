@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+  - field.field.node.page.field_content
+  - node.type.page
+  module:
+  - canvas
+id: node.page.full
+content_entity_type_id: node
+content_entity_type_bundle: page
+content_entity_type_view_mode: full
+exposed_slots: {}
+component_tree:
+  d71788f1-72ec-4fe0-9731-aee681c0df58:
+    uuid: d71788f1-72ec-4fe0-9731-aee681c0df58
+    component_id: sdc.vartheme_bs5.section
+    component_version: active
+    inputs:
+      container_type: container
+      columns: '100'
+      padding_block_start: pt-5
+      padding_block_end: pb-5
+      background_color: none
+      text_color: auto
+  d71788f1-72ec-4fe0-9731-aee681c0df58:col_1:0:
+    parent_uuid: d71788f1-72ec-4fe0-9731-aee681c0df58
+    slot: col_1
+    uuid: 17901a1c-5c61-43db-8b41-6141fbd570b9
+    component_id: sdc.vartheme_bs5.heading
+    component_version: active
+    inputs:
+      heading_text:
+        sourceType: entity-field
+        expression: ℹ︎␜entity:node:page␝title␞␟value
+      level: 1
+  d71788f1-72ec-4fe0-9731-aee681c0df58:col_1:1:
+    parent_uuid: d71788f1-72ec-4fe0-9731-aee681c0df58
+    slot: col_1
+    uuid: cb377558-c15d-4c79-a603-dea544e45fae
+    component_id: sdc.vartheme_bs5.rich-text
+    component_version: active
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: ℹ︎␜entity:node:page␝field_content␞␟processed
+      trim: false
