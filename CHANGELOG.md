@@ -6,17 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Changed
-- Use the Vartheme BS5 PNG email logo (`logo-email.png`) in HTML emails instead of the SVG site
-  logo, which many email clients do not show
-  ([#3637289](https://www.drupal.org/i/3637289)).
 
 ## [1.0.10] - 2026-11-12
 ### Fixed
 - Store the starter pages' path aliases without a fixed language, so the home page and the other
   starter pages are found when the default language is not English
   ([#3636515](https://www.drupal.org/i/3636515)).
+- Confirm the contact form inline instead of showing an error inside its Canvas page, and add the
+  missing Terms and Conditions page ([#3636515](https://www.drupal.org/i/3636515)).
 ### Changed
+- Use the Vartheme BS5 PNG email logo (`logo-email.png`) in HTML emails instead of the SVG site
+  logo, which many email clients do not show
+  ([#3637289](https://www.drupal.org/i/3637289)).
 - Update Node.js to >= 24.0 and Yarn to 4.18.1 ([#3635669](https://www.drupal.org/i/3635669)).
 - Set the recipe version to `1.0.10`
   ([#3637851](https://www.drupal.org/i/3637851)).
