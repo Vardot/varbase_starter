@@ -32,6 +32,65 @@ install:
 config:
   strict: false
   actions:
+    # Canvas makes a component for every block as soon as the block exists, and
+    # labels it in the install language, so on a non-English install a component
+    # Canvas made before this recipe has another version than the English one
+    # the templates, patterns and regions pin. Keep the English version beside
+    # it as an older version. Only blocks whose label is translated.
+    canvas.component.block.system_branding_block:
+      simpleConfigUpdate:
+        versioned_properties.7d528e00f56b3abf:
+          settings:
+            default_settings:
+              id: system_branding_block
+              label: Site branding
+              label_display: '0'
+              provider: system
+              use_site_logo: true
+              use_site_name: true
+              use_site_slogan: true
+          fallback_metadata:
+            slot_definitions: null
+    canvas.component.block.system_breadcrumb_block:
+      simpleConfigUpdate:
+        versioned_properties.0d7e961dd03aa710:
+          settings:
+            default_settings:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              label_display: '0'
+              provider: system
+          fallback_metadata:
+            slot_definitions: null
+    canvas.component.block.views_block.blog-latest:
+      simpleConfigUpdate:
+        versioned_properties.c336f6157683ac13:
+          settings:
+            default_settings:
+              id: views_block:blog-latest
+              label: 'Blog: Latest blog posts'
+              label_display: '0'
+              provider: views
+              views_label: ''
+              items_per_page: null
+              exposed: {  }
+          fallback_metadata:
+            slot_definitions: null
+    canvas.component.block.webform_block:
+      simpleConfigUpdate:
+        versioned_properties.b5dca6ca0519bf1b:
+          settings:
+            default_settings:
+              id: webform_block
+              label: Webform
+              label_display: '0'
+              provider: webform
+              webform_id: ''
+              default_data: ''
+              redirect: false
+              lazy: false
+          fallback_metadata:
+            slot_definitions: null
     system.site:
       simpleConfigUpdate:
         page.front: '/home'
@@ -430,6 +489,19 @@ config:
         provider: views
         source: block
         source_local_id: 'views_exposed_filter_block:search-block_1'
+      # Canvas may have made it already, labelled in the install language: keep
+      # the English version, as at the top.
+      simpleConfigUpdate:
+        versioned_properties.abd3c7419d413cec:
+          settings:
+            default_settings:
+              id: views_exposed_filter_block:search-block_1
+              label: 'Exposed form: search-block_1'
+              label_display: '0'
+              provider: views
+              views_label: ''
+          fallback_metadata:
+            slot_definitions: null
     canvas.page_region.vartheme_bs5.header:
       setProperties:
         component_tree.64cc6d33-c24c-45be-a52b-1deb85fcab0b:
