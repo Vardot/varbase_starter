@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: af20100b-64ac-4d2e-886b-64bf32bd4d39
+name: 'Headings'
+cssVariable: '--bs-heading-color'
+value:
+  colorSpace: srgb
+  components:
+    - 0.1294
+    - 0.1451
+    - 0.1608
+  alpha: null
+  hex: '#212529'
+displayFormat: hex
+weight: 15

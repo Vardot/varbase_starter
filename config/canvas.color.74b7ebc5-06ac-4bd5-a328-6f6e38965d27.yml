@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: 74b7ebc5-06ac-4bd5-a328-6f6e38965d27
+name: 'Teal'
+cssVariable: '--bs-teal'
+value:
+  colorSpace: srgb
+  components:
+    - 0.1255
+    - 0.7882
+    - 0.5922
+  alpha: null
+  hex: '#20c997'
+displayFormat: hex
+weight: 30

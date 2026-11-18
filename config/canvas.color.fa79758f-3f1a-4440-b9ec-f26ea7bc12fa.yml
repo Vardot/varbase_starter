@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: fa79758f-3f1a-4440-b9ec-f26ea7bc12fa
+name: 'Gray'
+cssVariable: '--bs-gray'
+value:
+  colorSpace: srgb
+  components:
+    - 0.4235
+    - 0.4588
+    - 0.4902
+  alpha: null
+  hex: '#6c757d'
+displayFormat: hex
+weight: 34

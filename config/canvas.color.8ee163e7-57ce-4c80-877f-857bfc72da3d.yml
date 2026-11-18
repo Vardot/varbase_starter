@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: 8ee163e7-57ce-4c80-877f-857bfc72da3d
+name: 'Highlight text'
+cssVariable: '--bs-highlight-color'
+value:
+  colorSpace: srgb
+  components:
+    - 0.1294
+    - 0.1451
+    - 0.1608
+  alpha: null
+  hex: '#212529'
+displayFormat: hex
+weight: 20

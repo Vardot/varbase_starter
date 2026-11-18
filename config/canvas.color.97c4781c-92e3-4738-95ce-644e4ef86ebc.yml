@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: 97c4781c-92e3-4738-95ce-644e4ef86ebc
+name: 'White'
+cssVariable: '--bs-white'
+value:
+  colorSpace: srgb
+  components:
+    - 1.0
+    - 1.0
+    - 1.0
+  alpha: null
+  hex: '#ffffff'
+displayFormat: hex
+weight: 32

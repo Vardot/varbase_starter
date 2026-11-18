@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: 6c8f09b3-db0b-419b-8543-f3fafc9e144a
+name: 'Highlight background'
+cssVariable: '--bs-highlight-bg'
+value:
+  colorSpace: srgb
+  components:
+    - 1.0
+    - 0.9529
+    - 0.8039
+  alpha: null
+  hex: '#fff3cd'
+displayFormat: hex
+weight: 21

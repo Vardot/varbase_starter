@@ -31,6 +31,17 @@ This recipe bundles:
 - Contact form: Modal confirmation
 - Page menus: Main, Footer, Utility
 
+## Brand kit
+
+Content editors and content admins can restyle the whole site from Canvas > Brand kit.
+The palette is the Bootstrap 5.3 colour set under Bootstrap's own names: the eight theme
+colours (`--bs-primary` to `--bs-dark`) and the root colours (`--bs-body-color`,
+`--bs-body-bg`, `--bs-link-color`, `--bs-border-color` and the rest), plus Bootstrap's named
+colours (`--bs-blue` to `--bs-gray-dark`). It ships with the
+theme's values, so a fresh site looks unchanged. Canvas global CSS derives the tints, focus
+ring, buttons and colour utilities from these colours. The recipe sets the global CSS on
+install; add your own global CSS after it.
+
 ## Usage
 
 Install via Drupal Recipe Installer Kit. After installation, you'll be redirected to `/admin/dashboard/welcome`.

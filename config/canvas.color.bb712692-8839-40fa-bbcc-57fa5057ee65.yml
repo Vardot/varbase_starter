@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: bb712692-8839-40fa-bbcc-57fa5057ee65
+name: 'Success'
+cssVariable: '--bs-success'
+value:
+  colorSpace: srgb
+  components:
+    - 0.098
+    - 0.5294
+    - 0.3294
+  alpha: null
+  hex: '#198754'
+displayFormat: hex
+weight: 2

@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- A Canvas brand kit that restyles the whole site: the Bootstrap 5.3 colours ship as brand kit
+  colours under their own `--bs-*` names, Canvas global CSS derives the tints, buttons and
+  utilities from them, and content editors and admins can change them
+  ([#3638669](https://www.drupal.org/i/3638669)).
 
 ## [1.0.11] - 2026-11-14
 ### Fixed

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: 9a97bafe-a7a3-49b0-9a50-6d5a8031028b
+name: 'Body background'
+cssVariable: '--bs-body-bg'
+value:
+  colorSpace: srgb
+  components:
+    - 1.0
+    - 1.0
+    - 1.0
+  alpha: null
+  hex: '#ffffff'
+displayFormat: hex
+weight: 9

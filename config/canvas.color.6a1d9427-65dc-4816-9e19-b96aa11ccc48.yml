@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+uuid: 6a1d9427-65dc-4816-9e19-b96aa11ccc48
+name: 'Gray dark'
+cssVariable: '--bs-gray-dark'
+value:
+  colorSpace: srgb
+  components:
+    - 0.2039
+    - 0.2275
+    - 0.251
+  alpha: null
+  hex: '#343a40'
+displayFormat: hex
+weight: 35
