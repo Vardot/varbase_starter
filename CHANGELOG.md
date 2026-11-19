@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   colours under their own `--bs-*` names, Canvas global CSS derives the tints, buttons and
   utilities from them, and content editors and admins can change them
   ([#3638669](https://www.drupal.org/i/3638669)).
+### Fixed
+- Ship a published Privacy policy page at `/privacy-policy`, with a draft-for-demo warning that
+  tells editors to replace it with the site's own privacy statement before launch, so the footer
+  and contact form consent links no longer land on an unpublished page
+  ([#3639415](https://www.drupal.org/i/3639415)).
 
 ## [1.0.11] - 2026-11-14
 ### Fixed
