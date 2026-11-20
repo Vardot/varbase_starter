@@ -33,9 +33,9 @@ module.exports = {
     paths: [process.env.FEATURES || 'tests/features/**/*.feature'],
     format: [
       // Coloured Feature/Scenario/Step breakdown in the CI log (what
-      // varbase_project 11.0.x uses). package.json pins @cucumber/cucumber and
-      // @cucumber/pretty-formatter with npm `overrides` (mirrored in yarn
-      // `resolutions`) to the versions varbase_project pins, so the formatter's
+      // varbase_project 11.0.x uses). @cucumber/cucumber comes from
+      // @vardot/varbase-e2e; package.json pins @cucumber/pretty-formatter
+      // with npm `overrides` (mirrored in yarn `resolutions`), so the formatter's
       // plugin API matches the installed cucumber-js and loads under npm — npm
       // ignores yarn `resolutions`, which is why it crashed before. The JSON
       // report below drives the HTML/PDF report.

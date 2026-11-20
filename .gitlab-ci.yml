@@ -279,7 +279,7 @@ workflow:
       when: on_success
     - when: manual
       allow_failure: false
-  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  image: mcr.microsoft.com/playwright:v1.63.0-noble
   needs: []
   timeout: 2h
   # composer pulls dists from github.com unauthenticated; a rate limit there is
@@ -570,7 +570,7 @@ workflow:
       when: on_success
     - when: manual
       allow_failure: false
-  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  image: mcr.microsoft.com/playwright:v1.63.0-noble
   needs: ["🧩 Drupal CMS - Varbase Starter"]
   timeout: 30m
   retry:
@@ -620,7 +620,7 @@ workflow:
       when: on_success
     - when: manual
       allow_failure: false
-  image: mcr.microsoft.com/playwright:v1.56.0-noble
+  image: mcr.microsoft.com/playwright:v1.63.0-noble
   needs: ["🧩 Drupal CMS - Varbase Starter", "🧪 functional (smoke)"]
   timeout: 2h
   retry:
