@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   tells editors to replace it with the site's own privacy statement before launch, so the footer
   and contact form consent links no longer land on an unpublished page
   ([#3639415](https://www.drupal.org/i/3639415)).
+- Fresh installs no longer report 12 invalid items under Canvas data health. Each component in the
+  shipped patterns has a label (Canvas 1.13 rejects `label: null`), and the recipe no longer ships
+  the Navbar Component config, which Canvas disables (the Vartheme BS5 Navbar has an empty value
+  in its Placement options) and so could never bring up to date ([#3639417](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639417)).
 
 ## [1.0.11] - 2026-11-14
 ### Fixed
