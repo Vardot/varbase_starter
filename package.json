@@ -20,11 +20,5 @@
   "devDependencies": {
     "eslint": "^9.0.0",
     "@vardot/varbase-e2e": "^2.0.8"
-  },
-  "overrides": {
-    "@cucumber/pretty-formatter": "1.0.1"
-  },
-  "resolutions": {
-    "@cucumber/pretty-formatter": "1.0.1"
   }
 }
