@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.12] - 2026-11-24
 ### Added
 - A Canvas brand kit that restyles the whole site: the Bootstrap 5.3 colours ship as brand kit
   colours under their own `--bs-*` names, Canvas global CSS derives the tints, buttons and
@@ -20,6 +22,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   shipped patterns has a label (Canvas 1.13 rejects `label: null`), and the recipe no longer ships
   the Navbar Component config, which Canvas disables (the Vartheme BS5 Navbar has an empty value
   in its Placement options) and so could never bring up to date ([#3639417](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639417)).
+- Point the "Get Professional Support" links at a Vardot page that exists
+  ([#3639402](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639402)).
+### Changed
+- Change the default PHP version to PHP 8.5 in CI and DDEV
+  ([#3638953](https://git.drupalcode.org/project/varbase_starter/-/work_items/3638953)).
+- Update vardot/varbase-e2e to 2.0.8 ([#3639416](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639416)).
+- Fall back to the Echo test provider in CI when amazee.ai is unavailable
+  ([#3639418](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639418)).
+- Set the recipe version to `1.0.12`
+  ([#3639419](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639419)).
 
 ## [1.0.11] - 2026-11-14
 ### Fixed
@@ -253,7 +265,11 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.8...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.12...1.0.x
+[1.0.12]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.11...1.0.12
+[1.0.11]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.10...1.0.11
+[1.0.10]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.9...1.0.10
+[1.0.9]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.8...1.0.9
 [1.0.8]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.7...1.0.8
 [1.0.7]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.6...1.0.7
 [1.0.6]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.5...1.0.6
