@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.14] - 2026-11-25
+### Changed
+- Use caret constraints with ^11.4 || ^12.0 to allow Drupal 11.5 and Drupal 12 in Varbase Starter
+  ([#3639420](https://git.drupalcode.org/project/varbase_starter/-/work_items/3639420)).
+
 ## [1.0.12] - 2026-11-24
 ### Added
 - A Canvas brand kit that restyles the whole site: the Bootstrap 5.3 colours ship as brand kit
@@ -265,7 +270,8 @@ Use 1.0.0-rc2 instead.
 ### Added
 - Initial release of the Varbase Starter recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.12...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.14...1.0.x
+[1.0.14]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.12...1.0.14
 [1.0.12]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.11...1.0.12
 [1.0.11]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.10...1.0.11
 [1.0.10]: https://git.drupalcode.org/project/varbase_starter/-/compare/1.0.9...1.0.10
